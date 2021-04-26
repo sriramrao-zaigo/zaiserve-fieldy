@@ -13,7 +13,7 @@ public class BrowserSetup {
 		WebDriver driver=null;
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+		//options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
 		driver = new ChromeDriver(options);
     	driver.manage().window().maximize();
 		return driver;
