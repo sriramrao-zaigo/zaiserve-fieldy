@@ -3,7 +3,19 @@
 <suite name="Fieldy Login Test">
 	<test name="Login TestCases">
 		<classes>
-			<!-- <class name="com.zaigo.reactui.Login"/> -->			
+			<!--<class name="com.zaigo.reactui.Login"/>
+			<class name="com.zaigo.reactui.ForgotPassword" />
+			<class name="com.zaigo.reactui.DepartmentTestCases" />
+			<class name="com.zaigo.reactui.RoleTestCases" />
+			<class name="com.zaigo.reactui.TeamTestCases" />
+			<class name="com.zaigo.reactui.UserTestCases" />
+			<class name="com.zaigo.reactui.UserListTestCases"/>
+			<class name="com.zaigo.reactui.SearchTestCases" />-->
+			
+			<class name="com.zaigo.reactui.LoginTestCases"/>
+				
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
+
+
