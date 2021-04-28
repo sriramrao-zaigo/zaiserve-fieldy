@@ -271,7 +271,7 @@ public class CreateVendorTestCases {
 	
 	
 	
-	*/
+	
 	
 	@Test
 	(priority=12)
@@ -295,10 +295,10 @@ public class CreateVendorTestCases {
 	     
 	     //Add Success alert
 	     
-	     /*
+	     
 	     String text =vendorPage.vendorPhoneError();
 		 Assert.assertEquals(text,"Only numbers allowed");
-	     */
+	     
 		 
 	}
 	
@@ -318,15 +318,11 @@ public class CreateVendorTestCases {
 		 vendorPage.vendorContactPerson("cperson hello");
 		 vendorPage.clickNextButton();
 		 vendorPage.clickAddLocation();
-		 
-	     vendorPage.clickSaveandComplete();
+		 vendorPage.vendorLineOne("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu");
+		 vendorPage.clickSaveandComplete();
+	     String text =vendorPage.vendorLineOneError();
+		 Assert.assertEquals(text,"The Address field is limited to 200 characters");
 	     
-	     //Add Success alert
-	     
-	     /*
-	     String text =vendorPage.vendorPhoneError();
-		 Assert.assertEquals(text,"Only numbers allowed");
-	     */
 		 
 	}
 	
@@ -345,17 +341,11 @@ public class CreateVendorTestCases {
 		 vendorPage.vendorEmail("email@gmail.com");
 		 vendorPage.vendorContactPerson("cperson hello");
 		 vendorPage.clickNextButton();
-		 vendorPage.clickNextButton();
-		 vendorPage.vendorProductandServices("hello");
-		 vendorPage.vendorclickEnter(Keys.ENTER);
-	     vendorPage.clickSaveandComplete();
-	     
-	     //Add Success alert
-	     
-	     /*
-	     String text =vendorPage.vendorPhoneError();
-		 Assert.assertEquals(text,"Only numbers allowed");
-	     */
+		 vendorPage.clickAddLocation();
+		 vendorPage.vendorLineTwo("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu");
+		 vendorPage.clickSaveandComplete();
+	     String text =vendorPage.vendorLineTwoError();
+		 Assert.assertEquals(text,"The Address field is limited to 200 characters");
 		 
 	}
 	
@@ -375,18 +365,11 @@ public class CreateVendorTestCases {
 		 vendorPage.vendorEmail("email@gmail.com");
 		 vendorPage.vendorContactPerson("cperson hello");
 		 vendorPage.clickNextButton();
-		 vendorPage.clickNextButton();
-		 vendorPage.vendorProductandServices("hello");
-		 vendorPage.vendorclickEnter(Keys.ENTER);
-	     vendorPage.clickSaveandComplete();
-	     
-	     //Add Success alert
-	     
-	     /*
-	     String text =vendorPage.vendorPhoneError();
-		 Assert.assertEquals(text,"Only numbers allowed");
-	     */
-		 
+		 vendorPage.clickAddLocation();
+		 vendorPage.vendorCity("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu");
+		 vendorPage.clickSaveandComplete();
+	     String text =vendorPage.vendorCityError();
+		 Assert.assertEquals(text,"The City field is limited to 200 characters");
 	}
 	
 	
@@ -396,7 +379,7 @@ public class CreateVendorTestCases {
 	{
 		//check contact person have max character validation
 		
-		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
+		CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -404,17 +387,11 @@ public class CreateVendorTestCases {
 		 vendorPage.vendorEmail("email@gmail.com");
 		 vendorPage.vendorContactPerson("cperson hello");
 		 vendorPage.clickNextButton();
-		 vendorPage.clickNextButton();
-		 vendorPage.vendorProductandServices("hello");
-		 vendorPage.vendorclickEnter(Keys.ENTER);
-	     vendorPage.clickSaveandComplete();
-	     
-	     //Add Success alert
-	     
-	     /*
-	     String text =vendorPage.vendorPhoneError();
-		 Assert.assertEquals(text,"Only numbers allowed");
-	     */
+		 vendorPage.clickAddLocation();
+		 vendorPage.vendorAddressContactPerson("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu");
+		 vendorPage.clickSaveandComplete();
+	     String text =vendorPage.vendorContctPersonError();
+		 Assert.assertEquals(text,"The Contact Person field is limited to 200 characters");
 		 
 	}
 	
@@ -423,6 +400,52 @@ public class CreateVendorTestCases {
 	public void verifyAlphabetsinZipcode() throws InterruptedException 
 	{
 		//check zipcode accepts the alphabets
+		
+		CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
+		 vendorPage.dashBoardUserMenu();
+		 vendorPage.clickVendorTab();
+		 vendorPage.vendorCreateButton();
+		 vendorPage.vendorName("hello");
+		 vendorPage.vendorEmail("email@gmail.com");
+		 vendorPage.vendorContactPerson("cperson hello");
+		 vendorPage.clickNextButton();
+		 vendorPage.clickAddLocation();
+		 vendorPage.vendorZipcode("Abcdefgh");
+		 vendorPage.clickSaveandComplete();
+	     String text =vendorPage.vendorZipcodeError();
+		 Assert.assertEquals(text,"Allowed Only 8 Digits");
+		 
+	}
+	
+	
+	@Test
+	(priority=18)
+	public void verifyMinZipcode() throws InterruptedException 
+	{
+		//check zipcode accepts the alphabets
+		
+		CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
+		 vendorPage.dashBoardUserMenu();
+		 vendorPage.clickVendorTab();
+		 vendorPage.vendorCreateButton();
+		 vendorPage.vendorName("hello");
+		 vendorPage.vendorEmail("email@gmail.com");
+		 vendorPage.vendorContactPerson("cperson hello");
+		 vendorPage.clickNextButton();
+		 vendorPage.clickAddLocation();
+		 vendorPage.vendorZipcode("Ab");
+		 vendorPage.clickSaveandComplete();
+	     String text =vendorPage.vendorZipcodeError();
+		 Assert.assertEquals(text,"Allowed only 8 digits");
+		 
+	}
+	
+	
+	@Test
+	(priority=19)
+	public void verifyWithValidDetails() throws InterruptedException 
+	{
+		//check zipcode accepts the one characters
 		
 		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
 		 vendorPage.dashBoardUserMenu();
@@ -433,24 +456,135 @@ public class CreateVendorTestCases {
 		 vendorPage.vendorContactPerson("cperson hello");
 		 vendorPage.clickNextButton();
 		 vendorPage.clickNextButton();
-		 vendorPage.vendorProductandServices("hello");
-		 vendorPage.vendorclickEnter(Keys.ENTER);
 	     vendorPage.clickSaveandComplete();
+	     String text =vendorPage.vendorSuccessMessage();
+		 Assert.assertEquals(text,"Successfully Created");
 	     
-	     //Add Success alert
-	     
-	     /*
-	     String text =vendorPage.vendorPhoneError();
-		 Assert.assertEquals(text,"Only numbers allowed");
-	     */
 		 
 	}
 	
+	*/
 	
 	
+	@Test
+	(priority=20)
+	public void verifyWithInvalidImage() throws InterruptedException 
+	{
+		//check with Invalid Image file
+		
+		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
+		 vendorPage.dashBoardUserMenu();
+		 vendorPage.clickVendorTab();
+		 vendorPage.vendorCreateButton();
+		 vendorPage.uploadImage("C:\\Users\\lenovo\\Pictures\\picjpg.jpg");
+		 String text =vendorPage.vendorImageError();
+		 Assert.assertEquals(text,"Image Error");
+	   
+	     
+	 }
 	
 	
+	@Test
+	(priority=21)
+	public void verifyMaxName() throws InterruptedException 
+	{
+		//Verify the max vendor name validation if Exceeds the Limit 50
+		
+		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
+		 vendorPage.dashBoardUserMenu();
+		 vendorPage.clickVendorTab();
+		 vendorPage.vendorCreateButton();
+		 vendorPage.vendorName("Lorem ipsum dolor sit amet, consectetuer adipiscin");
+		 vendorPage.clickNextButton();
+		 String text =vendorPage.vendorNameError();
+		 Assert.assertEquals(text, "Name Should not have More than 50 characters");
+		 vendorPage.clickCloseButton();
+		 vendorPage.clickYesButton();
+		 
+		 
+	    
+	}
 	
+	@Test
+	(priority=22)
+	public void verifyMaxEmail() throws InterruptedException 
+	{
+		//Verify the max validation if Email Exceeds the Limit 50
+		
+		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
+		 vendorPage.dashBoardUserMenu();
+		 vendorPage.clickVendorTab();
+		 vendorPage.vendorCreateButton();
+		 vendorPage.vendorEmail("Lorem ipsum dolor sit amet, consectetuer adipiscin");
+		 vendorPage.clickNextButton();
+		 String text =vendorPage.vendorEmailError();
+		 Assert.assertEquals(text, "Email Should not have More than 50 characters");
+		 vendorPage.clickCloseButton();
+		 vendorPage.clickYesButton();
+		 
+	    
+	}
+	
+	
+	@Test
+	(priority=23)
+	public void verifyMaxContactPerson() 
+	{
+		//Verify the max validation if Contact person Exceeds the Limit 50
+		
+		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
+		 vendorPage.dashBoardUserMenu();
+		 vendorPage.clickVendorTab();
+		 vendorPage.vendorCreateButton();
+		 vendorPage.vendorContactPerson("Lorem ipsum dolor sit amet, consectetuer adipiscin");
+		 vendorPage.clickNextButton();
+		 String text =vendorPage.vendorContactNameError();
+		 Assert.assertEquals(text, "Contact Person Should not have More than 50 characters");
+		 vendorPage.clickCloseButton();
+		 vendorPage.clickYesButton();
+		 
+	 }
+	
+	
+	@Test
+	(priority=24)
+	public void verifyDuplicateEmail() throws InterruptedException 
+	{
+		//Verify if Email Already Exist
+		
+		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
+		 vendorPage.dashBoardUserMenu();
+		 vendorPage.clickVendorTab();
+		 vendorPage.vendorCreateButton();
+		 vendorPage.vendorEmail("alreadyexist@zaigo.com");
+		 vendorPage.clickNextButton();
+		 String text =vendorPage.vendorEmailError();
+		 Assert.assertEquals(text, "Email Already Exist");
+		 vendorPage.clickCloseButton();
+		 vendorPage.clickYesButton();
+		 
+	    
+	}
+	
+	@Test
+	(priority=25)
+	public void verifyFaxMaxValidation() throws InterruptedException 
+	{
+		//Verify the Fax Field have the Max valdations
+		
+		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
+		 vendorPage.dashBoardUserMenu();
+		 vendorPage.clickVendorTab();
+		 vendorPage.vendorCreateButton();
+		 vendorPage.vendorFax("asddddddcddcdcdcdc");
+		 vendorPage.clickNextButton();
+		 String text =vendorPage.vendorFaxError();
+		 Assert.assertEquals(text, "This field is required");
+		 vendorPage.clickCloseButton();
+		 vendorPage.clickYesButton();
+		 
+	    
+	}
 	
 	
 	
