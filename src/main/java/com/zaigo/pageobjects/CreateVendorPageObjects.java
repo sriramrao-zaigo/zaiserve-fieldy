@@ -45,6 +45,7 @@ public class CreateVendorPageObjects {
 	
 	private By vendorfax=By.xpath("//input[@data-automationid='fax']");
 	
+	private By vendorfaxerror=By.xpath("//*[@data-automationid='fax']");
 	
 	
 	private By vendorsite=By.xpath("//input[@data-automationid='website']");
@@ -52,7 +53,9 @@ public class CreateVendorPageObjects {
 	private By vendorsiteerr=By.xpath("//*[@data-automationid='website-err']");
 	
 	
-	private By vendorimageupload=By.id("vendorimageupload");
+	private By vendorimageupload=By.id("imageUpload");
+	
+	private By imagerror = By.xpath("//input[@data-automationid='typeAndEnter']");
 	
 	private By vendorPdtServ = By.xpath("//input[@data-automationid='typeAndEnter']");	
 	
@@ -61,6 +64,8 @@ public class CreateVendorPageObjects {
 	private By warningpopup = By.xpath("//button[@data-automationid='yesBtn']");
 	
 	private By saveform =By.xpath("//button[@data-automationid='saveAndComplete']");
+	
+	private By successmessage= By.xpath("//*[@data-automationid='saveAndComplete']");
 	
 	//Address
 	
@@ -124,6 +129,12 @@ public class CreateVendorPageObjects {
 	
 	
 	
+	
+	public void uploadImage(String teamname )
+	{
+		wait.until(ExpectedConditions.presenceOfElementLocated(vendorimageupload));
+		driver.findElement(vendorimageupload).sendKeys(teamname);
+	}
 	
 	
 	
@@ -208,7 +219,11 @@ public class CreateVendorPageObjects {
 	    driver.findElement(vendorcperson).sendKeys(ContactPhone);
 		}
 		
-		
+		public void vendorFax(String Fax)
+		{
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorfax)));
+	    driver.findElement(vendorfax).sendKeys(Fax);
+		}
 		
 		
 		
@@ -235,6 +250,15 @@ public class CreateVendorPageObjects {
 	    return driver.findElement(vendoremailerr).getText();
 		}
 		
+		
+		public String vendorFaxError()
+		{
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorfaxerror)));
+	    return driver.findElement(vendorfaxerror).getText();
+		}
+		
+		
+		
 		public String vendorContactNameError()
 		{
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorcpersonerr)));
@@ -253,6 +277,21 @@ public class CreateVendorPageObjects {
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorsiteerr)));
 	    return driver.findElement(vendorsiteerr).getText();
 		}
+		
+		
+		public String vendorSuccessMessage()
+		{
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((successmessage)));
+	    return driver.findElement(successmessage).getText();
+		}
+		
+		
+		public String vendorImageError()
+		{
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((imagerror)));
+	    return driver.findElement(imagerror).getText();
+		}
+		
 		
 		//Address Form
 		
@@ -282,7 +321,7 @@ public class CreateVendorPageObjects {
 		}
 		
 		
-		public String vendorLineOneError(String services)
+		public String vendorLineOneError()
 		{
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
 	    return driver.findElement(vendorPdtServ).getText();
@@ -296,7 +335,7 @@ public class CreateVendorPageObjects {
 		}
 		
 		
-		public String vendorLineTwoError(String services)
+		public String vendorLineTwoError()
 		{
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
 	    return driver.findElement(vendorPdtServ).getText();
@@ -309,7 +348,7 @@ public class CreateVendorPageObjects {
 		}
 		
 		
-		public String vendorCityError(String services)
+		public String vendorCityError()
 		{
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
 	    return driver.findElement(vendorPdtServ).getText();
@@ -322,7 +361,7 @@ public class CreateVendorPageObjects {
 		}
 		
 		
-		public String vendorContctPersonError(String services)
+		public String vendorContctPersonError()
 		{
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
 	    return driver.findElement(vendorPdtServ).getText();
@@ -335,7 +374,7 @@ public class CreateVendorPageObjects {
 		}
 		
 		
-		public String vendorZipcodeError(String services)
+		public String vendorZipcodeError()
 		{
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
 	    return driver.findElement(vendorPdtServ).getText();
