@@ -54,14 +54,14 @@ public class CreateContractorTestCases {
 	
 	@Test
 	(priority=2)
-	public void verifyVendorTab() 
+	public void verifyContractorab() 
 	{
 		//Verify the Vendor Tab
 		
 		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
 		 contractorPage.dashBoardUserMenu();
 		 String text = contractorPage.dashBoardVendorMenuText();
-		 Assert.assertEquals(text, "Vendor");
+		 Assert.assertEquals(text, "Contractor");
 		    
 	    
 	}
@@ -176,13 +176,36 @@ public class CreateContractorTestCases {
 		contractorPage.contractorCreateButton();
 		contractorPage.contractorEmail("    ");
 		contractorPage.clickNextButton();
-		 String text =contractorPage.contractorEmailError();
-		 Assert.assertEquals(text, "Enter a valid email address");
-		 contractorPage.clickCloseButton();
-		 contractorPage.clickYesButton();
+		String text =contractorPage.contractorEmailError();
+		Assert.assertEquals(text, "Enter a valid email address");
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
 		 
 	    
 	}
+	
+	
+	@Test
+	(priority=9)
+	public void verifyEmailFormat() 
+	{
+		//Verify Format
+		
+		
+		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		contractorPage.dashBoardUserMenu();
+		contractorPage.clickVendorTab();
+		contractorPage.contractorCreateButton();
+		contractorPage.contractorEmail("asdffg");
+		contractorPage.clickNextButton();
+		String text =contractorPage.contractorEmailError();
+		Assert.assertEquals(text, "Enter a valid email address");
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
+		 
+	    
+	}
+	
 	
 	@Test
 	(priority=9)
@@ -246,9 +269,32 @@ public class CreateContractorTestCases {
 	    
 	}
 	
-	
+	/*
 	@Test
 	(priority=12)
+	public void verifyMaxPhone() 
+	{
+		//Verify Phone Field accepts 20 characters
+		
+		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		contractorPage.dashBoardUserMenu();
+		contractorPage.clickVendorTab();
+		contractorPage.contractorCreateButton();
+		contractorPage.contractorPhone("99402115639940211563");
+		contractorPage.clickNextButton();
+		String text = contractorPage.contractorPhoneError();
+		Assert.assertEquals(text,"Max 10 characters allowed");
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
+		 
+	    
+	}
+	
+	
+	
+	
+	@Test
+	(priority=12)*
 	public void verifyVendor() 
 	{
 		//Verify Phone Field Accepts Only the Number field.
@@ -270,13 +316,111 @@ public class CreateContractorTestCases {
 	}
 	
 	
+	@Test
+	(priority=14)
+	public void verifyMaxName() throws InterruptedException 
+	{
+		//Verify the max vendor name validation if Exceeds the Limit 50
+		
+		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		 contractorPage.dashBoardUserMenu();
+		 contractorPage.clickVendorTab();
+		 contractorPage.contractorCreateButton();
+		 contractorPage.contractorName("Lorem ipsum dolor sit amet, consectetuer adipiscin");
+		 contractorPage.clickNextButton();
+		 String text =contractorPage.contractorNameError();
+		 Assert.assertEquals(text, "Name Should not have More than 50 characters");
+		 contractorPage.clickCloseButton();
+		 contractorPage.clickYesButton();
+		 
+		 
+	    
+	}
 	
-	
-	
+	@Test
+	(priority=15)
+	public void verifyMaxEmail() throws InterruptedException 
+	{
+		//Verify the max validation if Email Exceeds the Limit 50
+		
+		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		 contractorPage.dashBoardUserMenu();
+		 contractorPage.clickVendorTab();
+		 contractorPage.contractorCreateButton();
+		 contractorPage.contractorEmail("Lorem ipsum dolor sit amet, consectetuer adipiscin");
+		 contractorPage.clickNextButton();
+		 String text =contractorPage.contractorEmailError();
+		 Assert.assertEquals(text, "Email Should not have More than 50 characters");
+		 contractorPage.clickCloseButton();
+		 contractorPage.clickYesButton();
+		 
+	    
+	}
 	
 	
 	@Test
-	(priority=13)
+	(priority=16)
+	public void verifyMaxContactPerson() 
+	{
+		//Verify the max validation if Contact person Exceeds the Limit 50
+		
+		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
+		 vendorPage.dashBoardUserMenu();
+		 vendorPage.clickVendorTab();
+		 vendorPage.vendorCreateButton();
+		 vendorPage.vendorContactPerson("Lorem ipsum dolor sit amet, consectetuer adipiscin");
+		 vendorPage.clickNextButton();
+		 String text =vendorPage.vendorContactNameError();
+		 Assert.assertEquals(text, "Contact Person Should not have More than 50 characters");
+		 vendorPage.clickCloseButton();
+		 vendorPage.clickYesButton();
+		 
+	 }
+	
+	
+	@Test
+	(priority=17)
+	public void verifyDuplicateEmail() throws InterruptedException 
+	{
+		//Verify if Email Already Exist
+		
+		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
+		 vendorPage.dashBoardUserMenu();
+		 vendorPage.clickVendorTab();
+		 vendorPage.vendorCreateButton();
+		 vendorPage.vendorEmail("alreadyexist@zaigo.com");
+		 vendorPage.clickNextButton();
+		 String text =vendorPage.vendorEmailError();
+		 Assert.assertEquals(text, "Email Already Exist");
+		 vendorPage.clickCloseButton();
+		 vendorPage.clickYesButton();
+		 
+	    
+	}
+	
+	@Test
+	(priority=18)
+	public void verifyFaxMaxValidation() throws InterruptedException 
+	{
+		//Verify the Fax Field have the Max valdations
+		
+		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
+		 vendorPage.dashBoardUserMenu();
+		 vendorPage.clickVendorTab();
+		 vendorPage.vendorCreateButton();
+		 vendorPage.vendorFax("asddddddcddcdcdcdc");
+		 vendorPage.clickNextButton();
+		 String text =vendorPage.vendorFaxError();
+		 Assert.assertEquals(text, "This field is required");
+		 vendorPage.clickCloseButton();
+		 vendorPage.clickYesButton();
+		 
+	    
+	}
+	
+	
+	@Test
+	(priority=19)
 	public void verifyLineOneMaxCharacters() throws InterruptedException 
 	{
 		//check the Line One has Max characters validation
@@ -300,7 +444,7 @@ public class CreateContractorTestCases {
 	
 	
 	@Test
-	(priority=14)
+	(priority=20)
 	public void verifyLineTwoMaxCharacters() throws InterruptedException 
 	{
 		//check the Line Two has Max characters validation
@@ -324,7 +468,7 @@ public class CreateContractorTestCases {
 	
 	
 	@Test
-	(priority=15)
+	(priority=21)
 	public void verifyCityMaxCharacters() throws InterruptedException 
 	{
 		//check City with Max character validations
@@ -346,7 +490,7 @@ public class CreateContractorTestCases {
 	
 	
 	@Test
-	(priority=16)
+	(priority=22)
 	public void verifyContactPersonMaxCharacters() throws InterruptedException 
 	{
 		//check contact person have max character validation
@@ -368,7 +512,7 @@ public class CreateContractorTestCases {
 	}
 	
 	@Test
-	(priority=17)
+	(priority=23)
 	public void verifyAlphabetsinZipcode() throws InterruptedException 
 	{
 		//check zipcode accepts the alphabets
@@ -391,7 +535,7 @@ public class CreateContractorTestCases {
 	
 	
 	@Test
-	(priority=18)
+	(priority=24)
 	public void verifyMinZipcode() throws InterruptedException 
 	{
 		//check zipcode accepts the alphabets
@@ -414,7 +558,7 @@ public class CreateContractorTestCases {
 	
 	
 	@Test
-	(priority=19)
+	(priority=25)
 	public void verifyWithValidDetails() throws InterruptedException 
 	{
 		//check zipcode accepts the one characters
@@ -439,7 +583,7 @@ public class CreateContractorTestCases {
 	
 	
 	@Test
-	(priority=20)
+	(priority=26)
 	public void verifyWithInvalidImage() throws InterruptedException 
 	{
 		//check with Invalid Image file
@@ -448,115 +592,26 @@ public class CreateContractorTestCases {
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
+		 vendorPage.vendorName("hello");
+		 vendorPage.vendorEmail("email@gmail.com");
+		 vendorPage.vendorContactPerson("cperson hello");
+	     vendorPage.clickSaveandComplete();
 		 vendorPage.uploadImage("C:\\Users\\lenovo\\Pictures\\picjpg.jpg");
-		 String text =vendorPage.vendorImageError();
-		 Assert.assertEquals(text,"Image Error");
+		 String textd =vendorPage.vendorImageError();
+		 Assert.assertEquals(textd,"Image Error");
 	   
 	     
 	 }
 	
 	
-	@Test
-	(priority=21)
-	public void verifyMaxName() throws InterruptedException 
-	{
-		//Verify the max vendor name validation if Exceeds the Limit 50
-		
-		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
-		 vendorPage.dashBoardUserMenu();
-		 vendorPage.clickVendorTab();
-		 vendorPage.vendorCreateButton();
-		 vendorPage.vendorName("Lorem ipsum dolor sit amet, consectetuer adipiscin");
-		 vendorPage.clickNextButton();
-		 String text =vendorPage.vendorNameError();
-		 Assert.assertEquals(text, "Name Should not have More than 50 characters");
-		 vendorPage.clickCloseButton();
-		 vendorPage.clickYesButton();
-		 
-		 
-	    
-	}
-	
-	@Test
-	(priority=22)
-	public void verifyMaxEmail() throws InterruptedException 
-	{
-		//Verify the max validation if Email Exceeds the Limit 50
-		
-		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
-		 vendorPage.dashBoardUserMenu();
-		 vendorPage.clickVendorTab();
-		 vendorPage.vendorCreateButton();
-		 vendorPage.vendorEmail("Lorem ipsum dolor sit amet, consectetuer adipiscin");
-		 vendorPage.clickNextButton();
-		 String text =vendorPage.vendorEmailError();
-		 Assert.assertEquals(text, "Email Should not have More than 50 characters");
-		 vendorPage.clickCloseButton();
-		 vendorPage.clickYesButton();
-		 
-	    
-	}
 	
 	
-	@Test
-	(priority=23)
-	public void verifyMaxContactPerson() 
-	{
-		//Verify the max validation if Contact person Exceeds the Limit 50
-		
-		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
-		 vendorPage.dashBoardUserMenu();
-		 vendorPage.clickVendorTab();
-		 vendorPage.vendorCreateButton();
-		 vendorPage.vendorContactPerson("Lorem ipsum dolor sit amet, consectetuer adipiscin");
-		 vendorPage.clickNextButton();
-		 String text =vendorPage.vendorContactNameError();
-		 Assert.assertEquals(text, "Contact Person Should not have More than 50 characters");
-		 vendorPage.clickCloseButton();
-		 vendorPage.clickYesButton();
-		 
-	 }
+	*/
 	
 	
-	@Test
-	(priority=24)
-	public void verifyDuplicateEmail() throws InterruptedException 
-	{
-		//Verify if Email Already Exist
-		
-		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
-		 vendorPage.dashBoardUserMenu();
-		 vendorPage.clickVendorTab();
-		 vendorPage.vendorCreateButton();
-		 vendorPage.vendorEmail("alreadyexist@zaigo.com");
-		 vendorPage.clickNextButton();
-		 String text =vendorPage.vendorEmailError();
-		 Assert.assertEquals(text, "Email Already Exist");
-		 vendorPage.clickCloseButton();
-		 vendorPage.clickYesButton();
-		 
-	    
-	}
 	
-	@Test
-	(priority=25)
-	public void verifyFaxMaxValidation() throws InterruptedException 
-	{
-		//Verify the Fax Field have the Max valdations
-		
-		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
-		 vendorPage.dashBoardUserMenu();
-		 vendorPage.clickVendorTab();
-		 vendorPage.vendorCreateButton();
-		 vendorPage.vendorFax("asddddddcddcdcdcdc");
-		 vendorPage.clickNextButton();
-		 String text =vendorPage.vendorFaxError();
-		 Assert.assertEquals(text, "This field is required");
-		 vendorPage.clickCloseButton();
-		 vendorPage.clickYesButton();
-		 
-	    
-	}
+	
+	
 	
 	
 	
