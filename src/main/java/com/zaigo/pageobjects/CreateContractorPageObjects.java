@@ -53,7 +53,8 @@ public class CreateContractorPageObjects {
 	private By contractorsite=By.xpath("//input[@data-automationid='website']");
 	
 	private By contractorsiteerr=By.xpath("//*[@data-automationid='website-error']");
-	
+	  
+	//changed
 	
 	private By contractorimageupload=By.id("imageUpload");
 	
