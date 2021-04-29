@@ -37,6 +37,8 @@ public class LoginTestCases {
 	    
     }
 	
+	
+	
 	@Test(priority = 2)
 	public void verifyEmptyPassword() 
 	{
@@ -53,6 +55,7 @@ public class LoginTestCases {
 	@Test(priority = 3)
 	public void verifyIncorrectMail() 
 	{
+		//Verify when both the Email and password are not exist in the database
 		
 		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
 		loginInPage.setUserCredentials("aswss@bg.in", "sxdsssscs");
@@ -67,6 +70,7 @@ public class LoginTestCases {
 	@Test(priority =4 )
 	public void verifyIncorrectPassword() 
 	{
+		//Verify when password are not exist in the database.
 		
 		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
 		loginInPage.setUserCredentials("admin@fieldy.co", "sxdsssscs");
@@ -80,6 +84,7 @@ public class LoginTestCases {
 	@Test(priority =5)
 	public void verifyInvalidEmail() 
 	{
+		//verify Email validation error message
 		
 		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
 		loginInPage.setUserCredentials("admin", "sxdsssscs");
@@ -93,6 +98,7 @@ public class LoginTestCases {
 	@Test(priority =6)
 	public void verifyInvalidPassword() 
 	{
+		//verify with Min password validation
 		
 		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
 		loginInPage.setUserCredentials("admin@fieldy.co", "sxd");
@@ -107,6 +113,8 @@ public class LoginTestCases {
 	public void verifyInvalidCredentials() 
 	{
 		
+		//verify with the invalid Email
+		
 		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
 		loginInPage.setUserCredentials("admin@field.co", "sxdasdsdd");
 	    loginInPage.clickLoginButton();
@@ -117,10 +125,30 @@ public class LoginTestCases {
     }
 	
 	
-	
 	@Test(priority =8)
+	public void verifyInvalidEmailValidPassword() 
+	{
+		
+		//Email Correct and password wrong
+		
+		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		loginInPage.setUserCredentials("admin@fieldy.co", "asdfff@123");
+	    loginInPage.clickLoginButton();
+	    String nameerr=loginInPage.getErrorMessageUserName();
+	    Assert.assertEquals(nameerr, "Invalid Email");
+	   
+	    
+    }
+	
+	
+	
+	
+	
+	@Test(priority =9)
 	public void verifyLockedUser() 
 	{
+		
+		//Verify the Error Message is Displayed when the Account is locked
 		
 	    LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
     	loginInPage.setUserCredentials("Locked@fieldy.co", "Zaiserve@123");
@@ -134,11 +162,13 @@ public class LoginTestCases {
     
     
 	
-	@Test(priority =9)
+	@Test(priority =10)
 	public void verifyInvalidAttempts() 
 	{
 		
-
+		
+		//Error Message Should Displayed when the user Enters Invalida datas for 3+ times
+		
 		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
 		loginInPage.setUserCredentials("admin@fieldy.co", "sxdasdsdd");
 	    loginInPage.clickLoginButton();
@@ -155,7 +185,7 @@ public class LoginTestCases {
 	  }
 	
 	
-	@Test(priority =10)
+	@Test(priority =11)
 	public void addDelay() throws InterruptedException 
 	{
 		
@@ -171,7 +201,7 @@ public class LoginTestCases {
 	
 	
 	
-	@Test(priority =11)
+	@Test(priority =12)
 	public void verify() 
 	{
 		//Single Account User
@@ -186,6 +216,21 @@ public class LoginTestCases {
 	   
 	 }	
 	
+		
+	@Test(priority =13)
+	public void verifyMultiAccount() 
+	{
+		//MutiAccount Account User
+		
+	    LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+    	loginInPage.setUserCredentials("admin@fieldy.co", "Zaiserve@123");
+	    loginInPage.clickLoginButton();
+	    loginInPage.clickMultiAccount();
+	    String text =loginInPage.dashBoardText();
+	    Assert.assertEquals(text, "Dashboard");
+	    
+	   
+	 }	
 	
 	
 	
