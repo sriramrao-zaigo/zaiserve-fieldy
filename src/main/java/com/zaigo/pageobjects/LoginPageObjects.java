@@ -21,6 +21,7 @@ public class LoginPageObjects {
 	private By lockpopup=By.xpath("//*[contains(text(), 'Your account is locked due to 3 failed login attempts. Lock will be released in 60 seconds.')]");
 	private By lockpopuptwo =By.xpath("//*[contains(text(),'Your account is locked. Please contact admin.')]");
 	private By dashboard =By.xpath("//a[@data-automationid='dashboard']");
+	private By multiaccount = By.xpath("//h4[contains(text(),'Fieldy Tenant 2')]");
 	
 	
 	
@@ -114,7 +115,10 @@ public class LoginPageObjects {
 		return driver.findElement(password_by).getAttribute("type");
 	}
 	
-	
+	public void clickMultiAccount() {
+		wait.until(ExpectedConditions.presenceOfElementLocated(multiaccount));
+		driver.findElement(multiaccount).click();
+	}
 	
 
 	public void clearTextElement(By web_element) {
