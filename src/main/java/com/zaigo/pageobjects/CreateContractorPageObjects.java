@@ -24,9 +24,9 @@ public class CreateContractorPageObjects {
 	
 	private By contractorcreatebtn=By.xpath("//*[@data-automationid='createContractor']");
 	
-	private By contractorname=By.xpath("//input[@data-automationid='companyName']");
+	private By contractorname=By.xpath("//input[@data-automationid='name']");
 	
-	private By contractornameer=By.xpath("//*[@data-automationid='companyname-error']");
+	private By contractornameer=By.xpath("//*[@data-automationid='name-error']");
 	
 	private By nextbtn = By.xpath("//button[@data-automationid='next']");
 	
@@ -54,7 +54,7 @@ public class CreateContractorPageObjects {
 	
 	private By contractorsiteerr=By.xpath("//*[@data-automationid='website-error']");
 	  
-	//changedf
+	private By locationone = By.xpath("//*[@data-automationid='Location 1']");
 	
 	private By contractorimageupload=By.id("imageUpload");
 	
@@ -67,41 +67,98 @@ public class CreateContractorPageObjects {
 	
 	private By saveform =By.xpath("//button[@data-automationid='saveAndComplete']");
 	
-	private By successmessage= By.xpath("//*[@data-automationid='saveAndComplete']");
+	private By successmessage= By.xpath("//*[@data-automationid='sucmessage']");
 	
 	//Address
 	
-	private By addlocationbtn = By.xpath("//button[@data-automationid='saveAndComplete']");
-	
-	private By lineone = By.xpath("//button[@data-automationid='saveAndComplete']");
-	
-	private By lineoneerr = By.xpath("//button[@data-automationid='saveAndComplete']");
+	private By addlocationbtn = By.xpath("//button[@data-automationid='anotherLocation']");
 	
 	
-    private By linetwo = By.xpath("//button[@data-automationid='saveAndComplete']");
 	
-	private By linetwoerr = By.xpath("//button[@data-automationid='saveAndComplete']");
+	private By lineone = By.xpath("//input[@data-automationid='noBuildingFlatName']");
+	
+	private By lineoneerr = By.xpath("//*[contains(text(),'maxOneFifty')]");
+	
+	
+    private By linetwo = By.xpath("//input[@data-automationid='streetName']");
+	
+	private By linetwoerr = By.xpath("//*[contains(text(),'Not allowed more than 150 characters')]");
 	
 	
     private By addressname = By.xpath("//button[@data-automationid='saveAndComplete']");
 	
 	private By addressnameerr = By.xpath("//button[@data-automationid='saveAndComplete']");
 	
-	private By city = By.xpath("//button[@data-automationid='saveAndComplete']");
+	private By city = By.xpath("//input[@data-automationid='cityVillage']");
 		
-    private By cityerr = By.xpath("//button[@data-automationid='saveAndComplete']");
+    private By cityerr = By.xpath("//*[contains(text(),'Not allowed more than 150 characters')]");
 	    
     
-    private By zipcode = By.xpath("//button[@data-automationid='saveAndComplete']");
+    private By zipcode = By.xpath("//input[@data-automationid='zipCode']");
 	
-    private By zipcoderr = By.xpath("//button[@data-automationid='saveAndComplete']");
+    private By zipcoderr = By.xpath("//*[contains(text(),'The field must be minimum 6')]");
+    
+    
+    
+    private By zipcoderr1 = By.xpath("//*[contains(text(),'Not allowed more than 30 characters')]");
+    
     
     private By country = By.xpath("//button[@data-automationid='saveAndComplete']");
 	
     private By state = By.xpath("//button[@data-automationid='saveAndComplete']");
     
-	
     
+    
+   private By clickmenu = By.xpath("//button[@data-automationid='activeContractor']");
+   
+   private By clickDelete = By.xpath("//*[@data-automationid='Delete Contractor']");
+   
+   private By listname = By.xpath("//h3[contains(text(),'erg')]");
+   
+   private By contractordetail = By.xpath("//button [@data-automationid='close']//following::h3");
+   
+   public String getCreatedContractorNameDetail()
+   {
+	   
+   
+		wait.until(ExpectedConditions.visibilityOfElementLocated((contractordetail)));
+		return driver.findElement(contractordetail).getText();
+	 }
+   
+   
+   
+   public void clickContractorName() 
+   {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((listname)));
+	    driver.findElement(listname).click();
+    }
+   
+   
+   
+   public String getCreatedContractorName() 
+   {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((listname)));
+		return driver.findElement(listname).getText();
+    }
+   
+   
+   public void clickActionMenu() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((clickmenu)));
+	driver.findElement(clickmenu).click();
+	    }
+   
+   public void clickDeleteMenu() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((clickDelete)));
+	driver.findElement(clickDelete).click();
+	    }
+   
+   
+   
+   
+    public void clickLocationOne() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((locationone)));
+	driver.findElement(locationone).click();
+	    }
 	
 	
 	public void clickAddLocation() {
@@ -284,6 +341,10 @@ public class CreateContractorPageObjects {
 		}
 		
 		
+		
+		
+		
+		
 		//Address Form
 		
 		public void selectCountry()
@@ -371,6 +432,11 @@ public class CreateContractorPageObjects {
 	    return driver.findElement(zipcoderr).getText();
 		}
 		
+		public String contractorZipcodeError1()
+		{
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((zipcoderr1)));
+	    return driver.findElement(zipcoderr1).getText();
+		}
 		
 		
 		
