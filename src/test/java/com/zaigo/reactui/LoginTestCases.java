@@ -125,20 +125,6 @@ public class LoginTestCases {
     }
 	
 	
-	@Test(priority =8)
-	public void verifyInvalidEmailValidPassword() 
-	{
-		
-		//Email Correct and password wrong
-		
-		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
-		loginInPage.setUserCredentials("admin@fieldy.co", "asdfff@123");
-	    loginInPage.clickLoginButton();
-	    String nameerr=loginInPage.getErrorMessageUserName();
-	    Assert.assertEquals(nameerr, "Invalid Email");
-	   
-	    
-    }
 	
 	
 	
@@ -180,7 +166,7 @@ public class LoginTestCases {
 	    loginInPage.clickLoginButton();
 	    String locked = loginInPage.toastText();
 	    Assert.assertEquals(locked, "Your account is locked due to 3 failed login attempts. Lock will be released in 60 seconds.");
-	    
+	   
 	    
 	  }
 	
