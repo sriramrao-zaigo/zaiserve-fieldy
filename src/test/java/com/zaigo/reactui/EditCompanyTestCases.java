@@ -1,5 +1,6 @@
 package com.zaigo.reactui;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -361,7 +362,7 @@ public class EditCompanyTestCases {
 			{
 			String text= editcompany.getLineOneErr();
 			System.out.print(text);
-			Assert.assertEquals(text, "Not allowed more than 50 characters");
+			Assert.assertEquals(text, "Not allowed more than 150 characters");
 			}
 			
 			catch(Exception e)
@@ -375,7 +376,7 @@ public class EditCompanyTestCases {
 		
 		
 		@Test
-		(priority=13)
+		(priority=14)
 		public void verifyMaxLineTwo() 
 		{
 			//Verify Max contact person chracters
@@ -392,9 +393,10 @@ public class EditCompanyTestCases {
      		editcompany.enterLineTwo("A simple & fast character counter character counter A simple & fast character counter character counterA simple & fast character counter character counter");
 			try
 			{
+				
 			String text= editcompany.getLineTwoErrorMessage();
 			System.out.print(text);
-			Assert.assertEquals(text, "Not allowed more than 50 characters");
+			Assert.assertEquals(text, "Not allowed more than 150 characters");
 			}
 			
 			catch(Exception e)
@@ -409,7 +411,7 @@ public class EditCompanyTestCases {
 		
 		
 		@Test
-		(priority=14)
+		(priority=13)
 		public void verifyMaxCity() 
 		{
 			//Verify Max contact person chracters
@@ -428,7 +430,7 @@ public class EditCompanyTestCases {
 			{
 			String text= editcompany.getCityErrorMessage();
 			System.out.print(text);
-			Assert.assertEquals(text, "Not allowed more than 50 characters");
+			Assert.assertEquals(text, "Not allowed more than 150 characters");
 			}
 			
 			catch(Exception e)
@@ -462,6 +464,38 @@ public class EditCompanyTestCases {
 			String text= editcompany.getZipcodeErrorMessage();
 			System.out.print(text);
 			Assert.assertEquals(text, "Not allowed more than 10 characters");
+			
+			}
+			
+			catch(Exception e)
+			{
+				String texte=e.getMessage();
+				System.out.print(texte);
+			}
+			
+			editcompany.clickClose();
+			editcompany.clickYes();
+		}
+		
+	/*		
+		@Test
+		(priority=16)
+		public void verifyErrorMessageImageSize() 
+		{
+			//Verify Max contact person chracters
+			
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			editcompany.clickUserMenu();
+			editcompany.clickCompanyTab();
+			editcompany.clickEditButton();
+			editcompany.enterCompanyName("csk ind pvt");
+			editcompany.uploadImage("C:\\Users\\lenovo\\Pictures\\picjpg.jpg");
+			editcompany.clickNext();
+			try
+			{
+			String text= editcompany.imageError();
+			System.out.print(text);
+			Assert.assertEquals(text, "");
 			}
 			
 			catch(Exception e)
@@ -472,6 +506,112 @@ public class EditCompanyTestCases {
 			
 			
 		}
+		*/
+		
+		
+		@Test
+		(priority=17)
+		public void verifyUpdatedSuccessfully() 
+		{
+			//Verify success message
+			
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			//editcompany.clickUserMenu();
+			//editcompany.clickCompanyTab();
+			editcompany.clickEditButton();
+			editcompany.enterCompanyName("Tenant Edit");
+			editcompany.clickSaveandComplete();
+			try
+			{
+			String text= editcompany.getSuccessMessage();
+			System.out.print(text);
+			Assert.assertEquals(text, "Updated Successfully");
+			}
+			
+			catch(Exception e)
+			{
+				String texte=e.getMessage();
+				System.out.print(texte);
+			}
+			
+			
+		}
+		
+		
+		@Test
+		(priority=18)
+		public void verifyNameUpdated() 
+		{
+			//Verify the Name is edited
+			
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			try
+			{
+			String text= editcompany.getCompanyName();
+			System.out.print(text);
+			Assert.assertEquals(text, "Tenant Edit");
+			}
+			
+			catch(Exception e)
+			{
+				String texte=e.getMessage();
+				System.out.print(texte);
+			}
+			
+			
+		}
+		
+		
+		@Test
+		(priority=19)
+		public void verifySiteUpdated() 
+		{
+			//Verify the Name is edited
+			
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			try
+			{
+			String text= editcompany.getWebsite();
+			System.out.print(text);
+			Assert.assertEquals(text, "https://www.zaigoinfotech.com/");
+			}
+			
+			catch(Exception e)
+			{
+				String texte=e.getMessage();
+				System.out.print(texte);
+			}
+			
+			
+		}
+		
+		@Test
+		(priority=20)
+		public void verifyNotesEdited() 
+		{
+			//Verify the Name is edited
+			
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			try
+			{
+			String text= editcompany.getNotes();
+			System.out.print(text);
+			Assert.assertEquals(text, "Noted");
+			}
+			
+			catch(Exception e)
+			{
+				String texte=e.getMessage();
+				System.out.print(texte);
+			}
+			
+			
+		}
+		
+		
+		
+		
+		
 		
 }
 
