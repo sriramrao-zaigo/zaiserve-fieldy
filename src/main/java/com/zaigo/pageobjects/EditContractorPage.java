@@ -3,14 +3,12 @@ package com.zaigo.pageobjects;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CreateContractorPageObjects {
-
+public class EditContractorPage {
 	
 	private WebDriver driver;
 	private WebDriverWait wait;
@@ -69,6 +67,10 @@ public class CreateContractorPageObjects {
 	
 	private By successmessage= By.xpath("//*[@data-automationid='sucmessage']");
 	
+	private By editbtn = By.xpath("//*[@data-automationid='Edit Contractor']");
+	
+	private By menu = By.xpath("//*[@data-automationid='activeContractor']");
+			
 	//Address
 	
 	private By addlocationbtn = By.xpath("//button[@data-automationid='anotherLocation']");
@@ -127,6 +129,22 @@ public class CreateContractorPageObjects {
 		wait.until(ExpectedConditions.visibilityOfElementLocated((contractordetail)));
 		return driver.findElement(contractordetail).getText();
 	 }
+   
+   
+   
+   public void clickMenu() 
+   {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((menu)));
+	    driver.findElement(menu).click();
+   }
+   
+   public void clickEdit() 
+   {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((editbtn)));
+	    driver.findElement(editbtn).click();
+   }
+   
+   
    
    
    public void clickSuccessClose() 
@@ -253,6 +271,7 @@ public class CreateContractorPageObjects {
 		public void contractorName(String name)
 		{
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((contractorname)));
+	    driver.findElement(contractorname).clear();
 	    driver.findElement(contractorname).sendKeys(name);
 		}
 
@@ -260,6 +279,7 @@ public class CreateContractorPageObjects {
 		public void contractorEmail(String Email)
 		{
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((contractoremail)));
+	    driver.findElement(contractoremail).clear();
 	    driver.findElement(contractoremail).sendKeys(Email);
 		}
 		
@@ -267,6 +287,7 @@ public class CreateContractorPageObjects {
 		public void contractorContactPerson(String ContactPerson)
 		{
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((contractorcperson)));
+	    driver.findElement(contractorcperson).clear();
 	    driver.findElement(contractorcperson).sendKeys(ContactPerson);
 		}
 		
@@ -274,6 +295,7 @@ public class CreateContractorPageObjects {
 		public void contractorPhone(String ContactPhone)
 		{
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((contractorphone)));
+	    driver.findElement(contractorcperson).clear();
 	    driver.findElement(contractorphone).sendKeys(ContactPhone);
 		}
 		
@@ -289,6 +311,7 @@ public class CreateContractorPageObjects {
 		public void contractorWebsite(String Website)
 		{
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((contractorsite)));
+	    driver.findElement(contractorsite).clear();
 	    driver.findElement(contractorsite).sendKeys(Website);
 		}
 		
@@ -453,7 +476,7 @@ public class CreateContractorPageObjects {
 		
 		
 		
-		public CreateContractorPageObjects(WebDriver driver) {
+		public EditContractorPage(WebDriver driver) {
 			this.driver = driver;
 			this.wait = new WebDriverWait(this.driver, 10);
 		}
@@ -470,10 +493,5 @@ public class CreateContractorPageObjects {
     
     
     
-    
-    
-    
-    
-    
-	
+
 }

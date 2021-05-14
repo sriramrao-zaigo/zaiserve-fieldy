@@ -1,6 +1,7 @@
 package com.zaigo.pageobjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,6 +27,10 @@ public class ComapanyEditPageObjects {
     private By nextbtn = By.xpath("//button[@data-automationid='next']");
     private By anotherlocation = By.xpath("//button[@data-automationid='anotherLocation']");
     private By clicklocation = By.xpath("//div[@data-automationid='Location 1']");
+    
+    private By imageupload= By.id("imageUpload");
+    
+    private By imageerr = By.xpath("//p[@data-automationid='imageErr']");
 	
 	
     private By locactionname =By.xpath("//input[@data-automationid='locationName']");
@@ -38,6 +43,9 @@ public class ComapanyEditPageObjects {
     private By city = By.xpath("//input[@data-automationid='cityVillage']");
     private By zipcode =By.xpath("//input[@data-automationid='zipCode']");
    
+    private By succmessage = By.xpath("//div[@data-automationid='success-message']");
+    
+    private By yesbtn = By.xpath("//button[@data-automationid='yesBtn']");
     
     //Errors Basics
     
@@ -52,10 +60,60 @@ public class ComapanyEditPageObjects {
     private By emailerr =By.xpath("//div[@data-automationid='locationEmail-error']");
     private By phoneerr =By.xpath("//div[@data-automationid='locationPhoneNumber-error']");
     
-    private By lineoneerr  = By.xpath("//div[@data-automationid='noBuildingFlatName']");
-    private By linetwoerr =By.xpath("//div[@data-automationid='streetName']");
-    private By cityerr= By.xpath("//div[@data-automationid='cityVillage']");
-    private By zipcodeerr =By.xpath("//div[@data-automationid='zipCode']");
+    private By lineoneerr  = By.xpath("//div[@data-automationid='noBuildingFlatName-error']");
+    private By linetwoerr =By.xpath("//div[@data-automationid='streetName-error']");
+    private By cityerr= By.xpath("//div[@data-automationid='cityVillage-error']");
+    private By zipcodeerr =By.xpath("//div[@data-automationid='zipCode-error']");
+    
+    private By getcompany = By.xpath("//div[contains(text(),'Tenant Edit')]");
+    private By getwebsite = By.xpath("//div[contains(text(),'https://www.zaigoinfotech.com/')]");
+    private By getnotes = By.xpath("//p[contains(text(),'Noted')]");
+    
+    private By close = By.xpath("//button[@data-automationid='close']");
+    
+    
+    public void clickClose() 
+    {
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated((close)));
+ 	    driver.findElement(close).click();
+    }
+    
+    public void clickYes() 
+    {
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated((yesbtn)));
+ 	    driver.findElement(yesbtn).click();
+    }
+    
+    
+    
+    public String getWebsite() 
+    {
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated((getwebsite)));
+ 	    return driver.findElement(getwebsite).getText();
+    }
+    
+    
+    public String getNotes() 
+    {
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated((getnotes)));
+ 	    return driver.findElement(getnotes).getText();
+    }
+    
+    
+    
+    
+    public String getCompanyName() 
+    {
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated((getcompany)));
+ 	    return driver.findElement(getcompany).getText();
+    }
+    
+    
+    public String getSuccessMessage() 
+    {
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated((succmessage)));
+ 	    return driver.findElement(succmessage).getText();
+    }
    
     
     public void clickUserMenu() 
@@ -63,6 +121,14 @@ public class ComapanyEditPageObjects {
  		wait.until(ExpectedConditions.visibilityOfElementLocated((usermenu)));
  	    driver.findElement(usermenu).click();
     }
+    
+    
+    public void clickSaveandComplete() 
+    {
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated((savebtn)));
+ 	    driver.findElement(savebtn).click();
+    }
+    
     
     
     public void clickCompanyTab() 
@@ -84,7 +150,13 @@ public class ComapanyEditPageObjects {
  	    return driver.findElement(savebtn).getText();
     }
     
+   
     
+    public void uploadImage(String upload) 
+    {
+ 		wait.until(ExpectedConditions.visibilityOfElementLocated((imageupload)));
+ 		driver.findElement(imageupload).sendKeys(upload);
+    }
     
     public void clickCompany() 
     {
@@ -222,6 +294,7 @@ public class ComapanyEditPageObjects {
    	}
     public String getLineOneErr()
    	{
+    	
     	wait.until(ExpectedConditions.presenceOfElementLocated(lineoneerr));
 		return driver.findElement(lineoneerr).getText();   	
 		

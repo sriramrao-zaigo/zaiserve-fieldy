@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.zaigo.pageobjects.CreateContractorPageObjects;
-import com.zaigo.pageobjects.CreateVendorPageObjects;
+import com.zaigo.pageobjects.CreateVendorPageObject;
 import com.zaigo.pageobjects.LoginPageObjects;
 import com.zaigo.utility.BrowserSetup;
 
@@ -284,7 +284,7 @@ public class CreateContractorTestCases {
 		contractorPage.contractorPhone("99402115639940211563");
 		contractorPage.clickNextButton();
 		String text = contractorPage.contractorPhoneError();
-		Assert.assertEquals(text,"Max 10 characters allowed");
+		Assert.assertEquals(text,"Input should contains 10 digits");
 		contractorPage.clickCloseButton();
 		contractorPage.clickYesButton();
 		 
@@ -297,49 +297,49 @@ public class CreateContractorTestCases {
 	
 	
 	
-	@Test
-	(priority=14)
-	public void verifyMaxName() throws InterruptedException 
-	{
-		//Verify the max vendor name validation if Exceeds the Limit 50
-		
-		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
-		 contractorPage.dashBoardUserMenu();
-		 contractorPage.clickVendorTab();
-		 contractorPage.contractorCreateButton();
-		 contractorPage.contractorName("Lorem ipsum dolor sit amet, consectetuer adipiscin");
-		 contractorPage.clickNextButton();
-		 String text =contractorPage.contractorNameError();
-		 Assert.assertEquals(text, "Name Should not have More than 50 characters");
-		 contractorPage.clickCloseButton();
-		 contractorPage.clickYesButton();
-		 
-		 
-	    
-	}
-	
-	
-	
-	@Test
-	(priority=16)
-	public void verifyMaxContactPerson() 
-	{
-		
-		//
-		//Verify the max validation if Contact person Exceeds the Limit 50
-		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
-		contractorPage.dashBoardUserMenu();
-		contractorPage.clickVendorTab();
-		contractorPage.contractorCreateButton();
-		contractorPage.contractorContactPerson("ghgfhghgjgjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjthgthjjjj");
-		 String text =contractorPage.contractorContactNameError();
-		 Assert.assertEquals(text, "Not allowed more than 50 characters");
-		 contractorPage.clickCloseButton();
-		 contractorPage.clickYesButton();
-		 
-	 }
-	
+//	@Test
+//	(priority=14)
+//	public void verifyMaxName() throws InterruptedException 
+//	{
+//		//Verify the max vendor name validation if Exceeds the Limit 50
+//		
+//		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+//		 contractorPage.dashBoardUserMenu();
+//		 contractorPage.clickVendorTab();
+//		 contractorPage.contractorCreateButton();
+//		 contractorPage.contractorName("Lorem ipsum dolor sit amet, consectetuer adipiscin");
+//		 contractorPage.clickNextButton();
+//		 String text =contractorPage.contractorNameError();
+//		 Assert.assertEquals(text, "Name Should not have More than 50 characters");
+//		 contractorPage.clickCloseButton();
+//		 contractorPage.clickYesButton();
+//		 
+//		 
+//	    
+//	}
+//	
+//	
+//	
+//	@Test
+//	(priority=16)
+//	public void verifyMaxContactPerson() 
+//	{
+//		
+//		//
+//		//Verify the max validation if Contact person Exceeds the Limit 50
+//		
+//		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+//		contractorPage.dashBoardUserMenu();
+//		contractorPage.clickVendorTab();
+//		contractorPage.contractorCreateButton();
+//		contractorPage.contractorContactPerson("ghgfhghgjgjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjthgthjjjj");
+//		 String text =contractorPage.contractorContactNameError();
+//		 Assert.assertEquals(text, "Not allowed more than 50 characters");
+//		 contractorPage.clickCloseButton();
+//		 contractorPage.clickYesButton();
+//		 
+//	 }
+//	
 	
 	@Test
 	(priority=27)
@@ -349,16 +349,18 @@ public class CreateContractorTestCases {
 	//add this after creating the email
 		//Verify if Email Already Exist
 		
-		 CreateVendorPageObjects vendorPage = new CreateVendorPageObjects(this.driver);
-		 vendorPage.dashBoardUserMenu();
-		 vendorPage.clickVendorTab();
-		 vendorPage.vendorCreateButton();
-		 vendorPage.vendorEmail("alreadyexist@zaigo.com");
-		 vendorPage.clickNextButton();
-		 String text =vendorPage.vendorEmailError();
-		 Assert.assertEquals(text, "Email Already Exist");
-		 vendorPage.clickCloseButton();
-		 vendorPage.clickYesButton();
+		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		contractorPage.dashBoardUserMenu();
+		contractorPage.clickVendorTab();
+		contractorPage.contractorCreateButton();
+		contractorPage.contractorName("hello");
+		contractorPage.contractorEmail("emailu26@gmail.com");
+		contractorPage.contractorContactPerson("cperson hello");
+		contractorPage.clickSaveandComplete();
+		 String text =contractorPage.contractorEmailError();
+		 Assert.assertEquals(text, "Email already Exists");
+		 contractorPage.clickCloseButton();
+	     contractorPage.clickYesButton();
 		 
 	    
 	}
@@ -386,6 +388,8 @@ public class CreateContractorTestCases {
 		contractorPage.clickSaveandComplete();
 	    String text =contractorPage.contractorLineOneError();
 		Assert.assertEquals(text,"maxOneFifty");
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
 	     
 		 
 	}
@@ -411,7 +415,8 @@ public class CreateContractorTestCases {
 		contractorPage.clickSaveandComplete();
 	    String text =contractorPage.contractorLineTwoError();
 		Assert.assertEquals(text,"Not allowed more than 150 characters");
-	     
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
 	}
 	
 	
@@ -438,7 +443,8 @@ public class CreateContractorTestCases {
 		contractorPage.clickSaveandComplete();
 	    String text =contractorPage.contractorCityError();
 		Assert.assertEquals(text,"Not allowed more than 150 characters");
-	     
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
 	}
 	
 	
@@ -469,7 +475,8 @@ public class CreateContractorTestCases {
 		contractorPage.clickSaveandComplete();
 	    String text =contractorPage.contractorZipcodeError();
 		Assert.assertEquals(text,"The field must be minimum 6");
-	     
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
 		 
 	}
 	
@@ -495,7 +502,8 @@ public class CreateContractorTestCases {
 		contractorPage.contractorZipcode("123123456123123456123123456123123456123123456123123456");
 	    String text =contractorPage.contractorZipcodeError1();
 		Assert.assertEquals(text,"Not allowed more than 30 characters");
-	     
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
 		 
 	}
 	
@@ -515,16 +523,8 @@ public class CreateContractorTestCases {
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
 		contractorPage.uploadImage("C:\\Users\\lenovo\\Pictures\\picjpg.jpg");
-		try
-		{
-		String textd =contractorPage.vendorImageError();
-		}catch (Exception e) {
-			// TODO: handle exception
-			String hello=e.getMessage();
-			System.out.print("Pass");
-		}
-	
-	   
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
 	 
 	     
 	 }
@@ -544,80 +544,80 @@ public class CreateContractorTestCases {
 	contractorPage.clickVendorTab();
 	contractorPage.contractorCreateButton();
 	contractorPage.contractorName("hello");
-	contractorPage.contractorEmail("emailu1@gmail.com");
+	contractorPage.contractorEmail("emailu26@gmail.com");
 	contractorPage.contractorContactPerson("cperson hello");
-	contractorPage.uploadImage("C:\\Users\\lenovo\\Pictures\\picjpg.jpg");
+	//contractorPage.uploadImage("C:\\Users\\lenovo\\Pictures\\picjpg.jpg");
 	contractorPage.clickSaveandComplete();
     String text =contractorPage.contractorSuccessMessage();
 	Assert.assertEquals(text,"Company Created successfully");
-     
-	 
+	contractorPage.clickCloseButton();
+	
 }
 	
 	
 	
-	@Test
-	(priority=25)
-	   public void verifyContracorInList() throws InterruptedException 
-	{
-		//check the created contractor name is in list
-		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
-		contractorPage.dashBoardUserMenu();
-		contractorPage.clickVendorTab();
-		String text =contractorPage.getCreatedContractorName();
-		Assert.assertEquals(text,"Contractor Name");
-	     
-		 
-	}
-	
-	
-	  
-	
-	@Test
-	(priority=26)
-	   public void verifyContracorDetail() throws InterruptedException 
-	{
-		//check the created contractor name is Detail
-		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
-		contractorPage.dashBoardUserMenu();
-		contractorPage.clickVendorTab();
-		contractorPage.clickContractorName();
-		String text =contractorPage.getCreatedContractorNameDetail();
-		Assert.assertEquals(text,"erg");
-	     
-		 
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	@Test
-	(priority=28)
-	   public void verifyContractorDeleted() throws InterruptedException 
-	{
-		//Contractor Deleted successfully
-		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
-		contractorPage.dashBoardUserMenu();
-		contractorPage.clickVendorTab();
-		contractorPage.clickActionMenu();
-		contractorPage.clickDeleteMenu();
-		String text =contractorPage.contractorSuccessMessage();
-		Assert.assertEquals(text,"Deleted Successfully");
-	     
-		 
-	}
+//	@Test
+//	(priority=25)
+//	   public void verifyContracorInList() throws InterruptedException 
+//	{
+//		//check the created contractor name is in list
+//		
+//		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+//		contractorPage.dashBoardUserMenu();
+//		contractorPage.clickVendorTab();
+//		String text =contractorPage.getCreatedContractorName();
+//		Assert.assertEquals(text,"Contractor Name");
+//	     
+//		 
+//	}
+//	
+//	
+//	  
+//	
+//	@Test
+//	(priority=26)
+//	   public void verifyContracorDetail() throws InterruptedException 
+//	{
+//		//check the created contractor name is Detail
+//		
+//		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+//		contractorPage.dashBoardUserMenu();
+//		contractorPage.clickVendorTab();
+//		contractorPage.clickContractorName();
+//		String text =contractorPage.getCreatedContractorNameDetail();
+//		Assert.assertEquals(text,"erg");
+//	     
+//		 
+//	}
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	@Test
+//	(priority=28)
+//	   public void verifyContractorDeleted() throws InterruptedException 
+//	{
+//		//Contractor Deleted successfully
+//		
+//		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+//		contractorPage.dashBoardUserMenu();
+//		contractorPage.clickVendorTab();
+//		contractorPage.clickActionMenu();
+//		contractorPage.clickDeleteMenu();
+//		String text =contractorPage.contractorSuccessMessage();
+//		Assert.assertEquals(text,"Deleted Successfully");
+//	     
+//		 
+//	}
 	
 	
 	

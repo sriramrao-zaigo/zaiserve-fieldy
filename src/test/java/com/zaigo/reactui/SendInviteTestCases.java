@@ -192,7 +192,7 @@ public class SendInviteTestCases {
 	
 	@Test
 	(priority=10)
-	public void verifyUserSendInviteWith() throws InterruptedException 
+	public void verifyUserSendInviteWithMessage() throws InterruptedException 
 	{
 		//Verify user can sendinvite with message
 		
