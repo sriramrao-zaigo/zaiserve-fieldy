@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.zaigo.pageobjects.ComapanyEditPageObjects;
-import com.zaigo.pageobjects.CreateVendorPageObject;
+//import com.zaigo.pageobjects.CreateVendorPageObjects;
 import com.zaigo.pageobjects.LoginPageObjects;
 import com.zaigo.utility.BrowserSetup;
 
