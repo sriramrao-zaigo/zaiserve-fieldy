@@ -9,23 +9,23 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CreateVendorPageObjects {
+public class CreateVendorPageObject {
 	
 	
 	private WebDriver driver;
 	private WebDriverWait wait;
 
-	private By usermenu=By.xpath("//a[@data-automationid='user']");
+private By usermenu=By.xpath("//a[@data-automationid='user']");
 	
 	
 	private By vendormenu=By.xpath("//a[@data-automationid='vendor']");
 	
 	private By vendortab=By.xpath("//a[@data-automationid='vendor']");
+	
 	private By vendorcreatebtn=By.xpath("//*[@data-automationid='createVendor']");
 	
-	private By vendorname=By.xpath("//input[@data-automationid='companyName']");
-	
-	private By vendornameer=By.xpath("//*[@data-automationid='company-name-error']");
+	private By vendorname=By.xpath("//*[@data-automationid='companyName']");
+	private By vendornameerr=By.xpath("//*[@data-automationid='name-error']");
 	
 	private By nextbtn = By.xpath("//button[@data-automationid='next']");
 	
@@ -35,7 +35,7 @@ public class CreateVendorPageObjects {
 	
     private By vendorcperson=By.xpath("//input[@data-automationid='contactPerson']");
 	
-	private By vendorcpersonerr=By.xpath("//*[@data-automationid='contactperson-error']");
+	private By vendorcpersonerr=By.xpath("//*[@data-automationid='contact_person_name-error']");
 	
 	private By vendorphone=By.xpath("//input[@data-automationid='phone']");
 	
@@ -50,7 +50,7 @@ public class CreateVendorPageObjects {
 	
 	private By vendorsite=By.xpath("//input[@data-automationid='website']");
 	
-	private By vendorsiteerr=By.xpath("//*[@data-automationid='website-err']");
+	private By vendorsiteerr=By.xpath("//*[@data-automationid='website-error']");
 	
 	
 	private By vendorimageupload=By.id("imageUpload");
@@ -65,38 +65,122 @@ public class CreateVendorPageObjects {
 	
 	private By saveform =By.xpath("//button[@data-automationid='saveAndComplete']");
 	
-	private By successmessage= By.xpath("//*[@data-automationid='saveAndComplete']");
+	private By successmessage= By.xpath("//*[@data-automationid='sucmessage']");
 	
+	private By closesucc =By.xpath("//button[@data-automationid='close']");
 	//Address
 	
-	private By addlocationbtn = By.xpath("//button[@data-automationid='saveAndComplete']");
-	
-	private By lineone = By.xpath("//button[@data-automationid='saveAndComplete']");
-	
-	private By lineoneerr = By.xpath("//button[@data-automationid='saveAndComplete']");
+	private By addlocationbtn = By.xpath("//button[@data-automationid='anotherLocation']");
 	
 	
-    private By linetwo = By.xpath("//button[@data-automationid='saveAndComplete']");
+	private By locationone = By.xpath("//*[@data-automationid='Location 1']");
 	
-	private By linetwoerr = By.xpath("//button[@data-automationid='saveAndComplete']");
+	private By lineone = By.xpath("//input[@data-automationid='noBuildingFlatName']");
+	
+	private By lineoneerr = By.xpath("//*[contains(text(),'maxOneFifty')]");
+	
+	
+    private By linetwo = By.xpath("//input[@data-automationid='streetName']");
+	
+	private By linetwoerr = By.xpath("//*[contains(text(),'Not allowed more than 150 characters')]");
 	
 	
     private By addressname = By.xpath("//button[@data-automationid='saveAndComplete']");
 	
 	private By addressnameerr = By.xpath("//button[@data-automationid='saveAndComplete']");
 	
-	private By city = By.xpath("//button[@data-automationid='saveAndComplete']");
+	private By city = By.xpath("//input[@data-automationid='cityVillage']");
 		
-    private By cityerr = By.xpath("//button[@data-automationid='saveAndComplete']");
+    private By cityerr = By.xpath("//*[contains(text(),'Not allowed more than 150 characters')]");
 	    
     
-    private By zipcode = By.xpath("//button[@data-automationid='saveAndComplete']");
+    private By zipcode = By.xpath("//input[@data-automationid='zipCode']");
 	
-    private By zipcoderr = By.xpath("//button[@data-automationid='saveAndComplete']");
+    private By zipcoderr = By.xpath("//*[contains(text(),'The field must be minimum 6')]");
     
     private By country = By.xpath("//button[@data-automationid='saveAndComplete']");
 	
     private By state = By.xpath("//button[@data-automationid='saveAndComplete']");
+    
+    private By actionmenu = By.xpath("//button[@data-automationid='vendorActive']");
+    
+    private By deletebtn = By.xpath("//*[@data-automationid='Delete Vendor']");
+  
+    private By searchfield = By.id("search");
+    
+    private By searchdata =By.xpath("//*[@id=\"root\"]/div/div/div[3]/div[2]/table/tbody/tr[1]/td[4]");
+    
+    private By detailview = By.xpath("//*[@data-automationid='close']//following::h3");
+    
+    private By list = By.xpath("//*[@data-automationid='vendorDetails']");
+    
+    private By closedetail = By.xpath("//button[@data-automationid='close']");
+    
+    
+    
+    
+    
+    public void clickDetailClose() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((closedetail)));
+		driver.findElement(closedetail).click();
+	    }
+    
+    
+   
+    
+    public void clickEnterSearch(Keys services) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((searchfield)));
+		 driver.findElement(searchfield).sendKeys(services);
+	    }
+    
+    public void clickName() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((list)));
+		driver.findElement(list).click();
+	    }
+    
+    public String detailView() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((detailview)));
+		return driver.findElement(detailview).getText();
+	    }
+    
+    
+    
+    public void enterSearch(String enter) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((searchfield)));
+		 driver.findElement(searchfield).sendKeys(enter);
+	    }
+    
+    
+    public String searchResult() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((searchfield)));
+		return driver.findElement(searchfield).getText();
+	    }
+    
+    
+    public void clickActionMenu() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((actionmenu)));
+		driver.findElement(actionmenu).click();
+	    }
+    
+    
+    public void clickDeleteMenu() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((deletebtn)));
+		driver.findElement(deletebtn).click();
+	    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public void clickSuccCloseButton() {
+  		wait.until(ExpectedConditions.visibilityOfElementLocated((closesucc)));
+  		driver.findElement(closesucc).click();
+  	    }
+    
     
     
 	
@@ -116,6 +200,11 @@ public class CreateVendorPageObjects {
 	public void clickAddLocation() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated((addlocationbtn)));
 		driver.findElement(addlocationbtn).click();
+	    }
+	
+	public void clickLocationOne() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((locationone)));
+		driver.findElement(locationone).click();
 	    }
 	
 	
@@ -240,8 +329,8 @@ public class CreateVendorPageObjects {
 		
 		public String vendorNameError()
 		{
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendornameer)));
-	    return driver.findElement(vendornameer).getText();
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendornameerr)));
+	    return driver.findElement(vendornameerr).getText();
 		}
 		
 		public String vendorEmailError()
@@ -316,42 +405,42 @@ public class CreateVendorPageObjects {
 		
 		public void vendorLineOne(String services)
 		{
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
-	    driver.findElement(vendorPdtServ).sendKeys(services);
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((lineone)));
+	    driver.findElement(lineone).sendKeys(services);
 		}
 		
 		
 		public String vendorLineOneError()
 		{
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
-	    return driver.findElement(vendorPdtServ).getText();
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((lineoneerr)));
+	    return driver.findElement(lineoneerr).getText();
 		}
 		
 		
 		public void vendorLineTwo(String services)
 		{
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
-	    driver.findElement(vendorPdtServ).sendKeys(services);
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((linetwo)));
+	    driver.findElement(linetwo).sendKeys(services);
 		}
 		
 		
 		public String vendorLineTwoError()
 		{
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
-	    return driver.findElement(vendorPdtServ).getText();
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((linetwoerr)));
+	    return driver.findElement(linetwoerr).getText();
 		}
 		
 		public void vendorCity(String services)
 		{
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
-	    driver.findElement(vendorPdtServ).sendKeys(services);
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((city)));
+	    driver.findElement(city).sendKeys(services);
 		}
 		
 		
 		public String vendorCityError()
 		{
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
-	    return driver.findElement(vendorPdtServ).getText();
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((cityerr)));
+	    return driver.findElement(cityerr).getText();
 		}
 		
 		public void vendorAddressContactPerson(String services)
@@ -369,15 +458,15 @@ public class CreateVendorPageObjects {
 		
 		public void vendorZipcode(String services)
 		{
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
-	    driver.findElement(vendorPdtServ).sendKeys(services);
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((zipcode)));
+	    driver.findElement(zipcode).sendKeys(services);
 		}
 		
 		
 		public String vendorZipcodeError()
 		{
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((vendorPdtServ)));
-	    return driver.findElement(vendorPdtServ).getText();
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((zipcoderr)));
+	    return driver.findElement(zipcoderr).getText();
 		}
 		
 		
@@ -386,7 +475,7 @@ public class CreateVendorPageObjects {
 		
 		
 		
-		public CreateVendorPageObjects(WebDriver driver) {
+		public CreateVendorPageObject(WebDriver driver) {
 			this.driver = driver;
 			this.wait = new WebDriverWait(this.driver, 10);
 		}
