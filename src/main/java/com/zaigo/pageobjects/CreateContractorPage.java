@@ -77,7 +77,7 @@ public class CreateContractorPage {
 	
 	private By lineone = By.xpath("//input[@data-automationid='noBuildingFlatName']");
 	
-	private By lineoneerr = By.xpath("//*[contains(text(),'maxOneFifty')]");
+	private By lineoneerr = By.xpath("//*[contains(text(),'Not allowed more than 150 characters')]");
 	
 	
     private By linetwo = By.xpath("//input[@data-automationid='streetName']");
