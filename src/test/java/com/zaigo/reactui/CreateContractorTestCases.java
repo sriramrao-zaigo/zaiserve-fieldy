@@ -270,7 +270,65 @@ public class CreateContractorTestCases {
 		 
 	    
 	}
+	@Test
+	(priority=13)
+	public void verifyMaxPhone() 
+	{
+		//Verify Phone Field accepts 20 digits
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.dashBoardUserMenu();
+		contractorPage.clickVendorTab();
+		contractorPage.contractorCreateButton();
+		contractorPage.contractorPhone("99402115639940211563");
+		contractorPage.clickNextButton();
+		String text = contractorPage.contractorPhoneError();
+		Assert.assertEquals(text,"Input should contains 10 digits");
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
+		 
+	    
+	}
+	        @Test
+		(priority=14)
+		public void verifyMaxContactPerson() 
+		{
+			
+			
+			//Verify the max validation if Contact person Exceeds the Limit 50
+			
+			CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+			contractorPage.dashBoardUserMenu();
+			contractorPage.clickVendorTab();
+			contractorPage.contractorCreateButton();
+			contractorPage.contractorContactPerson("ghgfhghgjgjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjthgthjjjj");
+			 String text =contractorPage.contractorContactNameError();
+			 Assert.assertEquals(text, "Not allowed more than 50 characters");
+			 contractorPage.clickCloseButton();
+			 contractorPage.clickYesButton();
+			 
+		 }
 	
+	        @Test
+		(priority=15)
+		public void verifyMaxName() throws InterruptedException 
+		{
+			//Verify the max vendor name validation if Exceeds the Limit 50
+			
+			 CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+			 contractorPage.dashBoardUserMenu();
+			 contractorPage.clickVendorTab();
+			 contractorPage.contractorCreateButton();
+			 contractorPage.contractorName("Lorem ipsum dolor sit amet, consectetuer adipiscin");
+			 contractorPage.clickNextButton();
+			 String text =contractorPage.contractorNameError();
+			 Assert.assertEquals(text, "Name Should not have More than 50 characters");
+			 contractorPage.clickCloseButton();
+			 contractorPage.clickYesButton();
+			 
+			 
+		    
+		}
 	
 	
 }
