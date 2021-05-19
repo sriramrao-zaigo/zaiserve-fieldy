@@ -261,7 +261,7 @@ public class CreateContractorTestCases {
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
-		contractorPage.contractorPhone("abcdefghijks");
+		contractorPage.contractorPhone("123");
 		contractorPage.clickNextButton();
 		String text = contractorPage.contractorPhoneError();
 		Assert.assertEquals(text,"Input should contains 10 digits");
