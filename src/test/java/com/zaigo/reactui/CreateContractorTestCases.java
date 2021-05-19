@@ -53,7 +53,7 @@ public class CreateContractorTestCases {
 	    
 	}
 
-	/*
+	
 	
 	
 	@Test
@@ -475,7 +475,7 @@ public class CreateContractorTestCases {
 
 	
 	
-	*/
+	
 	
 	
 	
