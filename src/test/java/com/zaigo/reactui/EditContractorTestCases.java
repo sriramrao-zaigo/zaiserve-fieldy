@@ -414,7 +414,7 @@ public class EditContractorTestCases {
 
  @Test
 (priority=17)
-   public void verifyContractorCreated() throws InterruptedException 
+   public void verifyContractorUpdated() throws InterruptedException 
 {
 	//Contractor Created successfully
 	
