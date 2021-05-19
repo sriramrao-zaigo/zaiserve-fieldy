@@ -73,7 +73,7 @@ public class LoginTestCases {
 		//Verify when password are not exist in the database.
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("admin@fieldy.co", "sxdsssscs");
+		loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "sxdsssscs");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessagePassword();
 	    Assert.assertEquals(nameerr, "Invalid Password");
@@ -101,7 +101,7 @@ public class LoginTestCases {
 		//verify with Min password validation
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("admin@fieldy.co", "sxd");
+		loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "sxd");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessagePassword();
 	    Assert.assertEquals(nameerr, "Enter minimum 8 characters.");
@@ -127,7 +127,7 @@ public class LoginTestCases {
 	
 	
 	
-	
+/*	
 	
 	
 	@Test(priority =9)
@@ -137,7 +137,7 @@ public class LoginTestCases {
 		//Verify the Error Message is Displayed when the Account is locked
 		
 	    LoginPage loginInPage = new LoginPage(this.driver);
-    	loginInPage.setUserCredentials("Locked@fieldy.co", "Zaiserve@123");
+    	    loginInPage.setUserCredentials("Locked@fieldy.co", "Zaiserve@123");
 	    loginInPage.clickLoginButton();
 	    String locked = loginInPage.toastTextTwo();
 	    Assert.assertEquals(locked, "Your account is locked. Please contact admin.");
@@ -146,7 +146,7 @@ public class LoginTestCases {
 	    
     }
     
-    
+    */
 	
 	@Test(priority =10)
 	public void verifyInvalidAttempts() 
@@ -202,14 +202,14 @@ public class LoginTestCases {
 	   
 	 }	
 	
-		
+	/*	
 	@Test(priority =13)
 	public void verifyMultiAccount() 
 	{
 		//MutiAccount Account User
 		
 	    LoginPage loginInPage = new LoginPage(this.driver);
-    	loginInPage.setUserCredentials("admin@fieldy.co", "Zaiserve@123");
+    	   loginInPage.setUserCredentials("admin@fieldy.co", "Zaiserve@123");
 	    loginInPage.clickLoginButton();
 	    loginInPage.clickMultiAccount();
 	    String text =loginInPage.dashBoardText();
@@ -217,7 +217,7 @@ public class LoginTestCases {
 	    
 	   
 	 }	
-	
+	*/
 	
 	
 
