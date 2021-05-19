@@ -37,7 +37,7 @@ public class LoginPage {
 	}
 	
 	public String dashBoardText() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated((dashboard)));
+		wait.until(ExpectedConditions.presenceOfElementLocated((dashboard)));
 		return driver.findElement(dashboard).getText();
 	}
 	
