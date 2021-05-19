@@ -322,13 +322,187 @@ public class CreateContractorTestCases {
 			 contractorPage.contractorName("Lorem ipsum dolor sit amet, consectetuer adipiscinddede ddededdcdc ddcdc");
 			 contractorPage.clickNextButton();
 			 String text =contractorPage.contractorNameError();
-			 Assert.assertEquals(text, "Name Should not have More than 50 characters");
+			 Assert.assertEquals(text, "Not allowed more than 50 characters");
 			 contractorPage.clickCloseButton();
 			 contractorPage.clickYesButton();
 			 
 			 
 		    
 		}
+	
+	
+	@Test
+	(priority=16)
+	public void verifyLineOneMaxCharacters() throws InterruptedException 
+	{
+		
+		//check the Line One has Max characters validation
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.dashBoardUserMenu();
+		contractorPage.clickVendorTab();
+		contractorPage.contractorCreateButton();
+		contractorPage.contractorName("hello");
+		contractorPage.contractorEmail("email@gmail.com");
+		contractorPage.contractorContactPerson("cperson hello");
+		contractorPage.clickNextButton();
+		contractorPage.clickAddLocation();
+		contractorPage.clickLocationOne();
+		contractorPage.contractorLineOne("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu");
+		contractorPage.clickSaveandComplete();
+	    String text =contractorPage.contractorLineOneError();
+		Assert.assertEquals(text,"Not allowed more than 150 characters");
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
+	     
+		 
+	}
+	
+	
+	@Test
+	(priority=17)
+	public void verifyLineTwoMaxCharacters() throws InterruptedException 
+	{
+		
+		//check the Line Two has Max characters validation
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.dashBoardUserMenu();
+		contractorPage.clickVendorTab();
+		contractorPage.contractorCreateButton();
+		contractorPage.contractorName("hello");
+		contractorPage.contractorEmail("email@gmail.com");
+		contractorPage.contractorContactPerson("cperson hello");
+		contractorPage.clickNextButton();
+		contractorPage.clickAddLocation();
+		contractorPage.clickLocationOne();
+		contractorPage.contractorLineTwo("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu");
+		contractorPage.clickSaveandComplete();
+	    String text =contractorPage.contractorLineTwoError();
+		Assert.assertEquals(text,"Not allowed more than 150 characters");
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
+	}
+	
+	
+	
+	
+	@Test
+	(priority=18)
+	public void verifyCityMaxCharacters() throws InterruptedException 
+	{
+		
+		//check City with Max character validations
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.dashBoardUserMenu();
+		contractorPage.clickVendorTab();
+		contractorPage.contractorCreateButton();
+		contractorPage.contractorName("hello");
+		contractorPage.contractorEmail("email@gmail.com");
+		contractorPage.contractorContactPerson("cperson hello");
+		contractorPage.clickNextButton();
+		contractorPage.clickAddLocation();
+		contractorPage.clickLocationOne();
+		contractorPage.contractorCity("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu");
+		contractorPage.clickSaveandComplete();
+	    String text =contractorPage.contractorCityError();
+		Assert.assertEquals(text,"Not allowed more than 150 characters");
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	@Test
+	(priority=19)
+	public void verifyMinZipcode() throws InterruptedException 
+	{
+		//
+		//check zipcode accepts the 3 digits
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.dashBoardUserMenu();
+		contractorPage.clickVendorTab();
+		contractorPage.contractorCreateButton();
+		contractorPage.contractorName("hello");
+		contractorPage.contractorEmail("email@gmail.com");
+		contractorPage.contractorContactPerson("cperson hello");
+		contractorPage.clickNextButton();
+		contractorPage.clickAddLocation();
+		contractorPage.clickLocationOne();
+		contractorPage.contractorZipcode("123");
+		contractorPage.clickSaveandComplete();
+	        String text =contractorPage.contractorZipcodeError();
+		Assert.assertEquals(text,"The field must be minimum 6");
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
+		 
+	}
+	
+	
+	
+	@Test
+	(priority=20)
+	public void verifyWithValidDetails() throws InterruptedException 
+	{
+		//
+		//check zipcode WITH 30 + CHARCAERS
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.dashBoardUserMenu();
+		contractorPage.clickVendorTab();
+		contractorPage.contractorCreateButton();
+		contractorPage.contractorName("hello");
+		contractorPage.contractorEmail("email@gmail.com");
+		contractorPage.contractorContactPerson("cperson hello");
+		contractorPage.clickNextButton();
+		contractorPage.clickAddLocation();
+		contractorPage.clickLocationOne();
+		contractorPage.contractorZipcode("123123456123123456123123456123123456123123456123123456");
+	    String text =contractorPage.contractorZipcodeError1();
+		Assert.assertEquals(text,"Not allowed more than 30 characters");
+		contractorPage.clickCloseButton();
+		contractorPage.clickYesButton();
+		 
+	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+ @Test
+(priority=21)
+   public void verifyContractorCreated() throws InterruptedException 
+{
+	//Contractor Created successfully
+	
+	CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+	contractorPage.dashBoardUserMenu();
+	contractorPage.clickVendorTab();
+	contractorPage.contractorCreateButton();
+	contractorPage.contractorName("hello");
+	contractorPage.contractorEmail("emailu26@gmail.com");
+	contractorPage.contractorContactPerson("cperson hello");
+	//contractorPage.uploadImage("C:\\Users\\lenovo\\Pictures\\picjpg.jpg");
+	contractorPage.clickSaveandComplete();
+    String text =contractorPage.contractorSuccessMessage();
+	Assert.assertEquals(text,"Company Created successfully");
+	contractorPage.clickCloseButton();
+	
+}
+	
+	
+	
 	
 	
 }
