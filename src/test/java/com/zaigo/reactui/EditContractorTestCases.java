@@ -49,7 +49,7 @@ public class EditContractorTestCases {
 		 Assert.assertEquals(text, "User");
 	    
 	}
-	
+	/*
 	
 	
 	@Test
@@ -388,7 +388,7 @@ public class EditContractorTestCases {
 	
 
 	
-	/*
+	
 	@Test
 	(priority=16)
 	public void verifyWithvalidImage() throws InterruptedException 
