@@ -16,6 +16,8 @@ public class CreateContractorTestCases {
 	
 	
 	
+	
+	
 	private WebDriver driver = null;
 	private LoginPage loginInPage = null;
 
@@ -31,7 +33,7 @@ public class CreateContractorTestCases {
 	
 	@AfterMethod
 	public void setVariableEmpty() {
-		setLoginInPage(null);
+		loginInPage = null;
 	}
 	
 	
