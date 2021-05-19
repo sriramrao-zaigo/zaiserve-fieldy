@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+
 public class EditContractorPage {
 	
 	private WebDriver driver;
@@ -70,6 +72,7 @@ public class EditContractorPage {
 	private By editbtn = By.xpath("//*[@data-automationid='Edit Contractor']");
 	
 	private By menu = By.xpath("//*[@data-automationid='activeContractor']");
+	private By Deleteconfirmyes = By.xpath("//button[@data-automationid='yesBtn']");
 			
 	//Address
 	
@@ -79,7 +82,7 @@ public class EditContractorPage {
 	
 	private By lineone = By.xpath("//input[@data-automationid='noBuildingFlatName']");
 	
-	private By lineoneerr = By.xpath("//*[contains(text(),'maxOneFifty')]");
+	private By lineoneerr = By.xpath("//*[contains(text(),'Not allowed more than 150 characters')]");
 	
 	
     private By linetwo = By.xpath("//input[@data-automationid='streetName']");
@@ -268,10 +271,11 @@ public class EditContractorPage {
 	    driver.findElement(contractorcreatebtn).click();
 		}
 
-		public void contractorName(String name)
+		public void contractorName(String name) throws InterruptedException
 		{
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((contractorname)));
-	    driver.findElement(contractorname).clear();
+	    wait.until(ExpectedConditions.presenceOfElementLocated((contractorname)));
+	  Thread.sleep(2000);
+      driver.findElement(contractorname).clear();
 	    driver.findElement(contractorname).sendKeys(name);
 		}
 
@@ -290,6 +294,13 @@ public class EditContractorPage {
 	    driver.findElement(contractorcperson).clear();
 	    driver.findElement(contractorcperson).sendKeys(ContactPerson);
 		}
+	
+	public void clickConfirmDelete() 
+   {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((Deleteconfirmyes)));
+	    driver.findElement(Deleteconfirmyes).click();
+   }
+   
 		
 		
 		public void contractorPhone(String ContactPhone)
