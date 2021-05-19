@@ -179,7 +179,7 @@ public class CreateContractorTestCases {
 		contractorPage.contractorEmail("    ");
 		contractorPage.clickNextButton();
 		String text =contractorPage.contractorEmailError();
-		Assert.assertEquals(text, "Enter a valid email address");
+		Assert.assertEquals(text, "This field is required");
 		contractorPage.clickCloseButton();
 		contractorPage.clickYesButton();
 		 
