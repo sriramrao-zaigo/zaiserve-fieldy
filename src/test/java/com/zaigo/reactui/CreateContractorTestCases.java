@@ -319,7 +319,7 @@ public class CreateContractorTestCases {
 			 contractorPage.dashBoardUserMenu();
 			 contractorPage.clickVendorTab();
 			 contractorPage.contractorCreateButton();
-			 contractorPage.contractorName("Lorem ipsum dolor sit amet, consectetuer adipiscin");
+			 contractorPage.contractorName("Lorem ipsum dolor sit amet, consectetuer adipiscinddede ddededdcdc ddcdc");
 			 contractorPage.clickNextButton();
 			 String text =contractorPage.contractorNameError();
 			 Assert.assertEquals(text, "Name Should not have More than 50 characters");
