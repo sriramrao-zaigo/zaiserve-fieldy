@@ -22,7 +22,7 @@ public class CreateContractorPage {
 	
 	private By contractortab=By.xpath("//a[@data-automationid='contractor']");
 	
-	private By contractorcreatebtn=By.xpath("//*[@data-automationid='createContractor']");
+	private By contractorcreatebtn=By.xpath("//button['contains(text(),'Create Contractor']");
 	
 	private By contractorname=By.xpath("//input[@data-automationid='name']");
 	
