@@ -269,7 +269,7 @@ public class CreateContractorTestCases {
 		 
 	    
 	}
-	/*
+	
 	
 	@Test
 	(priority=13)
