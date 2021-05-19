@@ -147,7 +147,7 @@ public class LoginTestCases {
 	    
     }
     
-    */
+   
 	
 	@Test(priority =10)
 	public void verifyInvalidAttempts() 
@@ -185,7 +185,7 @@ public class LoginTestCases {
 	
 	
 	
-	
+	*/
 	
 	
 	@Test(priority =12)
@@ -194,7 +194,8 @@ public class LoginTestCases {
 		//Single Account User
 		
 	    LoginPage loginInPage = new LoginPage(this.driver);
-    	loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "Zaiserve@123");
+    	    loginInPage.userField("sriram@zaigoinfotech.com");
+            loginInPage.passwordField("Zaiserve@123");
 	    loginInPage.clickLoginButton();
 	    String text =loginInPage.dashBoardText();
 	    Assert.assertEquals(text, "Dashboard");
