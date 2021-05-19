@@ -49,7 +49,7 @@ public class EditContractorTestCases {
 		 Assert.assertEquals(text, "User");
 	    
 	}
-	/*
+
 	
 	
 	@Test
@@ -408,7 +408,7 @@ public class EditContractorTestCases {
 	     
 	 }
 	
-	*/
+	
 	
 	
 
