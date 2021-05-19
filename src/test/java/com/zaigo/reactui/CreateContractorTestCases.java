@@ -47,8 +47,8 @@ public class CreateContractorTestCases {
 		 LoginPage loginInPage = new LoginPage(this.driver);
 	     loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "Zaiserve@123");
 		 loginInPage.clickLoginButton();
-		 CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
-		 String text = contractorPage.dashBoardUserMenuText();
+		// CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		// String text = contractorPage.dashBoardUserMenuText();
 		 //Assert.assertEquals(text, "User");
 	    
 	}
