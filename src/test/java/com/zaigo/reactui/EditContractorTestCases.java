@@ -262,7 +262,7 @@ public class EditContractorTestCases {
 		contractorPage.clickLocationOne();
 		contractorPage.contractorLineOne("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu");	
 	    String text =contractorPage.contractorLineOneError();
-		Assert.assertEquals(text,"maxOneFifty");
+		Assert.assertEquals(text,"Not allowed more than 150 characters");
 		contractorPage.clickCloseButton();
 		contractorPage.clickYesButton();
 	     
@@ -444,6 +444,7 @@ public class EditContractorTestCases {
 		contractorPage.clickVendorTab();
 		contractorPage.clickActionMenu();
 		contractorPage.clickDeleteMenu();
+		contractorPage.clickConfirmDelete();
 		String text =contractorPage.contractorSuccessMessage();
 		Assert.assertEquals(text,"Deleted Successfully");
 	     
