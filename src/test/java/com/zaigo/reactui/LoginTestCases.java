@@ -128,7 +128,7 @@ public class LoginTestCases {
 	
 	
 	
-/*	
+	
 	
 	
 	@Test(priority =9)
@@ -138,7 +138,7 @@ public class LoginTestCases {
 		//Verify the Error Message is Displayed when the Account is locked
 		
 	    LoginPage loginInPage = new LoginPage(this.driver);
-    	    loginInPage.setUserCredentials("Locked@fieldy.co", "Zaiserve@123");
+    	    loginInPage.setUserCredentials("Locked@zaigo.com", "Fieldy@123");
 	    loginInPage.clickLoginButton();
 	    String locked = loginInPage.toastTextTwo();
 	    Assert.assertEquals(locked, "Your account is locked. Please contact admin.");
@@ -147,6 +147,7 @@ public class LoginTestCases {
 	    
     }
     
+	/*
    
 	
 	@Test(priority =10)
