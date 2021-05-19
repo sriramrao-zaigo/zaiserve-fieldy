@@ -66,6 +66,8 @@ public class CreateContractorTestCases {
 		    
 	    
 	}
+	
+}
 	/*
 	
 	@Test
@@ -627,7 +629,7 @@ public void setLoginInPage(LoginPage loginInPage) {
 //		 
 //	}
 	
+	
+	}
+	
 	*/
-	
-	
-}
