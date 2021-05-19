@@ -167,7 +167,7 @@ public class LoginTestCases {
 	    loginInPage.clickLoginButton();
 	    String locked = loginInPage.toastText();
 	    Assert.assertEquals(locked, "Your account is locked due to 3 failed login attempts. Lock will be released in 60 seconds.");
-	   
+	   //
 	    
 	  }
 	
