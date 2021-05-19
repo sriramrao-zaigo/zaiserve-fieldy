@@ -428,6 +428,7 @@ public class EditContractorTestCases {
 		contractorPage.contractorContactPerson("hello");
 	//contractorPage.uploadImage("C:\\Users\\lenovo\\Pictures\\picjpg.jpg");
 	contractorPage.clickSaveandComplete();
+	   Thread.sleep(2000);
     String text =contractorPage.contractorSuccessMessage();
 	Assert.assertEquals(text,"Company Updated successfully");
 	contractorPage.clickCloseButton();
