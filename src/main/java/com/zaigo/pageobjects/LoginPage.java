@@ -64,6 +64,11 @@ public class LoginPage {
 		driver.findElement(password_by).sendKeys(password);
 	}
 	
+	public void userField(String user) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((username_by)));
+		driver.findElement(username_by).clear();
+		driver.findElement(username_by).sendKeys(user);
+	}
 	
 	
 
