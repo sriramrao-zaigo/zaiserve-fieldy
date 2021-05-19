@@ -189,7 +189,7 @@ public class LoginTestCases {
 	
 	
 	@Test(priority =12)
-	public void verify() 
+	public void verify() throws InterruptedException 
 	{
 		//Single Account User
 		
@@ -197,6 +197,7 @@ public class LoginTestCases {
     	    loginInPage.userField("sriram@zaigoinfotech.com");
             loginInPage.passwordField("Zaiserve@123");
 	    loginInPage.clickLoginButton();
+		Thread.sleep(5000);
 	    String text =loginInPage.dashBoardText();
 	    Assert.assertEquals(text, "Dashboard");
 	    
