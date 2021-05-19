@@ -1,12 +1,12 @@
 package com.zaigo.pageobjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+//import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ComapanyEditPageObjects {
+public class CompanyEditPage {
 
 	
 	
@@ -21,7 +21,7 @@ public class ComapanyEditPageObjects {
 	private By savebtn = By.xpath("//button[@data-automationid='saveAndComplete']");
 	
 	private By companyname =By.xpath("//input[@data-automationid='compay-name']");
-    private By website =By.xpath("//input[@data-automationid='company-website']");
+//    private By website =By.xpath("//input[@data-automationid='company-website']");
     private By accountowner =By.xpath("//input[@data-automationid='company-accountowner']");
     
     private By nextbtn = By.xpath("//button[@data-automationid='next']");
@@ -30,8 +30,7 @@ public class ComapanyEditPageObjects {
     
     private By imageupload= By.id("imageUpload");
     
-    private By imageerr = By.xpath("//p[@data-automationid='imageErr']");
-	
+//    private By imageerr = By.xpath("//p[@data-automationid='imageErr']");
 	
     private By locactionname =By.xpath("//input[@data-automationid='locationName']");
     private By contactperson =By.xpath("//input[@data-automationid='locationContactPerson']");
@@ -347,7 +346,7 @@ public class ComapanyEditPageObjects {
     
     
     
-	public ComapanyEditPageObjects(WebDriver driver) 
+	public CompanyEditPage(WebDriver driver) 
 	{
 		this.driver = driver;
 		this.wait = new WebDriverWait(this.driver, 10);

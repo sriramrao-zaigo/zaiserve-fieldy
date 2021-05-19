@@ -7,9 +7,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.zaigo.pageobjects.CreateContractorPageObjects;
-import com.zaigo.pageobjects.CreateVendorPageObject;
-import com.zaigo.pageobjects.LoginPageObjects;
+import com.zaigo.pageobjects.CreateContractorPage;
+import com.zaigo.pageobjects.CreateVendorPage;
+import com.zaigo.pageobjects.LoginPage;
 import com.zaigo.utility.BrowserSetup;
 
 public class CreateContractorTestCases {
@@ -17,7 +17,7 @@ public class CreateContractorTestCases {
 	
 	
 	private WebDriver driver = null;
-	private LoginPageObjects loginInPage = null;
+	private LoginPage loginInPage = null;
 
 	@BeforeClass
 	public void setup() {
@@ -31,7 +31,7 @@ public class CreateContractorTestCases {
 	
 	@AfterMethod
 	public void setVariableEmpty() {
-		loginInPage = null;
+		setLoginInPage(null);
 	}
 	
 	
@@ -42,10 +42,10 @@ public class CreateContractorTestCases {
 	{
 		//Verify the User Tab
 		
-		 LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		 LoginPage loginInPage = new LoginPage(this.driver);
 	     loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "Zaiserve@123");
 		 loginInPage.clickLoginButton();
-		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		 CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		 String text = contractorPage.dashBoardUserMenuText();
 		 Assert.assertEquals(text, "User");
 	    
@@ -59,7 +59,7 @@ public class CreateContractorTestCases {
 	{
 		//Verify the Vendor Tab
 		
-		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		 CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		 contractorPage.dashBoardUserMenu();
 		 String text = contractorPage.dashBoardVendorMenuText();
 		 Assert.assertEquals(text, "Contractor");
@@ -74,7 +74,7 @@ public class CreateContractorTestCases {
 	{
 		//Verify the CreateButton and Enter the Name
 		
-		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		 CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		 contractorPage.dashBoardUserMenu();
 		 contractorPage.clickVendorTab();
 		 contractorPage.contractorCreateButton();
@@ -91,7 +91,7 @@ public class CreateContractorTestCases {
 	{
 		//Verify the Error Message if the Name field is Null
 		
-		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		 CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		 contractorPage.dashBoardUserMenu();
 		 contractorPage.clickVendorTab();
 		 contractorPage.contractorCreateButton();
@@ -111,7 +111,7 @@ public class CreateContractorTestCases {
 	{
 		//Verify the Error Message if the email field is Null
 		
-		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		 CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		 contractorPage.dashBoardUserMenu();
 		 contractorPage.clickVendorTab();
 		 contractorPage.contractorCreateButton();
@@ -131,7 +131,7 @@ public class CreateContractorTestCases {
 	{
 		//Verify the Error Message if the email field is Null
 		
-		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		 CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		 contractorPage.dashBoardUserMenu();
 		 contractorPage.clickVendorTab();
 		 contractorPage.contractorCreateButton();
@@ -150,7 +150,7 @@ public class CreateContractorTestCases {
 	{
 		//Verify the blankspace not allowed error message
 		
-		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		 CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		 contractorPage.dashBoardUserMenu();
 		 contractorPage.clickVendorTab();
 		 contractorPage.contractorCreateButton();
@@ -171,7 +171,7 @@ public class CreateContractorTestCases {
 		//Verify Email Empty spaces
 		
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -193,7 +193,7 @@ public class CreateContractorTestCases {
 		//Verify Format
 		
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -214,7 +214,7 @@ public class CreateContractorTestCases {
 	{
 		//Verify Contact Person Empty spaces
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -234,7 +234,7 @@ public class CreateContractorTestCases {
 	{
 		//Verify Contact Person Empty spaces
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -256,7 +256,7 @@ public class CreateContractorTestCases {
 	{
 		//Verify Phone Field Accepts Only the Number field.
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -277,7 +277,7 @@ public class CreateContractorTestCases {
 	{
 		//Verify Phone Field accepts 20 digits
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -349,7 +349,7 @@ public class CreateContractorTestCases {
 	//add this after creating the email
 		//Verify if Email Already Exist
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -374,7 +374,7 @@ public class CreateContractorTestCases {
 		//
 		//check the Line One has Max characters validation
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -401,7 +401,7 @@ public class CreateContractorTestCases {
 	{
 		
 		//check the Line Two has Max characters validation
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -429,7 +429,7 @@ public class CreateContractorTestCases {
 		
 		//check City with Max character validations
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -461,7 +461,7 @@ public class CreateContractorTestCases {
 		//
 		//check zipcode accepts the 3 digits
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -489,7 +489,7 @@ public class CreateContractorTestCases {
 		//
 		//check zipcode WITH 30 + CHARCAERS
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -518,7 +518,7 @@ public class CreateContractorTestCases {
 		
 		//check with valid Image file
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -539,7 +539,7 @@ public class CreateContractorTestCases {
 {
 	//Contractor Created successfully
 	
-	CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+	CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 	contractorPage.dashBoardUserMenu();
 	contractorPage.clickVendorTab();
 	contractorPage.contractorCreateButton();
@@ -552,6 +552,14 @@ public class CreateContractorTestCases {
 	Assert.assertEquals(text,"Company Created successfully");
 	contractorPage.clickCloseButton();
 	
+}
+
+public LoginPage getLoginInPage() {
+	return loginInPage;
+}
+
+public void setLoginInPage(LoginPage loginInPage) {
+	this.loginInPage = loginInPage;
 }
 	
 	

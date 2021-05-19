@@ -3,13 +3,13 @@ package com.zaigo.pageobjects;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+//import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CreateContractorPageObjects {
+public class CreateContractorPage {
 
 	
 	private WebDriver driver;
@@ -18,7 +18,7 @@ public class CreateContractorPageObjects {
 	private By usermenu=By.xpath("//a[@data-automationid='user']");
 	
 	
-	private By contractorrmenu=By.xpath("//a[@data-automationid='vendor']");
+//	private By contractorrmenu=By.xpath("//a[@data-automationid='vendor']");
 	
 	private By contractortab=By.xpath("//a[@data-automationid='contractor']");
 	
@@ -453,7 +453,7 @@ public class CreateContractorPageObjects {
 		
 		
 		
-		public CreateContractorPageObjects(WebDriver driver) {
+		public CreateContractorPage(WebDriver driver) {
 			this.driver = driver;
 			this.wait = new WebDriverWait(this.driver, 10);
 		}

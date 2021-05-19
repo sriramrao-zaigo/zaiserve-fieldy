@@ -7,16 +7,16 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.zaigo.pageobjects.CreateContractorPageObjects;
+import com.zaigo.pageobjects.CreateContractorPage;
 import com.zaigo.pageobjects.EditContractorPage;
-import com.zaigo.pageobjects.LoginPageObjects;
+import com.zaigo.pageobjects.LoginPage;
 import com.zaigo.utility.BrowserSetup;
 
 public class EditContractorTestCases {
 	
 	
 	private WebDriver driver = null;
-	private LoginPageObjects loginInPage = null;
+	private LoginPage loginInPage = null;
 
 	@BeforeClass
 	public void setup() {
@@ -41,7 +41,7 @@ public class EditContractorTestCases {
 	{
 		//Verify the User Tab
 		
-		 LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		 LoginPage loginInPage = new LoginPage(this.driver);
 	     loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "Zaiserve@123");
 		 loginInPage.clickLoginButton();
 		 EditContractorPage contractorPage = new EditContractorPage(this.driver);
@@ -397,7 +397,7 @@ public class EditContractorTestCases {
 		
 		//check with valid Image file
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();

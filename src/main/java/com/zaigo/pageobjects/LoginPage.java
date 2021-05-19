@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPageObjects {
+public class LoginPage {
 	
 	private WebDriver driver;
 	private WebDriverWait wait;
@@ -17,7 +17,7 @@ public class LoginPageObjects {
 	private By password_error = By.xpath("//*[@data-automationid='login-password-error']");
 	private By form_title_css = By.tagName("h5");
 	private By login_button = By.tagName("button");
-	private By forgot_password = By.linkText("Forgot Password");
+//	private By forgot_password = By.linkText("Forgot Password");
 	private By lockpopup=By.xpath("//*[contains(text(), 'Your account is locked due to 3 failed login attempts. Lock will be released in 60 seconds.')]");
 	private By lockpopuptwo =By.xpath("//*[contains(text(),'Your account is locked. Please contact admin.')]");
 	private By dashboard =By.xpath("//a[@data-automationid='dashboard']");
@@ -25,12 +25,13 @@ public class LoginPageObjects {
 	
 	
 	
-	public LoginPageObjects(WebDriver driver)  {
+	public LoginPage(WebDriver driver)  {
 		this.driver = driver;
 		this.wait = new WebDriverWait(this.driver, 10);
-		String APP_URL = System.getenv("APP_URL");
+		String APP_URL=null;
+
 		if(APP_URL == null) {
-			APP_URL = "http://zaicrm.com/#/";
+			APP_URL = "http://qatenant3.zaicrm.com/#/";
 		}
 		driver.get(APP_URL);
 	}
@@ -136,12 +137,5 @@ public class LoginPageObjects {
 			driver.findElement(password_by).sendKeys(password);
 		}
 	}
-
-	
-	
-	
-	
-	
-
 
 }

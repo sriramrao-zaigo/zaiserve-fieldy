@@ -1,6 +1,5 @@
 package com.zaigo.reactui;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -8,17 +7,15 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.zaigo.pageobjects.CreateContractorPageObjects;
-import com.zaigo.pageobjects.CreateVendorPageObject;
-import com.zaigo.pageobjects.CreateVendorPageObjects;
-import com.zaigo.pageobjects.LoginPageObjects;
+import com.zaigo.pageobjects.CreateVendorPage;
+import com.zaigo.pageobjects.LoginPage;
 import com.zaigo.utility.BrowserSetup;
 
 
 public class CreateVendorTestCases {
 	
 	private WebDriver driver = null;
-	private LoginPageObjects loginInPage = null;
+	private LoginPage loginInPage = null;
 
 	@BeforeClass
 	public void setup() {
@@ -43,10 +40,10 @@ public class CreateVendorTestCases {
 	{
 		//Verify the User Tab
 		
-		 LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		 LoginPage loginInPage = new LoginPage(this.driver);
 	     loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "Zaiserve@123");
 		 loginInPage.clickLoginButton();
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 String text = vendorPage.dashBoardUserMenuText();
 		 Assert.assertEquals(text, "User");
 		    
@@ -62,7 +59,7 @@ public class CreateVendorTestCases {
 	{
 		//Verify the Vendor Tab
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 String text = vendorPage.dashBoardVendorMenuText();
 		 Assert.assertEquals(text, "Vendor");
@@ -78,7 +75,7 @@ public class CreateVendorTestCases {
 	{
 		//Verify the CreateButton and Enter the Name
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -95,7 +92,7 @@ public class CreateVendorTestCases {
 	{
 		//Verify the Error Message if the Name field is Null
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -117,7 +114,7 @@ public class CreateVendorTestCases {
 	{
 		//Verify the Error Message if the email field is Null
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -137,7 +134,7 @@ public class CreateVendorTestCases {
 	{
 		//Verify the Error Message if the email field is Null
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -156,7 +153,7 @@ public class CreateVendorTestCases {
 	{
 		//Verify the blankspace not allowed error message
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -176,7 +173,7 @@ public class CreateVendorTestCases {
 	{
 		//Verify Email Empty spaces
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -216,7 +213,7 @@ public class CreateVendorTestCases {
 	{
 		//Verify Contact Person Empty spaces
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -244,7 +241,7 @@ public class CreateVendorTestCases {
 		
 		
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -272,7 +269,7 @@ public class CreateVendorTestCases {
 		//Verify the Error Message if the email field is Null
 		
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -298,7 +295,7 @@ public class CreateVendorTestCases {
 	{
 		//check the Line One has Max characters validation
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -325,7 +322,7 @@ public class CreateVendorTestCases {
 	{
 		//check the Line Two has Max characters validation
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -352,7 +349,7 @@ public class CreateVendorTestCases {
 	{
 		//check City with Max character validations
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -382,7 +379,7 @@ public class CreateVendorTestCases {
 	{
 		//check zipcode accepts the alphabets
 		
-		CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -414,7 +411,7 @@ public class CreateVendorTestCases {
 	{
 		//check with valid Image file
 		
-		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
@@ -509,7 +506,7 @@ public class CreateVendorTestCases {
 	{
 		//Vendor Deleted successfully
 		
-		CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
+		CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		vendorPage.dashBoardUserMenu();
 		vendorPage.clickVendorTab();
 		vendorPage.clickActionMenu();

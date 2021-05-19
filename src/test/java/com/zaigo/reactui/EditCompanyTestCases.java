@@ -8,9 +8,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.zaigo.pageobjects.ComapanyEditPageObjects;
+import com.zaigo.pageobjects.CompanyEditPage;
 //import com.zaigo.pageobjects.CreateVendorPageObjects;
-import com.zaigo.pageobjects.LoginPageObjects;
+import com.zaigo.pageobjects.LoginPage;
 import com.zaigo.utility.BrowserSetup;
 
 public class EditCompanyTestCases {
@@ -18,7 +18,7 @@ public class EditCompanyTestCases {
 	
 	
 	private WebDriver driver = null;
-	private LoginPageObjects loginInPage = null;
+	private LoginPage loginInPage = null;
 
 	@BeforeClass
 	public void setup() {
@@ -43,10 +43,10 @@ public class EditCompanyTestCases {
 	{
 		//Verify the User Tab
 		
-		 LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		 LoginPage loginInPage = new LoginPage(this.driver);
 	     loginInPage.setUserCredentials("admin@fieldy.co", "Zaiserve@123");
 		 loginInPage.clickLoginButton();
-		 ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+		 CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 		 String text = editcompany.getUserMenuText();
 		 Assert.assertEquals(text, "User");
 		    
@@ -59,7 +59,7 @@ public class EditCompanyTestCases {
 	{
 		//Verify company tab
 		
-		ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+		CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 		editcompany.clickUserMenu();
 		
 		try
@@ -81,7 +81,7 @@ public class EditCompanyTestCases {
 	{
 		//Verify popup 
 		
-		ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+		CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 		editcompany.clickUserMenu();
 		editcompany.clickCompanyTab();
 		editcompany.clickEditButton();
@@ -109,7 +109,7 @@ public class EditCompanyTestCases {
 	{
 		//Verify Name Empty
 		
-		ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+		CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 //		editcompany.clickUserMenu();
 //		editcompany.clickCompanyTab();
 //		editcompany.clickEditButton();
@@ -136,7 +136,7 @@ public class EditCompanyTestCases {
 	{
 		//Verify Name Empty
 		
-		ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+		CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 //		editcompany.clickUserMenu();
 //		editcompany.clickCompanyTab();
 //		editcompany.clickEditButton();
@@ -165,7 +165,7 @@ public class EditCompanyTestCases {
 	{
 		//Verify Name Empty
 		
-		ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+		CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 //		editcompany.clickUserMenu();
 //		editcompany.clickCompanyTab();
 //		editcompany.clickEditButton();
@@ -191,7 +191,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Name Empty
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -219,7 +219,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Name Empty
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -252,7 +252,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Email Format
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -284,7 +284,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Phone Format
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -316,7 +316,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Max contact person chracters
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -348,7 +348,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Max contact person chracters
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -381,7 +381,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Max contact person chracters
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -416,7 +416,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Max contact person chracters
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -449,7 +449,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Max contact person chracters
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -515,7 +515,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify success message
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 			//editcompany.clickUserMenu();
 			//editcompany.clickCompanyTab();
 			editcompany.clickEditButton();
@@ -544,7 +544,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify the Name is edited
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 			try
 			{
 			String text= editcompany.getCompanyName();
@@ -568,7 +568,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify the Name is edited
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 			try
 			{
 			String text= editcompany.getWebsite();
@@ -591,7 +591,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify the Name is edited
 			
-			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
 			try
 			{
 			String text= editcompany.getNotes();

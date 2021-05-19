@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SendInvitePageObjects {
+public class SendInvitePage {
 	
 	 
 	 
@@ -22,7 +22,7 @@ public class SendInvitePageObjects {
 			private By userinvitebtn=By.xpath("//button[@data-automationid='sendInvite']");
 			
 			
-			private By sendbtn=By.xpath("//button[@data-automationid='sendLink']");
+//			private By sendbtn=By.xpath("//button[@data-automationid='sendLink']");
 			
 			//fn
 			private By firstname=By.xpath("//input[@data-automationid='firstName']");
@@ -39,7 +39,7 @@ public class SendInvitePageObjects {
 			//type
 			
 			
-			private By type=By.xpath("//button[@data-automationid='usertype']");
+//			private By type=By.xpath("//button[@data-automationid='usertype']");
 			
 			
 			//email
@@ -199,7 +199,7 @@ public class SendInvitePageObjects {
 			}
 			
 			
-			public SendInvitePageObjects (WebDriver driver) {
+			public SendInvitePage (WebDriver driver) {
 				this.driver = driver;
 				this.wait = new WebDriverWait(this.driver, 10);
 			}

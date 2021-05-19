@@ -6,7 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.zaigo.pageobjects.LoginPageObjects;
+import com.zaigo.pageobjects.LoginPage;
 import com.zaigo.utility.BrowserSetup;
 
 public class LoginTestCases {
@@ -28,7 +28,7 @@ public class LoginTestCases {
 	public void verifyEmptyEmail() 
 	{
 		
-		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		LoginPage loginInPage = new LoginPage(this.driver);
 		loginInPage.setUserCredentials("", "asdasdas");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessageUserName();
@@ -43,7 +43,7 @@ public class LoginTestCases {
 	public void verifyEmptyPassword() 
 	{
 		
-		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		LoginPage loginInPage = new LoginPage(this.driver);
 		loginInPage.setUserCredentials("hello@bg.in", "");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessagePassword();
@@ -57,7 +57,7 @@ public class LoginTestCases {
 	{
 		//Verify when both the Email and password are not exist in the database
 		
-		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		LoginPage loginInPage = new LoginPage(this.driver);
 		loginInPage.setUserCredentials("aswss@bg.in", "sxdsssscs");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessageUserName();
@@ -72,7 +72,7 @@ public class LoginTestCases {
 	{
 		//Verify when password are not exist in the database.
 		
-		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		LoginPage loginInPage = new LoginPage(this.driver);
 		loginInPage.setUserCredentials("admin@fieldy.co", "sxdsssscs");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessagePassword();
@@ -86,7 +86,7 @@ public class LoginTestCases {
 	{
 		//verify Email validation error message
 		
-		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		LoginPage loginInPage = new LoginPage(this.driver);
 		loginInPage.setUserCredentials("admin", "sxdsssscs");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessageUserName();
@@ -100,7 +100,7 @@ public class LoginTestCases {
 	{
 		//verify with Min password validation
 		
-		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		LoginPage loginInPage = new LoginPage(this.driver);
 		loginInPage.setUserCredentials("admin@fieldy.co", "sxd");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessagePassword();
@@ -115,7 +115,7 @@ public class LoginTestCases {
 		
 		//verify with the invalid Email
 		
-		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		LoginPage loginInPage = new LoginPage(this.driver);
 		loginInPage.setUserCredentials("admin@field.co", "sxdasdsdd");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessageUserName();
@@ -136,7 +136,7 @@ public class LoginTestCases {
 		
 		//Verify the Error Message is Displayed when the Account is locked
 		
-	    LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+	    LoginPage loginInPage = new LoginPage(this.driver);
     	loginInPage.setUserCredentials("Locked@fieldy.co", "Zaiserve@123");
 	    loginInPage.clickLoginButton();
 	    String locked = loginInPage.toastTextTwo();
@@ -155,7 +155,7 @@ public class LoginTestCases {
 		
 		//Error Message Should Displayed when the user Enters Invalida datas for 3+ times
 		
-		LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		LoginPage loginInPage = new LoginPage(this.driver);
 		loginInPage.setUserCredentials("admin@fieldy.co", "sxdasdsdd");
 	    loginInPage.clickLoginButton();
 	    String er1= loginInPage.getErrorMessagePassword();
@@ -192,7 +192,7 @@ public class LoginTestCases {
 	{
 		//Single Account User
 		
-	    LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+	    LoginPage loginInPage = new LoginPage(this.driver);
     	loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "Zaiserve@123");
 	    loginInPage.clickLoginButton();
 	    String text =loginInPage.dashBoardText();
@@ -208,7 +208,7 @@ public class LoginTestCases {
 	{
 		//MutiAccount Account User
 		
-	    LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+	    LoginPage loginInPage = new LoginPage(this.driver);
     	loginInPage.setUserCredentials("admin@fieldy.co", "Zaiserve@123");
 	    loginInPage.clickLoginButton();
 	    loginInPage.clickMultiAccount();

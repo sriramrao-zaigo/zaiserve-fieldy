@@ -3,12 +3,7 @@
 <suite name="Fieldy Login Test">
 	<test name="Login TestCases">
 		<classes>
-			
-			
 			<class name="com.zaigo.reactui.LoginTestCases"/>
-			
-			
-				
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
