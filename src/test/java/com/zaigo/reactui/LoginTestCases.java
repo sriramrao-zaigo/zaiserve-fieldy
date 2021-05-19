@@ -101,7 +101,8 @@ public class LoginTestCases {
 		//verify with Min password validation
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "sxd");
+		loginInPage.userField("sriram@zaigoinfotech.com");
+		loginInPage.passwordField("asd");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessagePassword();
 	    Assert.assertEquals(nameerr, "Enter minimum 8 characters.");
