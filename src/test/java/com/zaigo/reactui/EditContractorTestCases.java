@@ -388,7 +388,7 @@ public class EditContractorTestCases {
 	
 
 	
-	
+	/*
 	@Test
 	(priority=16)
 	public void verifyWithvalidImage() throws InterruptedException 
@@ -408,7 +408,7 @@ public class EditContractorTestCases {
 	     
 	 }
 	
-	
+	*/
 	
 	
 
