@@ -29,7 +29,7 @@ public class LoginTestCases {
 	{
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("", "asdasdas");
+		loginInPage.setUserCredentials("", "");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessageUserName();
 	    Assert.assertEquals(nameerr, "Enter Your Email");
