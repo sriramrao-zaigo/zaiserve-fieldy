@@ -13,8 +13,7 @@ public class CompanyEditPage {
 	private WebDriver driver;
 	private WebDriverWait wait;
 
-	private WebDriver driver;
-	private WebDriverWait wait;
+	
 
 	private By usermenu=By.xpath("//a[@data-automationid='user']");
 	
