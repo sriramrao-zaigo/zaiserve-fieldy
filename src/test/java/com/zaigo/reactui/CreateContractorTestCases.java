@@ -496,6 +496,8 @@ public class CreateContractorTestCases {
 	contractorPage.contractorContactPerson("cperson hello");
 	//contractorPage.uploadImage("C:\\Users\\lenovo\\Pictures\\picjpg.jpg");
 	contractorPage.clickSaveandComplete();
+	   contractorPage.contractorName("zaigo");
+	   contractorPage.clickSaveandComplete();
     String text =contractorPage.contractorSuccessMessage();
 	Assert.assertEquals(text,"Company Created successfully");
 	contractorPage.clickCloseButton();
