@@ -434,6 +434,7 @@ public class EditContractorTestCases {
 	contractorPage.clickCloseButton();
 	
 }
+	/*
       @Test
 	(priority=18)
 	   public void verifyContractorDeleted() throws InterruptedException 
@@ -451,5 +452,6 @@ public class EditContractorTestCases {
 	     
 		 
 	}
+	*/
 
 }
