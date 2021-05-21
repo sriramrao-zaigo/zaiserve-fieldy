@@ -1,10 +1,17 @@
 package com.zaigo.pageobjects;
 
-import org.openqa.selenium.By;
-//import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.zaigo.pageobjects.ComapanyEditPageObjects;
+//import com.zaigo.pageobjects.CreateVendorPageObjects;
+import com.zaigo.pageobjects.LoginPageObjects;
+import com.zaigo.utility.BrowserSetup;
 
 public class CompanyEditPage {
 
