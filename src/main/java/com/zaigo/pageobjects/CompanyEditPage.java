@@ -8,9 +8,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.zaigo.pageobjects.ComapanyEditPageObjects;
-//import com.zaigo.pageobjects.CreateVendorPageObjects;
-import com.zaigo.pageobjects.LoginPageObjects;
+import com.zaigo.pageobjects.ComapanyEditPage;
+//import com.zaigo.pageobjects.CreateVendorPage;
+import com.zaigo.pageobjects.LoginPage;
 import com.zaigo.utility.BrowserSetup;
 
 public class CompanyEditPage {
