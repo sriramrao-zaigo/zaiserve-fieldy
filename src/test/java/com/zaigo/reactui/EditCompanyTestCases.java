@@ -43,10 +43,10 @@ public class EditCompanyTestCases {
 	{
 		//Verify the User Tab
 		
-		 LoginPage loginInPage = new LoginPage(this.driver);
+		 LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
 	     loginInPage.setUserCredentials("admin@fieldy.co", "Zaiserve@123");
 		 loginInPage.clickLoginButton();
-		 CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+		 ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 		 String text = editcompany.getUserMenuText();
 		 Assert.assertEquals(text, "User");
 		    
@@ -59,7 +59,7 @@ public class EditCompanyTestCases {
 	{
 		//Verify company tab
 		
-		CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+		ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 		editcompany.clickUserMenu();
 		
 		try
@@ -81,24 +81,26 @@ public class EditCompanyTestCases {
 	{
 		//Verify popup 
 		
-		CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+		ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
+		driver.get(driver.getCurrentUrl());
 		editcompany.clickUserMenu();
 		editcompany.clickCompanyTab();
+		
 		editcompany.clickEditButton();
 		
-		try
-		{
-		String text= editcompany.getButtonText();
-		//System.out.print(text);
-		Assert.assertEquals(text, "Save and Complete");
-		}
-		
-		catch(Exception e)
-		{
-			String texte=e.getMessage();
-			System.out.print(texte);
-		}
-		
+//		try
+//		{
+//		String text= editcompany.getButtonText();
+//		//System.out.print(text);
+//		Assert.assertEquals(text, "Save and Complete");
+//		}
+//		
+//		catch(Exception e)
+//		{
+//			String texte=e.getMessage();
+//			System.out.print(texte);
+//		}
+//		
 		
 	}
 	
@@ -109,7 +111,7 @@ public class EditCompanyTestCases {
 	{
 		//Verify Name Empty
 		
-		CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+		ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 //		editcompany.clickUserMenu();
 //		editcompany.clickCompanyTab();
 //		editcompany.clickEditButton();
@@ -136,7 +138,7 @@ public class EditCompanyTestCases {
 	{
 		//Verify Name Empty
 		
-		CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+		ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 //		editcompany.clickUserMenu();
 //		editcompany.clickCompanyTab();
 //		editcompany.clickEditButton();
@@ -165,7 +167,7 @@ public class EditCompanyTestCases {
 	{
 		//Verify Name Empty
 		
-		CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+		ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 //		editcompany.clickUserMenu();
 //		editcompany.clickCompanyTab();
 //		editcompany.clickEditButton();
@@ -191,7 +193,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Name Empty
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -219,7 +221,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Name Empty
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -252,7 +254,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Email Format
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -284,7 +286,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Phone Format
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -316,7 +318,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Max contact person chracters
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -348,7 +350,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Max contact person chracters
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -381,7 +383,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Max contact person chracters
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -416,7 +418,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Max contact person chracters
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -449,7 +451,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify Max contact person chracters
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 //			editcompany.clickUserMenu();
 //			editcompany.clickCompanyTab();
 //			editcompany.clickEditButton();
@@ -515,7 +517,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify success message
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 			//editcompany.clickUserMenu();
 			//editcompany.clickCompanyTab();
 			editcompany.clickEditButton();
@@ -525,7 +527,7 @@ public class EditCompanyTestCases {
 			{
 			String text= editcompany.getSuccessMessage();
 			System.out.print(text);
-			Assert.assertEquals(text, "Updated Successfully");
+			Assert.assertEquals(text, "Edited Successfully");
 			}
 			
 			catch(Exception e)
@@ -544,7 +546,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify the Name is edited
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 			try
 			{
 			String text= editcompany.getCompanyName();
@@ -561,14 +563,14 @@ public class EditCompanyTestCases {
 			
 		}
 		
-		
+	/*	
 		@Test
 		(priority=19)
 		public void verifySiteUpdated() 
 		{
 			//Verify the Name is edited
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 			try
 			{
 			String text= editcompany.getWebsite();
@@ -591,7 +593,7 @@ public class EditCompanyTestCases {
 		{
 			//Verify the Name is edited
 			
-			CompanyEditPage editcompany = new CompanyEditPage(this.driver);
+			ComapanyEditPageObjects editcompany = new ComapanyEditPageObjects(this.driver);
 			try
 			{
 			String text= editcompany.getNotes();
@@ -609,6 +611,7 @@ public class EditCompanyTestCases {
 		}
 		
 		
+		*/
 		
 		
 		
