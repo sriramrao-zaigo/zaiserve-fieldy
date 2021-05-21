@@ -13,6 +13,9 @@ public class CompanyEditPage {
 	private WebDriver driver;
 	private WebDriverWait wait;
 
+	private WebDriver driver;
+	private WebDriverWait wait;
+
 	private By usermenu=By.xpath("//a[@data-automationid='user']");
 	
 	private By companies =By.xpath("//a[@data-automationid='companies']");
@@ -351,6 +354,7 @@ public class CompanyEditPage {
 		this.driver = driver;
 		this.wait = new WebDriverWait(this.driver, 10);
 	}
+	
 	
 	
 	
