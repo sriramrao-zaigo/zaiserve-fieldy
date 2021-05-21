@@ -57,7 +57,7 @@ public class CreateContractorTestCases {
 	
 	
 	@Test
-	(priority=2)
+	(priority=21)
 	public void verifyContractorab() 
 	{
 		//Verify the Vendor Tab
@@ -482,7 +482,7 @@ public class CreateContractorTestCases {
 	
 
  @Test
-(priority=21)
+(priority=2)
    public void verifyContractorCreated() throws InterruptedException 
 {
 	//Contractor Created successfully
