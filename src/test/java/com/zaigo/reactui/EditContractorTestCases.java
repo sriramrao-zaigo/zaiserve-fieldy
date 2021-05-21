@@ -53,7 +53,7 @@ public class EditContractorTestCases {
 	
 	
 	@Test
-	(priority=2)
+	(priority=17)
 	public void verifyContractorab() 
 	{
 		//Verify the contractor tab 
@@ -413,7 +413,7 @@ public class EditContractorTestCases {
 	
 
  @Test
-(priority=17)
+(priority=2)
    public void verifyContractorUpdated() throws InterruptedException 
 {
 	//Contractor Created successfully
