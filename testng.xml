@@ -4,7 +4,7 @@
 	<test name="Login TestCases">
 		<classes>
 			<class name="com.zaigo.reactui.LoginTestCases"/>
-			
+			<class name="com.zaigo.reactui.CreateContractorTestCases"/>
 			
 		</classes>
 	</test> <!-- Test -->
