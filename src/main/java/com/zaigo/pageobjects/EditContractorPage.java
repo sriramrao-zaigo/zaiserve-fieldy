@@ -67,7 +67,7 @@ public class EditContractorPage {
 	
 	private By saveform =By.xpath("//button[@data-automationid='saveAndComplete']");
 	
-	private By successmessage= By.xpath("//*[@data-automationid='sucmessage']");
+	private By successmessage= By.xpath("//h3[@data-automationid='sucmessage']");
 	
 	private By editbtn = By.xpath("//*[@data-automationid='Edit Contractor']");
 	
