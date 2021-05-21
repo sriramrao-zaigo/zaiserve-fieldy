@@ -492,7 +492,7 @@ public class CreateContractorTestCases {
 	contractorPage.clickVendorTab();
 	contractorPage.contractorCreateButton();
 	contractorPage.contractorName("hello");
-	contractorPage.contractorEmail("emailu912@gmail.com");
+	contractorPage.contractorEmail("emailu780@gmail.com");
 	contractorPage.contractorContactPerson("cperson hello");
 	//contractorPage.uploadImage("C:\\Users\\lenovo\\Pictures\\picjpg.jpg");
 	contractorPage.clickSaveandComplete();
