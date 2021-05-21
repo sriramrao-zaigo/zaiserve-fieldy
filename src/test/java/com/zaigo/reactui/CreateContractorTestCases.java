@@ -492,11 +492,9 @@ public class CreateContractorTestCases {
 	contractorPage.clickVendorTab();
 	contractorPage.contractorCreateButton();
 	contractorPage.contractorName("hello");
-	contractorPage.contractorEmail("emailu780@gmail.com");
+	contractorPage.contractorEmail("emailu781@gmail.com");
 	contractorPage.contractorContactPerson("cperson hello");
 	//contractorPage.uploadImage("C:\\Users\\lenovo\\Pictures\\picjpg.jpg");
-	contractorPage.clickSaveandComplete();
-	   contractorPage.contractorName("zaigo");
 	   contractorPage.clickSaveandComplete();
     String text =contractorPage.contractorSuccessMessage();
 	Assert.assertEquals(text,"Company Created successfully");
