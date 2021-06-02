@@ -77,7 +77,7 @@ private By usermenu=By.xpath("//a[@data-automationid='user']");
 	
 	private By lineone = By.xpath("//input[@data-automationid='noBuildingFlatName']");
 	
-	private By lineoneerr = By.xpath("//*[contains(text(),'maxOneFifty')]");
+	private By lineoneerr = By.xpath("//*[contains(text(),'Not allowed more than 150 characters')]");
 	
 	
     private By linetwo = By.xpath("//input[@data-automationid='streetName']");
@@ -242,6 +242,11 @@ private By usermenu=By.xpath("//a[@data-automationid='user']");
 			driver.findElement(warningpopup).click();
 		    }
 	    
+	    
+	    public String getCreateButtonValue() {
+			wait.until(ExpectedConditions.visibilityOfElementLocated((vendorcreatebtn)));
+			return driver.findElement(vendorcreatebtn).getText();
+		    }
 	    
 	    
 	    
