@@ -54,7 +54,7 @@ public class CreateVendorTestCases {
 
 	
 	@Test
-	(priority=2)
+	(priority=11)
 	public void verifyVendorTab() 
 	{
 		//Verify the Vendor Tab
@@ -78,10 +78,11 @@ public class CreateVendorTestCases {
 		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
 		 vendorPage.dashBoardUserMenu();
 		 vendorPage.clickVendorTab();
-		 vendorPage.vendorCreateButton();
-		 vendorPage.vendorName("Vendor Name");
-		 vendorPage.clickCloseButton();
-		 vendorPage.clickYesButton();
+		 String text = vendorPage.getCreateButtonValue();
+		 System.out.println(text);
+		 Assert.assertEquals(text, "Create Vendor");
+		 
+
 	    
 	}
 	
@@ -180,32 +181,32 @@ public class CreateVendorTestCases {
 		 vendorPage.vendorEmail("    ");
 		 vendorPage.clickNextButton();
 		 String text =vendorPage.vendorEmailError();
-		 Assert.assertEquals(text, "Enter a valid email address");
+		 Assert.assertEquals(text, "This field is required");
 		 vendorPage.clickCloseButton();
 		 vendorPage.clickYesButton();
 		 
 	    
 	}
 	
-//	@Test
-//	(priority=9)
-//	public void verifyCnameEmptySpaces() 
-//	{
-//		//Verify Contact Person Empty spaces
-//		
-//		 CreateVendorPageObject vendorPage = new CreateVendorPageObject(this.driver);
-//		 vendorPage.dashBoardUserMenu();
-//		 vendorPage.clickVendorTab();
-//		 vendorPage.vendorCreateButton();
-//		 vendorPage.vendorContactPerson("       ");
-//		 vendorPage.clickNextButton();
-//		 String text =vendorPage.vendorContactNameError();
-//		 Assert.assertEquals(text,"Blank space not allowed");
-//		 vendorPage.clickCloseButton();
-//		 vendorPage.clickYesButton();
+    @Test
+	(priority=9)
+	public void verifyCnameEmptySpaces() 
+	{
+		//Verify Contact Person Empty spaces
+		
+		 CreateVendorPage vendorPage = new CreateVendorPage(this.driver);
+		 vendorPage.dashBoardUserMenu();
+		 vendorPage.clickVendorTab();
+		 vendorPage.vendorCreateButton();
+		 vendorPage.vendorContactPerson("    ");
+		 vendorPage.clickNextButton();
+		 String text =vendorPage.vendorContactNameError();
+		 Assert.assertEquals(text,"Blank space not allowed");
+		 vendorPage.clickCloseButton();
+		 vendorPage.clickYesButton();
 		 
 	    
-//	}
+	}
 	
 	@Test
 	(priority=10)
@@ -234,8 +235,8 @@ public class CreateVendorTestCases {
 	
 
 	@Test
-	(priority=11)
-	public void verifyEnterProducts() throws InterruptedException 
+	(priority=2)
+	public void verifySuccessMessage() throws InterruptedException 
 	{
 		//valid case 
 		
@@ -260,7 +261,7 @@ public class CreateVendorTestCases {
 		 
 	}
 	
-	
+	/*
 	
 	@Test
 	(priority=12)
@@ -287,7 +288,7 @@ public class CreateVendorTestCases {
 	}
 	
 	
-	
+	*/
 	
 	@Test
 	(priority=13)
@@ -308,7 +309,7 @@ public class CreateVendorTestCases {
 		 vendorPage.vendorLineOne("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu");
 		 vendorPage.clickSaveandComplete();
 	     String text =vendorPage.vendorLineOneError();
-		 Assert.assertEquals(text,"maxOneFifty");
+		 Assert.assertEquals(text,"Not allowed more than 150 characters");
 		 vendorPage.clickCloseButton();
 		 vendorPage.clickYesButton();
 	     
@@ -431,6 +432,8 @@ public class CreateVendorTestCases {
 	 }
 	
 	
+
+	
 //	@Test
 //	(priority=21)
 //	public void verifyMaxName() throws InterruptedException 
@@ -497,7 +500,7 @@ public class CreateVendorTestCases {
 //	    
 //	}
 
-	
+	/*
 
 	
 	@Test
@@ -517,6 +520,8 @@ public class CreateVendorTestCases {
 		 
 	}
 	
+
+  */
 
 //	@Test
 //	(priority=18)
