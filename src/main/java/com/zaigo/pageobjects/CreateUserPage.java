@@ -34,6 +34,7 @@ public class CreateUserPage {
 	private By jobtitle = By.xpath("//input[@data-automationid='jobTitle']");
     private By jobtitleerr = By.xpath("//*[@data-automationid='jobTitle-error']");
     private By email = By.xpath("//input[@data-automationid='email']");
+    private By choose_con= By.xpath("//span[contains(text(),'Contractor')]");
     
     //Address
     
@@ -48,7 +49,7 @@ public class CreateUserPage {
 	
     private By linetwo = By.xpath("//input[@data-automationid='streetName']");
 	
-	private By linetwoerr = By.xpath("//*[contains(text(),'Not allowed more than 150 characters')]");
+	private By linetwoerr = By.xpath("//*[@data-automationid='streetName-error']");
 	
 	
     private By addressname = By.xpath("//button[@data-automationid='saveAndComplete']");
@@ -57,7 +58,7 @@ public class CreateUserPage {
 	
 	private By city = By.xpath("//input[@data-automationid='cityVillage']");
 		
-    private By cityerr = By.xpath("//*[contains(text(),'Not allowed more than 150 characters')]");
+    private By cityerr = By.xpath("//*[@data-automationid='cityVillage-error']");
 	    
     
     private By zipcode = By.xpath("//input[@data-automationid='zipCode']");
@@ -214,6 +215,15 @@ public class CreateUserPage {
 	   
 			wait.until(ExpectedConditions.visibilityOfElementLocated((emailerr)));
 			return driver.findElement(emailerr).getText();
+		 }
+	
+	
+	public void chooseContractor()
+	   {
+		   
+	   
+			wait.until(ExpectedConditions.visibilityOfElementLocated((choose_con)));
+			driver.findElement(choose_con).click();
 		 }
 	
 	
