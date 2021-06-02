@@ -7,9 +7,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.zaigo.pageobjects.CreateContractorPageObjects;
-import com.zaigo.pageobjects.LoginPageObjects;
-import com.zaigo.pageobjects.SendInvitePageObjects;
+import com.zaigo.pageobjects.CreateContractorPage;
+import com.zaigo.pageobjects.LoginPage;
+import com.zaigo.pageobjects.SendInvitePage;
 import com.zaigo.utility.BrowserSetup;
 
 public class SendInviteTestCases {
@@ -17,7 +17,7 @@ public class SendInviteTestCases {
 	
 	
 	private WebDriver driver = null;
-	private LoginPageObjects loginInPage = null;
+	private LoginPage loginInPage = null;
 
 	@BeforeClass
 	public void setup() {
@@ -42,10 +42,10 @@ public class SendInviteTestCases {
 	{
 		//Verify the User Tab
 		
-		 LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		 LoginPage loginInPage = new LoginPage(this.driver);
 	     loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "Zaiserve@123");
 		 loginInPage.clickLoginButton();
-		 SendInvitePageObjects invitePage = new SendInvitePageObjects(this.driver);
+		 SendInvitePage invitePage = new SendInvitePage(this.driver);
 		 String text = invitePage.getUserTab();
 		 Assert.assertEquals(text, "User");
 	    
@@ -59,7 +59,7 @@ public class SendInviteTestCases {
 	{
 		//Verify the Send invite popup
 		
-		 SendInvitePageObjects invitePage = new SendInvitePageObjects(this.driver);
+		 SendInvitePage invitePage = new SendInvitePage(this.driver);
 		 invitePage.clickUserTab();
 		 invitePage.clickUserSubMenu();
 		 invitePage.clickSendInvite();
@@ -75,7 +75,7 @@ public class SendInviteTestCases {
 	{
 		//Verify the Email format
 		
-		 SendInvitePageObjects invitePage = new SendInvitePageObjects(this.driver);
+		 SendInvitePage invitePage = new SendInvitePage(this.driver);
 		 invitePage.clickSendInvite();
 		 invitePage.clickNext();
 		 String text= invitePage.getEmailErrorText();
@@ -94,7 +94,7 @@ public class SendInviteTestCases {
 	{
 		//Verify the Email format
 		
-		 SendInvitePageObjects invitePage = new SendInvitePageObjects(this.driver);
+		 SendInvitePage invitePage = new SendInvitePage(this.driver);
 		 invitePage.clickSendInvite();
 		 invitePage.enterEmail("asdf");
 		 String text= invitePage.getEmailErrorText();
@@ -110,7 +110,7 @@ public class SendInviteTestCases {
 	{
 		//Verify the Email format
 		
-		 SendInvitePageObjects invitePage = new SendInvitePageObjects(this.driver);
+		 SendInvitePage invitePage = new SendInvitePage(this.driver);
 		 invitePage.clickSendInvite();
 		 invitePage.clickNext();
 		 String text= invitePage.firstNameError();
@@ -127,7 +127,7 @@ public class SendInviteTestCases {
 	{
 		//Verify the Email format
 		
-		 SendInvitePageObjects invitePage = new SendInvitePageObjects(this.driver);
+		 SendInvitePage invitePage = new SendInvitePage(this.driver);
 		 invitePage.clickSendInvite();
 		 invitePage.enterFirstName("  ");
 		 invitePage.clickNext();
@@ -145,7 +145,7 @@ public class SendInviteTestCases {
 	{
 		//Verify user can enter the message
 		
-		 SendInvitePageObjects invitePage = new SendInvitePageObjects(this.driver);
+		 SendInvitePage invitePage = new SendInvitePage(this.driver);
 		 invitePage.clickSendInvite();
 		 invitePage.enterFirstName("Firstname");
 		 invitePage.enterEmail("email@gmail.com");
@@ -163,7 +163,7 @@ public class SendInviteTestCases {
 	{
 		//Verify add more button is present
 		
-		 SendInvitePageObjects invitePage = new SendInvitePageObjects(this.driver);
+		 SendInvitePage invitePage = new SendInvitePage(this.driver);
 		 invitePage.clickSendInvite();
 		 String text= invitePage.getAddMoreText();
 		 Assert.assertEquals(text, "ADD MORE");
@@ -178,7 +178,7 @@ public class SendInviteTestCases {
 	{
 		//Verify user can send invite without message.
 		
-		 SendInvitePageObjects invitePage = new SendInvitePageObjects(this.driver);
+		 SendInvitePage invitePage = new SendInvitePage(this.driver);
 		 invitePage.clickSendInvite();
 		 invitePage.enterFirstName("Firstname");
 		 invitePage.enterEmail("email@gmail.com");
@@ -196,7 +196,7 @@ public class SendInviteTestCases {
 	{
 		//Verify user can sendinvite with message
 		
-		 SendInvitePageObjects invitePage = new SendInvitePageObjects(this.driver);
+		 SendInvitePage invitePage = new SendInvitePage(this.driver);
 		 invitePage.clickSendInvite();
 		 invitePage.enterFirstName("Firstname");
 		 invitePage.enterEmail("email@gmail.com");

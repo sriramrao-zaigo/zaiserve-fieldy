@@ -7,16 +7,16 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.zaigo.pageobjects.CreateContractorPageObjects;
+import com.zaigo.pageobjects.CreateContractorPage;
 import com.zaigo.pageobjects.EditContractorPage;
-import com.zaigo.pageobjects.LoginPageObjects;
+import com.zaigo.pageobjects.LoginPage;
 import com.zaigo.utility.BrowserSetup;
 
 public class EditContractorTestCases {
 	
 	
 	private WebDriver driver = null;
-	private LoginPageObjects loginInPage = null;
+	private LoginPage loginInPage = null;
 
 	@BeforeClass
 	public void setup() {
@@ -41,7 +41,7 @@ public class EditContractorTestCases {
 	{
 		//Verify the User Tab
 		
-		 LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		 LoginPage loginInPage = new LoginPage(this.driver);
 	     loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "Zaiserve@123");
 		 loginInPage.clickLoginButton();
 		 EditContractorPage contractorPage = new EditContractorPage(this.driver);
@@ -49,11 +49,11 @@ public class EditContractorTestCases {
 		 Assert.assertEquals(text, "User");
 	    
 	}
-	
+
 	
 	
 	@Test
-	(priority=2)
+	(priority=17)
 	public void verifyContractorab() 
 	{
 		//Verify the contractor tab 
@@ -262,7 +262,7 @@ public class EditContractorTestCases {
 		contractorPage.clickLocationOne();
 		contractorPage.contractorLineOne("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu");	
 	    String text =contractorPage.contractorLineOneError();
-		Assert.assertEquals(text,"maxOneFifty");
+		Assert.assertEquals(text,"Not allowed more than 150 characters");
 		contractorPage.clickCloseButton();
 		contractorPage.clickYesButton();
 	     
@@ -388,7 +388,7 @@ public class EditContractorTestCases {
 	
 
 	
-	
+	/*
 	@Test
 	(priority=16)
 	public void verifyWithvalidImage() throws InterruptedException 
@@ -397,7 +397,7 @@ public class EditContractorTestCases {
 		
 		//check with valid Image file
 		
-		CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.dashBoardUserMenu();
 		contractorPage.clickVendorTab();
 		contractorPage.contractorCreateButton();
@@ -409,12 +409,12 @@ public class EditContractorTestCases {
 	 }
 	
 	
-	
+	*/
 	
 
  @Test
-(priority=17)
-   public void verifyContractorCreated() throws InterruptedException 
+(priority=2)
+   public void verifyContractorUpdated() throws InterruptedException 
 {
 	//Contractor Created successfully
 	
@@ -428,11 +428,13 @@ public class EditContractorTestCases {
 		contractorPage.contractorContactPerson("hello");
 	//contractorPage.uploadImage("C:\\Users\\lenovo\\Pictures\\picjpg.jpg");
 	contractorPage.clickSaveandComplete();
+	   Thread.sleep(2000);
     String text =contractorPage.contractorSuccessMessage();
 	Assert.assertEquals(text,"Company Updated successfully");
 	contractorPage.clickCloseButton();
 	
 }
+	/*
       @Test
 	(priority=18)
 	   public void verifyContractorDeleted() throws InterruptedException 
@@ -444,10 +446,12 @@ public class EditContractorTestCases {
 		contractorPage.clickVendorTab();
 		contractorPage.clickActionMenu();
 		contractorPage.clickDeleteMenu();
+		contractorPage.clickConfirmDelete();
 		String text =contractorPage.contractorSuccessMessage();
 		Assert.assertEquals(text,"Deleted Successfully");
 	     
 		 
 	}
+	*/
 
 }

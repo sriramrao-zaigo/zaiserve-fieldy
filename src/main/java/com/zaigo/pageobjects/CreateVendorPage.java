@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CreateVendorPageObject {
+public class CreateVendorPage {
 	
 	
 	private WebDriver driver;
@@ -37,7 +37,7 @@ private By usermenu=By.xpath("//a[@data-automationid='user']");
 	
 	private By vendorcpersonerr=By.xpath("//*[@data-automationid='contact_person_name-error']");
 	
-	private By vendorphone=By.xpath("//input[@data-automationid='phone']");
+//	private By vendorphone=By.xpath("//input[@data-automationid='phone']");
 	
 	private By vendorphoneerr=By.xpath("//*[@data-automationid='phone-error']");
 	
@@ -85,9 +85,9 @@ private By usermenu=By.xpath("//a[@data-automationid='user']");
 	private By linetwoerr = By.xpath("//*[contains(text(),'Not allowed more than 150 characters')]");
 	
 	
-    private By addressname = By.xpath("//button[@data-automationid='saveAndComplete']");
+//    private By addressname = By.xpath("//button[@data-automationid='saveAndComplete']");
 	
-	private By addressnameerr = By.xpath("//button[@data-automationid='saveAndComplete']");
+//	private By addressnameerr = By.xpath("//button[@data-automationid='saveAndComplete']");
 	
 	private By city = By.xpath("//input[@data-automationid='cityVillage']");
 		
@@ -108,7 +108,7 @@ private By usermenu=By.xpath("//a[@data-automationid='user']");
   
     private By searchfield = By.id("search");
     
-    private By searchdata =By.xpath("//*[@id=\"root\"]/div/div/div[3]/div[2]/table/tbody/tr[1]/td[4]");
+//    private By searchdata =By.xpath("//*[@id=\"root\"]/div/div/div[3]/div[2]/table/tbody/tr[1]/td[4]");
     
     private By detailview = By.xpath("//*[@data-automationid='close']//following::h3");
     
@@ -475,7 +475,7 @@ private By usermenu=By.xpath("//a[@data-automationid='user']");
 		
 		
 		
-		public CreateVendorPageObject(WebDriver driver) {
+		public CreateVendorPage(WebDriver driver) {
 			this.driver = driver;
 			this.wait = new WebDriverWait(this.driver, 10);
 		}
