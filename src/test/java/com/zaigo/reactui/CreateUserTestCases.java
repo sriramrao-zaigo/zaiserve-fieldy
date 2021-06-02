@@ -7,14 +7,14 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.zaigo.pageobjects.CreateContractorPageObjects;
+import com.zaigo.pageobjects.CreateContractorPage;
 import com.zaigo.pageobjects.CreateUserPage;
-import com.zaigo.pageobjects.LoginPageObjects;
+import com.zaigo.pageobjects.LoginPage;
 import com.zaigo.utility.BrowserSetup;
 
 public class CreateUserTestCases {
 	private WebDriver driver = null;
-	private LoginPageObjects loginInPage = null;
+	private LoginPage loginInPage = null;
 
 	@BeforeClass
 	public void setup() {
@@ -39,10 +39,10 @@ public class CreateUserTestCases {
 	{
 		//Verify the User Tab
 		
-		 LoginPageObjects loginInPage = new LoginPageObjects(this.driver);
+		 LoginPage loginInPage = new LoginPage(this.driver);
 	     loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "Zaiserve@123");
 		 loginInPage.clickLoginButton();
-		 CreateContractorPageObjects contractorPage = new CreateContractorPageObjects(this.driver);
+		 CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		 String text = contractorPage.dashBoardUserMenuText();
 		 Assert.assertEquals(text, "User");
 	    
@@ -50,7 +50,7 @@ public class CreateUserTestCases {
 	
 	
 	@Test
-	(priority=2)
+	(priority=15)
 	public void verifyFirstNameMandatory() 
 	{
 		//Verify first name field is mandatory
@@ -72,7 +72,7 @@ public class CreateUserTestCases {
 	}
 
 	@Test
-	(priority=3)
+	(priority=16)
 	public void verifyRoleMandatory() 
 	{
 		//Verify Role field is mandatory
@@ -368,7 +368,7 @@ public class CreateUserTestCases {
 	
 	
 	@Test
-	(priority=16)
+	(priority=3)
 	public void verifyErrorMessageCompany() throws InterruptedException 
 	{
 		//
@@ -377,10 +377,10 @@ public class CreateUserTestCases {
 		CreateUserPage userpage = new CreateUserPage(this.driver);
 		userpage.clickUserHeaderMenu();
 		userpage.clickUser();
-		userpage.clickContractorUser();
 		userpage.clickCreateUserButton();
+		userpage.chooseContractor();
 		userpage.enterFirstName("hello");
-		userpage.enterEmail("email@gmail.com");
+		userpage.enterEmail("emailnisha@gmail.com");
 		userpage.clickContractorCompany();
 		userpage.clicksave();
 	    String text =userpage.getCompanyError();
@@ -393,7 +393,7 @@ public class CreateUserTestCases {
 	
 	
 	@Test
-	(priority=15)
+	(priority=2)
 	public void verifySuccessMessage() throws InterruptedException 
 	{
 		//
@@ -404,7 +404,7 @@ public class CreateUserTestCases {
 		userpage.clickUser();
 		userpage.clickCreateUserButton();
 		userpage.enterFirstName("hello");
-		userpage.enterEmail("email1@gmail.com");
+		userpage.enterEmail("emailrio1@gmail.com");
 		userpage.selectRole();
 		userpage.clicksave();
 	    String text =userpage.getSuccessText();
@@ -413,5 +413,178 @@ public class CreateUserTestCases {
 		 
 	}
 	
+	
+	
+	@Test
+	(priority=17)
+	public void verifyBlankSpaceAllowedFirstName() 
+	{
+		//Verify first name allow blank space.
+		
+		
+		 CreateUserPage userpage = new CreateUserPage(this.driver);
+		 userpage.clickUserHeaderMenu();
+		 userpage.clickUser();
+		 userpage.clickCreateUserButton();
+		 userpage.enterFirstName("  ");
+		 userpage.clickNextButton();
+		 String text= userpage.getFirstNameError();
+		 Assert.assertEquals(text, "Blank space not allowed");
+		 userpage.clickClose();
+		 userpage.clickYes();
+		 
+		 
+		 
+	    
+	}
+
+	@Test
+	(priority=18)
+	public void verifyBlankSpaceAllowedLastName() 
+	{
+		//Verify Last Name allows Blank Space
+		
+		
+		 CreateUserPage userpage = new CreateUserPage(this.driver);
+		 userpage.clickUserHeaderMenu();
+		 userpage.clickUser();
+		 userpage.clickCreateUserButton();
+		 userpage.enterLastName("  ");
+		 userpage.clickNextButton();
+		 String text= userpage.getLastNameError();
+		 Assert.assertEquals(text, "Blank space not allowed");
+		 userpage.clickClose();
+		 userpage.clickYes();
+		 
+		 
+		 
+		 
+	    
+	}
+	
+	
+	@Test
+	(priority=19)
+	public void verifyBlankSpaceNotAllowedEmail() 
+	{
+		//Verify Empty Space allowed in Email		
+		
+		 CreateUserPage userpage = new CreateUserPage(this.driver);
+		 userpage.clickUserHeaderMenu();
+		 userpage.clickUser();
+		 userpage.clickCreateUserButton();
+		 userpage.enterEmail(" ");
+		 userpage.clickNextButton();
+		 String text= userpage.getEmailError();
+		 Assert.assertEquals(text, "Enter a valid email address");
+		 userpage.clickClose();
+		 userpage.clickYes();
+		 
+		 
+		 
+	    
+	}
+	
+	
+	@Test
+	(priority=20)
+	public void verifyBlankSpaceNotAllowedJobTitle() 
+	{
+		//Verify Empty Space allowed in Job title		
+		
+		 CreateUserPage userpage = new CreateUserPage(this.driver);
+		 userpage.clickUserHeaderMenu();
+		 userpage.clickUser();
+		 userpage.clickCreateUserButton();
+		 userpage.enterJobTitle("  ");
+		 userpage.clickNextButton();
+		 String text= userpage.getTitleError();
+		 Assert.assertEquals(text, "Blank space not allowed");
+		 userpage.clickClose();
+		 userpage.clickYes();
+		 
+		 
+     }
+	
+	
+	@Test
+	(priority=21)
+	public void verifyLineOneEmptyCharacters() throws InterruptedException 
+	{
+		//
+		//check the Line One has accepts the Empty characters
+		
+		CreateUserPage userpage = new CreateUserPage(this.driver);
+		userpage.clickUserHeaderMenu();
+		userpage.clickUser();
+		userpage.clickCreateUserButton();
+		userpage.enterFirstName("hello");
+		userpage.enterEmail("email@gmail.com");
+		userpage.selectRole();
+		userpage.clickNextButton();
+		userpage.clickAddLocation();
+		userpage.clickLocationOne();
+		userpage.contractorLineOne(" ");
+		String text =userpage.contractorLineOneError();
+		Assert.assertEquals(text,"Blank space not allowed");
+		userpage.clickClose();
+		userpage.clickYes();
+	     
+		 
+	}
+	
+	
+	
+	@Test
+	(priority=22)
+	public void verifyLineTwoEmptyCharacters() throws InterruptedException 
+	{
+		
+		//check the Line Two has accepts the Empty characters
+		
+		
+		CreateUserPage userpage = new CreateUserPage(this.driver);
+		userpage.clickUserHeaderMenu();
+		userpage.clickUser();
+		userpage.clickCreateUserButton();
+		userpage.enterFirstName("hello");
+		userpage.enterEmail("email@gmail.com");
+		userpage.selectRole();
+		userpage.clickNextButton();
+		userpage.clickAddLocation();
+		userpage.clickLocationOne();
+		userpage.contractorLineTwo("  ");
+	    String text =userpage.contractorLineTwoError();
+		Assert.assertEquals(text,"Blank space not allowed");
+		userpage.clickClose();
+		userpage.clickYes();
+	}
+	
+	
+	
+	
+	@Test
+	(priority=23)
+	public void verifyCityEmptyCharacters() throws InterruptedException 
+	{
+		
+		//check Empty Characters City
+		
+		CreateUserPage userpage = new CreateUserPage(this.driver);
+		userpage.clickUserHeaderMenu();
+		userpage.clickUser();
+		userpage.clickCreateUserButton();
+		userpage.enterFirstName("hello");
+		userpage.enterEmail("email@gmail.com");
+		userpage.selectRole();
+		userpage.clickNextButton();
+		userpage.clickAddLocation();
+		userpage.clickLocationOne();
+		userpage.contractorCity("  ");
+	    String text =userpage.contractorCityError();
+		Assert.assertEquals(text,"Blank space not allowed");
+		userpage.clickClose();
+		userpage.clickYes();
+	}
 	
 }
