@@ -13,7 +13,7 @@ public class CreateUserPage {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	
+	//user create testcases
 	private By userheader = By.xpath("//*[@data-automationid='user']");
 	private By clickusermenu = By.xpath("//*[@id=\'root\']/div/div/div[1]/div/ul/li[2]/a");
 	private By createbutton=By.xpath("//*[@data-automationid='createUser']");
