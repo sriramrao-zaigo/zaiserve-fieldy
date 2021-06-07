@@ -18,7 +18,7 @@ public class CreateContractorPage {
 	private By usermenu=By.xpath("//a[@data-automationid='user']");
 	
 	
-//	private By contractorrmenu=By.xpath("//a[@data-automationid='vendor']");
+//	private By contractorrmenu=By.xpath("//a[@data-automationid='vendorw']");
 	
 	private By contractortab=By.xpath("//a[@data-automationid='contractor']");
 	
