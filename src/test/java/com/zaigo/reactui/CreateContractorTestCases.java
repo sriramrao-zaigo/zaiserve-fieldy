@@ -42,7 +42,7 @@ public class CreateContractorTestCases {
 	(priority=1)
 	public void verifyUserTab() 
 	{
-		//Verify the User Tab
+		//Verify  User Tab
 		
 		 LoginPage loginInPage = new LoginPage(this.driver);
 	        loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "Zaiserve@123");
