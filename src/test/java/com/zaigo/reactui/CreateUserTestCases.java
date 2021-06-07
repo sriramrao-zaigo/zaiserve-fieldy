@@ -70,6 +70,8 @@ public class CreateUserTestCases {
 		 
 	    
 	}
+	
+	/*
 
 	@Test
 	(priority=16)
@@ -94,6 +96,7 @@ public class CreateUserTestCases {
 	    
 	}
 	
+	*/
 	
 	@Test
 	(priority=4)
@@ -404,7 +407,7 @@ public class CreateUserTestCases {
 		userpage.clickUser();
 		userpage.clickCreateUserButton();
 		userpage.enterFirstName("hello");
-		userpage.enterEmail("emailrio1@gmail.com");
+		userpage.enterEmail("emailrio4@gmail.com");
 		userpage.selectRole();
 		userpage.clicksave();
 	    String text =userpage.getSuccessText();

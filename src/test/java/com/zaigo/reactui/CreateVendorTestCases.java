@@ -247,11 +247,11 @@ public class CreateVendorTestCases {
 		 vendorPage.clickVendorTab();
 		 vendorPage.vendorCreateButton();
 		 vendorPage.vendorName("hello");
-		 vendorPage.vendorEmail("email@gmail.com");
+		 vendorPage.vendorEmail("email12@gmail.com");
 		 vendorPage.vendorContactPerson("cperson hello");
 	     vendorPage.clickSaveandComplete();
 	     
-	     //Add Success alert
+	     //check thee success message alert
 	     
 	     
 	     String text =vendorPage.vendorSuccessMessage();
