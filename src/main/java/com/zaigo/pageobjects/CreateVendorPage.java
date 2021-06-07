@@ -11,11 +11,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CreateVendorPage {
 	
+	//objects for vendor create page
 	
 	private WebDriver driver;
 	private WebDriverWait wait;
 
-private By usermenu=By.xpath("//a[@data-automationid='user']");
+   private By usermenu=By.xpath("//a[@data-automationid='user']");
 	
 	
 	private By vendormenu=By.xpath("//a[@data-automationid='vendor']");
