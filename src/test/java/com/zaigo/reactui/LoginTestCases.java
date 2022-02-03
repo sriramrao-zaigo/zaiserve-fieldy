@@ -27,12 +27,14 @@ public class LoginTestCases {
 	@Test(priority = 1)
 	public void verifyEmptyEmail() 
 	{
+		//check the Error message when the Username is Empty
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
 		loginInPage.setUserCredentials("", "");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessageUserName();
 	    Assert.assertEquals(nameerr, "Enter Your Email");
+	    
 	   
 	    
     }
