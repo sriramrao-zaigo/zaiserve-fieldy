@@ -17,11 +17,13 @@ public class LoginPage {
 	private By password_error = By.id("login-password-error");
 	private By form_title_css = By.tagName("h5");
 	private By login_button = By.tagName("button");
-//	private By forgot_password = By.linkText("Forgot Password");
+    private By forgot_password = By.linkText("Forgot Password");
 	private By lockpopup=By.xpath("//*[contains(text(), 'Your account is locked due to 3 failed login attempts. Lock will be released in 60 seconds.')]");
 	private By lockpopuptwo =By.xpath("//*[contains(text(),'Your account is locked. Please contact admin.')]");
 	private By dashboard =By.xpath("//span[text()='Dashboard']");
 	private By multiaccount = By.xpath("//h4[contains(text(),'Fieldy Tenant 2')]");
+	
+	
 	
 	
 	
