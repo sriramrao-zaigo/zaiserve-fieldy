@@ -12,15 +12,15 @@ public class LoginPage {
 	private WebDriverWait wait;
 
 	private By username_by = By.id("login");
-	private By username_error_by = By.xpath("//*[@data-automationid='login-login-error']");
+	private By username_error_by = By.id("login-email-error");
 	private By password_by = By.id("password");
-	private By password_error = By.xpath("//*[@data-automationid='login-password-error']");
+	private By password_error = By.id("login-password-error");
 	private By form_title_css = By.tagName("h5");
 	private By login_button = By.tagName("button");
 //	private By forgot_password = By.linkText("Forgot Password");
 	private By lockpopup=By.xpath("//*[contains(text(), 'Your account is locked due to 3 failed login attempts. Lock will be released in 60 seconds.')]");
 	private By lockpopuptwo =By.xpath("//*[contains(text(),'Your account is locked. Please contact admin.')]");
-	private By dashboard =By.xpath("//*[@data-automationid='dashboard']");
+	private By dashboard =By.xpath("//span[text()='Dashboard']");
 	private By multiaccount = By.xpath("//h4[contains(text(),'Fieldy Tenant 2')]");
 	
 	
@@ -31,13 +31,13 @@ public class LoginPage {
 		String APP_URL=null;
 
 		if(APP_URL == null) {
-			APP_URL = "http://qatenant3.zaicrm.com/#/";
+			APP_URL = "http://tenant1.zaisuite.com/";
 		}
 		driver.get(APP_URL);
 	}
 	
 	public String dashBoardText() {
-		wait.until(ExpectedConditions.presenceOfElementLocated((dashboard)));
+		wait.until(ExpectedConditions.elementToBeClickable((dashboard)));
 		return driver.findElement(dashboard).getText();
 	}
 	
