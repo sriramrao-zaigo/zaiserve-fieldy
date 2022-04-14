@@ -27,12 +27,17 @@ public class LoginTestCases {
 	@Test(priority = 1)
 	public void verifyEmptyEmail() 
 	{
+		//check the Error message when the Username is Empty
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
 		loginInPage.setUserCredentials("","");
 	    loginInPage.clickLoginButton();
-	    String nameerr= driver.findElement(By.id("login")).getAttribute("validationMessage");
+        String nameerr= driver.findElement(By.id("login")).getAttribute("validationMessage");
 	    Assert.assertEquals(nameerr, "Please fill out this field.");
+
+	   
+	    
+
 	   
 	    
     }
@@ -113,8 +118,6 @@ public class LoginTestCases {
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessagePassword();
 	    Assert.assertEquals(nameerr, "Enter minimum 8 characters.");
-	   
-	    
     }
 	
 	
