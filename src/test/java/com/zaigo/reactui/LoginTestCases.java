@@ -1,5 +1,6 @@
 package com.zaigo.reactui;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -22,17 +23,16 @@ public class LoginTestCases {
 	public void exitBrowser() {
 		this.driver.quit();
 	}
-
 	
 	@Test(priority = 1)
 	public void verifyEmptyEmail() 
 	{
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("", "");
+		loginInPage.setUserCredentials("","");
 	    loginInPage.clickLoginButton();
-	    String nameerr=loginInPage.getErrorMessageUserName();
-	    Assert.assertEquals(nameerr, "Enter Your Email");
+	    String nameerr= driver.findElement(By.id("login")).getAttribute("validationMessage");
+	    Assert.assertEquals(nameerr, "Please fill out this field.");
 	   
 	    
     }
@@ -44,13 +44,15 @@ public class LoginTestCases {
 	{
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("hello@bg.in", "");
+		loginInPage.setUserCredentials("alpha@zaisuite.com", "");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessagePassword();
-	    Assert.assertEquals(nameerr, "Enter Your Password");
+	    Assert.assertEquals(nameerr, "Invalid Password");
 	   
 	    
     }
+	
+	
 	
 	@Test(priority = 3)
 	public void verifyIncorrectMail() 
@@ -58,7 +60,7 @@ public class LoginTestCases {
 		//Verify when both the Email and password are not exist in the database
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("aswss@bg.in", "sxdsssscs");
+		loginInPage.setUserCredentials("alphas@zaisuite.com", "Zaiserve@123");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessageUserName();
 	    Assert.assertEquals(nameerr, "Invalid Email");
@@ -67,13 +69,14 @@ public class LoginTestCases {
     }
 	
 	
+	
 	@Test(priority =4 )
 	public void verifyIncorrectPassword() 
 	{
 		//Verify when password are not exist in the database.
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "sxdsssscs");
+		loginInPage.setUserCredentials("alpha@zaisuite.com", "Zaisuite@124");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessagePassword();
 	    Assert.assertEquals(nameerr, "Invalid Password");
@@ -81,19 +84,23 @@ public class LoginTestCases {
 	    
     }
 	
+	
+	
 	@Test(priority =5)
 	public void verifyInvalidEmail() 
 	{
 		//verify Email validation error message
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("admin", "sxdsssscs");
+		loginInPage.setUserCredentials("admin", "Zaiserve@123");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessageUserName();
-	    Assert.assertEquals(nameerr, "Please Enter Valid Email");
+	    Assert.assertEquals(nameerr, "Invalid Email");
 	   
 	    
     }
+	
+	
 	
 	@Test(priority =6)
 	public void verifyInvalidPassword() 
@@ -101,7 +108,7 @@ public class LoginTestCases {
 		//verify with Min password validation
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.userField("sriram@zaigoinfotech.com");
+		loginInPage.userField("alpha@zaisuite.com");
 		loginInPage.passwordField("asd");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessagePassword();
@@ -109,6 +116,8 @@ public class LoginTestCases {
 	   
 	    
     }
+	
+	
 	
 	@Test(priority =7)
 	public void verifyInvalidCredentials() 
@@ -130,6 +139,7 @@ public class LoginTestCases {
 	
 	
 	
+	/*
 	
 	@Test(priority =9)
 	public void verifyLockedUser() 
@@ -138,8 +148,8 @@ public class LoginTestCases {
 		//Verify the Error Message is Displayed when the Account is locked
 		
 	    LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.userField("locked@zaigoinfotech.com");
-            loginInPage.passwordField("Fieldy@123");
+		loginInPage.userField("lock@zaisuite.com");
+        loginInPage.passwordField("Zaiserve@123");
 	    loginInPage.clickLoginButton();
 	    String locked = loginInPage.toastTextTwo();
 	    Assert.assertEquals(locked, "Your account is locked. Please contact admin.");
@@ -148,7 +158,9 @@ public class LoginTestCases {
 	    
     }
     
-	/*
+   
+    
+	
    
 	
 	@Test(priority =10)
@@ -186,8 +198,8 @@ public class LoginTestCases {
 	
 	
 	
-	*/
 	
+	*/
 	
 	
 	@Test(priority =12)
@@ -196,8 +208,8 @@ public class LoginTestCases {
 		//Single Account User
 		
 	    LoginPage loginInPage = new LoginPage(this.driver);
-    	    loginInPage.userField("sriram@zaigoinfotech.com");
-            loginInPage.passwordField("Zaiserve@123");
+    	loginInPage.userField("alpha@zaisuite.com");
+        loginInPage.passwordField("Zaiserve@123");
 	    loginInPage.clickLoginButton();
 	    String text =loginInPage.dashBoardText();
 	    Assert.assertEquals(text, "Dashboard");
@@ -213,7 +225,7 @@ public class LoginTestCases {
 		//MutiAccount Account User
 		
 	    LoginPage loginInPage = new LoginPage(this.driver);
-    	   loginInPage.setUserCredentials("admin@fieldy.co", "Zaiserve@123");
+    	loginInPage.setUserCredentials("admin@fieldy.co", "Zaiserve@123");
 	    loginInPage.clickLoginButton();
 	    loginInPage.clickMultiAccount();
 	    String text =loginInPage.dashBoardText();
