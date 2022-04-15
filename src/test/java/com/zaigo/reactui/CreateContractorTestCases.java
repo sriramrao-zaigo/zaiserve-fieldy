@@ -72,6 +72,8 @@ public class CreateContractorTestCases {
 
 		contractorPage.clickSaveandComplete();
 		
+		Thread.sleep(6000);
+		
 		
 		
 	}
