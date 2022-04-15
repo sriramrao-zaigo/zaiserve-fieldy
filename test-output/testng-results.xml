@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Fieldy Login Test" duration-ms="21329" started-at="2022-04-15T12:52:21 IST" finished-at="2022-04-15T12:52:42 IST">
+    <groups>
+    </groups>
+    <test name="Login TestCases" duration-ms="21329" started-at="2022-04-15T12:52:21 IST" finished-at="2022-04-15T12:52:42 IST">
+      <class name="com.zaigo.reactui.CreateContractorTestCases">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@184f6be2]" name="setup" is-config="true" duration-ms="2514" started-at="2022-04-15T12:52:21 IST" finished-at="2022-04-15T12:52:23 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyContractorTab()[pri:1, instance:com.zaigo.reactui.CreateContractorTestCases@184f6be2]" name="verifyContractorTab" duration-ms="18497" started-at="2022-04-15T12:52:23 IST" finished-at="2022-04-15T12:52:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyContractorTab -->
+        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@184f6be2]" name="setVariableEmpty" is-config="true" duration-ms="1" started-at="2022-04-15T12:52:42 IST" finished-at="2022-04-15T12:52:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method status="PASS" signature="verifyNameRequired()[pri:2, instance:com.zaigo.reactui.CreateContractorTestCases@184f6be2]" name="verifyNameRequired" duration-ms="268" started-at="2022-04-15T12:52:42 IST" finished-at="2022-04-15T12:52:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNameRequired -->
+        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@184f6be2]" name="setVariableEmpty" is-config="true" duration-ms="1" started-at="2022-04-15T12:52:42 IST" finished-at="2022-04-15T12:52:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+      </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->
+    </test> <!-- Login TestCases -->
+  </suite> <!-- Fieldy Login Test -->
+</testng-results>

@@ -1,6 +1,8 @@
 package com.zaigo.reactui;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -26,10 +28,10 @@ public class CreateContractorTestCases {
 		this.driver = BrowserSetup.startBrowser();
 	}
 
-	@AfterClass
-	public void exitBrowser() {
-		this.driver.quit();
-	}
+//	@AfterClass
+//	public void exitBrowser() {
+//		this.driver.quit();
+//	}
 	
 	@AfterMethod
 	public void setVariableEmpty() {
@@ -40,21 +42,42 @@ public class CreateContractorTestCases {
 	
 	@Test
 	(priority=1)
-	public void verifyUserTab() 
+	public void verifyContractorTab() throws InterruptedException 
 	{
 		//Verify  User Tab
 		
 		 LoginPage loginInPage = new LoginPage(this.driver);
-	        loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "Zaiserve@123");
+	     loginInPage.setUserCredentials("alpha@zaisuite.com", "Zaiserve@123");
 		 loginInPage.clickLoginButton();
-		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
-		String text = contractorPage.dashBoardUserMenuText();
-		 Assert.assertEquals(text, "User");
+		 CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		 contractorPage.clickTeam();
+	     Thread.sleep(5000);
+		 contractorPage.clickTeam();
+		 contractorPage.clickCompany();
+		 contractorPage.clickContractor();
+		 contractorPage.createContractorButtonj();
+		 
+		 
 	    
 	}
+	
+	@Test
+	(priority=2)
+	public void verifyNameRequired() throws InterruptedException
+	{
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		
+		contractorPage.contractorName("Kissflowm");
+		contractorPage.clickSaveandComplete();
+		
+	}
+	
+	
+	
 
 	
-	
+	/*
 	
 	@Test
 	(priority=21)
@@ -504,7 +527,7 @@ public class CreateContractorTestCases {
 	
 	
 	
-	
+	*/
 	
 }
 

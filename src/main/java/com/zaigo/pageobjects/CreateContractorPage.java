@@ -15,6 +15,16 @@ public class CreateContractorPage {
 	private WebDriver driver;
 	private WebDriverWait wait;
 
+	
+	private By team = By.xpath("//span[text()='Team']");
+	
+	private By company = By.xpath("//span[text()='Companies']");
+	
+	private By contractor = By.xpath("//div[@id='inner-id']//following::a[text()='Contractor']");
+	
+	private By createcontractorbutton = By.xpath("//button[@data-tabformid='team-company-contractor']");
+	
+	
 	private By usermenu=By.xpath("//a[@data-automationid='user']");
 	
 	
@@ -24,9 +34,9 @@ public class CreateContractorPage {
 	
 	private By contractorcreatebtn=By.xpath("//*[@id='root']/div/div/div[3]/div/div/button");
 	
-	private By contractorname=By.xpath("//input[@data-automationid='name']");
+	private By contractorname=By.id("name");
 	
-	private By contractornameer=By.xpath("//*[@data-automationid='name-error']");
+	private By contractornameer=By.id("name_error");
 	
 	private By nextbtn = By.xpath("//button[@data-automationid='next']");
 	
@@ -65,13 +75,15 @@ public class CreateContractorPage {
 	
 	private By warningpopup = By.xpath("//button[@data-automationid='yesBtn']");
 	
-	private By saveform =By.xpath("//button[@data-automationid='saveAndComplete']");
+	private By saveform =By.xpath("//button[@data-formsubmit='company_contractor_create']");
 	
 	private By successmessage= By.xpath("//*[@data-automationid='sucmessage']");
 	
 	//Address
 	
 	private By addlocationbtn = By.xpath("//button[@data-automationid='anotherLocation']");
+	
+	
 	
 	
 	
@@ -119,6 +131,41 @@ public class CreateContractorPage {
    
    private By clickclosebutton = By.xpath("//button[@data-automationid='c']");
     
+   
+   public void clickCreateCompany() 
+   {
+		wait.until(ExpectedConditions.elementToBeClickable((createcontractorbutton)));
+	    driver.findElement(createcontractorbutton).click();
+    }
+   
+   
+   
+   public void clickCompany() 
+   {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((company)));
+	    driver.findElement(company).click();
+    }
+   
+   public void clickContractor() 
+   {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((contractor)));
+	    driver.findElement(contractor).click();
+    }
+   
+   public void createContractorButtonj()
+   {
+	   wait.until(ExpectedConditions.visibilityOfElementLocated((createcontractorbutton)));
+	    driver.findElement(createcontractorbutton).click();
+   }
+   
+   
+   
+   
+   public void clickTeam() 
+   {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((team)));
+	    driver.findElement(team).click();
+    }
    
    public String getCreatedContractorNameDetail()
    {
@@ -246,7 +293,7 @@ public class CreateContractorPage {
 		
 		public void contractorCreateButton()
 		{
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((contractorcreatebtn)));
+	    wait.until(ExpectedConditions.presenceOfElementLocated((contractorcreatebtn)));
 	    driver.findElement(contractorcreatebtn).click();
 		}
 
@@ -255,7 +302,7 @@ public class CreateContractorPage {
 	    wait.until(ExpectedConditions.visibilityOfElementLocated((contractorname)));
 	    driver.findElement(contractorname).sendKeys(name);
 		}
-
+		
 		
 		public void contractorEmail(String Email)
 		{
@@ -455,7 +502,7 @@ public class CreateContractorPage {
 		
 		public CreateContractorPage(WebDriver driver) {
 			this.driver = driver;
-			this.wait = new WebDriverWait(this.driver, 10);
+			this.wait = new WebDriverWait(this.driver, 20);
 		}
 		
     
