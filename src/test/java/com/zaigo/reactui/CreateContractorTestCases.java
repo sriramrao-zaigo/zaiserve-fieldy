@@ -28,10 +28,10 @@ public class CreateContractorTestCases {
 		this.driver = BrowserSetup.startBrowser();
 	}
 
-//	@AfterClass
-//	public void exitBrowser() {
-//		this.driver.quit();
-//	}
+	@AfterClass
+	public void exitBrowser() {
+		this.driver.quit();
+	}
 	
 	@AfterMethod
 	public void setVariableEmpty() {
@@ -63,12 +63,11 @@ public class CreateContractorTestCases {
 	
 	@Test
 	(priority=2)
-	public void verifyNameRequired() throws InterruptedException
+	public void verifyName() throws InterruptedException
 	{
 		
 		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
-		
-		contractorPage.contractorName("Ratha tech new");
+		contractorPage.contractorName("hello indiahj");
 		contractorPage.clickSaveandComplete();
 		
 		

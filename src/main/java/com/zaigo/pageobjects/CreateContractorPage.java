@@ -137,7 +137,10 @@ public class CreateContractorPage {
 		wait.until(ExpectedConditions.elementToBeClickable((createcontractorbutton)));
 	    driver.findElement(createcontractorbutton).click();
     }
-   
+   public void hello()
+   {
+	   
+   }
    
    
    public void clickCompany() 

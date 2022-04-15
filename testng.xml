@@ -10,6 +10,7 @@
 			<class name="com.zaigo.reactui.LoginTestCases"/>
 			<class name="com.zaigo.reactui.CreateContractorTestCases"/>
 			
+		
 			
 			
 		</classes>
