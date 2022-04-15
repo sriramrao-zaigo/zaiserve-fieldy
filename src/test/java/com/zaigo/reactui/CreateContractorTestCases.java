@@ -67,7 +67,9 @@ public class CreateContractorTestCases {
 	{
 		
 		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
-		contractorPage.contractorName("hello indiahj");
+
+		contractorPage.contractorName("hello indiahjj");
+
 		contractorPage.clickSaveandComplete();
 		
 		
