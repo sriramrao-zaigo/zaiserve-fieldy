@@ -139,7 +139,7 @@ public class CreateContractorPage {
     }
    public void hello()
    {
-	   
+	   String hello;
    }
    
    
