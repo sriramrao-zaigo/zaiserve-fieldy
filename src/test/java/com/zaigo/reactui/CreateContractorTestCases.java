@@ -63,17 +63,132 @@ public class CreateContractorTestCases {
 	
 	@Test
 	(priority=2)
-	public void verifyName() throws InterruptedException
+	public void verifyContractorNameMandatory() throws InterruptedException
 	{
 		
 		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
-
-		contractorPage.contractorName("vanguard pvt ltd");
-
+        contractorPage.clickSaveandComplete();
+		String error_text=contractorPage.contractorNameError();
+		Assert.assertEquals(error_text,"Required Field");
+		
+		
+		
+	}
+	
+	@Test
+	(priority=4)
+	public void verifyContractorNumberMinValidation() throws InterruptedException
+	{
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.contractorEmail("@gmail.com");
+		contractorPage.contractorPhone("123");
 		contractorPage.clickSaveandComplete();
+        String email_error= contractorPage.contractorPhoneError();
+        Assert.assertEquals(email_error,"Atleast 6 digits required");
 		
-		Thread.sleep(6000);
 		
+		
+	}
+	
+	@Test
+	(priority=3)
+	public void verifyContractorEmailFormat() throws InterruptedException
+	{
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.contractorName("Contractor x");
+		contractorPage.contractorEmail("aibcd");
+		contractorPage.clickSaveandComplete();
+        String email_error= contractorPage.contractorEmailError();
+        Assert.assertEquals(email_error,"Enter a valid Email");
+		
+		
+		
+	}
+	
+	
+	@Test
+	(priority=5)
+	public void verifyContractorNumberMaxValidation() throws InterruptedException
+	{
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.contractorPhone("123123123118900");
+		contractorPage.clickSaveandComplete();
+        String email_error= contractorPage.contractorPhoneError();
+        Assert.assertEquals(email_error,"Not Allowed More than 12 digits");
+		
+		
+		
+	}
+	
+	@Test
+	(priority=6)
+	public void verifyFaxMinValidation() throws InterruptedException
+	{
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.clearPhone();
+		contractorPage.contractorFax("77");
+		String fax_error=contractorPage.contractorFaxError();
+		Assert.assertEquals(fax_error,"Atleast 3 digits required");
+		
+		
+	}
+	
+	@Test
+	(priority=7)
+	public void verifyFaxMaxValidation() throws InterruptedException
+	{
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.clearPhone();
+		contractorPage.contractorFax("777777777777777778888888888888877777777777777777777777");
+		contractorPage.clickSaveandComplete();
+		String fax_error=contractorPage.contractorFaxError();
+		Assert.assertEquals(fax_error,"Not Allowed More than 25 digits");
+		
+		
+	}
+	
+	@Test
+	(priority=8)
+	public void verifyCpersonMaxValidation() throws InterruptedException
+	{
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.clearFax();
+		contractorPage.contractorContactPerson("Tambaram,chennai Tambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,ww w wwkdmwemw ewewkmewkekewewewklwklwlkwkwwkelwelwweewwwwmwmwmwmswmskwmskwmksmwksmkswsTambaram,chennai Tambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,chennaiTambaram,ww w wwkdmwemw ewewkmewkekewewewklwklwlkwkwwkelwelwweewwwwmwmwmwmswmskwmskwmksmwksmkswss");
+		contractorPage.clickSaveandComplete();
+		String cperson_error=contractorPage.contractorContactNameError();
+		Assert.assertEquals(cperson_error,"Not Allowed More than 512 characters");
+		
+		
+	}
+	
+//	@Test(enabled= false)
+//	public void verifyWebsiteValidation() throws InterruptedException
+//	{
+//		
+//		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+//		contractorPage.clearContactPerson();
+//		contractorPage.contractorWebsite("abcd");
+//		contractorPage.clickSaveandComplete();
+//		String web_error=contractorPage.contractorWebsiteError();
+//		Assert.assertEquals(web_error,"Enter a valid URL(http(s)://sample.co)");
+//		
+//		
+//	}
+	
+	@Test
+	(priority=9)
+	public void verifySaveButtonExist() throws InterruptedException
+	{
+		
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		String text_button=contractorPage.getButtonText();
+		Assert.assertEquals(text_button, "Save & Complete");
 		
 		
 	}

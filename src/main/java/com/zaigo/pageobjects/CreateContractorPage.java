@@ -43,26 +43,26 @@ public class CreateContractorPage {
 	
 	private By contractoremail=By.xpath("//input[@data-automationid='email']");
 	
-	private By contractoremailerr=By.xpath("//*[@data-automationid='email-error']");
+	private By contractoremailerr=By.id("email_error");
 	
-    private By contractorcperson=By.xpath("//input[@data-automationid='contactPerson']");
+    private By contractorcperson=By.id("contact_person_name");
 	
-	private By contractorcpersonerr=By.xpath("//*[@data-automationid='contactperson-error']");
+	private By contractorcpersonerr=By.id("contact_person_name_error");
 	
-	private By contractorphone=By.xpath("//input[@data-automationid='phone']");
+	private By contractorphone=By.id("phone");
 	
-	private By contractorphoneerr=By.xpath("//*[@data-automationid='phone-error']");
+	private By contractorphoneerr=By.id("phone_error");
 	
 	
 	
 	private By contractorfax=By.xpath("//input[@data-automationid='fax']");
 	
-	private By contractorfaxerror=By.xpath("//*[@data-automationid='fax']");
+	private By contractorfaxerror=By.id("fax_error");
 	
 	
-	private By contractorsite=By.xpath("//input[@data-automationid='website']");
+	private By contractorsite=By.id("website");
 	
-	private By contractorsiteerr=By.xpath("//*[@data-automationid='website-error']");
+	private By contractorsiteerr=By.id("website_error");
 	  
 	private By locationone = By.xpath("//*[@data-automationid='Location 1']");
 	
@@ -137,10 +137,17 @@ public class CreateContractorPage {
 		wait.until(ExpectedConditions.elementToBeClickable((createcontractorbutton)));
 	    driver.findElement(createcontractorbutton).click();
     }
-   public void hello()
+   
+   public String getButtonText()
    {
-	   String hello;
+	   
+	    wait.until(ExpectedConditions.visibilityOfElementLocated((saveform)));
+		return driver.findElement(saveform).getText();
+	   
    }
+  
+   
+   
    
    
    public void clickCompany() 
@@ -161,6 +168,12 @@ public class CreateContractorPage {
 	    driver.findElement(createcontractorbutton).click();
    }
    
+   public void clearPhone()
+   {
+	   wait.until(ExpectedConditions.visibilityOfElementLocated((contractorphone)));
+	    driver.findElement(contractorphone).clear();
+	   
+   }
    
    
    
@@ -233,6 +246,11 @@ public class CreateContractorPage {
 		driver.findElement(saveform).click();
 	    }
 	
+	public void clearFax()
+	{
+		wait.until(ExpectedConditions.visibilityOfElementLocated((contractorfax)));
+		driver.findElement(contractorfax).clear();
+	}
 	
 	
 	
@@ -342,6 +360,12 @@ public class CreateContractorPage {
 	    driver.findElement(contractorsite).sendKeys(Website);
 		}
 		
+		public void clearContactPerson()
+		{
+			wait.until(ExpectedConditions.visibilityOfElementLocated((contractorcperson)));
+		    driver.findElement(contractorcperson).clear();
+			
+		}
 		
 		
 		
