@@ -70,7 +70,7 @@ public class CreateContractorTestCases {
         contractorPage.clickSaveandComplete();
 		String error_text=contractorPage.contractorNameError();
 		Assert.assertEquals(error_text,"Required Field");
-		
+		//q
 		
 		
 	}
