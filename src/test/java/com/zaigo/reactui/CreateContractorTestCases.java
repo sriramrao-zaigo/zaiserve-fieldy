@@ -53,7 +53,7 @@ public class CreateContractorTestCases {
 		 contractorPage.clickTeam();
 	     Thread.sleep(5000);
 		 contractorPage.clickTeam();
-		 contractorPage.clickCompany();
+		//contractorPage.clickCompany();
 		 contractorPage.clickContractor();
 		 contractorPage.createContractorButtonj();
 		 
