@@ -351,6 +351,7 @@ public class CreateContractorPage {
 	    driver.findElement(contractorfax).sendKeys(Fax);
 		}
 		
+		//Testing
 		
 		
 		
