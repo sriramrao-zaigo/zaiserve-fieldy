@@ -1,15 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Fieldy Login Test]">
+<suite name="Failed suite [Fieldy Login Test]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Login TestCases(failed)">
     <classes>
-      <class name="com.zaigo.reactui.LoginTestCases">
+      <class name="com.zaigo.reactui.CreateContractorTestCases">
         <methods>
+          <include name="verifyContractorNumberMaxValidation"/>
+          <include name="invalidValidationData"/>
+          <include name="verifyFaxMaxValidation"/>
+          <include name="contractExistingData"/>
+          <include name="verifyContractorEmailFormat"/>
+          <include name="validationNamePresentList"/>
+          <include name="manditoryField"/>
+          <include name="setVariableEmpty"/>
           <include name="exitBrowser"/>
-          <include name="verifyEmptyEmail"/>
+          <include name="alreadyExistData"/>
+          <include name="verifyContractorNameMandatory"/>
+          <include name="inputUserLocationFieldReq"/>
+          <include name="verifySaveButtonExist"/>
+          <include name="UserModule"/>
+          <include name="conReqField"/>
+          <include name="listValidationName"/>
+          <include name="invalidDataValidation"/>
+          <include name="verifyContractorTab"/>
+          <include name="conDatas"/>
+          <include name="reqOrganization"/>
+          <include name="verifyContractorNumberMinValidation"/>
+          <include name="validationName"/>
+          <include name="validationForCreateList"/>
+          <include name="conManditoryField"/>
+          <include name="inputContractorLocationFieldReq"/>
+          <include name="verifyCpersonMaxValidation"/>
+          <include name="verifyFaxMinValidation"/>
+          <include name="reqFieldUser"/>
+          <include name="modulePage"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.zaigo.reactui.LoginTestCases -->
+      </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->
     </classes>
   </test> <!-- Login TestCases(failed) -->
 </suite> <!-- Failed suite [Fieldy Login Test] -->
