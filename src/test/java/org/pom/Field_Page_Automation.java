@@ -532,8 +532,8 @@ public class Field_Page_Automation extends BaseClass {
 		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(ProfileUpload));
 		Actions action = new Actions(driver);
 		action.moveToElement(until).click().build().perform();
-		Thread.sleep(3000);
-		attachmentFile("sample-file (1).pdf");
+		Thread.sleep(1000);
+		attachmentFile("C:\\Users\\Zaigo PC\\Downloads\\sample-file.pdf");
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(ProfileErrorMessage)).getText();
 		// System.out.println("Error message Upload Pic " + text);
 		Assert.assertEquals(text, "Only png,jpeg,jpg Formats Allowed");
@@ -545,8 +545,8 @@ public class Field_Page_Automation extends BaseClass {
 		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(ProfileUpload));
 		Actions action = new Actions(driver);
 		action.moveToElement(until).click().build().perform();
-		Thread.sleep(3000);
-		attachmentFile("1622641377484 .jpeg");
+		Thread.sleep(1000);
+		attachmentFile("1622641377484.jpg");
 
 	}
 
@@ -608,6 +608,7 @@ public class Field_Page_Automation extends BaseClass {
 		this.inputStateName1(stateName);
 		this.inputCityVillage1(cityName);
 		this.inputZipCode1(zipCodeNo);
+		this.saveComplete();
 		this.saveComplete();
 		this.successfulMessage();
 

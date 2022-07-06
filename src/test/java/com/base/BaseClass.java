@@ -205,7 +205,7 @@ public class BaseClass {
 	public static String getPropertyValue(String key) throws IOException {
 		Properties properties = new Properties();
 		FileInputStream stream = new FileInputStream(
-				"C:\\Users\\lenovo\\git\\zaiserve-fieldy\\Folder\\config.properties");
+				"C:\\Users\\Zaigo PC\\eclipse-workspace\\zaiserve-fieldy\\Folder\\config.properties");
 		properties.load(stream);
 		String value = (String) properties.get(key);
 		return value;

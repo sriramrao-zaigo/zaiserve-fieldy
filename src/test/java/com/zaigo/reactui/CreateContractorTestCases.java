@@ -46,8 +46,8 @@ public class CreateContractorTestCases {
 		loginInPage.setUserCredentials("fieldy@zaiportal.com", "Zaiserve@123");
 		loginInPage.clickLoginButton();
 		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
-		contractorPage.clickTeam();
-		Thread.sleep(5000);
+		//contractorPage.clickTeam();
+		//Thread.sleep(5000);
 		contractorPage.clickTeam();
 		// contractorPage.clickCompany();
 		contractorPage.clickContractor();
@@ -59,8 +59,8 @@ public class CreateContractorTestCases {
 	public void verifyContractorNameMandatory() throws InterruptedException {
 
 		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		Thread.sleep(1000);
 		contractorPage.clickSaveandComplete();
-		//Thread.sleep(2000);
 		String error_text = contractorPage.contractorNameError();
 		Assert.assertEquals(error_text, "Required Field");
 		// q
@@ -170,7 +170,7 @@ public class CreateContractorTestCases {
 	@Test(priority = 11)
 	public void validationName() {
 		CreateContractorPage validation = new CreateContractorPage(driver);
-		validation.nameValidation("Ms. Ozella Hudson V");
+		validation.nameValidation("Mrs. Veda Predovic");
 	}
 
 	@Test(priority = 12)

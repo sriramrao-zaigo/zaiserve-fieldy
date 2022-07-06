@@ -113,7 +113,7 @@ public class CreateContractorPage {
 
 	private By clickclosebutton = By.xpath("//button[@data-automationid='c']");
 
-	By NameValidation = By.xpath("//span[text()='Ms. Ozella Hudson V']");
+	By NameValidation = By.xpath("//span[text()='Mrs. Veda Predovic']");
 
 	By SearchBox = By.xpath("//input[@data-automationid='search']");
 
@@ -124,7 +124,7 @@ public class CreateContractorPage {
 	public void validation() {
 		wait = new WebDriverWait(driver, 10);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated((NameValidation))).getText();
-		Assert.assertEquals(text, "Ms. Ozella Hudson V");
+		Assert.assertEquals(text, "Mrs. Veda Predovic");
 
 	}
 
@@ -133,7 +133,7 @@ public class CreateContractorPage {
 		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated((SearchBox)));
 		until.sendKeys(name,Keys.ENTER);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated((NameValidation))).getText();
-		Assert.assertEquals(text, "Ms. Ozella Hudson V");
+		Assert.assertEquals(text, "Mrs. Veda Predovic");
 		until.clear();
 	}
 

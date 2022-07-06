@@ -5,35 +5,19 @@
     <classes>
       <class name="com.zaigo.reactui.CreateContractorTestCases">
         <methods>
-          <include name="verifyContractorNumberMaxValidation"/>
           <include name="invalidValidationData"/>
-          <include name="verifyFaxMaxValidation"/>
+          <include name="listValidationName"/>
           <include name="contractExistingData"/>
-          <include name="verifyContractorEmailFormat"/>
-          <include name="validationNamePresentList"/>
-          <include name="manditoryField"/>
+          <include name="reqOrganization"/>
+          <include name="validationName"/>
           <include name="setVariableEmpty"/>
+          <include name="inputContractorLocationFieldReq"/>
           <include name="exitBrowser"/>
           <include name="alreadyExistData"/>
           <include name="verifyContractorNameMandatory"/>
           <include name="inputUserLocationFieldReq"/>
-          <include name="verifySaveButtonExist"/>
-          <include name="UserModule"/>
-          <include name="conReqField"/>
-          <include name="listValidationName"/>
-          <include name="invalidDataValidation"/>
-          <include name="verifyContractorTab"/>
-          <include name="conDatas"/>
-          <include name="reqOrganization"/>
-          <include name="verifyContractorNumberMinValidation"/>
-          <include name="validationName"/>
-          <include name="validationForCreateList"/>
-          <include name="conManditoryField"/>
-          <include name="inputContractorLocationFieldReq"/>
-          <include name="verifyCpersonMaxValidation"/>
-          <include name="verifyFaxMinValidation"/>
           <include name="reqFieldUser"/>
-          <include name="modulePage"/>
+          <include name="conReqField"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->
