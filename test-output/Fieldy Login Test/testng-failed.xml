@@ -5,18 +5,10 @@
     <classes>
       <class name="com.zaigo.reactui.CreateContractorTestCases">
         <methods>
-          <include name="invalidValidationData"/>
-          <include name="listValidationName"/>
-          <include name="contractExistingData"/>
-          <include name="reqOrganization"/>
-          <include name="validationName"/>
           <include name="setVariableEmpty"/>
-          <include name="inputContractorLocationFieldReq"/>
           <include name="exitBrowser"/>
-          <include name="alreadyExistData"/>
           <include name="verifyContractorNameMandatory"/>
-          <include name="inputUserLocationFieldReq"/>
-          <include name="reqFieldUser"/>
+          <include name="reqOrganization"/>
           <include name="conReqField"/>
           <include name="setup"/>
         </methods>

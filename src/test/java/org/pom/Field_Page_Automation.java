@@ -115,6 +115,8 @@ public class Field_Page_Automation extends BaseClass {
 	By ValidationName = By.xpath("//a[text()='Ajith']");
 	By InvalidData = By.xpath("//div[text()='No result found for Team User']");
 
+	By clickNext = By.xpath("//span[text()='Next']");
+
 	public Field_Page_Automation(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -171,7 +173,7 @@ public class Field_Page_Automation extends BaseClass {
 	}
 
 	private void dropDownType() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(1500);
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(DropDown)).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(Manager)).click();
@@ -573,6 +575,12 @@ public class Field_Page_Automation extends BaseClass {
 
 	}
 
+	private void clickNext() {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(clickNext)).click();
+
+	}
+
 	public void loginFieldy(String email, String pass) throws InterruptedException {
 		this.setEmail(email);
 		this.setPass(pass);
@@ -581,7 +589,7 @@ public class Field_Page_Automation extends BaseClass {
 
 	public void enterTeamModule() throws InterruptedException {
 		driver.navigate().refresh();
-		//Thread.sleep(5000);
+		// Thread.sleep(5000);
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
@@ -619,7 +627,7 @@ public class Field_Page_Automation extends BaseClass {
 		this.clickUser();
 		this.clickAddUser();
 		this.firstName(firstName);
-		//Thread.sleep(2000);
+		// Thread.sleep(2000);
 		this.dropDownType();
 		this.txtEmail(email);
 
@@ -636,7 +644,7 @@ public class Field_Page_Automation extends BaseClass {
 		this.txtEmail(email);
 		this.ScrollDown();
 		this.phoneNo(phoneNumber);
-		Thread.sleep(1000);
+		// Thread.sleep(1000);
 		this.saveComplete();
 		this.alreadyExist();
 
@@ -681,7 +689,7 @@ public class Field_Page_Automation extends BaseClass {
 		this.ProfileUpload();
 		this.conFirstName(firstName);
 		this.conLastName(lastName);
-		//Thread.sleep(3000);
+		// Thread.sleep(3000);
 		this.conBussinessUnit();
 		this.conServiceType();
 		this.conEmail(email);
@@ -707,12 +715,13 @@ public class Field_Page_Automation extends BaseClass {
 		this.clkContractor();
 		this.conFirstName(firstName);
 		this.conLastName(lastName);
-		//Thread.sleep(2000);
+		// Thread.sleep(2000);
 		this.conBussinessUnit();
 		this.conServiceType();
 		this.conEmail(email);
 		this.ScrollDown();
 		this.conPhoneNo(phoneNo);
+		this.conSaveComplete();
 		this.conSaveComplete();
 		this.alreadyExist();
 
@@ -727,8 +736,7 @@ public class Field_Page_Automation extends BaseClass {
 		this.conFirstName(firstName);
 		this.conEmail(email);
 		this.conOrganization();
-		Thread.sleep(1000);
-		this.conSaveComplete();
+		this.clickNext();
 		this.requiredFieldCompany();
 
 	}
@@ -742,7 +750,7 @@ public class Field_Page_Automation extends BaseClass {
 		this.conEmail(email);
 		this.ScrollDown();
 		this.conOrganization();
-		//Thread.sleep(2000);
+		// Thread.sleep(2000);
 		this.organization();
 
 	}
@@ -754,7 +762,7 @@ public class Field_Page_Automation extends BaseClass {
 		this.inputLocationName();
 		this.clearLocationNameField();
 		this.inputBuildingName();
-		//Thread.sleep(2000);
+		// Thread.sleep(2000);
 		this.clearBuildingName();
 
 		this.inputStreetName();
@@ -778,7 +786,7 @@ public class Field_Page_Automation extends BaseClass {
 		this.inputLocationName();
 		this.clearLocationNameField();
 		this.inputBuildingName();
-	//	Thread.sleep(2000);
+		// Thread.sleep(2000);
 		this.clearBuildingName();
 
 		this.inputStreetName();

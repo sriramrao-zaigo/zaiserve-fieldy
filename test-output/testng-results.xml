@@ -1,25 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="27" passed="24" failed="3" skipped="0">
+<testng-results ignored="0" total="44" passed="41" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-06T21:53:53 IST" name="Default suite" finished-at="2022-07-06T21:56:43 IST" duration-ms="169780">
+  <suite started-at="2022-07-06T22:42:46 IST" name="Fieldy Login Test" finished-at="2022-07-06T22:46:21 IST" duration-ms="215485">
     <groups>
     </groups>
-    <test started-at="2022-07-06T21:53:53 IST" name="Default test" finished-at="2022-07-06T21:56:43 IST" duration-ms="169780">
-      <class name="com.zaigo.reactui.CreateContractorTestCases">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:53:53 IST" name="setup" finished-at="2022-07-06T21:53:56 IST" duration-ms="2815" status="PASS">
+    <test started-at="2022-07-06T22:42:46 IST" name="Login TestCases" finished-at="2022-07-06T22:46:21 IST" duration-ms="215485">
+      <class name="com.zaigo.reactui.LoginTestCases">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.zaigo.reactui.LoginTestCases@2b91004a]" started-at="2022-07-06T22:42:46 IST" name="setup" finished-at="2022-07-06T22:42:48 IST" duration-ms="2265" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyContractorTab()[pri:1, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:53:56 IST" name="verifyContractorTab" finished-at="2022-07-06T21:54:41 IST" duration-ms="44366" status="PASS">
+        <test-method signature="verifyEmptyEmail()[pri:-7, instance:com.zaigo.reactui.LoginTestCases@2b91004a]" started-at="2022-07-06T22:42:48 IST" name="verifyEmptyEmail" finished-at="2022-07-06T22:42:55 IST" duration-ms="6750" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmptyEmail -->
+        <test-method signature="verifyEmptyPassword()[pri:-6, instance:com.zaigo.reactui.LoginTestCases@2b91004a]" started-at="2022-07-06T22:42:55 IST" name="verifyEmptyPassword" finished-at="2022-07-06T22:42:57 IST" duration-ms="2549" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmptyPassword -->
+        <test-method signature="verifyIncorrectMail()[pri:-5, instance:com.zaigo.reactui.LoginTestCases@2b91004a]" started-at="2022-07-06T22:42:57 IST" name="verifyIncorrectMail" finished-at="2022-07-06T22:42:59 IST" duration-ms="1876" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIncorrectMail -->
+        <test-method signature="verifyIncorrectPassword()[pri:-4, instance:com.zaigo.reactui.LoginTestCases@2b91004a]" started-at="2022-07-06T22:42:59 IST" name="verifyIncorrectPassword" finished-at="2022-07-06T22:43:02 IST" duration-ms="2448" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIncorrectPassword -->
+        <test-method signature="verifyInvalidEmail()[pri:-3, instance:com.zaigo.reactui.LoginTestCases@2b91004a]" started-at="2022-07-06T22:43:02 IST" name="verifyInvalidEmail" finished-at="2022-07-06T22:43:04 IST" duration-ms="2592" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInvalidEmail -->
+        <test-method signature="verifyInvalidPassword()[pri:-2, instance:com.zaigo.reactui.LoginTestCases@2b91004a]" started-at="2022-07-06T22:43:04 IST" name="verifyInvalidPassword" finished-at="2022-07-06T22:43:07 IST" duration-ms="2408" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInvalidPassword -->
+        <test-method signature="verifyInvalidCredentials()[pri:-1, instance:com.zaigo.reactui.LoginTestCases@2b91004a]" started-at="2022-07-06T22:43:07 IST" name="verifyInvalidCredentials" finished-at="2022-07-06T22:43:09 IST" duration-ms="1978" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInvalidCredentials -->
+        <test-method signature="verify()[pri:0, instance:com.zaigo.reactui.LoginTestCases@2b91004a]" started-at="2022-07-06T22:43:09 IST" name="verify" finished-at="2022-07-06T22:43:23 IST" duration-ms="14228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify -->
+        <test-method is-config="true" signature="exitBrowser()[pri:0, instance:com.zaigo.reactui.LoginTestCases@2b91004a]" started-at="2022-07-06T22:43:23 IST" name="exitBrowser" finished-at="2022-07-06T22:43:23 IST" duration-ms="266" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exitBrowser -->
+      </class> <!-- com.zaigo.reactui.LoginTestCases -->
+      <class name="com.zaigo.reactui.CreateContractorTestCases">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:23 IST" name="setup" finished-at="2022-07-06T22:43:24 IST" duration-ms="1104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyContractorTab()[pri:1, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:24 IST" name="verifyContractorTab" finished-at="2022-07-06T22:43:43 IST" duration-ms="18830" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyContractorTab -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:41 IST" name="setVariableEmpty" finished-at="2022-07-06T21:54:41 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:43 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:43 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method signature="verifyContractorNameMandatory()[pri:2, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:41 IST" name="verifyContractorNameMandatory" finished-at="2022-07-06T21:54:42 IST" duration-ms="1276" status="FAIL">
+        <test-method signature="verifyContractorNameMandatory()[pri:2, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:43 IST" name="verifyContractorNameMandatory" finished-at="2022-07-06T22:43:44 IST" duration-ms="737" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [Required Field] but found []]]>
@@ -32,7 +74,7 @@ at org.testng.Assert.assertEqualsImpl(Assert.java:140)
 at org.testng.Assert.assertEquals(Assert.java:122)
 at org.testng.Assert.assertEquals(Assert.java:629)
 at org.testng.Assert.assertEquals(Assert.java:639)
-at com.zaigo.reactui.CreateContractorTestCases.verifyContractorNameMandatory(CreateContractorTestCases.java:65)
+at com.zaigo.reactui.CreateContractorTestCases.verifyContractorNameMandatory(CreateContractorTestCases.java:66)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -67,132 +109,184 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyContractorNameMandatory -->
-        <test-method signature="verifyContractorEmailFormat()[pri:3, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:42 IST" name="verifyContractorEmailFormat" finished-at="2022-07-06T21:54:42 IST" duration-ms="536" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:44 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:44 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyContractorEmailFormat()[pri:3, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:44 IST" name="verifyContractorEmailFormat" finished-at="2022-07-06T22:43:44 IST" duration-ms="558" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyContractorEmailFormat -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:42 IST" name="setVariableEmpty" finished-at="2022-07-06T21:54:42 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method signature="verifyContractorNumberMinValidation()[pri:4, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:42 IST" name="verifyContractorNumberMinValidation" finished-at="2022-07-06T21:54:43 IST" duration-ms="480" status="PASS">
+        <test-method signature="verifyContractorNumberMinValidation()[pri:4, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:44 IST" name="verifyContractorNumberMinValidation" finished-at="2022-07-06T22:43:45 IST" duration-ms="460" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyContractorNumberMinValidation -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:42 IST" name="setVariableEmpty" finished-at="2022-07-06T21:54:42 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:44 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:44 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:43 IST" name="setVariableEmpty" finished-at="2022-07-06T21:54:43 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:45 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:45 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method signature="verifyContractorNumberMaxValidation()[pri:5, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:43 IST" name="verifyContractorNumberMaxValidation" finished-at="2022-07-06T21:54:43 IST" duration-ms="332" status="PASS">
+        <test-method signature="verifyContractorNumberMaxValidation()[pri:5, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:45 IST" name="verifyContractorNumberMaxValidation" finished-at="2022-07-06T22:43:45 IST" duration-ms="320" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyContractorNumberMaxValidation -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:43 IST" name="setVariableEmpty" finished-at="2022-07-06T21:54:43 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:45 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:45 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method signature="verifyFaxMinValidation()[pri:6, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:43 IST" name="verifyFaxMinValidation" finished-at="2022-07-06T21:54:44 IST" duration-ms="336" status="PASS">
+        <test-method signature="verifyFaxMinValidation()[pri:6, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:45 IST" name="verifyFaxMinValidation" finished-at="2022-07-06T22:43:45 IST" duration-ms="299" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFaxMinValidation -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:44 IST" name="setVariableEmpty" finished-at="2022-07-06T21:54:44 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method signature="verifyFaxMaxValidation()[pri:7, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:44 IST" name="verifyFaxMaxValidation" finished-at="2022-07-06T21:54:44 IST" duration-ms="570" status="PASS">
+        <test-method signature="verifyFaxMaxValidation()[pri:7, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:45 IST" name="verifyFaxMaxValidation" finished-at="2022-07-06T22:43:46 IST" duration-ms="556" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFaxMaxValidation -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:44 IST" name="setVariableEmpty" finished-at="2022-07-06T21:54:44 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:45 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:45 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method signature="verifyCpersonMaxValidation()[pri:8, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:44 IST" name="verifyCpersonMaxValidation" finished-at="2022-07-06T21:54:47 IST" duration-ms="2570" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:46 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:46 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyCpersonMaxValidation()[pri:8, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:46 IST" name="verifyCpersonMaxValidation" finished-at="2022-07-06T22:43:49 IST" duration-ms="2504" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCpersonMaxValidation -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:47 IST" name="setVariableEmpty" finished-at="2022-07-06T21:54:47 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:49 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:49 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method signature="verifySaveButtonExist()[pri:9, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:47 IST" name="verifySaveButtonExist" finished-at="2022-07-06T21:54:47 IST" duration-ms="64" status="PASS">
+        <test-method signature="verifySaveButtonExist()[pri:9, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:49 IST" name="verifySaveButtonExist" finished-at="2022-07-06T22:43:49 IST" duration-ms="58" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySaveButtonExist -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:47 IST" name="setVariableEmpty" finished-at="2022-07-06T21:54:47 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method signature="listValidationName()[pri:10, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:47 IST" name="listValidationName" finished-at="2022-07-06T21:54:50 IST" duration-ms="3540" status="PASS">
+        <test-method signature="listValidationName()[pri:10, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:49 IST" name="listValidationName" finished-at="2022-07-06T22:43:51 IST" duration-ms="2521" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- listValidationName -->
-        <test-method signature="validationName()[pri:11, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:50 IST" name="validationName" finished-at="2022-07-06T21:54:52 IST" duration-ms="1901" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:49 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:49 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="validationName()[pri:11, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:51 IST" name="validationName" finished-at="2022-07-06T22:43:53 IST" duration-ms="1496" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validationName -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:50 IST" name="setVariableEmpty" finished-at="2022-07-06T21:54:50 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:51 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:51 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:52 IST" name="setVariableEmpty" finished-at="2022-07-06T21:54:52 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method signature="invalidValidationData()[pri:12, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:52 IST" name="invalidValidationData" finished-at="2022-07-06T21:54:56 IST" duration-ms="3309" status="PASS">
+        <test-method signature="invalidValidationData()[pri:12, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:53 IST" name="invalidValidationData" finished-at="2022-07-06T22:43:54 IST" duration-ms="1310" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidValidationData -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:56 IST" name="setVariableEmpty" finished-at="2022-07-06T21:54:56 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:53 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:53 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method signature="modulePage()[pri:13, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:54:56 IST" name="modulePage" finished-at="2022-07-06T21:55:02 IST" duration-ms="6638" status="PASS">
+        <test-method signature="modulePage()[pri:13, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:54 IST" name="modulePage" finished-at="2022-07-06T22:43:56 IST" duration-ms="2138" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- modulePage -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:02 IST" name="setVariableEmpty" finished-at="2022-07-06T21:55:02 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:54 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:54 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method signature="reqFieldUser()[pri:14, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:02 IST" name="reqFieldUser" finished-at="2022-07-06T21:55:06 IST" duration-ms="3900" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:56 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:56 IST" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="reqFieldUser()[pri:14, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:56 IST" name="reqFieldUser" finished-at="2022-07-06T22:43:59 IST" duration-ms="2873" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reqFieldUser -->
-        <test-method signature="conReqField()[pri:15, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:06 IST" name="conReqField" finished-at="2022-07-06T21:55:14 IST" duration-ms="8062" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- conReqField -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:06 IST" name="setVariableEmpty" finished-at="2022-07-06T21:55:06 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:59 IST" name="setVariableEmpty" finished-at="2022-07-06T22:43:59 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method signature="reqOrganization()[pri:16, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:14 IST" name="reqOrganization" finished-at="2022-07-06T21:55:28 IST" duration-ms="13405" status="FAIL">
+        <test-method signature="conReqField()[pri:15, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:43:59 IST" name="conReqField" finished-at="2022-07-06T22:44:20 IST" duration-ms="21082" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //div[@id='user_image_error'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-5M7AM2E', ip: '192.168.29.125', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59400}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6de9e5e823c8fa042f0d5e7657196307]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@id='user_image_error'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-5M7AM2E', ip: '192.168.29.125', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59400}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6de9e5e823c8fa042f0d5e7657196307
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at org.pom.Field_Page_Automation.reqProfileUpload(Field_Page_Automation.java:539)
+at org.pom.Field_Page_Automation.conReqField(Field_Page_Automation.java:677)
+at com.zaigo.reactui.CreateContractorTestCases.conReqField(CreateContractorTestCases.java:200)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- conReqField -->
+        <test-method signature="reqOrganization()[pri:16, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:44:20 IST" name="reqOrganization" finished-at="2022-07-06T22:44:32 IST" duration-ms="11765" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //div[@id='company_id_error'] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-5M7AM2E', ip: '192.168.29.125', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56608}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 84d39530bfd7def5914a453c3d69b735]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59400}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6de9e5e823c8fa042f0d5e7657196307]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@id='company_id_error'] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-5M7AM2E', ip: '192.168.29.125', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56608}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 84d39530bfd7def5914a453c3d69b735
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59400}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6de9e5e823c8fa042f0d5e7657196307
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at org.pom.Field_Page_Automation.requiredFieldCompany(Field_Page_Automation.java:338)
-at org.pom.Field_Page_Automation.reqOrganization(Field_Page_Automation.java:732)
-at com.zaigo.reactui.CreateContractorTestCases.reqOrganization(CreateContractorTestCases.java:205)
+at org.pom.Field_Page_Automation.requiredFieldCompany(Field_Page_Automation.java:340)
+at org.pom.Field_Page_Automation.reqOrganization(Field_Page_Automation.java:740)
+at com.zaigo.reactui.CreateContractorTestCases.reqOrganization(CreateContractorTestCases.java:207)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -227,176 +321,189 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reqOrganization -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:14 IST" name="setVariableEmpty" finished-at="2022-07-06T21:55:14 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:44:20 IST" name="setVariableEmpty" finished-at="2022-07-06T22:44:20 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method signature="manditoryField()[pri:17, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:28 IST" name="manditoryField" finished-at="2022-07-06T21:55:34 IST" duration-ms="6223" status="PASS">
+        <test-method signature="manditoryField()[pri:17, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:44:32 IST" name="manditoryField" finished-at="2022-07-06T22:44:35 IST" duration-ms="2716" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- manditoryField -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:28 IST" name="setVariableEmpty" finished-at="2022-07-06T21:55:28 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:44:32 IST" name="setVariableEmpty" finished-at="2022-07-06T22:44:32 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:34 IST" name="setVariableEmpty" finished-at="2022-07-06T21:55:34 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method signature="inputUserLocationFieldReq()[pri:18, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:34 IST" name="inputUserLocationFieldReq" finished-at="2022-07-06T21:55:45 IST" duration-ms="10909" status="PASS">
+        <test-method signature="inputUserLocationFieldReq()[pri:18, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:44:35 IST" name="inputUserLocationFieldReq" finished-at="2022-07-06T22:44:46 IST" duration-ms="11629" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- inputUserLocationFieldReq -->
-        <test-method signature="conManditoryField()[pri:19, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:45 IST" name="conManditoryField" finished-at="2022-07-06T21:55:45 IST" duration-ms="513" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:44:35 IST" name="setVariableEmpty" finished-at="2022-07-06T22:44:35 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:44:46 IST" name="setVariableEmpty" finished-at="2022-07-06T22:44:46 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="conManditoryField()[pri:19, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:44:46 IST" name="conManditoryField" finished-at="2022-07-06T22:44:47 IST" duration-ms="544" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- conManditoryField -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:45 IST" name="setVariableEmpty" finished-at="2022-07-06T21:55:45 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:44:47 IST" name="setVariableEmpty" finished-at="2022-07-06T22:44:47 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method signature="inputContractorLocationFieldReq()[pri:20, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:45 IST" name="inputContractorLocationFieldReq" finished-at="2022-07-06T21:55:53 IST" duration-ms="7607" status="PASS">
+        <test-method signature="inputContractorLocationFieldReq()[pri:20, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:44:47 IST" name="inputContractorLocationFieldReq" finished-at="2022-07-06T22:44:54 IST" duration-ms="7614" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- inputContractorLocationFieldReq -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:45 IST" name="setVariableEmpty" finished-at="2022-07-06T21:55:45 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:53 IST" name="setVariableEmpty" finished-at="2022-07-06T21:55:53 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method signature="UserModule()[pri:21, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:55:53 IST" name="UserModule" finished-at="2022-07-06T21:56:01 IST" duration-ms="8272" status="PASS">
+        <test-method signature="UserModule()[pri:21, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:44:54 IST" name="UserModule" finished-at="2022-07-06T22:45:03 IST" duration-ms="8841" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserModule -->
-        <test-method signature="validationNamePresentList()[pri:22, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:01 IST" name="validationNamePresentList" finished-at="2022-07-06T21:56:04 IST" duration-ms="2698" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:44:54 IST" name="setVariableEmpty" finished-at="2022-07-06T22:44:54 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:03 IST" name="setVariableEmpty" finished-at="2022-07-06T22:45:03 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="validationNamePresentList()[pri:22, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:03 IST" name="validationNamePresentList" finished-at="2022-07-06T22:45:07 IST" duration-ms="3792" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validationNamePresentList -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:01 IST" name="setVariableEmpty" finished-at="2022-07-06T21:56:01 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:07 IST" name="setVariableEmpty" finished-at="2022-07-06T22:45:07 IST" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:04 IST" name="setVariableEmpty" finished-at="2022-07-06T21:56:04 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method signature="validationForCreateList()[pri:23, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:04 IST" name="validationForCreateList" finished-at="2022-07-06T21:56:07 IST" duration-ms="3622" status="PASS">
+        <test-method signature="validationForCreateList()[pri:23, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:07 IST" name="validationForCreateList" finished-at="2022-07-06T22:45:10 IST" duration-ms="3100" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validationForCreateList -->
-        <test-method signature="invalidDataValidation()[pri:24, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:07 IST" name="invalidDataValidation" finished-at="2022-07-06T21:56:10 IST" duration-ms="2398" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:10 IST" name="setVariableEmpty" finished-at="2022-07-06T22:45:10 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="invalidDataValidation()[pri:24, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:10 IST" name="invalidDataValidation" finished-at="2022-07-06T22:45:13 IST" duration-ms="3029" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidDataValidation -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:07 IST" name="setVariableEmpty" finished-at="2022-07-06T21:56:07 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:13 IST" name="setVariableEmpty" finished-at="2022-07-06T22:45:13 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:10 IST" name="setVariableEmpty" finished-at="2022-07-06T21:56:10 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method signature="conDatas()[pri:25, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:10 IST" name="conDatas" finished-at="2022-07-06T21:56:27 IST" duration-ms="16698" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()='User created successfully'] (tried for 10 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()='User created successfully'] (tried for 10 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at org.pom.Field_Page_Automation.successfulMessage(Field_Page_Automation.java:211)
-at org.pom.Field_Page_Automation.conDataReqOrganization(Field_Page_Automation.java:701)
-at com.zaigo.reactui.CreateContractorTestCases.conDatas(CreateContractorTestCases.java:266)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='User created successfully']"}
-  (Session info: chrome=103.0.5060.114)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-5M7AM2E', ip: '192.168.29.125', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56608}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 84d39530bfd7def5914a453c3d69b735
-*** Element info: {Using=xpath, value=//span[text()='User created successfully']}
-at jdk.internal.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 31 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="conDatas()[pri:25, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:13 IST" name="conDatas" finished-at="2022-07-06T22:45:23 IST" duration-ms="9680" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- conDatas -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:27 IST" name="setVariableEmpty" finished-at="2022-07-06T21:56:27 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:23 IST" name="setVariableEmpty" finished-at="2022-07-06T22:45:23 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method signature="alreadyExistData()[pri:26, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:27 IST" name="alreadyExistData" finished-at="2022-07-06T21:56:39 IST" duration-ms="12872" status="PASS">
+        <test-method signature="alreadyExistData()[pri:26, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:23 IST" name="alreadyExistData" finished-at="2022-07-06T22:45:27 IST" duration-ms="4722" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- alreadyExistData -->
-        <test-method signature="contractExistingData()[pri:27, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:39 IST" name="contractExistingData" finished-at="2022-07-06T21:56:43 IST" duration-ms="3470" status="PASS">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:27 IST" name="setVariableEmpty" finished-at="2022-07-06T22:45:27 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="contractExistingData()[pri:27, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:27 IST" name="contractExistingData" finished-at="2022-07-06T22:45:33 IST" duration-ms="5555" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- contractExistingData -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:39 IST" name="setVariableEmpty" finished-at="2022-07-06T21:56:39 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:43 IST" name="setVariableEmpty" finished-at="2022-07-06T21:56:43 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method is-config="true" signature="exitBrowser()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-06T21:56:43 IST" name="exitBrowser" finished-at="2022-07-06T21:56:43 IST" duration-ms="280" status="PASS">
+        <test-method is-config="true" signature="exitBrowser()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:33 IST" name="exitBrowser" finished-at="2022-07-06T22:45:33 IST" duration-ms="347" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exitBrowser -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3b6ddd1d]" started-at="2022-07-06T22:45:33 IST" name="setVariableEmpty" finished-at="2022-07-06T22:45:33 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
       </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="com.zaigo.reactui.SendInviteTestCases">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:45:33 IST" name="setup" finished-at="2022-07-06T22:45:35 IST" duration-ms="1321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyUserTab()[pri:1, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:45:35 IST" name="verifyUserTab" finished-at="2022-07-06T22:45:57 IST" duration-ms="22629" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserTab -->
+        <test-method signature="verifySendInvitePopup()[pri:2, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:45:57 IST" name="verifySendInvitePopup" finished-at="2022-07-06T22:46:04 IST" duration-ms="6990" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySendInvitePopup -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:45:57 IST" name="setVariableEmpty" finished-at="2022-07-06T22:45:57 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyEmailRequired()[pri:3, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:04 IST" name="verifyEmailRequired" finished-at="2022-07-06T22:46:07 IST" duration-ms="2197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmailRequired -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:04 IST" name="setVariableEmpty" finished-at="2022-07-06T22:46:04 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:07 IST" name="setVariableEmpty" finished-at="2022-07-06T22:46:07 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyEmailFormat()[pri:4, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:07 IST" name="verifyEmailFormat" finished-at="2022-07-06T22:46:10 IST" duration-ms="3062" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyEmailFormat -->
+        <test-method signature="verifyFirtName()[pri:5, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:10 IST" name="verifyFirtName" finished-at="2022-07-06T22:46:10 IST" duration-ms="308" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFirtName -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:10 IST" name="setVariableEmpty" finished-at="2022-07-06T22:46:10 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyFirtNameWithBlankSpace()[pri:6, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:10 IST" name="verifyFirtNameWithBlankSpace" finished-at="2022-07-06T22:46:13 IST" duration-ms="2945" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFirtNameWithBlankSpace -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:10 IST" name="setVariableEmpty" finished-at="2022-07-06T22:46:10 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyUserEnterMessage()[pri:7, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:13 IST" name="verifyUserEnterMessage" finished-at="2022-07-06T22:46:14 IST" duration-ms="834" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserEnterMessage -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:13 IST" name="setVariableEmpty" finished-at="2022-07-06T22:46:13 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:14 IST" name="setVariableEmpty" finished-at="2022-07-06T22:46:14 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyAddMoreButton()[pri:8, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:14 IST" name="verifyAddMoreButton" finished-at="2022-07-06T22:46:14 IST" duration-ms="167" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddMoreButton -->
+        <test-method signature="verifyUserSendInvite()[pri:9, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:14 IST" name="verifyUserSendInvite" finished-at="2022-07-06T22:46:21 IST" duration-ms="7090" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserSendInvite -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:14 IST" name="setVariableEmpty" finished-at="2022-07-06T22:46:14 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method is-config="true" signature="exitBrowser()[pri:0, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:21 IST" name="exitBrowser" finished-at="2022-07-06T22:46:21 IST" duration-ms="256" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exitBrowser -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.SendInviteTestCases@3f6b0be5]" started-at="2022-07-06T22:46:21 IST" name="setVariableEmpty" finished-at="2022-07-06T22:46:21 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+      </class> <!-- com.zaigo.reactui.SendInviteTestCases -->
+    </test> <!-- Login TestCases -->
+  </suite> <!-- Fieldy Login Test -->
 </testng-results>
