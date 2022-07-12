@@ -24,7 +24,10 @@ public class LoginTestCases {
 		this.driver.quit();
 	}
 	
-	@Test(priority = 1)
+	
+	/*
+	
+	@Test(priority=1)
 	public void verifyEmptyEmail() 
 	{
 		//check the Error message when the Username is Empty
@@ -34,19 +37,14 @@ public class LoginTestCases {
 	    loginInPage.clickLoginButton();
         String nameerr= driver.findElement(By.id("login")).getAttribute("validationMessage");
 	    Assert.assertEquals(nameerr, "Please fill in this field.");
-//one
 	   
 	   
-	    
-	    
-	 
-	    
 
 	   
 	    
     }
 	
-	/*
+	*/
 	
 	
 	@Test(priority = 2)
@@ -63,6 +61,7 @@ public class LoginTestCases {
     }
 	
 	
+	/*
 	
 	@Test(priority = 3)
 	public void verifyIncorrectMail() 
