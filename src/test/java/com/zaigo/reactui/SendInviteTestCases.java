@@ -1,5 +1,7 @@
 package com.zaigo.reactui;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -26,7 +28,7 @@ public class SendInviteTestCases {
 
 	@AfterClass
 	public void exitBrowser() {
-		this.driver.quit();
+		driver.quit();
 	}
 	
 	@AfterMethod
@@ -43,11 +45,11 @@ public class SendInviteTestCases {
 		//Verify the User Tab
 		
 		 LoginPage loginInPage = new LoginPage(this.driver);
-	     loginInPage.setUserCredentials("sriram@zaigoinfotech.com", "Zaiserve@123");
+	     loginInPage.setUserCredentials("fieldy@zaiportal.com", "Zaiserve@123");
 		 loginInPage.clickLoginButton();
 		 SendInvitePage invitePage = new SendInvitePage(this.driver);
 		 String text = invitePage.getUserTab();
-		 Assert.assertEquals(text, "User");
+		 Assert.assertEquals(text, "Team");
 	    
 	}
 
@@ -60,13 +62,15 @@ public class SendInviteTestCases {
 		//Verify the Send invite popup
 		
 		 SendInvitePage invitePage = new SendInvitePage(this.driver);
+		 
+		 Thread.sleep(5000);
 		 invitePage.clickUserTab();
 		 invitePage.clickUserSubMenu();
 		 invitePage.clickSendInvite();
 		 String text= invitePage.popupText();
 		 Assert.assertEquals(text, "Send Invite");
-		 invitePage.clickClose();
-		 invitePage.clickYes();
+//		 invitePage.clickClose();
+//		 invitePage.clickYes();
 	}
 	
 	@Test
@@ -76,18 +80,19 @@ public class SendInviteTestCases {
 		//Verify the Email format
 		
 		 SendInvitePage invitePage = new SendInvitePage(this.driver);
-		 invitePage.clickSendInvite();
-		 invitePage.clickNext();
+		// invitePage.clickSendInvite();
+		 Thread.sleep(2000);
+		 invitePage.clickInvite();
 		 String text= invitePage.getEmailErrorText();
-		 Assert.assertEquals(text, "This field is required");
-		 invitePage.clickClose();
-		 invitePage.clickYes();
+		 Assert.assertEquals(text, "Required Field");
+//		 invitePage.clickClose();
+//		 invitePage.clickYes();
 	}
-	
-	
-	
-	
-	
+//	
+//	
+//	
+//	
+//	
 	@Test
 	(priority=4)
 	public void verifyEmailFormat() throws InterruptedException 
@@ -95,15 +100,17 @@ public class SendInviteTestCases {
 		//Verify the Email format
 		
 		 SendInvitePage invitePage = new SendInvitePage(this.driver);
-		 invitePage.clickSendInvite();
+		 driver.navigate().refresh();
 		 invitePage.enterEmail("asdf");
+		 Thread.sleep(2000);
+		 invitePage.clickInvite();
 		 String text= invitePage.getEmailErrorText();
-		 Assert.assertEquals(text, "Enter a valid email address");
-		 invitePage.clickClose();
-		 invitePage.clickYes();
+		 Assert.assertEquals(text, "Enter a valid Email");
+//		 invitePage.clickClose();
+//		 invitePage.clickYes();
 	}
-	
-	
+//	
+//	
 	@Test
 	(priority=5)
 	public void verifyFirtName() throws InterruptedException 
@@ -111,16 +118,16 @@ public class SendInviteTestCases {
 		//Verify the Email format
 		
 		 SendInvitePage invitePage = new SendInvitePage(this.driver);
-		 invitePage.clickSendInvite();
+		 invitePage.clickInvite();
 		 invitePage.clickNext();
 		 String text= invitePage.firstNameError();
-		 Assert.assertEquals(text, "This field is required");
-		 invitePage.clickClose();
-		 invitePage.clickYes();
+		 Assert.assertEquals(text, "Required Field");
+//		 invitePage.clickClose();
+//		 invitePage.clickYes();
 	}
-	
-	
-	
+//	
+//	
+//	
 	@Test
 	(priority=6)
 	public void verifyFirtNameWithBlankSpace() throws InterruptedException 
@@ -128,17 +135,19 @@ public class SendInviteTestCases {
 		//Verify the Email format
 		
 		 SendInvitePage invitePage = new SendInvitePage(this.driver);
-		 invitePage.clickSendInvite();
+		 //invitePage.clickInvite();
+		 driver.navigate().refresh();
+//		 invitePage.clickInvite();
 		 invitePage.enterFirstName("  ");
-		 invitePage.clickNext();
+		 Thread.sleep(2000);
+		 invitePage.clickInvite();
 		 String text= invitePage.firstNameError();
-		 Assert.assertEquals(text, "Blank space not allowed");
-		 invitePage.clickClose();
-		 invitePage.clickYes();
+		 Assert.assertEquals(text, "Required Field");
+		 
 	}
-	
-	
-	
+//	
+//	
+//	
 	@Test
 	(priority=7)
 	public void verifyUserEnterMessage() throws InterruptedException 
@@ -146,17 +155,18 @@ public class SendInviteTestCases {
 		//Verify user can enter the message
 		
 		 SendInvitePage invitePage = new SendInvitePage(this.driver);
-		 invitePage.clickSendInvite();
+		 invitePage.clickInvite();
 		 invitePage.enterFirstName("Firstname");
 		 invitePage.enterEmail("email@gmail.com");
+		 invitePage.dndTypes();
 		 invitePage.clickNext();
 		 String text= invitePage.getMessageText();
 		 Assert.assertEquals(text, "Message");
-		 invitePage.clickClose();
-		 invitePage.clickYes();
+//		 invitePage.clickClose();
+//		 invitePage.clickYes();
 	}
 	
-	
+//	
 	@Test
 	(priority=8)
 	public void verifyAddMoreButton() throws InterruptedException 
@@ -164,14 +174,14 @@ public class SendInviteTestCases {
 		//Verify add more button is present
 		
 		 SendInvitePage invitePage = new SendInvitePage(this.driver);
-		 invitePage.clickSendInvite();
+		 invitePage.clickPrevious();
 		 String text= invitePage.getAddMoreText();
-		 Assert.assertEquals(text, "ADD MORE");
-		 invitePage.clickClose();
-		 invitePage.clickYes();
+		 Assert.assertEquals(text, "Add Users");
+//		 invitePage.clickClose();
+//		 invitePage.clickYes();
 	}
-	
-	
+//	
+//	
 	@Test
 	(priority=9)
 	public void verifyUserSendInvite() throws InterruptedException 
@@ -179,34 +189,37 @@ public class SendInviteTestCases {
 		//Verify user can send invite without message.
 		
 		 SendInvitePage invitePage = new SendInvitePage(this.driver);
-		 invitePage.clickSendInvite();
-		 invitePage.enterFirstName("Firstname");
-		 invitePage.enterEmail("email@gmail.com");
+//		 invitePage.clickSendInvite();
+		 driver.navigate().refresh();		 
+		 invitePage.enterFirstName("Hariharan");
+		 invitePage.enterEmail("hariharan.m@zaigoinfotech.com");
+		 Thread.sleep(1500);
+		 invitePage.dndTypes();
 		 invitePage.clickSubmit();
 		 String text= invitePage.getSuccessMessages();
-		 Assert.assertEquals(text, "Message");
-		 invitePage.clickClose();
-		 invitePage.clickYes();
+		 Assert.assertEquals(text, "Invitation sent successfully to 1 user(s)");
+//		 invitePage.clickClose();
+//		 invitePage.clickYes();
 	}
-	
-	
-	@Test
-	(priority=10)
-	public void verifyUserSendInviteWithMessage() throws InterruptedException 
-	{
-		//Verify user can sendinvite with message
-		
-		 SendInvitePage invitePage = new SendInvitePage(this.driver);
-		 invitePage.clickSendInvite();
-		 invitePage.enterFirstName("Firstname");
-		 invitePage.enterEmail("email@gmail.com");
-		 invitePage.clickNext();
-		 invitePage.enterMessage("message");
-		 invitePage.clickSubmit();
-		 String text= invitePage.getSuccessMessages();
-		 Assert.assertEquals(text, "Message");
-		 invitePage.clickClose();
-		 invitePage.clickYes();
-	}
+//	
+//	
+//	@Test
+//	(priority=10)
+//	public void verifyUserSendInviteWithMessage() throws InterruptedException 
+//	{
+//		//Verify user can sendinvite with message
+//		
+//		 SendInvitePage invitePage = new SendInvitePage(this.driver);
+//		 invitePage.clickSendInvite();
+//		 invitePage.enterFirstName("Firstname");
+//		 invitePage.enterEmail("email@gmail.com");
+//		 invitePage.clickNext();
+//		 invitePage.enterMessage("message");
+//		 invitePage.clickSubmit();
+//		 String text= invitePage.getSuccessMessages();
+//		 Assert.assertEquals(text, "Message");
+//		 invitePage.clickClose();
+//		 invitePage.clickYes();
+//	}
 
 }

@@ -1,93 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
+<testng-results skipped="0" failed="3" ignored="0" total="8" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Fieldy Login Test" duration-ms="53457" started-at="2022-06-23T17:16:54 IST" finished-at="2022-06-23T17:17:47 IST">
+  <suite name="Fieldy Login Test" duration-ms="109607" started-at="2022-07-12T18:53:13 IST" finished-at="2022-07-12T18:55:03 IST">
     <groups>
     </groups>
-    <test name="Login TestCases" duration-ms="53457" started-at="2022-06-23T17:16:54 IST" finished-at="2022-06-23T17:17:47 IST">
-      <class name="com.zaigo.reactui.CreateContractorTestCases">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="setup" is-config="true" duration-ms="21929" started-at="2022-06-23T17:16:54 IST" finished-at="2022-06-23T17:17:16 IST">
+    <test name="Login TestCases" duration-ms="109607" started-at="2022-07-12T18:53:13 IST" finished-at="2022-07-12T18:55:03 IST">
+      <class name="com.zaigo.reactui.LoginTestCases">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.zaigo.reactui.LoginTestCases@3b088d51]" name="setup" is-config="true" duration-ms="51654" started-at="2022-07-12T18:53:13 IST" finished-at="2022-07-12T18:54:05 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="verifyContractorTab()[pri:1, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="verifyContractorTab" duration-ms="23047" started-at="2022-06-23T17:17:16 IST" finished-at="2022-06-23T17:17:39 IST">
+        <test-method status="PASS" signature="verifyEmptyEmail()[pri:1, instance:com.zaigo.reactui.LoginTestCases@3b088d51]" name="verifyEmptyEmail" duration-ms="9090" started-at="2022-07-12T18:54:05 IST" finished-at="2022-07-12T18:54:14 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyContractorTab -->
-        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="setVariableEmpty" is-config="true" duration-ms="0" started-at="2022-06-23T17:17:39 IST" finished-at="2022-06-23T17:17:39 IST">
+        </test-method> <!-- verifyEmptyEmail -->
+        <test-method status="FAIL" signature="verifyEmptyPassword()[pri:2, instance:com.zaigo.reactui.LoginTestCases@3b088d51]" name="verifyEmptyPassword" duration-ms="12801" started-at="2022-07-12T18:54:14 IST" finished-at="2022-07-12T18:54:27 IST">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.id: login-password-error (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'CYBERSPACE', ip: '192.168.0.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51377}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 943dc0192901d28dc11d37e7c00c85e9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: login-password-error (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'CYBERSPACE', ip: '192.168.0.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51377}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 943dc0192901d28dc11d37e7c00c85e9
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.zaigo.pageobjects.LoginPage.getErrorMessagePassword(LoginPage.java:76)
+at com.zaigo.reactui.LoginTestCases.verifyEmptyPassword(LoginTestCases.java:54)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method status="PASS" signature="verifyContractorNameMandatory()[pri:2, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="verifyContractorNameMandatory" duration-ms="302" started-at="2022-06-23T17:17:39 IST" finished-at="2022-06-23T17:17:39 IST">
+        </test-method> <!-- verifyEmptyPassword -->
+        <test-method status="PASS" signature="verifyIncorrectMail()[pri:3, instance:com.zaigo.reactui.LoginTestCases@3b088d51]" name="verifyIncorrectMail" duration-ms="2158" started-at="2022-07-12T18:54:27 IST" finished-at="2022-07-12T18:54:29 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyContractorNameMandatory -->
-        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="setVariableEmpty" is-config="true" duration-ms="0" started-at="2022-06-23T17:17:39 IST" finished-at="2022-06-23T17:17:39 IST">
+        </test-method> <!-- verifyIncorrectMail -->
+        <test-method status="FAIL" signature="verifyIncorrectPassword()[pri:4, instance:com.zaigo.reactui.LoginTestCases@3b088d51]" name="verifyIncorrectPassword" duration-ms="10750" started-at="2022-07-12T18:54:29 IST" finished-at="2022-07-12T18:54:40 IST">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.id: login-password-error (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'CYBERSPACE', ip: '192.168.0.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51377}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 943dc0192901d28dc11d37e7c00c85e9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: login-password-error (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'CYBERSPACE', ip: '192.168.0.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51377}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 943dc0192901d28dc11d37e7c00c85e9
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.zaigo.pageobjects.LoginPage.getErrorMessagePassword(LoginPage.java:76)
+at com.zaigo.reactui.LoginTestCases.verifyIncorrectPassword(LoginTestCases.java:86)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method status="PASS" signature="verifyContractorEmailFormat()[pri:3, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="verifyContractorEmailFormat" duration-ms="599" started-at="2022-06-23T17:17:39 IST" finished-at="2022-06-23T17:17:40 IST">
+        </test-method> <!-- verifyIncorrectPassword -->
+        <test-method status="PASS" signature="verifyInvalidEmail()[pri:5, instance:com.zaigo.reactui.LoginTestCases@3b088d51]" name="verifyInvalidEmail" duration-ms="2339" started-at="2022-07-12T18:54:40 IST" finished-at="2022-07-12T18:54:42 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyContractorEmailFormat -->
-        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="setVariableEmpty" is-config="true" duration-ms="0" started-at="2022-06-23T17:17:40 IST" finished-at="2022-06-23T17:17:40 IST">
+        </test-method> <!-- verifyInvalidEmail -->
+        <test-method status="PASS" signature="verifyInvalidPassword()[pri:6, instance:com.zaigo.reactui.LoginTestCases@3b088d51]" name="verifyInvalidPassword" duration-ms="2623" started-at="2022-07-12T18:54:42 IST" finished-at="2022-07-12T18:54:45 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method status="PASS" signature="verifyContractorNumberMinValidation()[pri:4, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="verifyContractorNumberMinValidation" duration-ms="369" started-at="2022-06-23T17:17:40 IST" finished-at="2022-06-23T17:17:40 IST">
+        </test-method> <!-- verifyInvalidPassword -->
+        <test-method status="PASS" signature="verifyInvalidCredentials()[pri:7, instance:com.zaigo.reactui.LoginTestCases@3b088d51]" name="verifyInvalidCredentials" duration-ms="2253" started-at="2022-07-12T18:54:45 IST" finished-at="2022-07-12T18:54:47 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyContractorNumberMinValidation -->
-        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="setVariableEmpty" is-config="true" duration-ms="0" started-at="2022-06-23T17:17:40 IST" finished-at="2022-06-23T17:17:40 IST">
+        </test-method> <!-- verifyInvalidCredentials -->
+        <test-method status="FAIL" signature="verify()[pri:12, instance:com.zaigo.reactui.LoginTestCases@3b088d51]" name="verify" duration-ms="12391" started-at="2022-07-12T18:54:47 IST" finished-at="2022-07-12T18:55:00 IST">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //div[@data-menuselector='dashboard-menu'] (tried for 10 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@data-menuselector='dashboard-menu'] (tried for 10 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.zaigo.pageobjects.LoginPage.dashBoardText(LoginPage.java:39)
+at com.zaigo.reactui.LoginTestCases.verify(LoginTestCases.java:217)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@data-menuselector='dashboard-menu']"}
+  (Session info: chrome=103.0.5060.66)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'CYBERSPACE', ip: '192.168.0.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51377}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 943dc0192901d28dc11d37e7c00c85e9
+*** Element info: {Using=xpath, value=//div[@data-menuselector='dashboard-menu']}
+at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method status="PASS" signature="verifyContractorNumberMaxValidation()[pri:5, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="verifyContractorNumberMaxValidation" duration-ms="215" started-at="2022-06-23T17:17:40 IST" finished-at="2022-06-23T17:17:40 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyContractorNumberMaxValidation -->
-        <test-method status="PASS" signature="verifyFaxMinValidation()[pri:6, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="verifyFaxMinValidation" duration-ms="4269" started-at="2022-06-23T17:17:40 IST" finished-at="2022-06-23T17:17:44 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyFaxMinValidation -->
-        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="setVariableEmpty" is-config="true" duration-ms="0" started-at="2022-06-23T17:17:40 IST" finished-at="2022-06-23T17:17:40 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="setVariableEmpty" is-config="true" duration-ms="0" started-at="2022-06-23T17:17:44 IST" finished-at="2022-06-23T17:17:44 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method status="PASS" signature="verifyFaxMaxValidation()[pri:7, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="verifyFaxMaxValidation" duration-ms="414" started-at="2022-06-23T17:17:44 IST" finished-at="2022-06-23T17:17:45 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyFaxMaxValidation -->
-        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="setVariableEmpty" is-config="true" duration-ms="0" started-at="2022-06-23T17:17:45 IST" finished-at="2022-06-23T17:17:45 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method status="PASS" signature="verifyCpersonMaxValidation()[pri:8, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="verifyCpersonMaxValidation" duration-ms="1147" started-at="2022-06-23T17:17:45 IST" finished-at="2022-06-23T17:17:46 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCpersonMaxValidation -->
-        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="setVariableEmpty" is-config="true" duration-ms="0" started-at="2022-06-23T17:17:46 IST" finished-at="2022-06-23T17:17:46 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method status="PASS" signature="verifySaveButtonExist()[pri:9, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="verifySaveButtonExist" duration-ms="55" started-at="2022-06-23T17:17:46 IST" finished-at="2022-06-23T17:17:46 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySaveButtonExist -->
-        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="setVariableEmpty" is-config="true" duration-ms="0" started-at="2022-06-23T17:17:46 IST" finished-at="2022-06-23T17:17:46 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setVariableEmpty -->
-        <test-method status="PASS" signature="exitBrowser()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@5a1c0542]" name="exitBrowser" is-config="true" duration-ms="1023" started-at="2022-06-23T17:17:46 IST" finished-at="2022-06-23T17:17:47 IST">
+        </test-method> <!-- verify -->
+        <test-method status="PASS" signature="exitBrowser()[pri:0, instance:com.zaigo.reactui.LoginTestCases@3b088d51]" name="exitBrowser" is-config="true" duration-ms="3285" started-at="2022-07-12T18:55:00 IST" finished-at="2022-07-12T18:55:03 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exitBrowser -->
-      </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->
+      </class> <!-- com.zaigo.reactui.LoginTestCases -->
     </test> <!-- Login TestCases -->
   </suite> <!-- Fieldy Login Test -->
 </testng-results>

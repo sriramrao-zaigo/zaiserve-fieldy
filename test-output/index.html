@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Fieldy_Login_Test">
-              <span class="suite-name border-passed">Fieldy Login Test</span>
+              <span class="suite-name border-failed">Fieldy Login Test</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,31 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">9 methods,   9 passed</span>
+                    <span class="method-stats">8 methods, 3 failed,   5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Fieldy_Login_Test" class="hide-methods failed suite-Fieldy_Login_Test"> (hide)</a> <!-- hide-methods failed suite-Fieldy_Login_Test -->
+                      <a href="#" panel-name="suite-Fieldy_Login_Test" class="show-methods failed suite-Fieldy_Login_Test"> (show)</a> <!-- show-methods failed suite-Fieldy_Login_Test -->
+                    </span>
+                    <div class="method-list-content failed suite-Fieldy_Login_Test">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.LoginTestCases" hash-for-method="verify">verify</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.LoginTestCases" hash-for-method="verifyEmptyPassword">verifyEmptyPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.LoginTestCases" hash-for-method="verifyIncorrectPassword">verifyIncorrectPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Fieldy_Login_Test -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,47 +128,27 @@
                     <div class="method-list-content passed suite-Fieldy_Login_Test">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.CreateContractorTestCases" hash-for-method="verifyContractorEmailFormat">verifyContractorEmailFormat</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.LoginTestCases" hash-for-method="verifyEmptyEmail">verifyEmptyEmail</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.CreateContractorTestCases" hash-for-method="verifyContractorNameMandatory">verifyContractorNameMandatory</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.LoginTestCases" hash-for-method="verifyIncorrectMail">verifyIncorrectMail</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.CreateContractorTestCases" hash-for-method="verifyContractorNumberMaxValidation">verifyContractorNumberMaxValidation</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.LoginTestCases" hash-for-method="verifyInvalidCredentials">verifyInvalidCredentials</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.CreateContractorTestCases" hash-for-method="verifyContractorNumberMinValidation">verifyContractorNumberMinValidation</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.LoginTestCases" hash-for-method="verifyInvalidEmail">verifyInvalidEmail</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.CreateContractorTestCases" hash-for-method="verifyContractorTab">verifyContractorTab</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.CreateContractorTestCases" hash-for-method="verifyCpersonMaxValidation">verifyCpersonMaxValidation</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.CreateContractorTestCases" hash-for-method="verifyFaxMaxValidation">verifyFaxMaxValidation</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.CreateContractorTestCases" hash-for-method="verifyFaxMinValidation">verifyFaxMinValidation</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.CreateContractorTestCases" hash-for-method="verifySaveButtonExist">verifySaveButtonExist</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Fieldy_Login_Test" title="com.zaigo.reactui.LoginTestCases" hash-for-method="verifyInvalidPassword">verifyInvalidPassword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Fieldy_Login_Test -->
@@ -159,73 +163,133 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Fieldy_Login_Test" class="panel Fieldy_Login_Test">
-          <div class="suite-Fieldy_Login_Test-class-passed">
+          <div class="suite-Fieldy_Login_Test-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.zaigo.reactui.CreateContractorTestCases</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.zaigo.reactui.LoginTestCases</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyContractorEmailFormat">
-                  </a> <!-- verifyContractorEmailFormat -->
-                  <span class="method-name">verifyContractorEmailFormat</span>
+                  <a name="verify">
+                  </a> <!-- verify -->
+                  <span class="method-name">verify</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@data-menuselector=&apos;dashboard-menu&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.zaigo.pageobjects.LoginPage.dashBoardText(LoginPage.java:39)
+	at com.zaigo.reactui.LoginTestCases.verify(LoginTestCases.java:217)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@data-menuselector=&apos;dashboard-menu&apos;]&quot;}
+  (Session info: chrome=103.0.5060.66)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;CYBERSPACE&apos;, ip: &apos;192.168.0.101&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51377}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 943dc0192901d28dc11d37e7c00c85e9
+*** Element info: {Using=xpath, value=//div[@data-menuselector=&apos;dashboard-menu&apos;]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 30 more
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyContractorNameMandatory">
-                  </a> <!-- verifyContractorNameMandatory -->
-                  <span class="method-name">verifyContractorNameMandatory</span>
+                  <a name="verifyEmptyPassword">
+                  </a> <!-- verifyEmptyPassword -->
+                  <span class="method-name">verifyEmptyPassword</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: login-password-error (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;CYBERSPACE&apos;, ip: &apos;192.168.0.101&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51377}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 943dc0192901d28dc11d37e7c00c85e9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.zaigo.pageobjects.LoginPage.getErrorMessagePassword(LoginPage.java:76)
+	at com.zaigo.reactui.LoginTestCases.verifyEmptyPassword(LoginTestCases.java:54)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyContractorNumberMaxValidation">
-                  </a> <!-- verifyContractorNumberMaxValidation -->
-                  <span class="method-name">verifyContractorNumberMaxValidation</span>
+                  <a name="verifyIncorrectPassword">
+                  </a> <!-- verifyIncorrectPassword -->
+                  <span class="method-name">verifyIncorrectPassword</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: login-password-error (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;CYBERSPACE&apos;, ip: &apos;192.168.0.101&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_261&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\lenovo\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51377}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 943dc0192901d28dc11d37e7c00c85e9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.zaigo.pageobjects.LoginPage.getErrorMessagePassword(LoginPage.java:76)
+	at com.zaigo.reactui.LoginTestCases.verifyIncorrectPassword(LoginTestCases.java:86)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Fieldy_Login_Test-class-failed -->
+          <div class="suite-Fieldy_Login_Test-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.zaigo.reactui.LoginTestCases</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyEmptyEmail">
+                  </a> <!-- verifyEmptyEmail -->
+                  <span class="method-name">verifyEmptyEmail</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyContractorNumberMinValidation">
-                  </a> <!-- verifyContractorNumberMinValidation -->
-                  <span class="method-name">verifyContractorNumberMinValidation</span>
+                  <a name="verifyIncorrectMail">
+                  </a> <!-- verifyIncorrectMail -->
+                  <span class="method-name">verifyIncorrectMail</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyContractorTab">
-                  </a> <!-- verifyContractorTab -->
-                  <span class="method-name">verifyContractorTab</span>
+                  <a name="verifyInvalidCredentials">
+                  </a> <!-- verifyInvalidCredentials -->
+                  <span class="method-name">verifyInvalidCredentials</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyCpersonMaxValidation">
-                  </a> <!-- verifyCpersonMaxValidation -->
-                  <span class="method-name">verifyCpersonMaxValidation</span>
+                  <a name="verifyInvalidEmail">
+                  </a> <!-- verifyInvalidEmail -->
+                  <span class="method-name">verifyInvalidEmail</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyFaxMaxValidation">
-                  </a> <!-- verifyFaxMaxValidation -->
-                  <span class="method-name">verifyFaxMaxValidation</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyFaxMinValidation">
-                  </a> <!-- verifyFaxMinValidation -->
-                  <span class="method-name">verifyFaxMinValidation</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifySaveButtonExist">
-                  </a> <!-- verifySaveButtonExist -->
-                  <span class="method-name">verifySaveButtonExist</span>
+                  <a name="verifyInvalidPassword">
+                  </a> <!-- verifyInvalidPassword -->
+                  <span class="method-name">verifyInvalidPassword</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -242,7 +306,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Fieldy Login Test&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Login TestCases&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.zaigo.reactui.CreateContractorTestCases&quot;/&gt;
+      &lt;class name=&quot;com.zaigo.reactui.LoginTestCases&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Login TestCases --&gt;
 &lt;/suite&gt; &lt;!-- Fieldy Login Test --&gt;
@@ -282,48 +346,44 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(9);
+data.addRows(8);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyContractorTab')
-data.setCell(0, 2, 'com.zaigo.reactui.CreateContractorTestCases')
-data.setCell(0, 3, 23047);
+data.setCell(0, 1, 'verifyEmptyPassword')
+data.setCell(0, 2, 'com.zaigo.reactui.LoginTestCases')
+data.setCell(0, 3, 12801);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyFaxMinValidation')
-data.setCell(1, 2, 'com.zaigo.reactui.CreateContractorTestCases')
-data.setCell(1, 3, 4269);
+data.setCell(1, 1, 'verify')
+data.setCell(1, 2, 'com.zaigo.reactui.LoginTestCases')
+data.setCell(1, 3, 12391);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyCpersonMaxValidation')
-data.setCell(2, 2, 'com.zaigo.reactui.CreateContractorTestCases')
-data.setCell(2, 3, 1147);
+data.setCell(2, 1, 'verifyIncorrectPassword')
+data.setCell(2, 2, 'com.zaigo.reactui.LoginTestCases')
+data.setCell(2, 3, 10750);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyContractorEmailFormat')
-data.setCell(3, 2, 'com.zaigo.reactui.CreateContractorTestCases')
-data.setCell(3, 3, 599);
+data.setCell(3, 1, 'verifyEmptyEmail')
+data.setCell(3, 2, 'com.zaigo.reactui.LoginTestCases')
+data.setCell(3, 3, 9090);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'verifyFaxMaxValidation')
-data.setCell(4, 2, 'com.zaigo.reactui.CreateContractorTestCases')
-data.setCell(4, 3, 414);
+data.setCell(4, 1, 'verifyInvalidPassword')
+data.setCell(4, 2, 'com.zaigo.reactui.LoginTestCases')
+data.setCell(4, 3, 2623);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'verifyContractorNumberMinValidation')
-data.setCell(5, 2, 'com.zaigo.reactui.CreateContractorTestCases')
-data.setCell(5, 3, 369);
+data.setCell(5, 1, 'verifyInvalidEmail')
+data.setCell(5, 2, 'com.zaigo.reactui.LoginTestCases')
+data.setCell(5, 3, 2339);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'verifyContractorNameMandatory')
-data.setCell(6, 2, 'com.zaigo.reactui.CreateContractorTestCases')
-data.setCell(6, 3, 302);
+data.setCell(6, 1, 'verifyInvalidCredentials')
+data.setCell(6, 2, 'com.zaigo.reactui.LoginTestCases')
+data.setCell(6, 3, 2253);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'verifyContractorNumberMaxValidation')
-data.setCell(7, 2, 'com.zaigo.reactui.CreateContractorTestCases')
-data.setCell(7, 3, 215);
-data.setCell(8, 0, 8)
-data.setCell(8, 1, 'verifySaveButtonExist')
-data.setCell(8, 2, 'com.zaigo.reactui.CreateContractorTestCases')
-data.setCell(8, 3, 55);
+data.setCell(7, 1, 'verifyIncorrectMail')
+data.setCell(7, 2, 'com.zaigo.reactui.LoginTestCases')
+data.setCell(7, 3, 2158);
 window.suiteTableData['Fieldy_Login_Test']= { tableData: data, tableDiv: 'times-div-Fieldy_Login_Test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 30 seconds</span>
+              <span class="suite-total-time">Total running time: 54 seconds</span>
               <div id="times-div-Fieldy_Login_Test">
               </div> <!-- times-div-Fieldy_Login_Test -->
             </div> <!-- times-div -->
@@ -349,86 +409,52 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.zaigo.reactui.CreateContractorTestCases</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.zaigo.reactui.LoginTestCases</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">verifyContractorTab</span>
-                <span class="method-start">21940 ms</span>
+                <span class="method-name">verifyEmptyEmail</span>
+                <span class="method-start">51662 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">setVariableEmpty</span>
-                <span class="method-start">44990 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">verifyContractorNameMandatory</span>
-                <span class="method-start">45031 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyEmptyPassword</span>
+                <span class="method-start">60815 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">setVariableEmpty</span>
-                <span class="method-start">45334 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">verifyContractorEmailFormat</span>
-                <span class="method-start">45335 ms</span>
+                <span class="method-name">verifyIncorrectMail</span>
+                <span class="method-start">73782 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">setVariableEmpty</span>
-                <span class="method-start">45935 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">verifyContractorNumberMinValidation</span>
-                <span class="method-start">45936 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyIncorrectPassword</span>
+                <span class="method-start">75942 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">setVariableEmpty</span>
-                <span class="method-start">46306 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">verifyContractorNumberMaxValidation</span>
-                <span class="method-start">46307 ms</span>
+                <span class="method-name">verifyInvalidEmail</span>
+                <span class="method-start">86693 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">setVariableEmpty</span>
-                <span class="method-start">46523 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">verifyFaxMinValidation</span>
-                <span class="method-start">46523 ms</span>
+                <span class="method-name">verifyInvalidPassword</span>
+                <span class="method-start">89034 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">setVariableEmpty</span>
-                <span class="method-start">50795 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">verifyFaxMaxValidation</span>
-                <span class="method-start">50796 ms</span>
+                <span class="method-name">verifyInvalidCredentials</span>
+                <span class="method-start">91658 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">setVariableEmpty</span>
-                <span class="method-start">51211 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">verifyCpersonMaxValidation</span>
-                <span class="method-start">51212 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verify</span>
+                <span class="method-start">93912 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">setVariableEmpty</span>
-                <span class="method-start">52360 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">verifySaveButtonExist</span>
-                <span class="method-start">52361 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">setVariableEmpty</span>
-                <span class="method-start">52417 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">exitBrowser</span>
-                <span class="method-start">52417 ms</span>
+                <span class="method-start">106305 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

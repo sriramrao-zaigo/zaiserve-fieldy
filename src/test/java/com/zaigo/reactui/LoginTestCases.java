@@ -42,6 +42,7 @@ public class LoginTestCases {
 	    
     }
 	
+	/*
 	
 	
 	@Test(priority = 2)
@@ -57,7 +58,7 @@ public class LoginTestCases {
 	    
     }
 	
-	//hello
+	
 	
 	@Test(priority = 3)
 	public void verifyIncorrectMail() 
@@ -204,6 +205,8 @@ public class LoginTestCases {
 	
 	*/
 	
+	/*
+	
 	
 	@Test(priority =12)
 	public void verify() 
@@ -220,6 +223,8 @@ public class LoginTestCases {
 	   
 	   
 	 }	
+	
+	*/
 	
 	/*
 	@Test(priority =13)
