@@ -33,7 +33,7 @@ public class LoginTestCases {
 		this.driver.quit();
 	}
 
-	@Test(priority = -7)
+	@Test(priority = 1)
 	public void verifyEmptyEmail() {
 		// check the Error message when the Username is Empty
 
@@ -45,7 +45,7 @@ public class LoginTestCases {
 
 	}
 
-	@Test(priority = -6)
+	@Test(priority = 2)
 	public void verifyEmptyPassword() {
 
 		LoginPage loginInPage = new LoginPage(this.driver);
@@ -56,7 +56,7 @@ public class LoginTestCases {
 
 	}
 
-	@Test(priority = -5)
+	@Test(priority = 3)
 	public void verifyIncorrectMail() {
 		// Verify when both the Email and password are not exist in the database
 
@@ -68,7 +68,7 @@ public class LoginTestCases {
 
 	}
 
-	@Test(priority = -4)
+	@Test(priority = 4)
 	public void verifyIncorrectPassword() {
 		// Verify when password are not exist in the database.
 
@@ -80,7 +80,7 @@ public class LoginTestCases {
 
 	}
 
-	@Test(priority = -3)
+	@Test(priority = 5)
 	public void verifyInvalidEmail() {
 		// verify Email validation error message
 
@@ -92,7 +92,7 @@ public class LoginTestCases {
 
 	}
 
-	@Test(priority = -2)
+	@Test(priority = 6)
 	public void verifyInvalidPassword() {
 		// verify with Min password validation
 
@@ -104,7 +104,7 @@ public class LoginTestCases {
 		Assert.assertEquals(nameerr, "Enter minimum 8 characters.");
 	}
 
-	@Test(priority = -1)
+	@Test(priority = 7)
 	public void verifyInvalidCredentials() {
 
 		// verify with the invalid Email
@@ -172,7 +172,7 @@ public class LoginTestCases {
 //	 * 
 //	 */
 
-	@Test(priority = 0)
+	@Test(priority = 8)
 	public void verify() {
 		// Single Account User
 
