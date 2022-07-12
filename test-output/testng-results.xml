@@ -1,75 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
+<testng-results ignored="0" total="27" passed="27" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Fieldy Login Test" duration-ms="42473" started-at="2022-04-15T16:25:45 IST" finished-at="2022-04-15T16:26:28 IST">
+  <suite started-at="2022-07-12T14:13:35 IST" name="Default suite" finished-at="2022-07-12T14:15:13 IST" duration-ms="98593">
     <groups>
     </groups>
-    <test name="Login TestCases" duration-ms="42473" started-at="2022-04-15T16:25:45 IST" finished-at="2022-04-15T16:26:28 IST">
-      <class name="com.zaigo.reactui.LoginTestCases">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.zaigo.reactui.LoginTestCases@396f6598]" name="setup" is-config="true" duration-ms="2565" started-at="2022-04-15T16:25:45 IST" finished-at="2022-04-15T16:25:48 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="verifyEmptyEmail()[pri:1, instance:com.zaigo.reactui.LoginTestCases@396f6598]" name="verifyEmptyEmail" duration-ms="3415" started-at="2022-04-15T16:25:48 IST" finished-at="2022-04-15T16:25:51 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyEmptyEmail -->
-        <test-method status="PASS" signature="verifyEmptyPassword()[pri:2, instance:com.zaigo.reactui.LoginTestCases@396f6598]" name="verifyEmptyPassword" duration-ms="1673" started-at="2022-04-15T16:25:51 IST" finished-at="2022-04-15T16:25:53 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyEmptyPassword -->
-        <test-method status="PASS" signature="verifyIncorrectMail()[pri:3, instance:com.zaigo.reactui.LoginTestCases@396f6598]" name="verifyIncorrectMail" duration-ms="1082" started-at="2022-04-15T16:25:53 IST" finished-at="2022-04-15T16:25:54 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyIncorrectMail -->
-        <test-method status="PASS" signature="verifyIncorrectPassword()[pri:4, instance:com.zaigo.reactui.LoginTestCases@396f6598]" name="verifyIncorrectPassword" duration-ms="1595" started-at="2022-04-15T16:25:54 IST" finished-at="2022-04-15T16:25:56 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyIncorrectPassword -->
-        <test-method status="PASS" signature="verifyInvalidEmail()[pri:5, instance:com.zaigo.reactui.LoginTestCases@396f6598]" name="verifyInvalidEmail" duration-ms="1586" started-at="2022-04-15T16:25:56 IST" finished-at="2022-04-15T16:25:57 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyInvalidEmail -->
-        <test-method status="PASS" signature="verifyInvalidPassword()[pri:6, instance:com.zaigo.reactui.LoginTestCases@396f6598]" name="verifyInvalidPassword" duration-ms="1732" started-at="2022-04-15T16:25:57 IST" finished-at="2022-04-15T16:25:59 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyInvalidPassword -->
-        <test-method status="PASS" signature="verifyInvalidCredentials()[pri:7, instance:com.zaigo.reactui.LoginTestCases@396f6598]" name="verifyInvalidCredentials" duration-ms="1101" started-at="2022-04-15T16:25:59 IST" finished-at="2022-04-15T16:26:00 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyInvalidCredentials -->
-        <test-method status="PASS" signature="verify()[pri:12, instance:com.zaigo.reactui.LoginTestCases@396f6598]" name="verify" duration-ms="6425" started-at="2022-04-15T16:26:00 IST" finished-at="2022-04-15T16:26:07 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify -->
-        <test-method status="PASS" signature="exitBrowser()[pri:0, instance:com.zaigo.reactui.LoginTestCases@396f6598]" name="exitBrowser" is-config="true" duration-ms="1130" started-at="2022-04-15T16:26:07 IST" finished-at="2022-04-15T16:26:08 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exitBrowser -->
-      </class> <!-- com.zaigo.reactui.LoginTestCases -->
+    <test started-at="2022-07-12T14:13:35 IST" name="Default test" finished-at="2022-07-12T14:15:13 IST" duration-ms="98593">
       <class name="com.zaigo.reactui.CreateContractorTestCases">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@394e1a0f]" name="setup" is-config="true" duration-ms="1769" started-at="2022-04-15T16:26:08 IST" finished-at="2022-04-15T16:26:09 IST">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:35 IST" name="setup" finished-at="2022-07-12T14:13:37 IST" duration-ms="1678" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="verifyContractorTab()[pri:1, instance:com.zaigo.reactui.CreateContractorTestCases@394e1a0f]" name="verifyContractorTab" duration-ms="18143" started-at="2022-04-15T16:26:09 IST" finished-at="2022-04-15T16:26:28 IST">
+        <test-method signature="verifyContractorTab()[pri:1, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:37 IST" name="verifyContractorTab" finished-at="2022-07-12T14:13:50 IST" duration-ms="13550" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyContractorTab -->
-        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@394e1a0f]" name="setVariableEmpty" is-config="true" duration-ms="1" started-at="2022-04-15T16:26:28 IST" finished-at="2022-04-15T16:26:28 IST">
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:50 IST" name="setVariableEmpty" finished-at="2022-07-12T14:13:50 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
-        <test-method status="PASS" signature="verifyNameRequired()[pri:2, instance:com.zaigo.reactui.CreateContractorTestCases@394e1a0f]" name="verifyNameRequired" duration-ms="205" started-at="2022-04-15T16:26:28 IST" finished-at="2022-04-15T16:26:28 IST">
+        <test-method signature="verifyContractorNameMandatory()[pri:2, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:50 IST" name="verifyContractorNameMandatory" finished-at="2022-07-12T14:13:52 IST" duration-ms="2144" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyNameRequired -->
-        <test-method status="PASS" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@394e1a0f]" name="setVariableEmpty" is-config="true" duration-ms="1" started-at="2022-04-15T16:26:28 IST" finished-at="2022-04-15T16:26:28 IST">
+        </test-method> <!-- verifyContractorNameMandatory -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:52 IST" name="setVariableEmpty" finished-at="2022-07-12T14:13:52 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyContractorEmailFormat()[pri:3, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:52 IST" name="verifyContractorEmailFormat" finished-at="2022-07-12T14:13:53 IST" duration-ms="309" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyContractorEmailFormat -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:53 IST" name="setVariableEmpty" finished-at="2022-07-12T14:13:53 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyContractorNumberMinValidation()[pri:4, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:53 IST" name="verifyContractorNumberMinValidation" finished-at="2022-07-12T14:13:53 IST" duration-ms="278" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyContractorNumberMinValidation -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:53 IST" name="setVariableEmpty" finished-at="2022-07-12T14:13:53 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyContractorNumberMaxValidation()[pri:5, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:53 IST" name="verifyContractorNumberMaxValidation" finished-at="2022-07-12T14:13:53 IST" duration-ms="200" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyContractorNumberMaxValidation -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:53 IST" name="setVariableEmpty" finished-at="2022-07-12T14:13:53 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyFaxMinValidation()[pri:6, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:53 IST" name="verifyFaxMinValidation" finished-at="2022-07-12T14:13:53 IST" duration-ms="189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFaxMinValidation -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:53 IST" name="setVariableEmpty" finished-at="2022-07-12T14:13:53 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyFaxMaxValidation()[pri:7, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:53 IST" name="verifyFaxMaxValidation" finished-at="2022-07-12T14:13:54 IST" duration-ms="378" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFaxMaxValidation -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:54 IST" name="setVariableEmpty" finished-at="2022-07-12T14:13:54 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifyCpersonMaxValidation()[pri:8, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:54 IST" name="verifyCpersonMaxValidation" finished-at="2022-07-12T14:13:55 IST" duration-ms="1743" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCpersonMaxValidation -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:55 IST" name="setVariableEmpty" finished-at="2022-07-12T14:13:55 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="verifySaveButtonExist()[pri:9, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:55 IST" name="verifySaveButtonExist" finished-at="2022-07-12T14:13:55 IST" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySaveButtonExist -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:55 IST" name="setVariableEmpty" finished-at="2022-07-12T14:13:55 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="listValidationName()[pri:10, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:55 IST" name="listValidationName" finished-at="2022-07-12T14:13:58 IST" duration-ms="2266" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listValidationName -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:58 IST" name="setVariableEmpty" finished-at="2022-07-12T14:13:58 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="validationName()[pri:11, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:13:58 IST" name="validationName" finished-at="2022-07-12T14:14:00 IST" duration-ms="2300" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validationName -->
+        <test-method signature="invalidValidationData()[pri:12, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:00 IST" name="invalidValidationData" finished-at="2022-07-12T14:14:01 IST" duration-ms="1137" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidValidationData -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:00 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:00 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:01 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:01 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="modulePage()[pri:13, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:01 IST" name="modulePage" finished-at="2022-07-12T14:14:03 IST" duration-ms="2193" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- modulePage -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:03 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:03 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="reqFieldUser()[pri:14, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:03 IST" name="reqFieldUser" finished-at="2022-07-12T14:14:06 IST" duration-ms="2692" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reqFieldUser -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:06 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:06 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="conReqField()[pri:15, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:06 IST" name="conReqField" finished-at="2022-07-12T14:14:10 IST" duration-ms="4177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- conReqField -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:10 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:10 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="reqOrganization()[pri:16, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:10 IST" name="reqOrganization" finished-at="2022-07-12T14:14:15 IST" duration-ms="4972" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reqOrganization -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:15 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:15 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="manditoryField()[pri:17, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:15 IST" name="manditoryField" finished-at="2022-07-12T14:14:18 IST" duration-ms="2890" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- manditoryField -->
+        <test-method signature="inputUserLocationFieldReq()[pri:18, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:18 IST" name="inputUserLocationFieldReq" finished-at="2022-07-12T14:14:27 IST" duration-ms="8876" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inputUserLocationFieldReq -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:18 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:18 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:27 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:27 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="conManditoryField()[pri:19, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:27 IST" name="conManditoryField" finished-at="2022-07-12T14:14:27 IST" duration-ms="491" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- conManditoryField -->
+        <test-method signature="inputContractorLocationFieldReq()[pri:20, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:27 IST" name="inputContractorLocationFieldReq" finished-at="2022-07-12T14:14:36 IST" duration-ms="9018" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inputContractorLocationFieldReq -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:27 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:27 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:36 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:36 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="UserModule()[pri:21, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:36 IST" name="UserModule" finished-at="2022-07-12T14:14:45 IST" duration-ms="9059" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserModule -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:45 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:45 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="validationNamePresentList()[pri:22, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:45 IST" name="validationNamePresentList" finished-at="2022-07-12T14:14:48 IST" duration-ms="2088" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validationNamePresentList -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:48 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:48 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="validationForCreateList()[pri:23, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:48 IST" name="validationForCreateList" finished-at="2022-07-12T14:14:50 IST" duration-ms="2276" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validationForCreateList -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:50 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:50 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="invalidDataValidation()[pri:24, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:50 IST" name="invalidDataValidation" finished-at="2022-07-12T14:14:52 IST" duration-ms="2237" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidDataValidation -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:52 IST" name="setVariableEmpty" finished-at="2022-07-12T14:14:52 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="conDatas()[pri:25, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:14:52 IST" name="conDatas" finished-at="2022-07-12T14:15:02 IST" duration-ms="9540" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- conDatas -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:15:02 IST" name="setVariableEmpty" finished-at="2022-07-12T14:15:02 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="alreadyExistData()[pri:26, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:15:02 IST" name="alreadyExistData" finished-at="2022-07-12T14:15:07 IST" duration-ms="5692" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- alreadyExistData -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:15:07 IST" name="setVariableEmpty" finished-at="2022-07-12T14:15:07 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setVariableEmpty -->
+        <test-method signature="contractExistingData()[pri:27, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:15:07 IST" name="contractExistingData" finished-at="2022-07-12T14:15:13 IST" duration-ms="5881" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- contractExistingData -->
+        <test-method is-config="true" signature="exitBrowser()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:15:13 IST" name="exitBrowser" finished-at="2022-07-12T14:15:13 IST" duration-ms="211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exitBrowser -->
+        <test-method is-config="true" signature="setVariableEmpty()[pri:0, instance:com.zaigo.reactui.CreateContractorTestCases@3bf9ce3e]" started-at="2022-07-12T14:15:13 IST" name="setVariableEmpty" finished-at="2022-07-12T14:15:13 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setVariableEmpty -->
       </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->
-    </test> <!-- Login TestCases -->
-  </suite> <!-- Fieldy Login Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
