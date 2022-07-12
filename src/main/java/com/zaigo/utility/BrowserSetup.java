@@ -18,6 +18,7 @@ public class BrowserSetup {
     	driver.manage().window().maximize();
 		return driver;
 		
+		
 	}
 
 	public static WebDriverWait createWebDriverWait(WebDriver driver) {
