@@ -33,10 +33,10 @@ public class LoginTestCases {
 		loginInPage.setUserCredentials("","");
 	    loginInPage.clickLoginButton();
         String nameerr= driver.findElement(By.id("login")).getAttribute("validationMessage");
-	    Assert.assertEquals(nameerr, "Please fill out this field.");
+	    Assert.assertEquals(nameerr, "Please fill in this field.");
 
 	   
-	    //ww
+	   
 	    
 	    
 	 
