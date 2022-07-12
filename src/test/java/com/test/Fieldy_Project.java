@@ -19,25 +19,25 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Fieldy_Project {
 	WebDriver driver;
 
-//	@BeforeClass
-//	public void beforeLaunching() {
-//		WebDriverManager.chromedriver().setup();
-//		driver = new ChromeDriver();
-//		driver.manage().window().maximize();
-//		driver.get("http://tenant4.zaiportal.com/login/");
-//	}
-//
-//	@AfterClass
-//	public void afterLaunching() {
-//		driver.quit();
-//	}
-//
+	@BeforeClass
+	public void beforeLaunching() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("http://tenant4.zaiportal.com/login/");
+	}
+
+	@AfterClass
+	public void afterLaunching() {
+		driver.quit();
+	}
+
 	@Test(priority = 1) // 1-Login
 	public void loginPage() throws InterruptedException {
 		Field_Page_Automation login = new Field_Page_Automation(driver);
 		login.loginFieldy("fieldy@zaiportal.com", "Zaiserve@123");
 	}
-//
+
 	@Test(priority = 2) // 2-Module
 	public void modulePage() throws InterruptedException {
 		Field_Page_Automation modules = new Field_Page_Automation(driver);

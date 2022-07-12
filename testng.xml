@@ -5,6 +5,7 @@
 		<classes>
 			<class name="com.zaigo.reactui.LoginTestCases" />
 			<class name="com.zaigo.reactui.CreateContractorTestCases" />
+			<class name="com.test.Fieldy_Project" />
 			<class name="com.zaigo.reactui.SendInviteTestCases" />
 		</classes>
 	</test> <!-- Test -->
