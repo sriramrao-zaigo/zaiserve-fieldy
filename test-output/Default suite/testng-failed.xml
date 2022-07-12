@@ -5,15 +5,11 @@
     <classes>
       <class name="com.zaigo.reactui.CreateContractorTestCases">
         <methods>
-          <include name="verifyContractorNumberMaxValidation"/>
-          <include name="verifyFaxMaxValidation"/>
           <include name="setVariableEmpty"/>
-          <include name="verifyContractorEmailFormat"/>
+          <include name="contractExistingData"/>
           <include name="exitBrowser"/>
-          <include name="verifyContractorNameMandatory"/>
-          <include name="verifyFaxMinValidation"/>
-          <include name="reqOrganization"/>
-          <include name="verifyContractorNumberMinValidation"/>
+          <include name="conDatas"/>
+          <include name="alreadyExistData"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->

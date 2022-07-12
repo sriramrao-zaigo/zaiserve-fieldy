@@ -27,12 +27,10 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	public static WebDriver driver;
-	
 
 	public static void browserConfigChrome() {
 		WebDriverManager.chromedriver().setup();
@@ -211,7 +209,5 @@ public class BaseClass {
 		return value;
 
 	}
-
-
 
 }

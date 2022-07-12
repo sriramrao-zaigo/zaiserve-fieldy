@@ -66,8 +66,8 @@ public class Field_Page_Automation extends BaseClass {
 
 	By Url = By.id("social_media__url__1");
 
-	By SaveComplete = By.xpath("//button[@data-formsubmit='user_create']//parent::div");
-	By ConSaveComplete = By.xpath("//button[@data-automationid='save-complete']");
+	By SaveComplete = By.xpath("//button[@data-formsubmit='user_create']");
+	By ConSaveComplete = By.xpath("//button[@data-formsubmit='user_contractor_create']");
 
 	By SuccessfulMessage = By.xpath("//span[text()='User created successfully']");
 	By AlreadySameMail = By.xpath("//span[text()='User Already Exist with the same email address']");
@@ -173,7 +173,7 @@ public class Field_Page_Automation extends BaseClass {
 	}
 
 	private void dropDownType() throws InterruptedException {
-		Thread.sleep(1500);
+		Thread.sleep(1800);
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(DropDown)).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(Manager)).click();
@@ -293,12 +293,13 @@ public class Field_Page_Automation extends BaseClass {
 
 	private void ScrollUp() {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,-250)");
+		jse.executeScript("window.scrollBy(0,-1000)");
 
 	}
 
-	private void conSaveComplete() {
-		wait = new WebDriverWait(driver, 10);
+	private void conSaveComplete() throws InterruptedException {
+		Thread.sleep(1500);
+		wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ConSaveComplete)).click();
 
 	}
@@ -343,10 +344,10 @@ public class Field_Page_Automation extends BaseClass {
 
 	}
 
-	private void saveComplete() {
+	private void saveComplete() throws InterruptedException {
+		Thread.sleep(1500);
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(SaveComplete)).click();
-
 	}
 
 	private void clkUser() {
@@ -617,7 +618,6 @@ public class Field_Page_Automation extends BaseClass {
 		this.inputCityVillage1(cityName);
 		this.inputZipCode1(zipCodeNo);
 		this.saveComplete();
-		this.saveComplete();
 		this.successfulMessage();
 
 	}
@@ -705,7 +705,6 @@ public class Field_Page_Automation extends BaseClass {
 		this.inputCityVillage1(cityName);
 		this.inputZipCode1(zipCodeNo);
 		this.conSaveComplete();
-		this.conSaveComplete();
 		this.successfulMessage();
 
 	}
@@ -736,7 +735,9 @@ public class Field_Page_Automation extends BaseClass {
 		this.conFirstName(firstName);
 		this.conEmail(email);
 		this.conOrganization();
-		this.clickNext();
+		Thread.sleep(1000);
+		this.conSaveComplete();
+		this.conSaveComplete();
 		this.requiredFieldCompany();
 
 	}

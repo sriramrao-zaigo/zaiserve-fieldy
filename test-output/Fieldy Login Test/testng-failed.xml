@@ -7,9 +7,8 @@
         <methods>
           <include name="setVariableEmpty"/>
           <include name="exitBrowser"/>
-          <include name="verifyContractorNameMandatory"/>
-          <include name="reqOrganization"/>
-          <include name="conReqField"/>
+          <include name="conDatas"/>
+          <include name="alreadyExistData"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->

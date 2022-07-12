@@ -191,9 +191,9 @@ public class SendInviteTestCases {
 		 SendInvitePage invitePage = new SendInvitePage(this.driver);
 //		 invitePage.clickSendInvite();
 		 driver.navigate().refresh();		 
-		 invitePage.enterFirstName("Firstname");
-		 invitePage.enterEmail("email@gmail.com");
-		 Thread.sleep(2000);
+		 invitePage.enterFirstName("Hariharan");
+		 invitePage.enterEmail("hariharan.m@zaigoinfotech.com");
+		 Thread.sleep(1500);
 		 invitePage.dndTypes();
 		 invitePage.clickSubmit();
 		 String text= invitePage.getSuccessMessages();
