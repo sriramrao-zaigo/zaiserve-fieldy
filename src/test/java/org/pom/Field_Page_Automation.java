@@ -298,7 +298,7 @@ public class Field_Page_Automation extends BaseClass {
 	}
 
 	private void conSaveComplete() throws InterruptedException {
-		Thread.sleep(1500);
+		Thread.sleep(2000);
 		wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ConSaveComplete)).click();
 
@@ -345,7 +345,7 @@ public class Field_Page_Automation extends BaseClass {
 	}
 
 	private void saveComplete() throws InterruptedException {
-		Thread.sleep(1500);
+		Thread.sleep(2000);
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(SaveComplete)).click();
 	}
@@ -589,7 +589,7 @@ public class Field_Page_Automation extends BaseClass {
 	}
 
 	public void enterTeamModule() throws InterruptedException {
-		driver.navigate().refresh();
+//		driver.navigate().refresh();
 		// Thread.sleep(5000);
 		this.clickTeam();
 		this.clickUser();
@@ -644,7 +644,6 @@ public class Field_Page_Automation extends BaseClass {
 		this.txtEmail(email);
 		this.ScrollDown();
 		this.phoneNo(phoneNumber);
-		// Thread.sleep(1000);
 		this.saveComplete();
 		this.alreadyExist();
 
