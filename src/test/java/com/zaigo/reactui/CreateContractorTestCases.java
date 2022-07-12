@@ -59,7 +59,7 @@ public class CreateContractorTestCases {
 	public void verifyContractorNameMandatory() throws InterruptedException {
 
 		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
-		Thread.sleep(1000);
+		Thread.sleep(1500);
 		contractorPage.clickSaveandComplete();
 
 		String error_text = contractorPage.contractorNameError();
