@@ -192,7 +192,7 @@ public class SendInviteTestCases {
 //		 invitePage.clickSendInvite();
 		 driver.navigate().refresh();		 
 		 invitePage.enterFirstName("Hariharan");
-		 invitePage.enterEmail("hariharan.m@zaigoinfotech.com");
+		 invitePage.enterEmail("hariharanm123@zaigoinfotech.com");
 		 Thread.sleep(1500);
 		 invitePage.dndTypes();
 		 invitePage.clickSubmit();
