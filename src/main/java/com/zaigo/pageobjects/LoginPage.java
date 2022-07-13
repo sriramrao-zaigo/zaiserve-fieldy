@@ -23,7 +23,8 @@ public class LoginPage {
 	private By lockpopuptwo = By.xpath("//*[contains(text(),'Your account is locked. Please contact admin.')]");
 	private By dashboard = By.xpath("//div[@data-menuselector='dashboard-menu']");
 	private By multiaccount = By.xpath("//h4[contains(text(),'Fieldy Tenant 2')]");
-
+    private By after_login = By.xpath("//a[@id='dashboard-menu']");
+	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new WebDriverWait(this.driver, 10);
@@ -36,8 +37,8 @@ public class LoginPage {
 	}
 
 	public String dashBoardText() {
-		wait.until(ExpectedConditions.elementToBeClickable((dashboard)));
-		return driver.findElement(dashboard).getText();
+		wait.until(ExpectedConditions.elementToBeClickable((after_login)));
+		return driver.findElement(after_login).getText();
 	}
 
 	public String toastText() {

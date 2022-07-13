@@ -36,7 +36,7 @@ public class LoginTestCases {
 		loginInPage.setUserCredentials("","");
 	    loginInPage.clickLoginButton();
         String nameerr= driver.findElement(By.id("login")).getAttribute("validationMessage");
-	    Assert.assertEquals(nameerr, "Please fill in this field.");
+	    Assert.assertEquals(nameerr, "Please fill out this field.");
 	   
 	   
 
@@ -52,7 +52,7 @@ public class LoginTestCases {
 	{
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("alpha@zaisuite.com", "");
+		loginInPage.setUserCredentials("fieldy@zaiportal.com", "");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessagePassword();
 	    Assert.assertEquals(nameerr, "Invalid Password");
@@ -61,7 +61,7 @@ public class LoginTestCases {
 	    
     }
 	
-	/*
+	
 	
 	
 	@Test(priority = 3)
@@ -70,7 +70,7 @@ public class LoginTestCases {
 		//Verify when both the Email and password are not exist in the database
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("alphas@zaisuite.com", "Zaiserve@123");
+		loginInPage.setUserCredentials("fieldys@zaiportal.com", "Zaiserve@123");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessageUserName();
 	    Assert.assertEquals(nameerr, "Invalid Email");
@@ -86,7 +86,7 @@ public class LoginTestCases {
 		//Verify when password are not exist in the database.
 		
 		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("alpha@zaisuite.com", "Zaisuite@124");
+		loginInPage.setUserCredentials("fieldy@zaiportal.com", "Zaisuite@124");
 	    loginInPage.clickLoginButton();
 	    String nameerr=loginInPage.getErrorMessagePassword();
 	    Assert.assertEquals(nameerr, "Invalid Password");
@@ -143,9 +143,26 @@ public class LoginTestCases {
     }
 	
 	
+	@Test(priority =8)
+	public void verifyvalidCredentials() 
+	{
+		
+		//verify with the invalid Email
+		
+		LoginPage loginInPage = new LoginPage(this.driver);
+		loginInPage.setUserCredentials("fieldy@zaiportal.com", "Zaiserve@123");
+	    loginInPage.clickLoginButton();
+	    String text= loginInPage.dashBoardText();
+	    System.out.println(text);
+	    
+	   
+	    
+    }
 	
 	
-	*/
+
+	
+	
 	
 	/*
 	
