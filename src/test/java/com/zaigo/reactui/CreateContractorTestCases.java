@@ -42,16 +42,18 @@ public class CreateContractorTestCases {
 	public void verifyContractorTab() throws InterruptedException {
 		// Verify User Tab
 
-		LoginPage loginInPage = new LoginPage(this.driver);
-		loginInPage.setUserCredentials("fieldy@zaiportal.com", "Zaiserve@123");
-		loginInPage.clickLoginButton();
-		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		//LoginPage loginInPage = new LoginPage(this.driver);
+	//	loginInPage.setUserCredentials("fieldy@zaiportal.com", "Zaiserve@123");
+		//loginInPage.clickLoginButton();
+	//	CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		// contractorPage.clickTeam();
 		// Thread.sleep(5000);
-		contractorPage.clickTeam();
+	//	contractorPage.clickTeam();
 		// contractorPage.clickCompany();
-		contractorPage.clickContractor();
-		contractorPage.createContractorButtonj();
+	//	contractorPage.clickContractor();
+	//	contractorPage.createContractorButtonj();
+		
+		System.out.println("Hello");
 
 	}
 
