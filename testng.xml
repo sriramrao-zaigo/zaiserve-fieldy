@@ -5,7 +5,7 @@
 		<classes>
 			
 
-			<class name="com.zaigo.reactui.LoginTestCases"></class>
+			<class name="com.zaigo.reactui.CreateContractorTestCases"></class>
 
 			
 			

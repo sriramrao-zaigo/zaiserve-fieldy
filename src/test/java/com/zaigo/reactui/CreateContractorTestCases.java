@@ -55,6 +55,8 @@ public class CreateContractorTestCases {
 
 	}
 
+	
+	/*
 	@Test(priority = 2)
 	public void verifyContractorNameMandatory() throws InterruptedException {
 
