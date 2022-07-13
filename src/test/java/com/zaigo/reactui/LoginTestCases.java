@@ -25,7 +25,7 @@ public class LoginTestCases {
 	}
 	
 	
-	/*
+	
 	
 	@Test(priority=1)
 	public void verifyEmptyEmail() 
@@ -44,10 +44,10 @@ public class LoginTestCases {
 	    
     }
 	
-	*/
+
 	
 	
-	@Test(priority = 1)
+	@Test(priority = 2)
 	public void verifyEmptyPassword() 
 	{
 		
@@ -61,8 +61,8 @@ public class LoginTestCases {
 	    
     }
 	
-	
 	/*
+	
 	
 	@Test(priority = 3)
 	public void verifyIncorrectMail() 
@@ -145,7 +145,7 @@ public class LoginTestCases {
 	
 	
 	
-	
+	*/
 	
 	/*
 	
