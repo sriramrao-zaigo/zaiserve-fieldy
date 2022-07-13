@@ -47,7 +47,7 @@ public class LoginTestCases {
 	*/
 	
 	
-	@Test(priority = 2)
+	@Test(priority = 1)
 	public void verifyEmptyPassword() 
 	{
 		
@@ -57,6 +57,7 @@ public class LoginTestCases {
 	    String nameerr=loginInPage.getErrorMessagePassword();
 	    Assert.assertEquals(nameerr, "Invalid Password");
 	   
+	    //Hello
 	    
     }
 	
