@@ -113,7 +113,7 @@ public class CreateContractorPage {
 
 	private By clickclosebutton = By.xpath("//button[@data-automationid='c']");
 
-	By NameValidation = By.xpath("//span[text()='Mrs. Veda Predovic']");
+	By NameValidation = By.xpath("//div[contains(text(),'No Search Results found for')]");
 
 	By SearchBox = By.xpath("//input[@data-automationid='search']");
 
@@ -121,27 +121,40 @@ public class CreateContractorPage {
 
 	By ErrorValidation = By.xpath("//div[text()='No Search Results found for']");
 
+	By Search = By.id("team-company-search-button");
+
 	public void validation() {
 		wait = new WebDriverWait(driver, 10);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated((NameValidation))).getText();
-		Assert.assertEquals(text, "Mrs. Veda Predovic");
+		Assert.assertEquals(text, "Dhamudha");
 
 	}
 
 	public void nameValidationList(String name) {
 		wait = new WebDriverWait(driver, 10);
 		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated((SearchBox)));
-		until.sendKeys(name,Keys.ENTER);
+		until.sendKeys(name);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Search)).click();
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated((NameValidation))).getText();
-		Assert.assertEquals(text, "Mrs. Veda Predovic");
+		Assert.assertEquals(text, "Dhamudha");
 		until.clear();
 	}
 
 	public void invalidValidation(String name) {
 		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated((SearchBox))).sendKeys(name,Keys.ENTER);
+		wait.until(ExpectedConditions.visibilityOfElementLocated((SearchBox))).sendKeys(name, Keys.ENTER);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated((ErrorValidation))).getText();
-		Assert.assertEquals(text, "No Search Results found for\"asfvcsv\"");
+		System.out.println(text);
+		if(text.contains("No Search Results found for"))
+		{
+			System.out.println("Pass");
+			
+		}
+		else
+		{
+			System.out.println("Fail");
+		}
+		//Assert.assertEquals(text, "No Search Results found for");
 
 	}
 
@@ -431,8 +444,8 @@ public class CreateContractorPage {
 	}
 
 	public void listValidation() {
-		this.clickTeam();
-		this.clickContractor();
+//		this.clickTeam();
+//		this.clickContractor();
 		this.validation();
 
 	}

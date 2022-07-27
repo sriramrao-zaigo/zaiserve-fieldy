@@ -15,6 +15,8 @@ import org.testng.annotations.Test;
 
 import com.zaigo.pageobjects.CreateContractorPage;
 import com.zaigo.pageobjects.CreateVendorPage;
+
+import com.zaigo.pageobjects.EditContractorPage;
 import com.zaigo.pageobjects.LoginPage;
 import com.zaigo.utility.BrowserSetup;
 
@@ -42,28 +44,24 @@ public class CreateContractorTestCases {
 	public void verifyContractorTab() throws InterruptedException {
 		// Verify User Tab
 
-		//LoginPage loginInPage = new LoginPage(this.driver);
-	//	loginInPage.setUserCredentials("fieldy@zaiportal.com", "Zaiserve@123");
-		//loginInPage.clickLoginButton();
-	//	CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		LoginPage loginInPage = new LoginPage(this.driver);
+		loginInPage.setUserCredentials("fieldy@zaiportal.com", "Zaiserve@123");
+		loginInPage.clickLoginButton();
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		// contractorPage.clickTeam();
 		// Thread.sleep(5000);
-	//	contractorPage.clickTeam();
+		contractorPage.clickTeam();
 		// contractorPage.clickCompany();
-	//	contractorPage.clickContractor();
-	//	contractorPage.createContractorButtonj();
-		
-		System.out.println("Hello");
+		contractorPage.clickContractor();
+		contractorPage.createContractorButtonj();
 
 	}
 
-	
-	/*
 	@Test(priority = 2)
 	public void verifyContractorNameMandatory() throws InterruptedException {
 
 		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
-		Thread.sleep(1500);
+		Thread.sleep(1000);
 		contractorPage.clickSaveandComplete();
 
 		String error_text = contractorPage.contractorNameError();
@@ -167,25 +165,33 @@ public class CreateContractorTestCases {
 
 	}
 
+	
 	@Test(priority = 10)
+	public void createContract() throws InterruptedException {
+		EditContractorPage create = new EditContractorPage(driver);
+		create.CreateContractor("HariHaranm", "hariharanm@zaigoinfotech.com", "Dhamu", "6676223210", "684",
+				"https://expermobileappweb.web.app/", "Chennai", "Mani@gmail.com", "Mani", "8765412309",
+				"245", "IndraNagar", "Karnataka", "Banglore", "620054");
+
+	}
+/*
+	@Test(priority = 11)
 	public void listValidationName() {
 		CreateContractorPage listValidation = new CreateContractorPage(driver);
 		listValidation.listValidation();
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 12)
 	public void validationName() {
 		CreateContractorPage validation = new CreateContractorPage(driver);
-		validation.nameValidation("Mrs. Veda Predovic");
+		validation.nameValidation("Dhamudha");
 	}
-
-	@Test(priority = 12)
+*/
+	@Test(priority = 13)
 	public void invalidValidationData() {
 		CreateContractorPage errorValidation = new CreateContractorPage(driver);
-		errorValidation.invalidData("asfvcsv");
+		errorValidation.invalidData("sasaaasdd");
 	}
-
-	
 
 	/*
 	 * 
