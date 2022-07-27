@@ -93,7 +93,7 @@ public class Field_Page_Automation extends BaseClass {
 	By clkUser = By.xpath("//input[@data-formdynamic='user_create_edit']");
 
 	By Company = By.xpath("//input[@data-dropdownlist='contractor-company']");
-	By CompanyName = By.id("dropid-2731");
+	By CompanyName = By.xpath("//div[text()='Dhamu']");
 
 	By ClickContractor = By.xpath("//input[@data-formdynamic='user_contractor_create_edit']");
 	By ClickUser = By.xpath("//input[@data-formdynamic='user_create_edit']");
@@ -193,7 +193,6 @@ public class Field_Page_Automation extends BaseClass {
 	private void phoneNo(String phoneNo) {
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(PhoneNo)).sendKeys(phoneNo);
-
 	}
 
 	private void clkSave() {
@@ -569,6 +568,7 @@ public class Field_Page_Automation extends BaseClass {
 
 	private void anySearchData(String invaliddata) {
 		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(SearchBox)).clear();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(SearchBox)).sendKeys(invaliddata);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ClickSearchIcon)).click();
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(InvalidData)).getText();

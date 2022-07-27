@@ -1,4 +1,4 @@
-package com.test;
+package com.zaigo.reactui;
 
 import java.awt.AWTException;
 import java.io.IOException;
@@ -81,7 +81,7 @@ public class Fieldy_Project {
 	@Test(priority = 8)
 	private void conManditoryField() throws InterruptedException {
 		Field_Page_Automation conManditoryField = new Field_Page_Automation(driver);
-		conManditoryField.conOrganization("Kumar", "kumar@gmail.com");
+		conManditoryField.conOrganization("Ram", "ram@gmail.com");
 
 	}
 
@@ -100,20 +100,39 @@ public class Fieldy_Project {
 	}
 
 	@Test(priority = 11)
+	public void listValidate() {
+		Field_Page_Automation listValidate = new Field_Page_Automation(driver);
+		listValidate.verifyNameList();
+
+	}
+
+	@Test(priority = 12)
+	public void searchValidate() {
+		Field_Page_Automation searchValidate = new Field_Page_Automation(driver);
+		searchValidate.validationList("Ajith");
+	}
+
+	@Test(priority = 13)
+	public void invalidSearch() {
+		Field_Page_Automation invalidSearch = new Field_Page_Automation(driver);
+		invalidSearch.invalidData("afhwuifhe");
+	}
+
+	@Test(priority = 14)
 	public void conDatas() throws InterruptedException, AWTException {
 		Field_Page_Automation conDataReqOrganization = new Field_Page_Automation(driver);
 		conDataReqOrganization.conDataReqOrganization("Prem", "Kumar", "Prem@zaigoinfotech.com", "8765432190",
 				"Coimbatore", "200", "Cavery Nagar", "TamilNadu", "Main City", "630098");
 	}
 
-	@Test(priority = 12)
+	@Test(priority = 15)
 	public void alreadyExistData() throws InterruptedException {
 		Field_Page_Automation existData = new Field_Page_Automation(driver);
 		existData.existingData("Ajith", "Kumar", "Testing", "ajith@zaigoinfotech.com", "9876543210");
 
 	}
 
-	@Test(priority = 13)
+	@Test(priority = 16)
 	public void contractExistingData() throws InterruptedException {
 		Field_Page_Automation contractExistingData = new Field_Page_Automation(driver);
 		contractExistingData.conExistingDatas("Prem", "Kumar", "Prem@zaigoinfotech.com", "8765432190");

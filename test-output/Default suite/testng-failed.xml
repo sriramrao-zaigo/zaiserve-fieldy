@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.Fieldy_Project">
+      <class name="com.zaigo.reactui.CreateContractorTestCases">
         <methods>
-          <include name="contractExistingData"/>
-          <include name="afterLaunching"/>
-          <include name="beforeLaunching"/>
-          <include name="alreadyExistData"/>
+          <include name="setVariableEmpty"/>
+          <include name="exitBrowser"/>
+          <include name="createContract"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- com.test.Fieldy_Project -->
+      </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

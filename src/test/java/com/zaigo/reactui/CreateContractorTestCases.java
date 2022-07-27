@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 
 import com.zaigo.pageobjects.CreateContractorPage;
 import com.zaigo.pageobjects.CreateVendorPage;
+import com.zaigo.pageobjects.EditContractor;
 import com.zaigo.pageobjects.LoginPage;
 import com.zaigo.utility.BrowserSetup;
 
@@ -164,24 +165,31 @@ public class CreateContractorTestCases {
 	}
 
 	@Test(priority = 10)
+	public void createContract() throws InterruptedException {
+		EditContractor create = new EditContractor(driver);
+		create.CreateContractor("Dhamu", "dhamu@zaigoinfotech.com", "Dhamu", "9876543210", "684",
+				"https://expermobileappweb.web.app/", "Chennai", "Mani@gmail.com", "Mani", "8765412309",
+				"245", "IndraNagar", "Karnataka", "Banglore", "620054");
+
+	}
+
+	@Test(priority = 11)
 	public void listValidationName() {
 		CreateContractorPage listValidation = new CreateContractorPage(driver);
 		listValidation.listValidation();
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 12)
 	public void validationName() {
 		CreateContractorPage validation = new CreateContractorPage(driver);
-		validation.nameValidation("Mrs. Veda Predovic");
+		validation.nameValidation("Dhamu");
 	}
 
-	@Test(priority = 12)
+	@Test(priority = 13)
 	public void invalidValidationData() {
 		CreateContractorPage errorValidation = new CreateContractorPage(driver);
 		errorValidation.invalidData("asfvcsv");
 	}
-
-	
 
 	/*
 	 * 

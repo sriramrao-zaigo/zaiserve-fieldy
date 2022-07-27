@@ -3,14 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.zaigo.reactui.SendInviteTestCases">
+      <class name="com.zaigo.reactui.EditContractorCompanies">
         <methods>
-          <include name="verifyUserSendInvite"/>
-          <include name="setup"/>
-          <include name="setVariableEmpty"/>
-          <include name="exitBrowser"/>
+          <include name="beforeLaunching"/>
+          <include name="editName"/>
+          <include name="afterLaunching"/>
         </methods>
-      </class> <!-- com.zaigo.reactui.SendInviteTestCases -->
+      </class> <!-- com.zaigo.reactui.EditContractorCompanies -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

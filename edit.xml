@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.zaigo.reactui.SendInviteTestCases"/>
+      <class name="com.zaigo.reactui.EditContractorCompanies"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
