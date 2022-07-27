@@ -16,29 +16,37 @@ import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
 import com.zaigo.pageobjects.CreateUserPage;
+import com.zaigo.pageobjects.LoginPage;
+import com.zaigo.utility.BrowserSetup;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CreateUserTestCases {
 	WebDriver driver;
-
+	private LoginPage loginInPage = null;
+	
 	@BeforeClass
-	public void beforeLaunching() {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("http://tenant4.zaiportal.com/login/");
+	public void setup() {
+		this.driver = BrowserSetup.startBrowser();
 	}
 
 	@AfterClass
-	public void afterLaunching() {
-		driver.quit();
+	public void exitBrowser() {
+		this.driver.quit();
 	}
+
+	@AfterMethod
+	public void setVariableEmpty() {
+		loginInPage = null;
+	}
+
+	
 
 	@Test(priority = 1) // 1-Login
 	public void loginPage() throws InterruptedException {
-		CreateUserPage login = new CreateUserPage(driver);
-		login.loginFieldy("fieldy@zaiportal.com", "Zaiserve@123");
+		LoginPage loginInPage = new LoginPage(this.driver);
+		loginInPage.setUserCredentials("fieldy@zaiportal.com", "Zaiserve@123");
+		loginInPage.clickLoginButton();
 	}
 
 	@Test(priority = 2) // 2-Module
@@ -124,7 +132,7 @@ public class CreateUserTestCases {
 	@Test(priority = 14)
 	public void conDatas() throws InterruptedException, AWTException {
 		CreateUserPage conDataReqOrganization = new CreateUserPage(driver);
-		conDataReqOrganization.conDataReqOrganization("Prem", "Kumar", "Prem@zaigoinfotech.com", "8765432190",
+		conDataReqOrganization.conDataReqOrganization("Prem", "Kumar", "Prem8@zaigoinfotech.com", "8785432190",
 				"Coimbatore", "200", "Cavery Nagar", "TamilNadu", "Main City", "630098");
 	}
 
