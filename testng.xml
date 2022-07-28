@@ -5,7 +5,7 @@
 		<classes>
 			
 
-			<class name="com.zaigo.reactui.CreateUserTestCases">
+			<class name="com.zaigo.reactui.CreateContractorTestCases">
 			</class> 
 			
 			
@@ -13,5 +13,6 @@
 			
 			
 		</classes>
+		
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

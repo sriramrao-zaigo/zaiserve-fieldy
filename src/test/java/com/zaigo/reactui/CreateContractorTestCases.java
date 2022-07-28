@@ -3,6 +3,7 @@ package com.zaigo.reactui;
 import java.awt.AWTException;
 import java.io.IOException;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,8 +16,6 @@ import org.testng.annotations.Test;
 
 import com.zaigo.pageobjects.CreateContractorPage;
 import com.zaigo.pageobjects.CreateVendorPage;
-
-import com.zaigo.pageobjects.EditContractorPage;
 import com.zaigo.pageobjects.LoginPage;
 import com.zaigo.utility.BrowserSetup;
 
@@ -165,32 +164,32 @@ public class CreateContractorTestCases {
 
 	}
 
-	
 	@Test(priority = 10)
 	public void createContract() throws InterruptedException {
-		EditContractorPage create = new EditContractorPage(driver);
-		create.CreateContractor("HariHaranm", "hariharanm@zaigoinfotech.com", "Dhamu", "6676223210", "684",
+		CreateContractorPage create = new CreateContractorPage(driver);
+		//RandomStringUtils.randomNumeric(100)
+		create.CreateContractor("Dhamu014", "dhamu014@zaigoinfotech.com", "Dhamu", "9560567894", "684",
 				"https://expermobileappweb.web.app/", "Chennai", "Mani@gmail.com", "Mani", "8765412309",
 				"245", "IndraNagar", "Karnataka", "Banglore", "620054");
 
 	}
-/*
-	@Test(priority = 11)
-	public void listValidationName() {
-		CreateContractorPage listValidation = new CreateContractorPage(driver);
-		listValidation.listValidation();
-	}
 
-	@Test(priority = 12)
-	public void validationName() {
-		CreateContractorPage validation = new CreateContractorPage(driver);
-		validation.nameValidation("Dhamudha");
-	}
-*/
+//	@Test(priority = 11)
+//	public void listValidationName() {
+//		CreateContractorPage listValidation = new CreateContractorPage(driver);
+//		listValidation.listValidation();
+//	}
+//
+//	@Test(priority = 12)
+//	public void validationName() {
+//		CreateContractorPage validation = new CreateContractorPage(driver);
+//		validation.nameValidation("Dhamu");
+//	}
+
 	@Test(priority = 13)
 	public void invalidValidationData() {
 		CreateContractorPage errorValidation = new CreateContractorPage(driver);
-		errorValidation.invalidData("sasaaasdd");
+		errorValidation.invalidData("asfvcsv");
 	}
 
 	/*
