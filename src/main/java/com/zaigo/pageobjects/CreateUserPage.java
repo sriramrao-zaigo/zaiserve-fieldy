@@ -3,7 +3,6 @@ package com.zaigo.pageobjects;
 import java.awt.AWTException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -115,6 +114,8 @@ public class CreateUserPage {
 	By InvalidData = By.xpath("//div[text()='No result found for Team User']");
 
 	By clickNext = By.xpath("//span[text()='Next']");
+
+	By dashBoard = By.id("quote_status");
 
 	public CreateUserPage(WebDriver driver) {
 		this.driver = driver;
@@ -596,9 +597,15 @@ public class CreateUserPage {
 		this.clickLogin();
 	}
 
+	private void dashBoard() {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(dashBoard)).sendKeys("12:00 AM");
+
+	}
+
 	public void enterTeamModule() throws InterruptedException {
 //		driver.navigate().refresh();
-
+		this.dashBoard();
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
