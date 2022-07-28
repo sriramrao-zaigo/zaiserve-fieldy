@@ -606,6 +606,7 @@ public class CreateUserPage {
 		this.clickAddUser();
 
 	}
+	
 
 	public void datas(String firstName, String lastName, String title, String email, String phoneNumber,
 			String location, String buildingName, String streetName, String stateName, String cityName,
