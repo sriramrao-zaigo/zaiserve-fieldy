@@ -66,7 +66,7 @@ public class CreateUserPage {
 	By Url = By.id("social_media__url__1");
 
 	By SaveComplete = By.xpath("//button[@data-formsubmit='user_create']");
-	By ConSaveComplete = By.xpath("//button[@data-formsubmit='user_contractor_create']");
+	By ConSaveComplete = By.xpath("//button[@data-automationid='save-complete']");
 
 	By SuccessfulMessage = By.xpath("//span[text()='User created successfully']");
 	By AlreadySameMail = By.xpath("//span[text()='User Already Exist with the same email address']");
@@ -172,7 +172,7 @@ public class CreateUserPage {
 	}
 
 	private void dropDownType() throws InterruptedException {
-		Thread.sleep(1800);
+		Thread.sleep(4000);
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(DropDown)).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(Manager)).click();
@@ -298,7 +298,9 @@ public class CreateUserPage {
 	private void conSaveComplete() throws InterruptedException {
 		Thread.sleep(2000);
 		wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(ConSaveComplete)).click();
+		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(ConSaveComplete));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(until).click().build().perform();
 
 	}
 
@@ -597,7 +599,7 @@ public class CreateUserPage {
 
 	public void enterTeamModule() throws InterruptedException {
 //		driver.navigate().refresh();
-		// Thread.sleep(5000);
+
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
@@ -658,6 +660,7 @@ public class CreateUserPage {
 
 	public void reqField() throws InterruptedException, AWTException {
 		// this.reqProfileUpload();
+		Thread.sleep(2000);
 		this.clkSave();
 		scrollDown();
 		this.requiredFieldFirstName();
@@ -824,6 +827,75 @@ public class CreateUserPage {
 
 	public void invalidData(String data) {
 		this.anySearchData(data);
+
+	}
+
+	By Dots = By.xpath("//*[@id=\"fieldy-user-user-user-list_aserpttbl\"]/tbody/tr[2]/td[9]/div/div[1]");
+	By conDots = By.xpath("//*[@id=\"fieldy-user-user-contractor-list_aserpttbl\"]/tbody/tr[2]/td[10]/div/div[1]/i");
+	Actions actions;
+
+	private void mouseActionDots() {
+		wait = new WebDriverWait(driver, 10);
+		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(Dots));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(until).perform();
+
+	}
+
+	private void conmouseActionDots() {
+		wait = new WebDriverWait(driver, 10);
+		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(conDots));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(until).perform();
+
+	}
+
+	By Delete = By.xpath("//*[@id=\"fieldy-user-user-user-list_aserpttbl\"]/tbody/tr[2]/td[9]/div/div[2]/ul/li[3]/a");
+	By conDelete = By
+			.xpath("//*[@id=\"fieldy-user-user-contractor-list_aserpttbl\"]/tbody/tr[2]/td[10]/div/div[2]/ul/li[3]");
+	By Yes = By.xpath("//button[text()='Yes']");
+	By DeleteMessage = By.xpath("//span[text()='User have been deleted successfully']");
+
+	private void clickDelete() {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Delete)).click();
+
+	}
+
+	private void clickconDelete() {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(conDelete)).click();
+
+	}
+
+	private void clickYes() {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Yes)).click();
+
+	}
+
+	private void verifyDeleteMessage() {
+		wait = new WebDriverWait(driver, 10);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteMessage)).getText();
+		Assert.assertEquals(text, "User have been deleted successfully");
+
+	}
+
+	public void deleteField() {
+		this.clickUser();
+		this.mouseActionDots();
+		this.clickDelete();
+		this.clickYes();
+		this.verifyDeleteMessage();
+
+	}
+
+	public void deleteConField() {
+		this.Contractor();
+		this.conmouseActionDots();
+		this.clickconDelete();
+		this.clickYes();
+		this.verifyDeleteMessage();
 
 	}
 

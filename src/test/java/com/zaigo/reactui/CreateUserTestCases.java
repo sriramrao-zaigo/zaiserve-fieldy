@@ -22,9 +22,10 @@ import com.zaigo.utility.BrowserSetup;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CreateUserTestCases {
-	WebDriver driver;
+
+	private WebDriver driver = null;
 	private LoginPage loginInPage = null;
-	
+
 	@BeforeClass
 	public void setup() {
 		this.driver = BrowserSetup.startBrowser();
@@ -39,8 +40,6 @@ public class CreateUserTestCases {
 	public void setVariableEmpty() {
 		loginInPage = null;
 	}
-
-	
 
 	@Test(priority = 1) // 1-Login
 	public void loginPage() throws InterruptedException {
@@ -78,9 +77,11 @@ public class CreateUserTestCases {
 	@Test(priority = 6)
 	public void manditoryField() throws InterruptedException {
 		CreateUserPage manditoryField = new CreateUserPage(driver);
-		manditoryField.manditoryDatas("Prem", "prem@zaigoinfotech.com");
+		manditoryField.manditoryDatas("Prem", "prem@zaigoingotech.com");
 
 	}
+	
+	
 
 	@Test(priority = 7)
 	public void inputUserLocationFieldReq() throws IOException, InterruptedException {
@@ -132,7 +133,7 @@ public class CreateUserTestCases {
 	@Test(priority = 14)
 	public void conDatas() throws InterruptedException, AWTException {
 		CreateUserPage conDataReqOrganization = new CreateUserPage(driver);
-		conDataReqOrganization.conDataReqOrganization("Prem", "Kumar", "Prem8@zaigoinfotech.com", "8785432190",
+		conDataReqOrganization.conDataReqOrganization("Prem", "Kumar", "Prem@zaigoingotech.com", "8765432190",
 				"Coimbatore", "200", "Cavery Nagar", "TamilNadu", "Main City", "630098");
 	}
 
@@ -146,7 +147,8 @@ public class CreateUserTestCases {
 	@Test(priority = 16)
 	public void contractExistingData() throws InterruptedException {
 		CreateUserPage contractExistingData = new CreateUserPage(driver);
-		contractExistingData.conExistingDatas("Prem", "Kumar", "Prem@zaigoinfotech.com", "8765432190");
+		contractExistingData.conExistingDatas("Prem", "Kumar", "Prem@zaigoingotech.com", "8765432190");
+		contractExistingData.deleteField();
 
 	}
 
