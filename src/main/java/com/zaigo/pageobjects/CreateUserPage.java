@@ -298,7 +298,7 @@ public class CreateUserPage {
 	private void conSaveComplete() throws InterruptedException {
 		Thread.sleep(2000);
 		wait = new WebDriverWait(driver, 20);
-		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(ConSaveComplete));
+		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(ConSaveComplete));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(until).click().build().perform();
 
@@ -599,7 +599,7 @@ public class CreateUserPage {
 
 	public void enterTeamModule() throws InterruptedException {
 //		driver.navigate().refresh();
-
+		
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
