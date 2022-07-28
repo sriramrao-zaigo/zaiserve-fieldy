@@ -179,8 +179,12 @@ public class CreateContractorPage {
 		until.clear();
 	}
 
+	By name1 = By.xpath("//td[text()='Company']");
+
 	public void invalidValidation(String name) {
 		wait = new WebDriverWait(driver, 10);
+		String text2 = wait.until(ExpectedConditions.visibilityOfElementLocated((name1))).getText();
+		Assert.assertEquals(text2, "Company");
 		wait.until(ExpectedConditions.visibilityOfElementLocated((SearchBox))).sendKeys(name, Keys.ENTER);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated((ErrorValidation))).getText();
 		Assert.assertEquals(text, "No Search Results found for\"asfvcsv\"");
