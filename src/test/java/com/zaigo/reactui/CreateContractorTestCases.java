@@ -39,6 +39,10 @@ public class CreateContractorTestCases {
 		loginInPage = null;
 	}
 
+	
+	/*To Run this in Jenkins , We Need to Change the Name , Email , Phone in the Method
+	 Name - createContract
+	*/
 	@Test(priority = 1)
 	public void verifyContractorTab() throws InterruptedException {
 		// Verify User Tab
@@ -168,7 +172,7 @@ public class CreateContractorTestCases {
 	public void createContract() throws InterruptedException {
 		CreateContractorPage create = new CreateContractorPage(driver);
 		//RandomStringUtils.randomNumeric(100)
-		create.CreateContractor("Dhamu002", "dhamu002@zaigoinfotech.com", "Dhamu", "9591667898", "684",
+		create.CreateContractor("Dhamu003", "dhamu003@zaigoinfotech.com", "Dhamu", "9591667893", "684",
 				"https://expermobileappweb.web.app/", "Chennai", "Mani@gmail.com", "Mani", "8765412309",
 				"245", "IndraNagar", "Karnataka", "Banglore", "620054");
 
