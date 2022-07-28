@@ -172,7 +172,7 @@ public class CreateUserPage {
 	}
 
 	private void dropDownType() throws InterruptedException {
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(DropDown)).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(Manager)).click();
@@ -301,7 +301,6 @@ public class CreateUserPage {
 		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(ConSaveComplete));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(until).click().build().perform();
-
 	}
 
 	private void alreadyExist() {
@@ -599,14 +598,12 @@ public class CreateUserPage {
 
 	public void enterTeamModule() throws InterruptedException {
 //		driver.navigate().refresh();
-		this.clickTeam();
-		Thread.sleep(5000);
+
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
 
 	}
-	
 
 	public void datas(String firstName, String lastName, String title, String email, String phoneNumber,
 			String location, String buildingName, String streetName, String stateName, String cityName,
@@ -662,7 +659,7 @@ public class CreateUserPage {
 
 	public void reqField() throws InterruptedException, AWTException {
 		// this.reqProfileUpload();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		this.clkSave();
 		scrollDown();
 		this.requiredFieldFirstName();
@@ -686,6 +683,7 @@ public class CreateUserPage {
 		this.Contractor();
 		this.addContractor();
 		// this.reqProfileUpload();
+		Thread.sleep(2000);
 		this.clkSave();
 		this.requiredFieldFirstName();
 		this.requiredFieldEmail();
@@ -761,9 +759,9 @@ public class CreateUserPage {
 		this.conFirstName(firstName);
 		this.conEmail(email);
 		this.ScrollDown();
-		this.conOrganization();
-		// Thread.sleep(2000);
-		this.organization();
+//		this.conOrganization();
+//		// Thread.sleep(2000);
+//		this.organization();
 
 	}
 
@@ -866,7 +864,9 @@ public class CreateUserPage {
 
 	private void clickconDelete() {
 		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(conDelete)).click();
+		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(conDelete));
+		Actions actions = new Actions(driver);
+		actions.click(until).perform();
 
 	}
 
