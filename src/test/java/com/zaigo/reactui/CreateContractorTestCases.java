@@ -47,8 +47,8 @@ public class CreateContractorTestCases {
 		loginInPage.setUserCredentials("fieldy@zaiportal.com", "Zaiserve@123");
 		loginInPage.clickLoginButton();
 		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
-		// contractorPage.clickTeam();
-		// Thread.sleep(5000);
+		contractorPage.clickTeam();
+		Thread.sleep(3000);
 		contractorPage.clickTeam();
 		// contractorPage.clickCompany();
 		contractorPage.clickContractor();
