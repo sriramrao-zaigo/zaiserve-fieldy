@@ -599,7 +599,8 @@ public class CreateUserPage {
 
 	public void enterTeamModule() throws InterruptedException {
 //		driver.navigate().refresh();
-		
+		this.clickTeam();
+		Thread.sleep(5000);
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
