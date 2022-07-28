@@ -152,7 +152,7 @@ By Email = By.id("login");
 	By txtPhoneNo = By.id("phone");
 	By txtFax = By.id("fax");
 	By txtWebSite = By.id("website");
-	By clickNext = By.xpath("//*[@id=\'team-company-contractor\']/div/div/div[1]/button[2]");
+	By clickNext = By.xpath("");
 	By LocationName = By.id("addresses__name__0");
 	By comEmail = By.id("addresses__email__0");
 	By ContactPerson = By.id("addresses__contact_person__0");
