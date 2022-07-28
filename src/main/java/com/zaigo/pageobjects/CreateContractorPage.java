@@ -514,7 +514,7 @@ public class CreateContractorPage {
 //		wait.until(ExpectedConditions.visibilityOfElementLocated(CityName)).sendKeys(City);
 //		wait.until(ExpectedConditions.visibilityOfElementLocated(ZipCode)).sendKeys(Zip);
 		Thread.sleep(2000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(SaveNext)).click();
 		// wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext)).click();
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(CreateContractor)).getText();
 		Assert.assertEquals(text, "Contractor have been created successfully");

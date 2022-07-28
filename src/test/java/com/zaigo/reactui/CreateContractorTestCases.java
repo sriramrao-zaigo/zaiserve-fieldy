@@ -168,7 +168,7 @@ public class CreateContractorTestCases {
 	public void createContract() throws InterruptedException {
 		CreateContractorPage create = new CreateContractorPage(driver);
 		//RandomStringUtils.randomNumeric(100)
-		create.CreateContractor("Dhamu018", "dhamu018@zaigoinfotech.com", "Dhamu", "9560567898", "684",
+		create.CreateContractor("Dhamu001", "dhamu001@zaigoinfotech.com", "Dhamu", "9590667898", "684",
 				"https://expermobileappweb.web.app/", "Chennai", "Mani@gmail.com", "Mani", "8765412309",
 				"245", "IndraNagar", "Karnataka", "Banglore", "620054");
 
