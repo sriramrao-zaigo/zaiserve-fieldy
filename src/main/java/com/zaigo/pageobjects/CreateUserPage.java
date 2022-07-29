@@ -594,6 +594,7 @@ public class CreateUserPage {
 		this.setEmail(email);
 		this.setPass(pass);
 		this.clickLogin();
+		Thread.sleep(5000);
 	}
 
 	By filter = By.xpath("//div[text()=' Overall data']");
@@ -610,8 +611,7 @@ public class CreateUserPage {
 	public void enterTeamModule() throws InterruptedException {
 //		driver.navigate().refresh();
 //		this.dashBoard();
-		this.clickTeam();
-		Thread.sleep(4000);
+		
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
