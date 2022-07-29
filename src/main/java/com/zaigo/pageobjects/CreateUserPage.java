@@ -594,7 +594,6 @@ public class CreateUserPage {
 		this.setEmail(email);
 		this.setPass(pass);
 		this.clickLogin();
-//		Thread.sleep(5000);
 	}
 
 	By filter = By.xpath("//div[text()=' Overall data']");
@@ -608,11 +607,20 @@ public class CreateUserPage {
 
 	}
 
+	By DashBoard = By.xpath("//div[@data-menuselector='dashboard-menu']");
+
+	public void dashBoard1() {
+		wait = new WebDriverWait(driver, 10);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(DashBoard)).getText();
+		Assert.assertEquals(text, "Dashboard");
+
+	}
+
 	public void enterTeamModule() throws InterruptedException {
 //		driver.navigate().refresh();
 //		this.dashBoard();
-		this.clickTeam();
-		Thread.sleep(5000);
+//		this.clickTeam();
+		this.dashBoard1();
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
