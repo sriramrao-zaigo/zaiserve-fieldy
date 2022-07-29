@@ -3,6 +3,7 @@ package com.zaigo.pageobjects;
 import java.awt.AWTException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -114,8 +115,6 @@ public class CreateUserPage {
 	By InvalidData = By.xpath("//div[text()='No result found for Team User']");
 
 	By clickNext = By.xpath("//span[text()='Next']");
-
-	By dashBoard = By.id("quote_status");
 
 	public CreateUserPage(WebDriver driver) {
 		this.driver = driver;
@@ -597,15 +596,24 @@ public class CreateUserPage {
 		this.clickLogin();
 	}
 
+	By filter = By.xpath("//div[text()=' Overall data']");
+	//By Apply = By.xpath("(//button[@data-searchbutton='invoice_filter'])[1]");
+
 	private void dashBoard() {
 		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(dashBoard)).sendKeys("12:00 AM");
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(filter)).getText();
+		Assert.assertEquals(text, " Overall data");
+		//wait.until(ExpectedConditions.elementToBeClickable(Apply)).click();
 
 	}
 
 	public void enterTeamModule() throws InterruptedException {
 //		driver.navigate().refresh();
-		//this.dashBoard();
+//		this.dashBoard();
+		this.clickTeam();
+		Thread.sleep(4000);
+		this.clickTeam();
+		Thread.sleep(2000);
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
