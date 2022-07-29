@@ -594,24 +594,25 @@ public class CreateUserPage {
 		this.setEmail(email);
 		this.setPass(pass);
 		this.clickLogin();
-		Thread.sleep(5000);
+//		Thread.sleep(5000);
 	}
 
 	By filter = By.xpath("//div[text()=' Overall data']");
-	//By Apply = By.xpath("(//button[@data-searchbutton='invoice_filter'])[1]");
+	// By Apply = By.xpath("(//button[@data-searchbutton='invoice_filter'])[1]");
 
 	private void dashBoard() {
 		wait = new WebDriverWait(driver, 10);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(filter)).getText();
 		Assert.assertEquals(text, " Overall data");
-		//wait.until(ExpectedConditions.elementToBeClickable(Apply)).click();
+		// wait.until(ExpectedConditions.elementToBeClickable(Apply)).click();
 
 	}
 
 	public void enterTeamModule() throws InterruptedException {
 //		driver.navigate().refresh();
 //		this.dashBoard();
-		
+		this.clickTeam();
+		Thread.sleep(5000);
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
