@@ -613,8 +613,6 @@ public class CreateUserPage {
 		this.clickTeam();
 		Thread.sleep(4000);
 		this.clickTeam();
-		Thread.sleep(2000);
-		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
 
