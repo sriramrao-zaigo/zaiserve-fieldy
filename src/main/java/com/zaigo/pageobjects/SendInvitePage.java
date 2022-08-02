@@ -63,7 +63,7 @@ public class SendInvitePage {
 	private By clickSaveandComplete = By.xpath("//button[@data-automationid='send-invite']");
 
 	public void clickSubmit() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated((clickSaveandComplete)));
+		wait.until(ExpectedConditions.elementToBeClickable((clickSaveandComplete)));
 		driver.findElement(clickSaveandComplete).click();
 	}
 

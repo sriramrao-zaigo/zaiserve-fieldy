@@ -8,16 +8,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserSetup {
-	
+
 	public static WebDriver startBrowser() {
-		WebDriver driver=null;
+		WebDriver driver = null;
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
-	    //options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "window-size=1920,1200", "--disable-gpu");
+		options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "window-size=1920,1200",
+				"--disable-gpu");
 		driver = new ChromeDriver(options);
-    	driver.manage().window().maximize();
+		driver.manage().window().maximize();
 		return driver;
-		
+
 	}
 
 	public static WebDriverWait createWebDriverWait(WebDriver driver) {

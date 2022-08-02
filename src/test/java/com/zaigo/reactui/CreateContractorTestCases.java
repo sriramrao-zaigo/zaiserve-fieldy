@@ -3,6 +3,7 @@ package com.zaigo.reactui;
 import java.awt.AWTException;
 import java.io.IOException;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -49,6 +50,9 @@ public class CreateContractorTestCases {
 		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		// contractorPage.clickTeam();
 		// Thread.sleep(5000);
+//		contractorPage.clickTeam();
+		String text = loginInPage.dashBoardText();
+		Assert.assertEquals(text, "Dashboard");
 		contractorPage.clickTeam();
 		// contractorPage.clickCompany();
 		contractorPage.clickContractor();
@@ -86,8 +90,8 @@ public class CreateContractorTestCases {
 	public void verifyContractorEmailFormat() throws InterruptedException {
 
 		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
-		contractorPage.contractorName("Contractor x");
-		contractorPage.contractorEmail("aibcd");
+		contractorPage.contractorName("Contractor y");
+		contractorPage.contractorEmail("aibcda");
 		contractorPage.clickSaveandComplete();
 		String email_error = contractorPage.contractorEmailError();
 		Assert.assertEquals(email_error, "Enter a valid Email");
@@ -141,6 +145,15 @@ public class CreateContractorTestCases {
 
 	}
 
+	@Test(priority = 9)
+	public void clearFields() {
+		CreateContractorPage clear = new CreateContractorPage(this.driver);
+		clear.clearContractorPerson();
+		clear.clearContractorEmail();
+		clear.conMaxValidation();
+
+	}
+
 //	@Test(enabled= false)
 //	public void verifyWebsiteValidation() throws InterruptedException
 //	{
@@ -155,7 +168,7 @@ public class CreateContractorTestCases {
 //		
 //	}
 
-	@Test(priority = 9)
+	@Test(priority = 10)
 	public void verifySaveButtonExist() throws InterruptedException {
 
 		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
@@ -164,26 +177,31 @@ public class CreateContractorTestCases {
 
 	}
 
-	@Test(priority = 10)
+	@Test(priority = 11)
 	public void createContract() throws InterruptedException {
-		EditContractor create = new EditContractor(driver);
-		create.CreateContractor("Dhamu", "dhamu@zaigoinfotech.com", "Dhamu", "9876543210", "684",
-				"https://expermobileappweb.web.app/", "Chennai", "Mani@gmail.com", "Mani", "8765412309",
-				"245", "IndraNagar", "Karnataka", "Banglore", "620054");
+		CreateContractorPage create = new CreateContractorPage(driver);
+		String r = RandomStringUtils.randomAlphabetic(3);
+		create.CreateContractor("Dhamu" + r, "dhamuy" + r + "@zaigoinfotech.com", "Dhamu" + r, "9599580891", "684",
+				"https://expermobileappweb.web.app/", "Chennai", "Mani@gmail.com", "Mani", "8765412309", "245",
+				"IndraNagar", "Karnataka", "Banglore", "620054");
+		create.Location("Chennai", "Mani@gmail.com", "Mani", "8765412309", "245", "IndraNagar", "Karnataka", "Banglore",
+				"620054");
+//		String text = create.validation();
+//		Assert.assertEquals(text, "Dhamu" + r);
 
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 12)
 	public void listValidationName() {
 		CreateContractorPage listValidation = new CreateContractorPage(driver);
 		listValidation.listValidation();
 	}
 
-	@Test(priority = 12)
-	public void validationName() {
-		CreateContractorPage validation = new CreateContractorPage(driver);
-		validation.nameValidation("Dhamu");
-	}
+//	@Test(priority = 12)
+//	public void validationName() {
+//		CreateContractorPage validation = new CreateContractorPage(driver);
+//		validation.nameValidation("Dhamu" + r);
+//	}
 
 	@Test(priority = 13)
 	public void invalidValidationData() {

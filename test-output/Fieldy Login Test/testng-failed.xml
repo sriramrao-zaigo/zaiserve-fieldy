@@ -3,15 +3,14 @@
 <suite name="Failed suite [Fieldy Login Test]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Login TestCases(failed)">
     <classes>
-      <class name="com.zaigo.reactui.Fieldy_Project">
+      <class name="com.zaigo.reactui.CreateContractorTestCases">
         <methods>
-          <include name="beforeLaunching"/>
-          <include name="afterLaunching"/>
-          <include name="reqFieldUser"/>
-          <include name="alreadyExistData"/>
-          <include name="conDatas"/>
+          <include name="listValidationName"/>
+          <include name="setVariableEmpty"/>
+          <include name="exitBrowser"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- com.zaigo.reactui.Fieldy_Project -->
+      </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->
     </classes>
   </test> <!-- Login TestCases(failed) -->
 </suite> <!-- Failed suite [Fieldy Login Test] -->

@@ -2,6 +2,7 @@ package com.zaigo.pageobjects;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 //import org.openqa.selenium.Keys;
@@ -113,7 +114,7 @@ public class CreateContractorPage {
 
 	private By clickclosebutton = By.xpath("//button[@data-automationid='c']");
 
-	By NameValidation = By.xpath("//span[text()='Dhamu']");
+	By NameValidation = By.xpath("//*[@id=\"fieldy-user-company-contractor-list_aserpttbl\"]/tbody/tr[3]/td[2]/span");
 
 	By SearchBox = By.xpath("//input[@data-automationid='search']");
 
@@ -123,10 +124,39 @@ public class CreateContractorPage {
 
 	By Search = By.id("team-company-search-button");
 
-	public void validation() {
+	By Email = By.id("login");
+	By Pass = By.id("password");
+	By Click = By.xpath("//button[@type='submit']");
+	By Team = By.xpath("//a[@id='team-menu']");
+	// By contractor =
+	// By.xpath("//div[@id='inner-id']//following::a[text()='Contractor']");
+	By ThreeDots = By.xpath("//*[@id=\"fieldy-user-company-contractor-list_aserpttbl\"]/tbody/tr[2]/td[8]/div/div[1]");
+	By Edit = By
+			.xpath("//*[@id=\"fieldy-user-company-contractor-list_aserpttbl\"]/tbody/tr[2]/td[8]/div/div[2]/ul/li[1]");
+
+	By Name = By.id("name");
+	By SaveNext = By.xpath("//*[@id=\"team-company-contractor\"]/div/div/div[2]/button");
+	By SaveNxt = By.xpath("//button[@data-spinloader='company_contractor_create_edit']");
+	By Assertion = By.xpath("//span[text()='Contractor have been updated successfully']");
+
+	By Delete = By
+			.xpath("//*[@id=\"fieldy-user-company-contractor-list_aserpttbl\"]/tbody/tr[2]/td[8]/div/div[2]/ul/li[2]");
+	By Yes = By.xpath("//button[text()='Yes']");
+	By DeleteAssert = By.xpath("//span[text()='Contractor have been deleted successfully']");
+
+	By txtEmail = By.id("email");
+	By txtContactPerson = By.id("contact_person_name");
+	By txtPhoneNo = By.id("phone");
+	By txtFax = By.id("fax");
+	By txtWebSite = By.id("website");
+	By clickNext = By.xpath("//*[@id=\"team-company-contractor\"]/div/div/div[1]/button[2]/span");
+
+	By AddContractor = By.xpath("//button[@data-formsactions='create']");
+
+	public String validation() {
 		wait = new WebDriverWait(driver, 10);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated((NameValidation))).getText();
-		Assert.assertEquals(text, "Dhamu");
+		return text;
 
 	}
 
@@ -140,8 +170,12 @@ public class CreateContractorPage {
 		until.clear();
 	}
 
+	By name1 = By.xpath("//td[text()='Company']");
+
 	public void invalidValidation(String name) {
 		wait = new WebDriverWait(driver, 10);
+		String text2 = wait.until(ExpectedConditions.visibilityOfElementLocated((name1))).getText();
+		Assert.assertEquals(text2, "Company");
 		wait.until(ExpectedConditions.visibilityOfElementLocated((SearchBox))).sendKeys(name, Keys.ENTER);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated((ErrorValidation))).getText();
 		Assert.assertEquals(text, "No Search Results found for\"asfvcsv\"");
@@ -287,9 +321,26 @@ public class CreateContractorPage {
 		driver.findElement(contractorname).sendKeys(name);
 	}
 
+	public void clearContractorName() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((contractorname)));
+		driver.findElement(contractorname).clear();
+	}
+
 	public void contractorEmail(String Email) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated((contractoremail)));
 		driver.findElement(contractoremail).sendKeys(Email);
+	}
+
+	public void clearContractorEmail() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((contractoremail)));
+		driver.findElement(contractoremail).clear();
+
+	}
+
+	public void clearContractorPerson() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated((contractorcperson)));
+		driver.findElement(contractorcperson).clear();
+
 	}
 
 	public void contractorContactPerson(String ContactPerson) {
@@ -434,7 +485,7 @@ public class CreateContractorPage {
 	}
 
 	public void listValidation() {
-//		this.clickTeam();
+		// this.clickTeam();
 //		this.clickContractor();
 		this.validation();
 
@@ -450,9 +501,166 @@ public class CreateContractorPage {
 
 	}
 
+	private void ContractorField(String CompanyName, String textEmail, String person, String phoneNo, String fax,
+			String webSite, String location, String tEmail, String contact, String Number, String Flat, String Street,
+			String State, String City, String Zip) throws InterruptedException {
+		wait = new WebDriverWait(driver, 20);
+		// driver.navigate().refresh();
+		// wait.until(ExpectedConditions.visibilityOfElementLocated(AddContractor)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Name)).sendKeys(CompanyName);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(txtEmail)).sendKeys(textEmail);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(txtContactPerson)).sendKeys(person);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(txtPhoneNo)).sendKeys(phoneNo);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(txtFax)).sendKeys(fax);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(txtWebSite)).sendKeys(webSite);
+//		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(clickNext));
+//		Actions actions = new Actions(driver);
+//		actions.moveToElement(until).click().build().perform();
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(LocationName)).sendKeys(location);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(comEmail)).sendKeys(tEmail);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(ContactPerson)).sendKeys(contact);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(PhoneNo)).sendKeys(Number);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(FlatName)).sendKeys(Flat);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(StreetName)).sendKeys(Street);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(StateName)).sendKeys(State);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(CityName)).sendKeys(City);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(ZipCode)).sendKeys(Zip);
+//		Thread.sleep(2000);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext)).click();
+		// wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext)).click();
+//		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(CreateContractor)).getText();
+//		Assert.assertEquals(text, "Contractor have been created successfully");
+
+	}
+
+	public void CreateContractor(String CompanyName, String textEmail, String person, String phoneNo, String fax,
+			String webSite, String location, String tEmail, String contact, String Number, String Flat, String Street,
+			String State, String City, String Zip) throws InterruptedException {
+		this.ContractorField(CompanyName, textEmail, person, phoneNo, fax, webSite, location, tEmail, contact, Number,
+				Flat, Street, State, City, Zip);
+
+	}
+
 	public CreateContractorPage(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new WebDriverWait(this.driver, 20);
+	}
+
+	By LocationName = By.id("addresses__name__0");
+	By comEmail = By.id("addresses__email__0");
+	By ContactPerson = By.id("addresses__contact_person__0");
+	By PhoneNo = By.id("addresses__phone_number__0");
+	By FlatName = By.id("addresses__line_1__0");
+	By StreetName = By.id("addresses__line_2__0");
+	By StateName = By.id("addresses__state__0");
+	By CityName = By.id("addresses__city__0");
+	By ZipCode = By.id("addresses__zipcode__0");
+	By CreateContractor = By.xpath("//span[text()='Contractor have been created successfully']");
+	By SaveNext1 = By.xpath("//*[@id=\"team-company-contractor\"]/div/div/div[2]/button");
+	By Next = By.xpath("//span[text()='Next']");
+
+	private void clickNext() {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Next)).click();
+	}
+
+	private void LocationField(String location, String tEmail, String contact, String Number, String Flat,
+			String Street, String State, String City, String Zip) throws InterruptedException {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(clickNext)).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(LocationName)).sendKeys(location);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(comEmail)).sendKeys(tEmail);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ContactPerson)).sendKeys(contact);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(PhoneNo)).sendKeys(Number);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(FlatName)).sendKeys(Flat);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(StreetName)).sendKeys(Street);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(StateName)).sendKeys(State);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(CityName)).sendKeys(City);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ZipCode)).sendKeys(Zip);
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext1)).click();
+		// wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext)).click();
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(CreateContractor)).getText();
+		Assert.assertEquals(text, "Contractor have been created successfully");
+
+	}
+
+	public void Location(String location, String tEmail, String contact, String Number, String Flat, String Street,
+			String State, String City, String Zip) throws InterruptedException {
+		this.LocationField(location, tEmail, contact, Number, Flat, Street, State, City, Zip);
+
+	}
+
+	By errorLocationName = By.id("addresses__name__0_error");
+	By errorEmail = By.id("addresses__email__0_error");
+	By errorContactPerson = By.id("addresses__contact_person__0_error");
+	By errorPhoneNo = By.id("addresses__phone_number__0_error");
+	By errorNo = By.id("addresses__line_1__0_error");
+	By errorStreetName = By.id("addresses__line_2__0_error");
+	By errorStateName = By.id("addresses__state__0_error");
+	By errorCity = By.id("addresses__city__0_error");
+	By errorZipCode = By.id("addresses__zipcode__0_error");
+	By Previous = By.xpath("//*[text()='Previous']");
+
+	private void maxLocationField() {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(clickNext)).click();
+		String r = RandomStringUtils.randomAlphabetic(600);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(LocationName)).sendKeys(r, Keys.TAB);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(errorLocationName)).getText();
+		Assert.assertEquals(text, "Not Allowed More than 256 characters");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(LocationName)).clear();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(comEmail)).sendKeys(r, Keys.TAB);
+		String text2 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorEmail)).getText();
+		Assert.assertEquals(text2, "Not Allowed More than 256 characters");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(comEmail)).clear();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ContactPerson)).sendKeys(r, Keys.TAB);
+		String text3 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorContactPerson)).getText();
+		Assert.assertEquals(text3, "Not Allowed More than 512 characters");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ContactPerson)).clear();
+
+		String r1 = RandomStringUtils.randomNumeric(13);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(PhoneNo)).sendKeys(r1, Keys.TAB);
+		String text4 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorPhoneNo)).getText();
+		Assert.assertEquals(text4, "Not Allowed More than 12 digits");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(PhoneNo)).clear();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(FlatName)).sendKeys(r, Keys.TAB);
+		String text5 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorNo)).getText();
+		Assert.assertEquals(text5, "Not Allowed More than 256 characters");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(FlatName)).clear();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(StreetName)).sendKeys(r, Keys.TAB);
+		String text6 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorStreetName)).getText();
+		Assert.assertEquals(text6, "Not Allowed More than 256 characters");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(StreetName)).clear();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(StateName)).sendKeys(r, Keys.TAB);
+		String text7 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorStateName)).getText();
+		Assert.assertEquals(text7, "Not Allowed More than 45 characters");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(StateName)).clear();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(CityName)).sendKeys(r, Keys.TAB);
+		String text8 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorCity)).getText();
+		Assert.assertEquals(text8, "Not Allowed More than 256 characters");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(CityName)).clear();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ZipCode)).sendKeys(r, Keys.TAB);
+		String text9 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorZipCode)).getText();
+		Assert.assertEquals(text9, "Not Allowed More than 10 characters");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ZipCode)).clear();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Previous)).click();
+
+	}
+
+	public void conMaxValidation() {
+		this.maxLocationField();
+		this.clearContractorName();
+
 	}
 
 }

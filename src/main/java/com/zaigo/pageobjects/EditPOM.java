@@ -62,8 +62,8 @@ public class EditPOM {
 	}
 
 	public void userModule() throws InterruptedException {
-		this.clickTeam();
-		Thread.sleep(5000);
+//		this.clickTeam();
+//		Thread.sleep(5000);
 		this.clickTeam();
 		this.clickContractor();
 

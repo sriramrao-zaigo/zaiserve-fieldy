@@ -7,7 +7,7 @@
         <methods>
           <include name="setVariableEmpty"/>
           <include name="exitBrowser"/>
-          <include name="createContract"/>
+          <include name="verifyContractorNameMandatory"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->

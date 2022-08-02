@@ -7,35 +7,41 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.zaigo.pageobjects.EditContractor;
 import com.zaigo.pageobjects.EditPOM;
+import com.zaigo.pageobjects.LoginPage;
+import com.zaigo.utility.BrowserSetup;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class EditContractorCompanies {
-	WebDriver driver;
+public class EditContractorCompaniesTestCases {
+	private WebDriver driver = null;
+	private LoginPage loginInPage = null;
 
 	@BeforeClass
-	public void beforeLaunching() {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get("http://tenant4.zaiportal.com/login/");
+	public void setup() {
+		this.driver = BrowserSetup.startBrowser();
 	}
 
 	@AfterClass
-	public void afterLaunching() {
-		driver.quit();
+	public void exitBrowser() {
+		this.driver.quit();
 	}
 
-	@Test(priority = 0)
+	@AfterMethod
+	public void setVariableEmpty() {
+		loginInPage = null;
+	}
+
+	@Test(priority = 0) // 1-Login
 	public void loginPage() throws InterruptedException {
-		EditPOM login = new EditPOM(driver);
-		login.login("fieldy@zaiportal.com", "Zaiserve@123");
+		LoginPage loginInPage = new LoginPage(this.driver);
+		loginInPage.setUserCredentials("fieldy@zaiportal.com", "Zaiserve@123");
+		loginInPage.clickLoginButton();
 	}
 
 	@Test(priority = 1)

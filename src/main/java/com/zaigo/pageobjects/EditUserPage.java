@@ -54,7 +54,7 @@ public class EditUserPage {
 	}
 
 	public void modules() throws InterruptedException {
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		this.clickTeam();
 		this.clickUser();
 
