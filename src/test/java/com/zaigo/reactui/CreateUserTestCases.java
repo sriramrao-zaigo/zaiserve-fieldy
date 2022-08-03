@@ -80,8 +80,6 @@ public class CreateUserTestCases {
 		manditoryField.manditoryDatas("Prem", "prem@zaigoingotech.com");
 
 	}
-	
-	
 
 	@Test(priority = 7)
 	public void inputUserLocationFieldReq() throws IOException, InterruptedException {
@@ -149,6 +147,8 @@ public class CreateUserTestCases {
 		CreateUserPage contractExistingData = new CreateUserPage(driver);
 		contractExistingData.conExistingDatas("Prem", "Kumar", "Prem@zaigoingotech.com", "8765432190");
 		contractExistingData.deleteField();
+		Thread.sleep(4000);
+		contractExistingData.deleteConField();
 
 	}
 
