@@ -657,7 +657,7 @@ public class CreateUserPage {
 		this.clickUser();
 		this.clickAddUser();
 		this.firstName(firstName);
-		// Thread.sleep(2000);
+		Thread.sleep(2000);
 		this.dropDownType();
 		this.txtEmail(email);
 
