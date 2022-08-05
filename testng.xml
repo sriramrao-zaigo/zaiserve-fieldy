@@ -6,10 +6,10 @@
 
 
 
-			<class name="com.zaigo.reactui.LoginTestCases"></class>
-			<class name="com.zaigo.reactui.CreateContractorTestCases"></class>
-			<class name="com.zaigo.reactui.CreateUserTestCases"></class>
-			<class name="com.zaigo.reactui.SendInviteTestCases"></class>
+			<class name="com.zaigo.reactui.EditUserTestCases"></class>
+			
+
+
 
 
 
