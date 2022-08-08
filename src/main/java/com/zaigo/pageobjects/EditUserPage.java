@@ -64,7 +64,7 @@ public class EditUserPage {
 
 	public void modules() throws InterruptedException {
 		this.assertDashboard();
-
+		Thread.sleep(2000);
 		this.clickTeam();
 		this.clickUser();
 
@@ -90,7 +90,15 @@ public class EditUserPage {
 
 	}
 
+	private void assertionMessage() {
+		wait = new WebDriverWait(driver, 10);
+		String texts = wait.until(ExpectedConditions.visibilityOfElementLocated(firstName)).getText();
+		Assert.assertEquals(texts, "First Name");
+
+	}
+
 	public void editField() {
+		this.assertionMessage();
 		this.mouseActionDots();
 		this.clickEdit();
 
@@ -128,7 +136,7 @@ public class EditUserPage {
 
 	public void updateField(String updateName) throws InterruptedException {
 		Thread.sleep(2000);
-		this.visibleName();
+		// this.visibleName();
 		this.clearFirstName();
 		this.updateFirstName(updateName);
 		this.clickSaveNext();
@@ -151,17 +159,21 @@ public class EditUserPage {
 
 	}
 
+	By firstName = By.xpath("//td[text()='First Name']");
+
 	private void verifyDeleteMessage() {
 		wait = new WebDriverWait(driver, 10);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteMessage)).getText();
 		Assert.assertEquals(text, "User have been deleted successfully");
-
+		String texts = wait.until(ExpectedConditions.visibilityOfElementLocated(firstName)).getText();
+		Assert.assertEquals(texts, "First Name");
 	}
 
-	public void deleteField() {
+	public void deleteField() throws InterruptedException {
 		this.mouseActionDots();
 		this.clickDelete();
 		this.clickYes();
+		Thread.sleep(2000);
 		this.verifyDeleteMessage();
 
 	}

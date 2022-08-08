@@ -15,6 +15,7 @@ import com.zaigo.utility.BrowserSetup;
 public class EditContractorTestCases {
 	
 	
+	
 	private WebDriver driver = null;
 	private LoginPage loginInPage = null;
 

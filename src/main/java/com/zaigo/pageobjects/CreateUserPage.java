@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.Assertion;
 
 public class CreateUserPage {
 
@@ -65,13 +66,13 @@ public class CreateUserPage {
 
 	By Url = By.id("social_media__url__1");
 
-	By SaveComplete = By.xpath("//button[@data-formsubmit='user_create']");
+	By SaveComplete = By.xpath("//*[@id=\"team-user-team-user-create\"]/div/div/div[2]/button");
 	By ConSaveComplete = By.xpath("//button[@data-automationid='save-complete']");
 
 	By SuccessfulMessage = By.xpath("//span[text()='User created successfully']");
 	By AlreadySameMail = By.xpath("//span[text()='User Already Exist with the same email address']");
 
-	By Contract = By.xpath("//input[@data-formswitcher='user-contractor-create']");
+	By Contract = By.xpath("/html/body/div[2]/div[1]/div[3]/div[1]/div[1]/div/div/div[2]/input");
 	By conFirstName = By.id("first_name");
 	By conLastName = By.id("last_name");
 	By BussinessUnit = By.xpath("//input[@data-dropdownlist='business-unit']");
@@ -94,7 +95,7 @@ public class CreateUserPage {
 	By Company = By.xpath("//input[@data-dropdownlist='contractor-company']");
 	By CompanyName = By.xpath("//div[text()='Dhamu']");
 
-	By ClickContractor = By.xpath("//input[@data-formdynamic='user_contractor_create_edit']");
+	By ClickContractor = By.xpath("//input[@data-formswitcher='user-contractor-create']");
 	By ClickUser = By.xpath("//input[@data-formdynamic='user_create_edit']");
 
 	By ClickUsers = By.xpath("//a[text()='User ']");
@@ -157,7 +158,6 @@ public class CreateUserPage {
 	private void firstName(String firstName) {
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(FirstName)).sendKeys(firstName);
-
 	}
 
 	private void userClick() {
@@ -216,7 +216,10 @@ public class CreateUserPage {
 
 	private void clickContract() {
 		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(Contract)).click();
+		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(Contract));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(until).click().build().perform();
+
 	}
 
 	private void Contractor() {
@@ -274,6 +277,14 @@ public class CreateUserPage {
 	private void conOrganization() {
 		wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(conOrganization)).click();
+
+	}
+
+	By click = By.xpath("(//div[@class='p-2 list-hover-bg team-contractor-company w-20-ellipsis w-100'])[1]");
+
+	private void clickOrganization() {
+		wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(click)).click();
 
 	}
 
@@ -344,9 +355,20 @@ public class CreateUserPage {
 	}
 
 	private void saveComplete() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(2500);
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(SaveComplete)).click();
+	}
+
+	By conComplete = By.xpath("//*[@id=\"team-user-team-user-create\"]/div/div/div[2]");
+
+	private void conSaveCompletes() throws InterruptedException {
+		Thread.sleep(2000);
+		wait = new WebDriverWait(driver, 10);
+		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(conComplete));
+		Assert.assertEquals(until, "Save & Complete");
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", until);
+
 	}
 
 	private void clkUser() {
@@ -620,7 +642,9 @@ public class CreateUserPage {
 //		driver.navigate().refresh();
 //		this.dashBoard();
 //		this.clickTeam();
+
 		this.dashBoard1();
+		Thread.sleep(5000);
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
@@ -647,7 +671,9 @@ public class CreateUserPage {
 		this.inputStateName1(stateName);
 		this.inputCityVillage1(cityName);
 		this.inputZipCode1(zipCodeNo);
+//		Thread.sleep(2000);
 		this.saveComplete();
+//		this.saveComplete();
 		this.successfulMessage();
 
 	}
@@ -656,8 +682,8 @@ public class CreateUserPage {
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
+		Thread.sleep(4000);
 		this.firstName(firstName);
-		Thread.sleep(2000);
 		this.dropDownType();
 		this.txtEmail(email);
 
@@ -665,23 +691,34 @@ public class CreateUserPage {
 
 	public void existingData(String firstName, String lastName, String title, String email, String phoneNumber)
 			throws InterruptedException {
-		this.clickTheUser();
+//		this.clickTheUser();
 		this.clickAddUser();
 		this.firstName(firstName);
 		this.lastName(lastName);
-		this.dropDownType();
-		this.jobTitle(title);
+		// this.dropDownType();
+		// this.jobTitle(title);
 		this.txtEmail(email);
 		this.ScrollDown();
 		this.phoneNo(phoneNumber);
-		this.saveComplete();
+		this.conSaveComplete();
+		// this.conSaveComplete();
 		this.alreadyExist();
+
+	}
+
+	By TeamAssert = By.xpath("//a[@data-exitpopup='team_user_user__all__role']");
+
+	private void Assertion() {
+		wait = new WebDriverWait(driver, 10);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(TeamAssert)).getText();
+		Assert.assertEquals(text, "Team / Create User");
 
 	}
 
 	public void reqField() throws InterruptedException, AWTException {
 		// this.reqProfileUpload();
-		Thread.sleep(3000);
+		Thread.sleep(3500);
+		this.Assertion();
 		this.clkSave();
 		scrollDown();
 		this.requiredFieldFirstName();
@@ -742,16 +779,16 @@ public class CreateUserPage {
 
 	public void conExistingDatas(String firstName, String lastName, String email, String phoneNo)
 			throws InterruptedException {
+		Thread.sleep(2000);
 		this.clkContractor();
 		this.conFirstName(firstName);
 		this.conLastName(lastName);
-		// Thread.sleep(2000);
+		// 
 		this.conBussinessUnit();
 		this.conServiceType();
 		this.conEmail(email);
 		this.ScrollDown();
 		this.conPhoneNo(phoneNo);
-		this.conSaveComplete();
 		this.conSaveComplete();
 		this.alreadyExist();
 
@@ -766,9 +803,9 @@ public class CreateUserPage {
 		this.conFirstName(firstName);
 		this.conEmail(email);
 		this.conOrganization();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		this.conSaveComplete();
-		this.conSaveComplete();
+//		this.conSaveComplete();
 		this.requiredFieldCompany();
 
 	}
@@ -782,6 +819,7 @@ public class CreateUserPage {
 		this.conEmail(email);
 		this.ScrollDown();
 //		this.conOrganization();
+//		this.clickOrganization();
 //		// Thread.sleep(2000);
 //		this.organization();
 
@@ -894,6 +932,8 @@ public class CreateUserPage {
 
 	private void clickYes() {
 		wait = new WebDriverWait(driver, 10);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(Yes)).getText();
+		Assert.assertEquals(text, "Yes");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(Yes)).click();
 
 	}
@@ -902,7 +942,19 @@ public class CreateUserPage {
 		wait = new WebDriverWait(driver, 10);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteMessage)).getText();
 		Assert.assertEquals(text, "User have been deleted successfully");
+		String Name = wait.until(ExpectedConditions.visibilityOfElementLocated(Assertion)).getText();
+		Assert.assertEquals(Name, "First Name");
 
+	}
+
+	By Assertion = By.xpath("//td[text()='First Name']");
+
+	private void converifyDeleteMessage() {
+		wait = new WebDriverWait(driver, 10);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteMessage)).getText();
+		Assert.assertEquals(text, "User have been deleted successfully");
+		String Name = wait.until(ExpectedConditions.visibilityOfElementLocated(Assertion)).getText();
+		Assert.assertEquals(Name, "First Name");
 	}
 
 	public void deleteField() {
@@ -914,12 +966,13 @@ public class CreateUserPage {
 
 	}
 
-	public void deleteConField() {
+	public void deleteConField() throws InterruptedException {
+		Thread.sleep(3000);
 		this.Contractor();
 		this.conmouseActionDots();
 		this.clickconDelete();
 		this.clickYes();
-		this.verifyDeleteMessage();
+		this.converifyDeleteMessage();
 
 	}
 
