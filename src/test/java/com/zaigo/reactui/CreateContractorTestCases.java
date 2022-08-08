@@ -52,7 +52,7 @@ public class CreateContractorTestCases {
 		loginInPage.clickLoginButton();
 		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
 		contractorPage.clickTeam();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		contractorPage.clickTeam();
 		// contractorPage.clickCompany();
 		contractorPage.clickContractor();
