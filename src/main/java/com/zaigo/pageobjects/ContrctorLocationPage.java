@@ -77,7 +77,7 @@ public class ContrctorLocationPage {
 	public void modulePage() {
 		this.clickTeam();
 		this.clickContractor();
-		this.clickAddContractor();
+		
 
 	}
 
@@ -131,6 +131,7 @@ public class ContrctorLocationPage {
 	}
 
 	public void ContractorField(String company, String email, String person, String phone, String fax, String website) {
+		this.clickAddContractor();
 		this.inputCompanyName(company);
 		this.inputContractorEmail(email);
 		this.inputContractPerson(person);

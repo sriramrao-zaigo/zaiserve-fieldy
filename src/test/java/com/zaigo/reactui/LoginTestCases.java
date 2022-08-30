@@ -173,15 +173,17 @@ public class LoginTestCases {
 //	 */
 
 	@Test(priority = 8)
-	public void verify() {
+	public void verify() throws InterruptedException {
 		// Single Account User
 
 		LoginPage loginInPage = new LoginPage(this.driver);
 		loginInPage.userField("fieldy@zaiportal.com");
 		loginInPage.passwordField("Zaiserve@123");
 		loginInPage.clickLoginButton();
-		String text = loginInPage.dashBoardText();
-		Assert.assertEquals(text, "Dashboard");
+//		Thread.sleep(5000);
+		CreateContractorPage contractorPage = new CreateContractorPage(this.driver);
+		contractorPage.assertTeam();
+//		contractorPage.clickTeam();
 
 	}
 

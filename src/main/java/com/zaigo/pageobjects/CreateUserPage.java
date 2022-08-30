@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -15,8 +16,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.Assertion;
 
-public class CreateUserPage {
+import com.base.BaseClass;
+
+public class CreateUserPage extends BaseClass {
 
 	WebDriver driver;
 	WebDriverWait wait;
@@ -65,13 +69,13 @@ public class CreateUserPage {
 
 	By Url = By.id("social_media__url__1");
 
-	By SaveComplete = By.xpath("//button[@data-formsubmit='user_create']");
+	By SaveComplete = By.xpath("//*[@id=\"team-user-team-user-create\"]/div/div/div[2]/button");
 	By ConSaveComplete = By.xpath("//button[@data-automationid='save-complete']");
 
 	By SuccessfulMessage = By.xpath("//span[text()='User created successfully']");
 	By AlreadySameMail = By.xpath("//span[text()='User Already Exist with the same email address']");
 
-	By Contract = By.xpath("//input[@data-formswitcher='user-contractor-create']");
+	By Contract = By.xpath("/html/body/div[2]/div[1]/div[3]/div[1]/div[1]/div/div/div[2]/input");
 	By conFirstName = By.id("first_name");
 	By conLastName = By.id("last_name");
 	By BussinessUnit = By.xpath("//input[@data-dropdownlist='business-unit']");
@@ -82,19 +86,20 @@ public class CreateUserPage {
 	By conPhoneNo = By.xpath("//input[@data-automationid='phones__number__0']");
 	By conSaveNext = By.xpath("//button[@data-spinloader='user_contractor_create_edit']");
 
-	By conOrganization = By.xpath("//input[@name='contractor_type' and @value=1]");
+	By conOrganization = By.xpath("//input[@value='1']");
 
 	By reqFieldFirstName = By.xpath("//div[@id='first_name_error']");
 	By reqFieldType = By.xpath("//div[@id='role_id_error']");
 	By reqFieldEmail = By.xpath("//div[@id='email_error']");
-	By reqFieldCompany = By.xpath("//div[@id='company_id_error']");
+	By reqFieldCompany = By
+			.xpath("//div[@class='floating-label custom-dropdown select-box select-box-45']//child::div");
 
 	By clkUser = By.xpath("//input[@data-formdynamic='user_create_edit']");
 
 	By Company = By.xpath("//input[@data-dropdownlist='contractor-company']");
 	By CompanyName = By.xpath("//div[text()='Dhamu']");
 
-	By ClickContractor = By.xpath("//input[@data-formdynamic='user_contractor_create_edit']");
+	By ClickContractor = By.xpath("//input[@data-formswitcher='user-contractor-create']");
 	By ClickUser = By.xpath("//input[@data-formdynamic='user_create_edit']");
 
 	By ClickUsers = By.xpath("//a[text()='User ']");
@@ -112,7 +117,7 @@ public class CreateUserPage {
 	By SearchBox = By.xpath("//input[@id='team-user-user-user-search-filter']");
 	By ClickSearchIcon = By.xpath("//button[@id='team-user-user-search-button']");
 	By ValidationName = By.xpath("//a[text()='Ajith']");
-	By InvalidData = By.xpath("//div[text()='No result found for Team User']");
+	By InvalidData = By.xpath("//*[text()='No Result Found for Team User']");
 
 	By clickNext = By.xpath("//span[text()='Next']");
 
@@ -134,7 +139,9 @@ public class CreateUserPage {
 
 	private void clickTeam() {
 		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(Team)).click();
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(Team)).getText();
+		Assert.assertEquals(text, "Team");
+		driver.findElement(Team).click();
 	}
 
 	private void clickUsers() {
@@ -157,7 +164,11 @@ public class CreateUserPage {
 	private void firstName(String firstName) {
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(FirstName)).sendKeys(firstName);
+	}
 
+	private void clearFirstName() {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(FirstName)).clear();
 	}
 
 	private void userClick() {
@@ -171,11 +182,17 @@ public class CreateUserPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(LastName)).sendKeys(lastName);
 	}
 
+	By Data = By.xpath("//h3[text()='No Data Found']");
+
 	private void dropDownType() throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(DropDown)).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(Manager)).click();
+		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(DropDown));
+		actions = new Actions(driver);
+		actions.moveToElement(until).click().perform();
+		WebElement until2 = wait.until(ExpectedConditions.visibilityOfElementLocated(Manager));
+		actions = new Actions(driver);
+		actions.moveToElement(until2).click().perform();
 
 	}
 
@@ -196,7 +213,9 @@ public class CreateUserPage {
 
 	private void clkSave() {
 		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext)).click();
+		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(until).click().build().perform();
 
 	}
 
@@ -216,7 +235,10 @@ public class CreateUserPage {
 
 	private void clickContract() {
 		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(Contract)).click();
+		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(Contract));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(until).click().build().perform();
+
 	}
 
 	private void Contractor() {
@@ -277,6 +299,14 @@ public class CreateUserPage {
 
 	}
 
+	By click = By.xpath("(//div[@class='p-2 list-hover-bg team-contractor-company w-20-ellipsis w-100'])[1]");
+
+	private void clickOrganization() {
+		wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(click)).click();
+
+	}
+
 	private void clickTheUser() {
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ClickTheUser)).click();
@@ -284,8 +314,8 @@ public class CreateUserPage {
 	}
 
 	private void ScrollDown() {
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("window.scrollBy(0,1000)");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,document.body.scrollHeight)", "");
 
 	}
 
@@ -339,14 +369,32 @@ public class CreateUserPage {
 		wait = new WebDriverWait(driver, 10);
 		String company = wait.until(ExpectedConditions.visibilityOfElementLocated(reqFieldCompany)).getText();
 		// System.out.println("Company " + company);
-		Assert.assertEquals(company, "Required Field");
+//		Assert.assertEquals(company, "Required Field");
+		if (company.equals("Required Field")) {
+			System.out.println(true);
+
+		} else {
+			System.out.println(false);
+
+		}
 
 	}
 
 	private void saveComplete() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(2500);
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(SaveComplete)).click();
+	}
+
+	By conComplete = By.xpath("//*[@id=\"team-user-team-user-create\"]/div/div/div[2]");
+
+	private void conSaveCompletes() throws InterruptedException {
+		Thread.sleep(2000);
+		wait = new WebDriverWait(driver, 10);
+		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(conComplete));
+		Assert.assertEquals(until, "Save & Complete");
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", until);
+
 	}
 
 	private void clkUser() {
@@ -537,28 +585,28 @@ public class CreateUserPage {
 
 	}
 
-//	private void reqProfileUpload() throws AWTException, InterruptedException {
-//		wait = new WebDriverWait(driver, 10);
-//		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(ProfileUpload));
-//		Actions action = new Actions(driver);
-//		action.moveToElement(until).click().build().perform();
-//		Thread.sleep(1000);
-//		attachmentFile("C:\\Users\\Zaigo PC\\Downloads\\sample-file.pdf");
-//		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(ProfileErrorMessage)).getText();
-//		// System.out.println("Error message Upload Pic " + text);
-//		Assert.assertEquals(text, "Only png,jpeg,jpg Formats Allowed");
-//
-//	}
+	private void reqProfileUpload() throws AWTException, InterruptedException {
+		wait = new WebDriverWait(driver, 10);
+		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(ProfileUpload));
+		Actions action = new Actions(driver);
+		action.moveToElement(until).click().build().perform();
+		Thread.sleep(1000);
+		attachmentFile("C:\\Users\\Zaigo PC\\Downloads\\sample-file.pdf");
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(ProfileErrorMessage)).getText();
+		// System.out.println("Error message Upload Pic " + text);
+		Assert.assertEquals(text, "Only png,jpeg,jpg Formats Allowed");
 
-//	private void ProfileUpload() throws AWTException, InterruptedException {
-//		wait = new WebDriverWait(driver, 10);
-//		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(ProfileUpload));
-//		Actions action = new Actions(driver);
-//		action.moveToElement(until).click().build().perform();
-//		Thread.sleep(1000);
-//		attachmentFile("1622641377484.jpg");
-//
-//	}
+	}
+
+	private void ProfileUpload() throws AWTException, InterruptedException {
+		wait = new WebDriverWait(driver, 10);
+		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(ProfileUpload));
+		Actions action = new Actions(driver);
+		action.moveToElement(until).click().build().perform();
+		Thread.sleep(1000);
+		attachmentFile("1622641377484.jpg");
+
+	}
 
 	private void searchBox(String name) {
 		wait = new WebDriverWait(driver, 10);
@@ -580,7 +628,7 @@ public class CreateUserPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(SearchBox)).sendKeys(invaliddata);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ClickSearchIcon)).click();
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(InvalidData)).getText();
-		Assert.assertEquals(text, "No result found for Team User");
+		Assert.assertEquals(text, "No Result Found for Team User");
 
 	}
 
@@ -607,12 +655,13 @@ public class CreateUserPage {
 
 	}
 
-	By DashBoard = By.xpath("//div[@data-menuselector='dashboard-menu']");
+	By DashBoard = By.id("dashboard-customer-name");
 
 	public void dashBoard1() {
 		wait = new WebDriverWait(driver, 10);
-		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(DashBoard)).getText();
-		Assert.assertEquals(text, "Dashboard");
+		// wait.until(ExpectedConditions.visibilityOfElementLocated(DashBoard));
+		String title = driver.getTitle();
+		Assert.assertEquals(title, "Fieldy | Login");
 
 	}
 
@@ -620,7 +669,11 @@ public class CreateUserPage {
 //		driver.navigate().refresh();
 //		this.dashBoard();
 //		this.clickTeam();
+
 		this.dashBoard1();
+//		this.clickTeam();
+		Thread.sleep(10000);
+//		this.clickTeam();
 		this.clickTeam();
 		this.clickUser();
 		this.clickAddUser();
@@ -632,7 +685,7 @@ public class CreateUserPage {
 			String zipCodeNo) throws InterruptedException, AWTException {
 		this.ScrollUp();
 		this.clkUser();
-		// this.ProfileUpload();
+		this.ProfileUpload();
 		this.firstName(firstName);
 		this.lastName(lastName);
 		this.dropDownType();
@@ -647,18 +700,30 @@ public class CreateUserPage {
 		this.inputStateName1(stateName);
 		this.inputCityVillage1(cityName);
 		this.inputZipCode1(zipCodeNo);
+//		Thread.sleep(2000);
 		this.saveComplete();
-		// this.saveComplete();
+//		this.saveComplete();
 		this.successfulMessage();
 
 	}
 
+	By radioUser = By.xpath("//input[@data-formdynamic='user_create_edit']");
+
+	private void clickRadioButtonUser() {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(radioUser)).click();
+
+	}
+
 	public void manditoryDatas(String firstName, String email) throws InterruptedException {
-		this.clickTeam();
-		this.clickUser();
-		this.clickAddUser();
+//		this.clickTeam();
+//		this.clickUser();
+//		this.clickAddUser();
+		// Thread.sleep(5000);
+
+		this.ScrollUp();
+		this.clickRadioButtonUser();
 		this.firstName(firstName);
-		// Thread.sleep(2000);
 		this.dropDownType();
 		this.txtEmail(email);
 
@@ -666,29 +731,41 @@ public class CreateUserPage {
 
 	public void existingData(String firstName, String lastName, String title, String email, String phoneNumber)
 			throws InterruptedException {
-		this.clickTheUser();
+//		this.clickTheUser();
 		this.clickAddUser();
 		this.firstName(firstName);
 		this.lastName(lastName);
-		this.dropDownType();
-		this.jobTitle(title);
+		// this.dropDownType();
+		// this.jobTitle(title);
 		this.txtEmail(email);
 		this.ScrollDown();
 		this.phoneNo(phoneNumber);
-		this.saveComplete();
+		this.conSaveComplete();
+		this.conSaveComplete();
 		this.alreadyExist();
 
 	}
 
+	By TeamAssert = By.xpath("//a[@data-exitpopup='team_user_user__all__role']");
+
+	private void Assertion() {
+		wait = new WebDriverWait(driver, 10);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(TeamAssert)).getText();
+		Assert.assertEquals(text, "Team / Create User");
+
+	}
+
 	public void reqField() throws InterruptedException, AWTException {
-		// this.reqProfileUpload();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		this.reqProfileUpload();
+//		Thread.sleep(3500);
+//		this.Assertion();
 		this.clkSave();
 		scrollDown();
 		this.requiredFieldFirstName();
 		this.requiredFieldType();
 		this.requiredFieldEmail();
-//		//reqProfileUpload();
+//		reqProfileUpload();
 //		scrollDown();
 //		Thread.sleep(5000);
 //		//this.reqProfileUpload();
@@ -699,14 +776,25 @@ public class CreateUserPage {
 
 	}
 
+	By radioButtonCon = By.xpath("//input[@data-formdynamic='user_contractor_create_edit']");
+
+	private void clickRadioButton() {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(radioButtonCon)).click();
+
+	}
+
 	public void conReqField() throws InterruptedException, AWTException {
-		driver.navigate().refresh();
-		this.clickTeam();
-		this.clickUser();
-		this.Contractor();
-		this.addContractor();
+//		driver.navigate().refresh();
+//		this.clickTeam();
+//		this.clickUser();
+//		this.Contractor();
+//		this.addContractor();
 		// this.reqProfileUpload();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
+		this.ScrollUp();
+		this.clickRadioButton();
+		this.reqProfileUpload();
 		this.clkSave();
 		this.requiredFieldFirstName();
 		this.requiredFieldEmail();
@@ -718,7 +806,7 @@ public class CreateUserPage {
 			throws InterruptedException, AWTException {
 		this.Contractor();
 		this.addContractor();
-		// this.ProfileUpload();
+		this.ProfileUpload();
 		this.conFirstName(firstName);
 		this.conLastName(lastName);
 		// Thread.sleep(3000);
@@ -743,33 +831,36 @@ public class CreateUserPage {
 
 	public void conExistingDatas(String firstName, String lastName, String email, String phoneNo)
 			throws InterruptedException {
+		Thread.sleep(2000);
 		this.clkContractor();
 		this.conFirstName(firstName);
 		this.conLastName(lastName);
-		// Thread.sleep(2000);
+		//
 		this.conBussinessUnit();
 		this.conServiceType();
 		this.conEmail(email);
 		this.ScrollDown();
 		this.conPhoneNo(phoneNo);
 		this.conSaveComplete();
-		this.conSaveComplete();
 		this.alreadyExist();
 
 	}
 
 	public void reqOrganization(String firstName, String email) throws InterruptedException {
-		driver.navigate().refresh();
+//		driver.navigate().refresh();
 //		this.Contractor();
 //		this.addContractor();
 //		this.clkContractor();
-		this.ScrollDown();
+//		this.ScrollDown();
 		this.conFirstName(firstName);
 		this.conEmail(email);
+		this.ScrollDown();
 		this.conOrganization();
-		Thread.sleep(1000);
+		this.ScrollDown();
+		Thread.sleep(2000);
 		this.conSaveComplete();
-		this.conSaveComplete();
+
+//		this.conSaveComplete();
 		this.requiredFieldCompany();
 
 	}
@@ -783,6 +874,7 @@ public class CreateUserPage {
 		this.conEmail(email);
 		this.ScrollDown();
 //		this.conOrganization();
+//		this.clickOrganization();
 //		// Thread.sleep(2000);
 //		this.organization();
 
@@ -889,12 +981,14 @@ public class CreateUserPage {
 		wait = new WebDriverWait(driver, 10);
 		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(conDelete));
 		Actions actions = new Actions(driver);
-		actions.click(until).perform();
+		actions.moveToElement(until).click().build().perform();
 
 	}
 
 	private void clickYes() {
 		wait = new WebDriverWait(driver, 10);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(Yes)).getText();
+		Assert.assertEquals(text, "Yes");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(Yes)).click();
 
 	}
@@ -903,6 +997,24 @@ public class CreateUserPage {
 		wait = new WebDriverWait(driver, 10);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteMessage)).getText();
 		Assert.assertEquals(text, "User have been deleted successfully");
+		String Name = wait.until(ExpectedConditions.visibilityOfElementLocated(Assertion)).getText();
+		Assert.assertEquals(Name, "First Name");
+
+	}
+
+	By Assertion = By.xpath("//td[text()='First Name']");
+
+	public void converifyDeleteMessage() {
+		wait = new WebDriverWait(driver, 10);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteMessage)).getText();
+		Assert.assertEquals(text, "User have been deleted successfully");
+		String Name = wait.until(ExpectedConditions.visibilityOfElementLocated(Assertion)).getText();
+		Assert.assertEquals(Name, "First Name");
+	}
+
+	private void alertAccept() {
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
 
 	}
 
@@ -916,11 +1028,12 @@ public class CreateUserPage {
 	}
 
 	public void deleteConField() throws InterruptedException {
+		Thread.sleep(3000);
 		this.Contractor();
 		this.conmouseActionDots();
 		this.clickconDelete();
 		this.clickYes();
-		this.verifyDeleteMessage();
+		this.converifyDeleteMessage();
 
 	}
 

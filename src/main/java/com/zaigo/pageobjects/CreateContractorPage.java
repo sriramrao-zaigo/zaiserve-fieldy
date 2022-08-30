@@ -216,8 +216,14 @@ public class CreateContractorPage {
 	}
 
 	public void clickTeam() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated((team)));
+		wait.until(ExpectedConditions.elementToBeClickable((team)));
 		driver.findElement(team).click();
+	}
+
+	public void assertTeam() {
+		String text = wait.until(ExpectedConditions.elementToBeClickable((team))).getText();
+		Assert.assertEquals(text, "Team");
+
 	}
 
 	public String getCreatedContractorNameDetail() {
@@ -329,6 +335,7 @@ public class CreateContractorPage {
 	public void contractorEmail(String Email) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated((contractoremail)));
 		driver.findElement(contractoremail).sendKeys(Email);
+
 	}
 
 	public void clearContractorEmail() {
@@ -577,7 +584,7 @@ public class CreateContractorPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(StateName)).sendKeys(State);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(CityName)).sendKeys(City);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ZipCode)).sendKeys(Zip);
-		Thread.sleep(1000);
+		// Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext1)).click();
 		// wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext)).click();
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(CreateContractor)).getText();
@@ -609,48 +616,68 @@ public class CreateContractorPage {
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(LocationName)).sendKeys(r, Keys.TAB);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(errorLocationName)).getText();
-		Assert.assertEquals(text, "Not Allowed More than 256 characters");
+		Assert.assertEquals(text, "Not Allowed More Than 256 Characters");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(LocationName)).clear();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(comEmail)).sendKeys("hgdsa", Keys.TAB);
+		String texts = wait.until(ExpectedConditions.visibilityOfElementLocated(errorEmail)).getText();
+		Assert.assertEquals(texts, "Enter A Valid Email");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(comEmail)).clear();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(comEmail)).sendKeys(r, Keys.TAB);
 		String text2 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorEmail)).getText();
-		Assert.assertEquals(text2, "Not Allowed More than 256 characters");
+		Assert.assertEquals(text2, "Not Allowed More Than 256 Characters");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(comEmail)).clear();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ContactPerson)).sendKeys(r, Keys.TAB);
 		String text3 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorContactPerson)).getText();
-		Assert.assertEquals(text3, "Not Allowed More than 512 characters");
+		Assert.assertEquals(text3, "Not Allowed More Than 512 Characters");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ContactPerson)).clear();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(PhoneNo)).sendKeys("5762", Keys.TAB);
+		String texterror = wait.until(ExpectedConditions.visibilityOfElementLocated(errorPhoneNo)).getText();
+		Assert.assertEquals(texterror, "Atleast 6 Digits Required");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(PhoneNo)).clear();
 
 		String r1 = RandomStringUtils.randomNumeric(13);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(PhoneNo)).sendKeys(r1, Keys.TAB);
 		String text4 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorPhoneNo)).getText();
-		Assert.assertEquals(text4, "Not Allowed More than 12 digits");
+		Assert.assertEquals(text4, "Not Allowed More Than 12 Digits");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(PhoneNo)).clear();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(FlatName)).sendKeys(r, Keys.TAB);
 		String text5 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorNo)).getText();
-		Assert.assertEquals(text5, "Not Allowed More than 256 characters");
+		Assert.assertEquals(text5, "Not Allowed More Than 256 Characters");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(FlatName)).clear();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(StreetName)).sendKeys(r, Keys.TAB);
 		String text6 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorStreetName)).getText();
-		Assert.assertEquals(text6, "Not Allowed More than 256 characters");
+		Assert.assertEquals(text6, "Not Allowed More Than 256 Characters");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(StreetName)).clear();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(StateName)).sendKeys(r, Keys.TAB);
 		String text7 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorStateName)).getText();
-		Assert.assertEquals(text7, "Not Allowed More than 45 characters");
+		Assert.assertEquals(text7, "Not Allowed More Than 45 Characters");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(StateName)).clear();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(CityName)).sendKeys(r, Keys.TAB);
 		String text8 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorCity)).getText();
-		Assert.assertEquals(text8, "Not Allowed More than 256 characters");
+		Assert.assertEquals(text8, "Not Allowed More Than 256 Characters");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(CityName)).clear();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ZipCode)).sendKeys("!@#$%^", Keys.TAB);
+		String text10 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorZipCode)).getText();
+		Assert.assertEquals(text10, "Allowed Special Character(S)-");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ZipCode)).clear();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ZipCode)).sendKeys("12", Keys.TAB);
+		String text11 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorZipCode)).getText();
+		Assert.assertEquals(text11, "Atleast 3 Characters Required");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ZipCode)).clear();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ZipCode)).sendKeys(r, Keys.TAB);
 		String text9 = wait.until(ExpectedConditions.visibilityOfElementLocated(errorZipCode)).getText();
-		Assert.assertEquals(text9, "Not Allowed More than 10 characters");
+		Assert.assertEquals(text9, "Not Allowed More Than 10 Characters");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ZipCode)).clear();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(Previous)).click();

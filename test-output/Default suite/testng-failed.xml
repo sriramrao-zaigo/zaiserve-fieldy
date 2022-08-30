@@ -3,14 +3,24 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.zaigo.reactui.CreateContractorTestCases">
+      <class name="com.zaigo.reactui.CustomerCreateContactTestCases">
         <methods>
-          <include name="setVariableEmpty"/>
+          <include name="maxValidationContactPage"/>
+          <include name="maxValidationEquipmentPage"/>
+          <include name="minValidationContactPage"/>
+          <include name="valdationOfAttachmentField"/>
+          <include name="contactModule"/>
           <include name="exitBrowser"/>
-          <include name="verifyContractorNameMandatory"/>
+          <include name="manditoryField"/>
+          <include name="alreadyExistedMail"/>
+          <include name="minValidationPropertyPage"/>
+          <include name="maxValidationPropertyPage"/>
           <include name="setup"/>
+          <include name="createContact"/>
+          <include name="setVariableEmpty"/>
+          <include name="listValidation"/>
         </methods>
-      </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->
+      </class> <!-- com.zaigo.reactui.CustomerCreateContactTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

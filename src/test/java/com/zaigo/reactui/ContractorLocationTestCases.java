@@ -48,7 +48,7 @@ public class ContractorLocationTestCases {
 
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3,invocationCount = 5)
 	public void contractorField() {
 		ContrctorLocationPage field = new ContrctorLocationPage(driver);
 		String r = RandomStringUtils.randomAlphabetic(6);

@@ -12,7 +12,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.zaigo.pageobjects.EditContractor;
-import com.zaigo.pageobjects.EditPOM;
+import com.zaigo.pageobjects.EditContractorCompaniesPage;
+import com.zaigo.pageobjects.EditUserPage;
 import com.zaigo.pageobjects.LoginPage;
 import com.zaigo.utility.BrowserSetup;
 
@@ -46,21 +47,21 @@ public class EditContractorCompaniesTestCases {
 
 	@Test(priority = 1)
 	public void userModuleField() throws InterruptedException {
-		EditPOM userModuleField = new EditPOM(driver);
+		EditContractorCompaniesPage userModuleField = new EditContractorCompaniesPage(driver);
 		userModuleField.userModule();
 
 	}
 
 	@Test(priority = 3)
 	public void editField() {
-		EditPOM edit = new EditPOM(driver);
+		EditContractorCompaniesPage edit = new EditContractorCompaniesPage(driver);
 		edit.editField();
 
 	}
 
 	@Test(priority = 4)
 	public void editName() throws InterruptedException {
-		EditPOM edit = new EditPOM(driver);
+		EditContractorCompaniesPage edit = new EditContractorCompaniesPage(driver);
 		String alphabetics = RandomStringUtils.randomAlphabetic(7);
 		edit.editNameField(alphabetics);
 
@@ -68,7 +69,7 @@ public class EditContractorCompaniesTestCases {
 
 	@Test(priority = 5)
 	public void deleteField() {
-		EditPOM delete = new EditPOM(driver);
+		EditContractorCompaniesPage delete = new EditContractorCompaniesPage(driver);
 		delete.dltField();
 	}
 

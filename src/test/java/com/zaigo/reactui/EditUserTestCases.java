@@ -61,7 +61,7 @@ public class EditUserTestCases {
 	}
 
 	@Test(priority = 5)
-	public void deleteList() {
+	public void deleteList() throws InterruptedException {
 		EditUserPage delete = new EditUserPage(driver);
 		delete.deleteField();
 	}

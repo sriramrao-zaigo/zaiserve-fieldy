@@ -1,5 +1,6 @@
 package com.zaigo.pageobjects;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -43,6 +44,12 @@ public class EditUserPage {
 	By Team = By.id("team-menu");
 	By User = By.id("team-user-menu");
 
+	private void assertTeam() {
+		wait = new WebDriverWait(driver, 20);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(Team)).getText();
+		Assert.assertEquals(text, "Team");
+	}
+
 	private void clickTeam() {
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(Team)).click();
@@ -53,15 +60,28 @@ public class EditUserPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(User)).click();
 	}
 
+	By Dashboard = By.id("dashboard-customer-name");
+
+	private void assertDashboard() {
+		wait = new WebDriverWait(driver, 10);
+//		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(Dashboard)).getText();
+		String title = driver.getTitle();
+		Assert.assertEquals(title, "Fieldy | Login");
+
+	}
+
 	public void modules() throws InterruptedException {
-		//Thread.sleep(5000);
+//		this.assertDashboard();
+//		this.clickTeam();
+		this.assertTeam();
+		Thread.sleep(10000);
 		this.clickTeam();
 		this.clickUser();
 
 	}
 
-	By Dots = By.xpath("//*[@id=\"fieldy-user-user-user-list_aserpttbl\"]/tbody/tr[3]/td[9]");
-	By Edit = By.xpath("//*[@id=\"fieldy-user-user-user-list_aserpttbl\"]/tbody/tr[3]/td[9]/div/div[2]/ul/li[2]");
+	By Dots = By.xpath("//*[@id=\"fieldy-user-user-user-list_aserpttbl\"]/tbody/tr[2]/td[9]/div/div[1]/i");
+	By Edit = By.xpath("//*[@id=\"fieldy-user-user-user-list_aserpttbl\"]/tbody/tr[2]/td[9]/div/div[2]/ul/li[2]");
 	Actions actions;
 
 	private void mouseActionDots() {
@@ -80,15 +100,46 @@ public class EditUserPage {
 
 	}
 
+	private void assertionMessage() {
+		wait = new WebDriverWait(driver, 10);
+		String texts = wait.until(ExpectedConditions.visibilityOfElementLocated(firstName)).getText();
+		Assert.assertEquals(texts, "First Name");
+
+	}
+
 	public void editField() {
+		this.assertionMessage();
 		this.mouseActionDots();
 		this.clickEdit();
 
 	}
 
-	By FirstName = By.id("first_name");
+	By FirstName = By.xpath("//input[@data-automationid='first_name']");
 	By SaveNext = By.xpath("//button[@data-automationid='save_complete']");
 	By SuccessMessage = By.xpath("//span[text()='User information updated successfully']");
+	By active = By.xpath("//input[@value='active']");
+	By value = By.xpath("//a[@data-exitpopup='team_user_user__all__role']");
+
+	private void assertValue() {
+		wait = new WebDriverWait(driver, 10);
+		String text = wait.until(ExpectedConditions.elementToBeClickable(value)).getText();
+		Assert.assertEquals(text, "Team / Edit User");
+
+	}
+
+	private void clickClearFirstName() {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(FirstName)).click();
+
+	}
+
+	private void selectName() {
+		wait = new WebDriverWait(driver, 10);
+		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(FirstName));
+		Actions actions = new Actions(driver);
+		actions.doubleClick(until).perform();
+
+	}
 
 	private void clearFirstName() {
 		wait = new WebDriverWait(driver, 10);
@@ -101,23 +152,45 @@ public class EditUserPage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(FirstName)).sendKeys(updateName);
 	}
 
-	private void clickSaveNext() {
+	private void clickSaveNext() throws InterruptedException {
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext)).click();
+//		Thread.sleep(2000);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(SuccessMessage)).getText();
 		Assert.assertEquals(text, "User information updated successfully");
 
 	}
 
-	public void updateField(String updateName) throws InterruptedException {
-		Thread.sleep(2000);
-		this.clearFirstName();
-		this.updateFirstName(updateName);
-		this.clickSaveNext();
+	private void visibleName() {
+		wait = new WebDriverWait(driver, 10);
+		String attribute = wait.until(ExpectedConditions.visibilityOfElementLocated(FirstName)).getAttribute("value");
+		wait.until(ExpectedConditions.textToBePresentInElementValue(FirstName, attribute));
 
 	}
 
-	By Delete = By.xpath("//*[@id=\"fieldy-user-user-user-list_aserpttbl\"]/tbody/tr[3]/td[9]/div/div[2]/ul/li[3]");
+	By name = By.xpath("//td[text()='First Name']");
+
+	private void nameValidation() {
+		wait = new WebDriverWait(driver, 10);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(name)).getText();
+		Assert.assertEquals(text, "First Name");
+
+	}
+
+	public void updateField(String updateName) throws InterruptedException {
+		Thread.sleep(3000);
+//		 this.visibleName();
+//		this.assertValue();
+//		this.clickClearFirstName();
+//		this.selectName();
+		this.clearFirstName();
+		this.updateFirstName(updateName);
+		this.clickSaveNext();
+		this.nameValidation();
+
+	}
+
+	By Delete = By.xpath("(//*[@class='fa fa-trash']//ancestor::li)[1]");
 	By Yes = By.xpath("//button[text()='Yes']");
 	By DeleteMessage = By.xpath("//span[text()='User have been deleted successfully']");
 
@@ -133,17 +206,27 @@ public class EditUserPage {
 
 	}
 
+	By firstName = By.xpath("//td[text()='First Name']");
+
 	private void verifyDeleteMessage() {
 		wait = new WebDriverWait(driver, 10);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteMessage)).getText();
 		Assert.assertEquals(text, "User have been deleted successfully");
+		String texts = wait.until(ExpectedConditions.visibilityOfElementLocated(firstName)).getText();
+		Assert.assertEquals(texts, "First Name");
+	}
+
+	private void alertAccept() {
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
 
 	}
 
-	public void deleteField() {
+	public void deleteField() throws InterruptedException {
 		this.mouseActionDots();
 		this.clickDelete();
 		this.clickYes();
+		// Thread.sleep(1000);
 		this.verifyDeleteMessage();
 
 	}

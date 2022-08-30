@@ -1,9 +1,15 @@
 package com.zaigo.reactui;
 
 import java.awt.AWTException;
+import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.logging.FileHandler;
+
+import org.apache.commons.io.FileUtils;
 import org.junit.Ignore;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -136,10 +142,9 @@ public class CreateUserTestCases {
 	}
 
 	@Test(priority = 15)
-	public void alreadyExistData() throws InterruptedException {
+	public void alreadyExistData() throws InterruptedException, IOException {
 		CreateUserPage existData = new CreateUserPage(driver);
 		existData.existingData("Ajith", "Kumar", "Testing", "ajith@zaigoinfotech.com", "9876543210");
-
 	}
 
 	@Test(priority = 16)
@@ -147,7 +152,6 @@ public class CreateUserTestCases {
 		CreateUserPage contractExistingData = new CreateUserPage(driver);
 		contractExistingData.conExistingDatas("Prem", "Kumar", "Prem@zaigoingotech.com", "8765432190");
 		contractExistingData.deleteField();
-		Thread.sleep(4000);
 		contractExistingData.deleteConField();
 
 	}

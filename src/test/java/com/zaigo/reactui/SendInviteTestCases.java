@@ -143,6 +143,7 @@ public class SendInviteTestCases {
 		invitePage.clickInvite();
 		invitePage.enterFirstName("Firstname");
 		invitePage.enterEmail("email@gmail.com");
+		Thread.sleep(2000);
 		invitePage.dndTypes();
 		invitePage.clickNext();
 		String text = invitePage.getMessageText();
@@ -174,14 +175,14 @@ public class SendInviteTestCases {
 //		 invitePage.clickSendInvite();
 		driver.navigate().refresh();
 		invitePage.enterFirstName("Hariharan");
-		String r = RandomStringUtils.randomNumeric(3);
+		String r = RandomStringUtils.randomNumeric(4);
 		invitePage.enterEmail("hariharan.m" + r + "@zaigoinfotech.com");
-		Thread.sleep(1500);
+		Thread.sleep(2000);
 		invitePage.dndTypes();
 		invitePage.clickSubmit();
 		
-//		String text = invitePage.getSuccessMessages();
-//		Assert.assertEquals(text, "Invitation sent successfully to 1 user(s)");
+		String text = invitePage.getSuccessMessages();
+		Assert.assertEquals(text, "Invitation sent successfully to 1 user(s)");
 		
 		
 //		 invitePage.clickClose();

@@ -21,7 +21,7 @@ public class LoginPage {
 	private By lockpopup = By.xpath(
 			"//*[contains(text(), 'Your account is locked due to 3 failed login attempts. Lock will be released in 60 seconds.')]");
 	private By lockpopuptwo = By.xpath("//*[contains(text(),'Your account is locked. Please contact admin.')]");
-	private By dashboard = By.xpath("//div[@data-menuselector='dashboard-menu']");
+	private By dashboard = By.xpath("//span[@class='sidebar-brand-full']");
 	private By multiaccount = By.xpath("//h4[contains(text(),'Fieldy Tenant 2')]");
 
 	public LoginPage(WebDriver driver) {
@@ -32,12 +32,13 @@ public class LoginPage {
 		if (APP_URL == null) {
 			APP_URL = "http://tenant4.zaiportal.com/login/";
 		}
-		driver.get(APP_URL);
+		driver.navigate().to(APP_URL);
 	}
 
 	public String dashBoardText() {
-		wait.until(ExpectedConditions.elementToBeClickable((dashboard)));
-		return driver.findElement(dashboard).getText();
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated((dashboard)));
+		return driver.getTitle();
 	}
 
 	public String toastText() {

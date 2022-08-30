@@ -92,7 +92,7 @@ public class SendInvitePage {
 		driver.findElement(clickyes).click();
 	}
 
-	public void dndTypes() {
+	public void dndTypes() throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOfElementLocated((dndtype))).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated((dndAdmin))).click();
 
