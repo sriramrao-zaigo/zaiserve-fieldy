@@ -27,7 +27,7 @@ public class EditContractorCompaniesPage {
 			.xpath("//*[@id=\"fieldy-user-company-contractor-list_aserpttbl\"]/tbody/tr[2]/td[8]/div/div[2]/ul/li[1]");
 
 	By Name = By.id("name");
-	By SaveNext = By.xpath("//button[@data-spinloader='company_contractor_create_edit']");
+	By SaveNext = By.xpath("//div[@class='col-lg-2 col-md-2 col-sm-12 col-12 text-right']//child::button");
 	By Assertion = By.xpath("//span[text()='Contractor have been updated successfully']");
 	By clickNext = By.xpath("//span[text()='Next']");
 
@@ -151,7 +151,9 @@ public class EditContractorCompaniesPage {
 		wait = new WebDriverWait(driver, 10);
 		String until = wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext)).getText();
 		Assert.assertEquals(until, "Save & Complete");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext)).click();
+		WebElement until2 = wait.until(ExpectedConditions.visibilityOfElementLocated(SaveNext));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(until2).click().build().perform();
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(Assertion)).getText();
 		Assert.assertEquals(text, "Contractor have been updated successfully");
 

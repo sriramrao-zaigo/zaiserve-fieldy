@@ -120,7 +120,7 @@ public class CreateContractorPage {
 
 	By ClickSearchBox = By.xpath("//input[@data-automationid='search']");
 
-	By ErrorValidation = By.xpath("//div[text()='No Search Results found for']");
+	By ErrorValidation = By.xpath("//div[text()='No Result Found']");
 
 	By Search = By.id("team-company-search-button");
 
@@ -178,7 +178,7 @@ public class CreateContractorPage {
 		Assert.assertEquals(text2, "Company");
 		wait.until(ExpectedConditions.visibilityOfElementLocated((SearchBox))).sendKeys(name, Keys.ENTER);
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated((ErrorValidation))).getText();
-		Assert.assertEquals(text, "No Search Results found for\"asfvcsv\"");
+		Assert.assertEquals(text, "No Result Found");
 
 	}
 
@@ -221,7 +221,7 @@ public class CreateContractorPage {
 	}
 
 	public void assertTeam() {
-		String text = wait.until(ExpectedConditions.elementToBeClickable((team))).getText();
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated((team))).getText();
 		Assert.assertEquals(text, "Team");
 
 	}

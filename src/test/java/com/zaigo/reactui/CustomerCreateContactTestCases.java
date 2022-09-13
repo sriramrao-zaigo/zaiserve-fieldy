@@ -60,7 +60,7 @@ public class CustomerCreateContactTestCases {
 	}
 
 	@Test(priority = 4)
-	private void maxValidationContactPage() {
+	private void maxValidationContactPage() throws AWTException, InterruptedException {
 		CustomerCreateContactPage maxValidation = new CustomerCreateContactPage(driver);
 		maxValidation.maxValidation();
 
@@ -95,12 +95,18 @@ public class CustomerCreateContactTestCases {
 	}
 
 	@Test(priority = 9)
-	private void createContact() throws AWTException {
+	private void createContactWithoutOrganization() throws AWTException, InterruptedException {
 		CustomerCreateContactPage createContact = new CustomerCreateContactPage(driver);
-
 		createContact.validationFormPropertyPage();
 		createContact.validationFormEquipmentPage();
 		createContact.validationFormContactPage();
+
+	}
+
+	@Test(priority = 10)
+	private void alreadyExistedMail() {
+		CustomerCreateContactPage alreadyExisted = new CustomerCreateContactPage(driver);
+		alreadyExisted.alreadyExistedEmail();
 
 	}
 
@@ -109,14 +115,27 @@ public class CustomerCreateContactTestCases {
 		CustomerCreateContactPage listValidation = new CustomerCreateContactPage(driver);
 		listValidation.alphabetsFilters();
 		listValidation.searchListName();
+//		listValidation.searchListPhoneNumber();
+//		listValidation.searchMailId();
 		listValidation.searchInvalidListName();
 
 	}
 
-	@Test(priority = 10)
-	private void alreadyExistedMail() {
-		CustomerCreateContactPage alreadyExisted = new CustomerCreateContactPage(driver);
-		alreadyExisted.alreadyExistedEmail();
+	@Test(priority = 12)
+	private void validationOrganization() throws InterruptedException {
+		CustomerCreateContactPage validation = new CustomerCreateContactPage(driver);
+		validation.validationCreateOrganization();
+
+	}
+
+//	@Test(priority = 13)
+	private void createCustomerContactWithOrganization() throws InterruptedException {
+
+	}
+
+//	@Test(priority = 14)
+	private void filterValidation() {
+		CustomerCreateContactPage FilterTesting = new CustomerCreateContactPage(driver);
 
 	}
 

@@ -117,7 +117,7 @@ public class CreateUserPage extends BaseClass {
 	By SearchBox = By.xpath("//input[@id='team-user-user-user-search-filter']");
 	By ClickSearchIcon = By.xpath("//button[@id='team-user-user-search-button']");
 	By ValidationName = By.xpath("//a[text()='Ajith']");
-	By InvalidData = By.xpath("//*[text()='No Result Found for Team User']");
+	By InvalidData = By.xpath("//*[text()='No Result Found']");
 
 	By clickNext = By.xpath("//span[text()='Next']");
 
@@ -628,7 +628,7 @@ public class CreateUserPage extends BaseClass {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(SearchBox)).sendKeys(invaliddata);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ClickSearchIcon)).click();
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(InvalidData)).getText();
-		Assert.assertEquals(text, "No Result Found for Team User");
+		Assert.assertEquals(text, "No Result Found");
 
 	}
 
@@ -659,9 +659,10 @@ public class CreateUserPage extends BaseClass {
 
 	public void dashBoard1() {
 		wait = new WebDriverWait(driver, 10);
-		// wait.until(ExpectedConditions.visibilityOfElementLocated(DashBoard));
-		String title = driver.getTitle();
-		Assert.assertEquals(title, "Fieldy | Login");
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(Team)).getText();
+		
+//		String title = driver.getTitle();
+		Assert.assertEquals(text, "Team");
 
 	}
 
@@ -1006,8 +1007,8 @@ public class CreateUserPage extends BaseClass {
 
 	public void converifyDeleteMessage() {
 		wait = new WebDriverWait(driver, 10);
-		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteMessage)).getText();
-		Assert.assertEquals(text, "User have been deleted successfully");
+		//String text = wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteMessage)).getText();
+		//Assert.assertEquals(text, "User have been deleted successfully");
 		String Name = wait.until(ExpectedConditions.visibilityOfElementLocated(Assertion)).getText();
 		Assert.assertEquals(Name, "First Name");
 	}

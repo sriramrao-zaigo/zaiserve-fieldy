@@ -5,6 +5,7 @@ import java.awt.Desktop.Action;
 import java.sql.Savepoint;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import javax.lang.model.element.Element;
 
@@ -16,12 +17,15 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.internal.MouseAction;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
 import org.testng.Assert;
 import org.testng.asserts.Assertion;
 import org.testng.internal.BaseClassFinder;
+
 import com.base.BaseClass;
 
 public class CustomerCreateContactPage extends BaseClass {
@@ -44,6 +48,9 @@ public class CustomerCreateContactPage extends BaseClass {
 	String CreatedMessage = "Customer contact created successfully";
 	String EmailAlreadyExisted = "The e-mail is already exit";
 	String Invalid = "No Result Found for Contacts";
+	String LogoError = "File Size Not Allowed More Than 2 MB";
+	String MinValidationZipcode = "Atleast 3 characters required";
+	String MaxValidationZipcode = "Not Allowed More than 10 characters";
 
 	public CustomerCreateContactPage(WebDriver driver) {
 		this.driver = driver;
@@ -66,6 +73,12 @@ public class CustomerCreateContactPage extends BaseClass {
 	private void inputText(By element, String text) {
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element)).sendKeys(text);
+
+	}
+
+	private void validationCheckingInputText(By element, String text) {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(element)).sendKeys(text, Keys.TAB);
 
 	}
 
@@ -109,6 +122,14 @@ public class CustomerCreateContactPage extends BaseClass {
 
 	}
 
+	private void mouseClickButton(By element) {
+		wait = new WebDriverWait(driver, 10);
+		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(until).click().build().perform();
+
+	}
+
 	private void clickAddContact() {
 		wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(AddContact)).click();
@@ -116,11 +137,11 @@ public class CustomerCreateContactPage extends BaseClass {
 	}
 
 	public void modulePage() throws InterruptedException {
-		Thread.sleep(5000);
+
 		this.dashBoard();
+		Thread.sleep(5000);
 		this.clickCustomer();
 		this.clickContact();
-		this.clickAddContact();
 
 	}
 
@@ -151,6 +172,7 @@ public class CustomerCreateContactPage extends BaseClass {
 	}
 
 	public void manditoryValidation() throws InterruptedException, AWTException {
+		this.clickAddContact();
 		this.assertTittle();
 		Thread.sleep(5000);
 		this.blankFirstName();
@@ -335,7 +357,10 @@ public class CustomerCreateContactPage extends BaseClass {
 
 	}
 
-	public void maxValidation() {
+	public void maxValidation() throws AWTException, InterruptedException {
+		this.mouseActionClick(Logo);
+		this.attachmentFile("dsc00531");
+		this.assertName(ErrorLogo, LogoError);
 		this.maxFirstName();
 		this.assertFirstName();
 		this.clearFirstName();
@@ -628,7 +653,11 @@ public class CustomerCreateContactPage extends BaseClass {
 	By InstallationNotes = By.id("equipments__installation_notes__0");
 	By ErrorInstallationNotes = By.id("equipments__installation_notes__0_error");
 	String randomAlphabetic = RandomStringUtils.randomAlphabetic(257);
-	String num = RandomStringUtils.randomNumeric(4);
+	String num = RandomStringUtils.randomNumeric(3);
+	String MinValidationZipPhone = RandomStringUtils.randomNumeric(2);
+	String MaxValidationZipPhone = RandomStringUtils.randomNumeric(15);
+	String MaxValidationStateName = RandomStringUtils.randomAlphabetic(50);
+	String PhoneNumber = RandomStringUtils.randomNumeric(9);
 
 	private void max256Fields(By element) {
 		wait = new WebDriverWait(driver, 10);
@@ -640,6 +669,32 @@ public class CustomerCreateContactPage extends BaseClass {
 		wait = new WebDriverWait(driver, 10);
 		String randomAlphabetic2 = RandomStringUtils.randomAlphabetic(2049);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element)).sendKeys(randomAlphabetic2, Keys.TAB);
+
+	}
+
+	private void min3Fields(By element) {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(element)).sendKeys(MinValidationZipPhone, Keys.TAB);
+
+	}
+
+	private void max12Fields(By element) {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(element)).sendKeys(MaxValidationZipPhone, Keys.TAB);
+
+	}
+
+	private void error12ErrorMessage(By element) {
+		wait = new WebDriverWait(driver, 10);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(element)).getText();
+		Assert.assertEquals(text, MaxValidationPhoneNumber);
+
+	}
+
+	private void error3ErrorMessage(By element) {
+		wait = new WebDriverWait(driver, 10);
+		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(element)).getText();
+		Assert.assertEquals(text, MinValidationZipPhone);
 
 	}
 
@@ -693,20 +748,10 @@ public class CustomerCreateContactPage extends BaseClass {
 		this.clearEquipmentPage(InstallationNotes);
 	}
 
-	By AttachmentFile = By.xpath("//div[@class='m-2 pt-4 attachment tab-content fieldy-tab-active']");
+	By AttachmentFile = By.id("customerDropZone");
 	By ErrorAttachmentFile = By.xpath("//div[@class='dropzone-error invalid-feedback']");
 	By attached = By.className("dropzone-uploads");
 //	By AssertionFile = By.xpath("//span[@class='fieldy-dropzone-title']");
-
-	private void xpathAssertion() {
-		for (int i = 1; i <= 10; i++) {
-			By AssertionFile = By.xpath("(//span[@class='fieldy-dropzone-title'])[" + i + "]");
-			wait = new WebDriverWait(driver, 10);
-			String text = wait.until(ExpectedConditions.visibilityOfElementLocated(AssertionFile)).getText();
-			Assert.assertEquals(text, "sample-file.pdf");
-		}
-
-	}
 
 	private void attachmentFile(By element) throws AWTException, InterruptedException {
 		wait = new WebDriverWait(driver, 20);
@@ -738,8 +783,11 @@ public class CustomerCreateContactPage extends BaseClass {
 
 	}
 
+	By MaxFile = By.xpath("//div[@class='dropzone-error invalid-feedback']");
+	By Delete = By.xpath("(//span[text()='Delete'])[10]");
+
 	private void multipleUpload() throws AWTException, InterruptedException {
-		for (int i = 1; i < 7; i++) {
+		for (int i = 1; i < 11; i++) {
 			this.attachmentFile(AttachmentFile);
 			Thread.sleep(2000);
 			attachmentFile("sample-file.pdf");
@@ -749,9 +797,15 @@ public class CustomerCreateContactPage extends BaseClass {
 			wait = new WebDriverWait(driver, 10);
 			String text = wait.until(ExpectedConditions.visibilityOfElementLocated(AssertionFile)).getText();
 			Assert.assertEquals(text, "sample-file.pdf");
-			Thread.sleep(2000);
+			Thread.sleep(1500);
 
 		}
+		this.attachmentFile(AttachmentFile);
+		Thread.sleep(2000);
+		attachmentFile("sample-file.pdf");
+		this.scrollDown();
+		this.assertName(MaxFile, "Maximum upload limit reached");
+		this.mouseActionClick(Delete);
 	}
 
 	public void attachmentFiles() throws AWTException, InterruptedException {
@@ -767,10 +821,14 @@ public class CustomerCreateContactPage extends BaseClass {
 
 	}
 
-	public void validationFormContactPage() throws AWTException {
+	By ImagePreview = By.id("imagePreview");
+
+	public void validationFormContactPage() throws AWTException, InterruptedException {
 		for (int i = 0; i < 2; i++) {
 			this.ClickButton(Previous);
 		}
+
+//		this.assertName(ImagePreview, "pexels-suliman-sallehi-1704488");
 		this.clearFirstName();
 		this.inputText(FirstName, "Manoj");
 		this.inputText(LastName, "Kumar");
@@ -799,12 +857,13 @@ public class CustomerCreateContactPage extends BaseClass {
 		this.ClickButton(LeadSources);
 		this.ClickButton(Social);
 		this.inputText(Email, "yahoo@gmail.com");
-		this.inputText(Phone, "9517418526");
+		this.inputText(Phone, "9" + PhoneNumber);
 		this.clickNext();
 
 	}
 
 	public void validationFormPropertyPage() {
+		this.ClickButton(MakethisProperty);
 		this.inputText(PropertyName, "Work Location");
 		this.inputText(ContactPersonName, "Ravi");
 		this.inputText(Address1, "25/825");
@@ -828,7 +887,6 @@ public class CustomerCreateContactPage extends BaseClass {
 	}
 
 	public void alphabetsFilters() {
-		this.alertAccept();
 		this.ClickButton(AlpbabetM);
 		this.assertName(ListName, "Manoj Kumar");
 
@@ -857,8 +915,150 @@ public class CustomerCreateContactPage extends BaseClass {
 		this.ClickButton(SaveComplete);
 		this.assertName(AlreadyEmail, EmailAlreadyExisted);
 		this.ClickButton(Tittle);
-		this.alertAccept();
 		this.ClickButton(Yes);
+	}
+
+	By AddNew = By.xpath("//div[@class='no-data-found text-break']//child::button");
+	By CompanyName = By.xpath("//form[@id='customer_organization_create_edit']//child::input[@id='company_name']");
+	By OrgPhoneNumber = By
+			.xpath("//form[@id='customer_organization_create_edit']//child::input[@id='phones__number__0']");
+	By OrgEmail = By.xpath("//form[@id='customer_organization_create_edit']//child::input[@id='email']");
+	By OrgWebsite = By.xpath("//form[@id='customer_organization_create_edit']//child::input[@id='website']");
+	By OrgBuilding = By.xpath("//form[@id='customer_organization_create_edit']//child::input[@id='line_1']");
+	By OrgStreet = By.xpath("//form[@id='customer_organization_create_edit']//child::input[@id='line_2']");
+	By OrgState = By.xpath("//form[@id='customer_organization_create_edit']//child::input[@id='state']");
+	By OrgCity = By.xpath("//form[@id='customer_organization_create_edit']//child::input[@id='city']");
+	By OrgZipcode = By.xpath("//form[@id='customer_organization_create_edit']//child::input[@id='zipcode']");
+	By ErrorCompanyName = By
+			.xpath("//form[@id='customer_organization_create_edit']//child::div[@id='company_name_error']");
+	By ErrorPhoneNumber = By
+			.xpath("//form[@id='customer_organization_create_edit']//child::div[@id='phones__number__0_error']");
+	By ErrorMail = By.xpath("//form[@id='customer_organization_create_edit']//child::div[@id='email_error']");
+	By ErrorWebsite = By.xpath("//form[@id='customer_organization_create_edit']//child::div[@id='website_error']");
+	By ErrorBuilding = By.xpath("//form[@id='customer_organization_create_edit']//child::div[@id='line_1_error']");
+	By ErrorStreet = By.xpath("//form[@id='customer_organization_create_edit']//child::div[@id='line_2_error']");
+	By ErrorState = By.xpath("//form[@id='customer_organization_create_edit']//child::div[@id='state_error']");
+	By ErrorCity = By.xpath("//form[@id='customer_organization_create_edit']//child::div[@id='city_error']");
+	By ErrorZipcode = By.xpath("//form[@id='customer_organization_create_edit']//child::div[@id='zipcode_error']");
+	By OrgSaveComplete = By
+			.xpath("//div[@class='d-flex row justify-content-between ']//child::button[@id='organization-create']");
+
+	public void validationCreateOrganization() throws InterruptedException {
+		this.clickAddContact();
+		this.firstName("Arun");
+		this.ClickButton(Organization);
+		this.inputText(Organization, "Demo");
+		this.mouseActionClick(AddNew);
+		this.max256Fields(CompanyName);
+		this.error256ErrorMessage(ErrorCompanyName);
+		this.clearEquipmentPage(CompanyName);
+		this.inputText(CompanyName, "Demo");
+
+		this.inputText(OrgPhoneNumber, MinValidationZipPhone);
+		this.mouseActionClick(OrgEmail);
+		this.assertName(ErrorPhoneNumber, MinValidationPhoneNumber);
+		this.clearEquipmentPage(OrgPhoneNumber);
+
+		this.max256Fields(OrgEmail);
+		this.error256ErrorMessage(ErrorMail);
+		this.clearEquipmentPage(OrgEmail);
+		this.inputText(OrgEmail, "Zaigo" + num + "@yahoo.com");
+
+		this.max256Fields(OrgWebsite);
+		this.error256ErrorMessage(ErrorWebsite);
+		this.clearEquipmentPage(OrgWebsite);
+
+		this.max256Fields(OrgBuilding);
+		this.error256ErrorMessage(ErrorBuilding);
+		this.clearEquipmentPage(OrgBuilding);
+
+		this.max256Fields(OrgStreet);
+		this.error256ErrorMessage(ErrorStreet);
+		this.clearEquipmentPage(OrgStreet);
+
+		this.inputText(OrgState, MaxValidationStateName);
+		this.mouseActionClick(OrgEmail);
+		this.assertName(ErrorState, MaxStateNameValidation);
+		this.clearEquipmentPage(OrgState);
+
+		this.max256Fields(OrgCity);
+		this.error256ErrorMessage(ErrorCity);
+		this.clearEquipmentPage(OrgCity);
+
+		this.inputText(OrgZipcode, MinValidationZipPhone);
+		this.mouseActionClick(OrgSaveComplete);
+		this.assertName(ErrorZipcode, MinValidationZipcode);
+		this.clearEquipmentPage(OrgZipcode);
+		this.inputText(OrgZipcode, MaxValidationZipPhone);
+		this.mouseActionClick(OrgSaveComplete);
+		this.assertName(ErrorZipcode, MaxValidationZipcode);
+		this.clearEquipmentPage(OrgZipcode);
+
+	}
+
+	public void createOrganization() throws InterruptedException {
+		this.inputText(OrgPhoneNumber, "9876541230");
+		this.inputText(OrgWebsite, "https://www.facebook.com");
+		this.inputText(OrgBuilding, "12");
+		this.inputText(OrgStreet, "SakthiNagar");
+		this.inputText(OrgCity, "Chennai");
+		this.inputText(OrgZipcode, "620005");
+		this.mouseActionClick(OrgSaveComplete);
+		Thread.sleep(2000);
+		this.assertName(ResponseMessage, CreatedMessage);
+
+	}
+
+	private void mouseAction(By element) {
+		wait = new WebDriverWait(driver, 10);
+		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(until).perform();
+
+	}
+
+	By Status = By.id("customer-contact-status-active");
+	By Filter = By.xpath("//span[@data-timeline-open='customercontact']");
+	By Apply = By.xpath("//div[@class='col-lg-4 col-md-4 col-sm-6 col-12 pt-2']//child::button");
+	By ListPhoneNumber = By.xpath("(//td[@class='p-2 pt-1 pb-1'])[4]");
+	By ListSocial = By.xpath("(//input[@class='mr-3'])[2]");
+	By ListLeadSource = By.id("customer-contact-lead-source-search");
+	By ListEmail = By.xpath("(//td[@class='p-2 pt-1 pb-1'])[5]");
+
+	private void dropDownByIndex(By element, int num) {
+		wait = new WebDriverWait(driver, 10);
+		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+		Select select = new Select(until);
+		select.selectByIndex(num);
+
+	}
+
+	private String getText(By element) {
+		wait = new WebDriverWait(driver, 10);
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(element)).getText();
+
+	}
+
+	private void filterValidation() {
+		this.ClickButton(Filter);
+
+	}
+
+	public void searchListPhoneNumber() {
+		String text = this.getText(ListPhoneNumber);
+		this.inputText(Search, text);
+		this.ClickButton(SearchButton);
+		this.assertName(ListPhoneNumber, text);
+		this.clearEquipmentPage(Search);
+
+	}
+
+	public void searchMailId() {
+		String text = this.getText(ListEmail);
+		this.inputText(Search, text);
+		this.ClickButton(SearchButton);
+		this.clearEquipmentPage(Search);
+
 	}
 
 }
