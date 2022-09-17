@@ -14,7 +14,8 @@ public class BrowserSetup {
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 
-//		options.addArguments("--headless","--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "window-size=1920,1200");
+//		options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu",
+//				"window-size=1920,1200");
 //		 1920,1080 , 1200
 //		"--headless"
 		driver = new ChromeDriver(options);

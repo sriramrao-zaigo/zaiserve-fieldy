@@ -23,8 +23,7 @@ public class EditContractorCompaniesPage {
 	By contractor = By.xpath("(//li[@class='nav-item']//preceding-sibling::*[@data-goesto='contractor-view'])[1]");
 
 	By ThreeDots = By.xpath("//*[@id=\"fieldy-user-company-contractor-list_aserpttbl\"]/tbody/tr[2]/td[8]/div/div[1]");
-	By Edit = By
-			.xpath("//*[@id=\"fieldy-user-company-contractor-list_aserpttbl\"]/tbody/tr[2]/td[8]/div/div[2]/ul/li[1]");
+	By Edit = By.xpath("(//div[@class='drop-down-list']//child::li[@data-modalfetch='company_location_delete'])[1]");
 
 	By Name = By.id("name");
 	By SaveNext = By.xpath("//div[@class='col-lg-2 col-md-2 col-sm-12 col-12 text-right']//child::button");
@@ -193,7 +192,9 @@ public class EditContractorCompaniesPage {
 
 	private void clickYes() {
 		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.presenceOfElementLocated(Yes)).click();
+		WebElement until = wait.until(ExpectedConditions.presenceOfElementLocated(Yes));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(until).click().build().perform();
 		String text = wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteAssert)).getText();
 		Assert.assertEquals(text, "Contractor have been deleted successfully");
 		String texts = wait.until(ExpectedConditions.visibilityOfElementLocated(firstName)).getText();

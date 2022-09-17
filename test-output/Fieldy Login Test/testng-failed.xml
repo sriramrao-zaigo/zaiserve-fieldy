@@ -7,43 +7,24 @@
         <methods>
           <include name="exitBrowser"/>
           <include name="deleteList"/>
-          <include name="updateContent"/>
           <include name="setVariableEmpty"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.zaigo.reactui.EditUserTestCases -->
-      <class name="com.zaigo.reactui.CreateContractorTestCases">
-        <methods>
-          <include name="invalidValidationData"/>
-          <include name="setVariableEmpty"/>
-          <include name="exitBrowser"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->
-      <class name="com.zaigo.reactui.EditDetailScreenCompaniesTestCases">
-        <methods>
-          <include name="setup"/>
-          <include name="addLocation"/>
-          <include name="setVariableEmpty"/>
-          <include name="exitBrowser"/>
-        </methods>
-      </class> <!-- com.zaigo.reactui.EditDetailScreenCompaniesTestCases -->
       <class name="com.zaigo.reactui.EditContractorCompaniesTestCases">
         <methods>
           <include name="editName"/>
           <include name="setup"/>
           <include name="setVariableEmpty"/>
           <include name="deleteField"/>
-          <include name="editField"/>
-          <include name="userModuleField"/>
           <include name="exitBrowser"/>
         </methods>
       </class> <!-- com.zaigo.reactui.EditContractorCompaniesTestCases -->
       <class name="com.zaigo.reactui.CreateUserTestCases">
         <methods>
+          <include name="contractExistingData"/>
           <include name="setVariableEmpty"/>
           <include name="exitBrowser"/>
-          <include name="invalidSearch"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.zaigo.reactui.CreateUserTestCases -->

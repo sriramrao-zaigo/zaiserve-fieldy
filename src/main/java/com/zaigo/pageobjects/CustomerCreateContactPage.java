@@ -47,7 +47,7 @@ public class CustomerCreateContactPage extends BaseClass {
 	String MaxLogoValidation = "File Size Not Allowed More Than 2 MB";
 	String CreatedMessage = "Customer contact created successfully";
 	String EmailAlreadyExisted = "The e-mail is already exit";
-	String Invalid = "No Result Found for Contacts";
+	String Invalid = "No Result Found";
 	String LogoError = "File Size Not Allowed More Than 2 MB";
 	String MinValidationZipcode = "Atleast 3 characters required";
 	String MaxValidationZipcode = "Not Allowed More than 10 characters";
@@ -68,7 +68,7 @@ public class CustomerCreateContactPage extends BaseClass {
 	By ListName = By.xpath("//*[@class='border-bottom']//a[text()='Manoj Kumar']");
 	By Search = By.id("customer-contact-search-value");
 	By SearchButton = By.id("customer-contact-search-button");
-	By InvalidList = By.xpath("//div[text()='No Result Found for Contacts']");
+	By InvalidList = By.xpath("//div[text()='No Result Found']");
 
 	private void inputText(By element, String text) {
 		wait = new WebDriverWait(driver, 10);

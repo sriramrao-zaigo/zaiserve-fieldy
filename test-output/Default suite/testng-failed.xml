@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.zaigo.reactui.CustomerCreateContactTestCases">
+      <class name="com.zaigo.reactui.OnBoardingTestCases">
         <methods>
           <include name="exitBrowser"/>
           <include name="setup"/>
-          <include name="setVariableEmpty"/>
-          <include name="listValidation"/>
+          <include name="misMatchPasswordField"/>
         </methods>
-      </class> <!-- com.zaigo.reactui.CustomerCreateContactTestCases -->
+      </class> <!-- com.zaigo.reactui.OnBoardingTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

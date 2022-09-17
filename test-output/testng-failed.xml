@@ -1,52 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Fieldy Login Test]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Login TestCases(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.zaigo.reactui.EditUserTestCases">
+      <class name="com.zaigo.reactui.OnBoardingTestCases">
         <methods>
           <include name="exitBrowser"/>
-          <include name="deleteList"/>
-          <include name="updateContent"/>
-          <include name="setVariableEmpty"/>
           <include name="setup"/>
+          <include name="misMatchPasswordField"/>
         </methods>
-      </class> <!-- com.zaigo.reactui.EditUserTestCases -->
-      <class name="com.zaigo.reactui.CreateContractorTestCases">
-        <methods>
-          <include name="invalidValidationData"/>
-          <include name="setVariableEmpty"/>
-          <include name="exitBrowser"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.zaigo.reactui.CreateContractorTestCases -->
-      <class name="com.zaigo.reactui.EditDetailScreenCompaniesTestCases">
-        <methods>
-          <include name="setup"/>
-          <include name="addLocation"/>
-          <include name="setVariableEmpty"/>
-          <include name="exitBrowser"/>
-        </methods>
-      </class> <!-- com.zaigo.reactui.EditDetailScreenCompaniesTestCases -->
-      <class name="com.zaigo.reactui.EditContractorCompaniesTestCases">
-        <methods>
-          <include name="editName"/>
-          <include name="setup"/>
-          <include name="setVariableEmpty"/>
-          <include name="deleteField"/>
-          <include name="editField"/>
-          <include name="userModuleField"/>
-          <include name="exitBrowser"/>
-        </methods>
-      </class> <!-- com.zaigo.reactui.EditContractorCompaniesTestCases -->
-      <class name="com.zaigo.reactui.CreateUserTestCases">
-        <methods>
-          <include name="setVariableEmpty"/>
-          <include name="exitBrowser"/>
-          <include name="invalidSearch"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.zaigo.reactui.CreateUserTestCases -->
+      </class> <!-- com.zaigo.reactui.OnBoardingTestCases -->
     </classes>
-  </test> <!-- Login TestCases(failed) -->
-</suite> <!-- Failed suite [Fieldy Login Test] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
