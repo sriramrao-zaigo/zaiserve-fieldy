@@ -3,13 +3,21 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.zaigo.reactui.OnBoardingTestCases">
+      <class name="com.zaigo.reactui.CustomerCreateOrganizationTestCases">
         <methods>
+          <include name="characterListValidation"/>
+          <include name="createOrganizationListFirstName"/>
+          <include name="searchOrganizationNameListValidation"/>
+          <include name="setVariableEmpty"/>
           <include name="exitBrowser"/>
+          <include name="filterListValidation"/>
+          <include name="searchPhoneNumberListValidation"/>
+          <include name="searchEmailListValidation"/>
+          <include name="alreadyExistedEmail"/>
+          <include name="searchInvalid"/>
           <include name="setup"/>
-          <include name="misMatchPasswordField"/>
         </methods>
-      </class> <!-- com.zaigo.reactui.OnBoardingTestCases -->
+      </class> <!-- com.zaigo.reactui.CustomerCreateOrganizationTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

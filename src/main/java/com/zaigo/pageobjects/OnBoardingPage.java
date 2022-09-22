@@ -1,5 +1,10 @@
 package com.zaigo.pageobjects;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -10,7 +15,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class OnBoardingPage {
+import com.base.BaseClass;
+
+public class OnBoardingPage extends BaseClass {
 
 	WebDriver driver;
 	WebDriverWait wait;
@@ -28,7 +35,7 @@ public class OnBoardingPage {
 
 	String characters256 = RandomStringUtils.randomAlphabetic(257);
 	String randomCharacter = RandomStringUtils.randomAlphabetic(6);
-	String characters2048 = RandomStringUtils.randomAlphabetic(2049);
+	String characters2048 = RandomStringUtils.randomAlphabetic(1280);
 
 	public OnBoardingPage(WebDriver driver) {
 		this.driver = driver;
@@ -52,7 +59,7 @@ public class OnBoardingPage {
 
 	private void mouseActionClick(By element) {
 		wait = new WebDriverWait(driver, 10);
-		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(element));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(until).click().build().perform();
 	}
@@ -101,9 +108,20 @@ public class OnBoardingPage {
 	By lastNameError = By.id("last_name_error");
 	By EmailError = By.id("email_error");
 
-	public void login() {
+	public void login() throws MalformedURLException, IOException {
 		driver.get("http://zaiportal.com/public/Onbording/meet.html");
-		this.assertName(LandingHeading, "Great to meet you!");
+		HttpURLConnection connection = (HttpURLConnection) new URL("http://zaiportal.com/public/Onbording/meet.html")
+				.openConnection();
+		connection.setRequestMethod("HEAD");
+		connection.connect();
+		int responseCode = connection.getResponseCode();
+		if (responseCode == 200) {
+			Assert.assertEquals(responseCode, 200);
+			this.assertName(LandingHeading, "Great to meet you!");
+		} else {
+			driver.quit();
+		}
+
 	}
 
 	public void mandatoryValidation() {
@@ -130,30 +148,31 @@ public class OnBoardingPage {
 
 	}
 
-	public void maximumValidationBussinessWebSite() {
-		this.inputText(BussinessWebSite, characters2048);
+	public void maximumValidationBussinessWebSite() throws IOException {
+		this.validationTab(BussinessWebSite, getPropertyValue("2048Characters"));
 		this.mouseActionClick(Continue);
 		this.assertName(BussinessWebsiteError, Max2048Validation);
 		this.clearField(BussinessWebSite);
 	}
 
-	public void maximumValidationFirstName() {
-		this.inputText(FirstName, characters256);
+	public void maximumValidationFirstName() throws IOException {
+		this.inputText(FirstName, getPropertyValue("256Characters"));
 		this.mouseActionClick(Continue);
 		this.assertName(FirstNameError, Max256CharacterValidation);
 		this.clearField(FirstName);
 
 	}
 
-	public void maximumValidationLastName() {
-		this.validationTab(LastName, characters256);
+	public void maximumValidationLastName() throws IOException {
+		this.inputText(LastName, getPropertyValue("256Characters"));
+		this.mouseActionClick(Continue);
 		this.assertName(lastNameError, Max256CharacterValidation);
 		this.clearField(LastName);
 
 	}
 
-	public void maximumValidationEmail() {
-		this.inputText(Email, characters256);
+	public void maximumValidationEmail() throws IOException {
+		this.inputText(Email, getPropertyValue("256Characters"));
 		this.mouseActionClick(Continue);
 		this.assertName(EmailError, Max256CharacterValidation);
 		this.clearField(Email);
@@ -161,7 +180,7 @@ public class OnBoardingPage {
 	}
 
 	public void validationEmail() {
-		this.inputText(Email, randomCharacter);
+		this.inputText(Email, "hgsauydg");
 		this.mouseActionClick(Continue);
 		this.assertName(EmailError, ValidEmail);
 		this.clearField(Email);
@@ -207,7 +226,7 @@ public class OnBoardingPage {
 
 	public void sizeCompany() {
 		this.assertName(Continue, "Continue");
-		for (int i = 1; i < 4; i++) {
+		for (int i = 1; i < 5; i++) {
 			By xpath = By.id("empdiv" + i);
 			wait = new WebDriverWait(driver, 10);
 			WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(xpath));
@@ -275,7 +294,7 @@ public class OnBoardingPage {
 		this.assertName(ConfirmPasswordError, PasswordCondition);
 
 	}
-	
+
 	public void mismatchPasswordValidation() {
 		this.inputText(ConfirmPassword, "Mhari@1997");
 		this.mouseActionClick(Continue);

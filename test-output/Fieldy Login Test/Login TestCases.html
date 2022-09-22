@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Login TestCases</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>57/4/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>104/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Sep 15 10:49:33 IST 2022</td>
+<td>Started on:</td><td>Wed Sep 21 17:43:32 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>371 seconds (371198 ms)</td>
+<tr><td>Total time:</td><td>309 seconds (309871 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,23 +75,23 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.zaigo.reactui.EditContractorCompaniesTestCases.deleteField()'><b>deleteField</b><br>Test class: com.zaigo.reactui.EditContractorCompaniesTestCases</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id=&quot;fieldy-user-company-contractor-list_aserpttbl&quot;]/tbody/tr[2]/td[8]/div/div[1] (tried for 10 second(s) with 500 milliseconds interval)
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.searchEmailListValidation()'><b>searchEmailListValidation</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//td[@class=&apos;p-2 pt-1 pb-1&apos;])[5] (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.zaigo.pageobjects.EditContractorCompaniesPage.deleteField(EditContractorCompaniesPage.java:207)
-	at com.zaigo.pageobjects.EditContractorCompaniesPage.dltField(EditContractorCompaniesPage.java:222)
-	at com.zaigo.reactui.EditContractorCompaniesTestCases.deleteField(EditContractorCompaniesTestCases.java:73)
+	at com.zaigo.pageobjects.CustomerCreateOrganizationPage.assertName(CustomerCreateOrganizationPage.java:76)
+	at com.zaigo.pageobjects.CustomerCreateOrganizationPage.searchEmailValidation(CustomerCreateOrganizationPage.java:660)
+	at com.zaigo.reactui.CustomerCreateOrganizationTestCases.searchEmailListValidation(CustomerCreateOrganizationTestCases.java:378)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;fieldy-user-company-contractor-list_aserpttbl&quot;]/tbody/tr[2]/td[8]/div/div[1]&quot;}
-  (Session info: chrome=105.0.5195.102)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//td[@class=&apos;p-2 pt-1 pb-1&apos;])[5]&quot;}
+  (Session info: chrome=105.0.5195.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.0.239&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.1.29&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60133}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 19fdbe1267abb184948b2115722f0817
-*** Element info: {Using=xpath, value=//*[@id=&quot;fieldy-user-company-contractor-list_aserpttbl&quot;]/tbody/tr[2]/td[8]/div/div[1]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50112}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 236eab4473f0423df13b30047ef80dc6
+*** Element info: {Using=xpath, value=(//td[@class=&apos;p-2 pt-1 pb-1&apos;])[5]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -106,13 +106,13 @@ Session ID: 19fdbe1267abb184948b2115722f0817
 	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	... 31 more
-... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1541339374", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1541339374'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id=&quot;fieldy-user-company-contractor-list_aserpttbl&quot;]/tbody/tr[2]/td[8]/div/div[1] (tried for 10 second(s) with 500 milliseconds interval)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1001755781", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1001755781'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//td[@class=&apos;p-2 pt-1 pb-1&apos;])[5] (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.zaigo.pageobjects.EditContractorCompaniesPage.deleteField(EditContractorCompaniesPage.java:207)
-	at com.zaigo.pageobjects.EditContractorCompaniesPage.dltField(EditContractorCompaniesPage.java:222)
-	at com.zaigo.reactui.EditContractorCompaniesTestCases.deleteField(EditContractorCompaniesTestCases.java:73)
+	at com.zaigo.pageobjects.CustomerCreateOrganizationPage.assertName(CustomerCreateOrganizationPage.java:76)
+	at com.zaigo.pageobjects.CustomerCreateOrganizationPage.searchEmailValidation(CustomerCreateOrganizationPage.java:660)
+	at com.zaigo.reactui.CustomerCreateOrganizationTestCases.searchEmailListValidation(CustomerCreateOrganizationTestCases.java:378)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -141,15 +141,15 @@ Session ID: 19fdbe1267abb184948b2115722f0817
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;fieldy-user-company-contractor-list_aserpttbl&quot;]/tbody/tr[2]/td[8]/div/div[1]&quot;}
-  (Session info: chrome=105.0.5195.102)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//td[@class=&apos;p-2 pt-1 pb-1&apos;])[5]&quot;}
+  (Session info: chrome=105.0.5195.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.0.239&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.1.29&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60133}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 19fdbe1267abb184948b2115722f0817
-*** Element info: {Using=xpath, value=//*[@id=&quot;fieldy-user-company-contractor-list_aserpttbl&quot;]/tbody/tr[2]/td[8]/div/div[1]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50112}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 236eab4473f0423df13b30047ef80dc6
+*** Element info: {Using=xpath, value=(//td[@class=&apos;p-2 pt-1 pb-1&apos;])[5]}
 	at jdk.internal.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
@@ -170,25 +170,25 @@ Session ID: 19fdbe1267abb184948b2115722f0817
 	... 31 more
 </pre></div></td>
 <td>10</td>
-<td>com.zaigo.reactui.EditContractorCompaniesTestCases@1151e434</td></tr>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.EditUserTestCases.deleteList()'><b>deleteList</b><br>Test class: com.zaigo.reactui.EditUserTestCases</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()=&apos;User have been deleted successfully&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.filterListValidation()'><b>filterListValidation</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//*[@data-n-linkto=&apos;customer_organization_timeline&apos;])[3] (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.zaigo.pageobjects.EditUserPage.verifyDeleteMessage(EditUserPage.java:213)
-	at com.zaigo.pageobjects.EditUserPage.deleteField(EditUserPage.java:230)
-	at com.zaigo.reactui.EditUserTestCases.deleteList(EditUserTestCases.java:66)
+	at com.zaigo.pageobjects.CustomerCreateOrganizationPage.getText(CustomerCreateOrganizationPage.java:94)
+	at com.zaigo.pageobjects.CustomerCreateOrganizationPage.filterValidation(CustomerCreateOrganizationPage.java:685)
+	at com.zaigo.reactui.CustomerCreateOrganizationTestCases.filterListValidation(CustomerCreateOrganizationTestCases.java:385)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;User have been deleted successfully&apos;]&quot;}
-  (Session info: chrome=105.0.5195.102)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//*[@data-n-linkto=&apos;customer_organization_timeline&apos;])[3]&quot;}
+  (Session info: chrome=105.0.5195.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.0.239&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.1.29&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60195}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e69c6ce19780a1027658b0e0f7c4cdc8
-*** Element info: {Using=xpath, value=//span[text()=&apos;User have been deleted successfully&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50112}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 236eab4473f0423df13b30047ef80dc6
+*** Element info: {Using=xpath, value=(//*[@data-n-linkto=&apos;customer_organization_timeline&apos;])[3]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -203,13 +203,13 @@ Session ID: e69c6ce19780a1027658b0e0f7c4cdc8
 	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	... 31 more
-... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace641941744", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace641941744'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()=&apos;User have been deleted successfully&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1320371095", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1320371095'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: (//*[@data-n-linkto=&apos;customer_organization_timeline&apos;])[3] (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.zaigo.pageobjects.EditUserPage.verifyDeleteMessage(EditUserPage.java:213)
-	at com.zaigo.pageobjects.EditUserPage.deleteField(EditUserPage.java:230)
-	at com.zaigo.reactui.EditUserTestCases.deleteList(EditUserTestCases.java:66)
+	at com.zaigo.pageobjects.CustomerCreateOrganizationPage.getText(CustomerCreateOrganizationPage.java:94)
+	at com.zaigo.pageobjects.CustomerCreateOrganizationPage.filterValidation(CustomerCreateOrganizationPage.java:685)
+	at com.zaigo.reactui.CustomerCreateOrganizationTestCases.filterListValidation(CustomerCreateOrganizationTestCases.java:385)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -238,15 +238,15 @@ Session ID: e69c6ce19780a1027658b0e0f7c4cdc8
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;User have been deleted successfully&apos;]&quot;}
-  (Session info: chrome=105.0.5195.102)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//*[@data-n-linkto=&apos;customer_organization_timeline&apos;])[3]&quot;}
+  (Session info: chrome=105.0.5195.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.0.239&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.1.29&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60195}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e69c6ce19780a1027658b0e0f7c4cdc8
-*** Element info: {Using=xpath, value=//span[text()=&apos;User have been deleted successfully&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50112}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 236eab4473f0423df13b30047ef80dc6
+*** Element info: {Using=xpath, value=(//*[@data-n-linkto=&apos;customer_organization_timeline&apos;])[3]}
 	at jdk.internal.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
@@ -266,26 +266,26 @@ Session ID: e69c6ce19780a1027658b0e0f7c4cdc8
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	... 31 more
 </pre></div></td>
-<td>10</td>
-<td>com.zaigo.reactui.EditUserTestCases@2dc54ad4</td></tr>
+<td>11</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.EditContractorCompaniesTestCases.editName()'><b>editName</b><br>Test class: com.zaigo.reactui.EditContractorCompaniesTestCases</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@data-exitpopup=&apos;team_companies_contractor&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.CreateContact()'><b>CreateContact</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()=&apos;Customer contact created successfully&apos;] (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.zaigo.pageobjects.EditContractorCompaniesPage.assertPage(EditContractorCompaniesPage.java:113)
-	at com.zaigo.pageobjects.EditContractorCompaniesPage.editNameField(EditContractorCompaniesPage.java:165)
-	at com.zaigo.reactui.EditContractorCompaniesTestCases.editName(EditContractorCompaniesTestCases.java:66)
+	at com.zaigo.pageobjects.CustomerCreateContactPage.assertName(CustomerCreateContactPage.java:438)
+	at com.zaigo.pageobjects.CustomerCreateContactPage.contactPage(CustomerCreateContactPage.java:1349)
+	at com.zaigo.reactui.CustomerCreateContactTestCases.CreateContact(CustomerCreateContactTestCases.java:228)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@data-exitpopup=&apos;team_companies_contractor&apos;]&quot;}
-  (Session info: chrome=105.0.5195.102)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;Customer contact created successfully&apos;]&quot;}
+  (Session info: chrome=105.0.5195.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.0.239&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.1.29&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60133}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 19fdbe1267abb184948b2115722f0817
-*** Element info: {Using=xpath, value=//a[@data-exitpopup=&apos;team_companies_contractor&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49954}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e632bfe380fb726707b8d3ae4f386777
+*** Element info: {Using=xpath, value=//span[text()=&apos;Customer contact created successfully&apos;]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -298,17 +298,15 @@ Session ID: 19fdbe1267abb184948b2115722f0817
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
 	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	... 31 more
-... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace965010099", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace965010099'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@data-exitpopup=&apos;team_companies_contractor&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace342862272", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace342862272'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()=&apos;Customer contact created successfully&apos;] (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.zaigo.pageobjects.EditContractorCompaniesPage.assertPage(EditContractorCompaniesPage.java:113)
-	at com.zaigo.pageobjects.EditContractorCompaniesPage.editNameField(EditContractorCompaniesPage.java:165)
-	at com.zaigo.reactui.EditContractorCompaniesTestCases.editName(EditContractorCompaniesTestCases.java:66)
+	at com.zaigo.pageobjects.CustomerCreateContactPage.assertName(CustomerCreateContactPage.java:438)
+	at com.zaigo.pageobjects.CustomerCreateContactPage.contactPage(CustomerCreateContactPage.java:1349)
+	at com.zaigo.reactui.CustomerCreateContactTestCases.CreateContact(CustomerCreateContactTestCases.java:228)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -337,114 +335,15 @@ Session ID: 19fdbe1267abb184948b2115722f0817
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@data-exitpopup=&apos;team_companies_contractor&apos;]&quot;}
-  (Session info: chrome=105.0.5195.102)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;Customer contact created successfully&apos;]&quot;}
+  (Session info: chrome=105.0.5195.127)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.0.239&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
+System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.1.29&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60133}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 19fdbe1267abb184948b2115722f0817
-*** Element info: {Using=xpath, value=//a[@data-exitpopup=&apos;team_companies_contractor&apos;]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 31 more
-</pre></div></td>
-<td>10</td>
-<td>com.zaigo.reactui.EditContractorCompaniesTestCases@1151e434</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.contractExistingData()'><b>contractExistingData</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()=&apos;User have been deleted successfully&apos;] (tried for 10 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.zaigo.pageobjects.CreateUserPage.verifyDeleteMessage(CreateUserPage.java:999)
-	at com.zaigo.pageobjects.CreateUserPage.deleteField(CreateUserPage.java:1027)
-	at com.zaigo.reactui.CreateUserTestCases.contractExistingData(CreateUserTestCases.java:154)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;User have been deleted successfully&apos;]&quot;}
-  (Session info: chrome=105.0.5195.102)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.0.239&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59741}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e5b86139b0d2e37a10f4fc8e7d475fa5
-*** Element info: {Using=xpath, value=//span[text()=&apos;User have been deleted successfully&apos;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 31 more
-... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1979893341", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1979893341'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()=&apos;User have been deleted successfully&apos;] (tried for 10 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.zaigo.pageobjects.CreateUserPage.verifyDeleteMessage(CreateUserPage.java:999)
-	at com.zaigo.pageobjects.CreateUserPage.deleteField(CreateUserPage.java:1027)
-	at com.zaigo.reactui.CreateUserTestCases.contractExistingData(CreateUserTestCases.java:154)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;User have been deleted successfully&apos;]&quot;}
-  (Session info: chrome=105.0.5195.102)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-5M7AM2E&apos;, ip: &apos;192.168.0.239&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59741}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e5b86139b0d2e37a10f4fc8e7d475fa5
-*** Element info: {Using=xpath, value=//span[text()=&apos;User have been deleted successfully&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\ZAIGOP~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49954}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e632bfe380fb726707b8d3ae4f386777
+*** Element info: {Using=xpath, value=//span[text()=&apos;Customer contact created successfully&apos;]}
 	at jdk.internal.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
@@ -464,8 +363,8 @@ Session ID: e5b86139b0d2e37a10f4fc8e7d475fa5
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	... 31 more
 </pre></div></td>
-<td>20</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
+<td>16</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -475,290 +374,525 @@ Session ID: e5b86139b0d2e37a10f4fc8e7d475fa5
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.inputContractorLocationFieldReq()'><b>inputContractorLocationFieldReq</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
-<td></td>
-<td>6</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
-<tr>
-<td title='com.zaigo.reactui.LoginTestCases.verifyInvalidCredentials()'><b>verifyInvalidCredentials</b><br>Test class: com.zaigo.reactui.LoginTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationCityField()'><b>maxValidationCityField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
 <td></td>
 <td>1</td>
-<td>com.zaigo.reactui.LoginTestCases@82de64a</td></tr>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
 <tr>
-<td title='com.zaigo.reactui.EditContractorCompaniesTestCases.loginPage()'><b>loginPage</b><br>Test class: com.zaigo.reactui.EditContractorCompaniesTestCases</td>
-<td></td>
-<td>3</td>
-<td>com.zaigo.reactui.EditContractorCompaniesTestCases@1151e434</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.manditoryField()'><b>manditoryField</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
-<td></td>
-<td>6</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.verifyContractorTab()'><b>verifyContractorTab</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
-<td></td>
-<td>19</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.conDatas()'><b>conDatas</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
-<td></td>
-<td>12</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
-<tr>
-<td title='com.zaigo.reactui.EditUserTestCases.modulePage()'><b>modulePage</b><br>Test class: com.zaigo.reactui.EditUserTestCases</td>
-<td></td>
-<td>20</td>
-<td>com.zaigo.reactui.EditUserTestCases@2dc54ad4</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.UserModule()'><b>UserModule</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
-<td></td>
-<td>15</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.listValidationName()'><b>listValidationName</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
-<td></td>
-<td>1</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
-<tr>
-<td title='com.zaigo.reactui.SendInviteTestCases.verifyEmailFormat()'><b>verifyEmailFormat</b><br>Test class: com.zaigo.reactui.SendInviteTestCases</td>
-<td></td>
-<td>3</td>
-<td>com.zaigo.reactui.SendInviteTestCases@1b11171f</td></tr>
-<tr>
-<td title='com.zaigo.reactui.SendInviteTestCases.verifyUserTab()'><b>verifyUserTab</b><br>Test class: com.zaigo.reactui.SendInviteTestCases</td>
-<td></td>
-<td>11</td>
-<td>com.zaigo.reactui.SendInviteTestCases@1b11171f</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.inputUserLocationFieldReq()'><b>inputUserLocationFieldReq</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
-<td></td>
-<td>7</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.verifyContractorNumberMinValidation()'><b>verifyContractorNumberMinValidation</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
-<td></td>
-<td>0</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
-<tr>
-<td title='com.zaigo.reactui.SendInviteTestCases.verifyFirtNameWithBlankSpace()'><b>verifyFirtNameWithBlankSpace</b><br>Test class: com.zaigo.reactui.SendInviteTestCases</td>
-<td></td>
-<td>2</td>
-<td>com.zaigo.reactui.SendInviteTestCases@1b11171f</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.verifyCpersonMaxValidation()'><b>verifyCpersonMaxValidation</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
-<td></td>
-<td>2</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.createContract()'><b>createContract</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
-<td></td>
-<td>3</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
-<tr>
-<td title='com.zaigo.reactui.EditDetailScreenCompaniesTestCases.loginPage()'><b>loginPage</b><br>Test class: com.zaigo.reactui.EditDetailScreenCompaniesTestCases</td>
-<td></td>
-<td>2</td>
-<td>com.zaigo.reactui.EditDetailScreenCompaniesTestCases@47d9a273</td></tr>
-<tr>
-<td title='com.zaigo.reactui.EditDetailScreenCompaniesTestCases.deleteLocation()'><b>deleteLocation</b><br>Test class: com.zaigo.reactui.EditDetailScreenCompaniesTestCases</td>
-<td></td>
-<td>2</td>
-<td>com.zaigo.reactui.EditDetailScreenCompaniesTestCases@47d9a273</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.verifyContractorEmailFormat()'><b>verifyContractorEmailFormat</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
-<td></td>
-<td>0</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
-<tr>
-<td title='com.zaigo.reactui.LoginTestCases.verifyEmptyPassword()'><b>verifyEmptyPassword</b><br>Test class: com.zaigo.reactui.LoginTestCases</td>
-<td></td>
-<td>1</td>
-<td>com.zaigo.reactui.LoginTestCases@82de64a</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.reqOrganization()'><b>reqOrganization</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
+<td title='com.zaigo.reactui.OnBoardingTestCases.login()'><b>login</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
 <td></td>
 <td>4</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
 <tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.conReqField()'><b>conReqField</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.minValidationZipcodeField()'><b>minValidationZipcodeField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
 <td></td>
-<td>2</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.SendInviteTestCases.verifyUserSendInvite()'><b>verifyUserSendInvite</b><br>Test class: com.zaigo.reactui.SendInviteTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.loginPage()'><b>loginPage</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
 <td></td>
-<td>6</td>
-<td>com.zaigo.reactui.SendInviteTestCases@1b11171f</td></tr>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
 <tr>
-<td title='com.zaigo.reactui.EditUserTestCases.editFunctionality()'><b>editFunctionality</b><br>Test class: com.zaigo.reactui.EditUserTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationPropertyZipCodeField()'><b>maxValidationPropertyZipCodeField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationProductNameField()'><b>maxValidationProductNameField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationStateField()'><b>maxValidationStateField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.invalidValidationEmailField()'><b>invalidValidationEmailField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.searchInvalidListName()'><b>searchInvalidListName</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
 <td></td>
 <td>4</td>
-<td>com.zaigo.reactui.EditUserTestCases@2dc54ad4</td></tr>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
 <tr>
-<td title='com.zaigo.reactui.SendInviteTestCases.verifyEmailRequired()'><b>verifyEmailRequired</b><br>Test class: com.zaigo.reactui.SendInviteTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.formatLogoValidation()'><b>formatLogoValidation</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
 <td></td>
-<td>2</td>
-<td>com.zaigo.reactui.SendInviteTestCases@1b11171f</td></tr>
+<td>5</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.LoginTestCases.verifyInvalidEmail()'><b>verifyInvalidEmail</b><br>Test class: com.zaigo.reactui.LoginTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.organizationNameAlreadyExistValidation()'><b>organizationNameAlreadyExistValidation</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
 <td></td>
-<td>2</td>
-<td>com.zaigo.reactui.LoginTestCases@82de64a</td></tr>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.verifyContractorNameMandatory()'><b>verifyContractorNameMandatory</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
-<td></td>
-<td>2</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
-<tr>
-<td title='com.zaigo.reactui.SendInviteTestCases.verifySendInvitePopup()'><b>verifySendInvitePopup</b><br>Test class: com.zaigo.reactui.SendInviteTestCases</td>
-<td></td>
-<td>6</td>
-<td>com.zaigo.reactui.SendInviteTestCases@1b11171f</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.conManditoryField()'><b>conManditoryField</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.emailValidation()'><b>emailValidation</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
 <td></td>
 <td>0</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.LoginTestCases.verify()'><b>verify</b><br>Test class: com.zaigo.reactui.LoginTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationPropertyNameField()'><b>maxValidationPropertyNameField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
 <td></td>
-<td>13</td>
-<td>com.zaigo.reactui.LoginTestCases@82de64a</td></tr>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.clearFields()'><b>clearFields</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationCityField()'><b>maxValidationCityField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
 <td></td>
-<td>14</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.SendInviteTestCases.verifyAddMoreButton()'><b>verifyAddMoreButton</b><br>Test class: com.zaigo.reactui.SendInviteTestCases</td>
+<td title='com.zaigo.reactui.OnBoardingTestCases.validateEmailFormat()'><b>validateEmailFormat</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.fileFormatValidationAttachmentField()'><b>fileFormatValidationAttachmentField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationPropertyContactPersonNameField()'><b>maxValidationPropertyContactPersonNameField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationProductNameField()'><b>maxValidationProductNameField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
 <td></td>
 <td>0</td>
-<td>com.zaigo.reactui.SendInviteTestCases@1b11171f</td></tr>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.LoginTestCases.verifyIncorrectPassword()'><b>verifyIncorrectPassword</b><br>Test class: com.zaigo.reactui.LoginTestCases</td>
-<td></td>
-<td>2</td>
-<td>com.zaigo.reactui.LoginTestCases@82de64a</td></tr>
-<tr>
-<td title='com.zaigo.reactui.LoginTestCases.verifyEmptyEmail()'><b>verifyEmptyEmail</b><br>Test class: com.zaigo.reactui.LoginTestCases</td>
-<td></td>
-<td>2</td>
-<td>com.zaigo.reactui.LoginTestCases@82de64a</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.verifyContractorNumberMaxValidation()'><b>verifyContractorNumberMaxValidation</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
-<td></td>
-<td>0</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.reqFieldUser()'><b>reqFieldUser</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
+<td title='com.zaigo.reactui.OnBoardingTestCases.validateRadioButtonClickable()'><b>validateRadioButtonClickable</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
 <td></td>
 <td>4</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
 <tr>
-<td title='com.zaigo.reactui.SendInviteTestCases.verifyUserEnterMessage()'><b>verifyUserEnterMessage</b><br>Test class: com.zaigo.reactui.SendInviteTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationFirstNameField()'><b>maxValidationFirstNameField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
 <td></td>
-<td>2</td>
-<td>com.zaigo.reactui.SendInviteTestCases@1b11171f</td></tr>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
 <tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.verifySaveButtonExist()'><b>verifySaveButtonExist</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
+<td title='com.zaigo.reactui.OnBoardingTestCases.industryTypeFieldPresent()'><b>industryTypeFieldPresent</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
 <td></td>
 <td>0</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
 <tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.loginPage()'><b>loginPage</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValdidationModelNumberField()'><b>maxValdidationModelNumberField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.maximumValidationIndustryField()'><b>maximumValidationIndustryField</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationPhoneNumberField()'><b>maxValidationPhoneNumberField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationContactPersonNameeField()'><b>maxValidationContactPersonNameeField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxSizeValidationAttachmentField()'><b>maxSizeValidationAttachmentField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>2</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationBrandNameField()'><b>maxValidationBrandNameField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationAddress22Field()'><b>maxValidationAddress22Field</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationJobTittleField()'><b>maxValidationJobTittleField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationAttachmentFileField()'><b>maxValidationAttachmentFileField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationInstallationNotesField()'><b>maxValidationInstallationNotesField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>4</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.minValidationPropertyZipCodeField()'><b>minValidationPropertyZipCodeField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationSerialNumberField()'><b>maxValidationSerialNumberField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.mandatoryValidation()'><b>mandatoryValidation</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationZipcodeField()'><b>maxValidationZipcodeField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.existingEmailValidation()'><b>existingEmailValidation</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
 <td></td>
 <td>3</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
 <tr>
-<td title='com.zaigo.reactui.LoginTestCases.verifyIncorrectMail()'><b>verifyIncorrectMail</b><br>Test class: com.zaigo.reactui.LoginTestCases</td>
-<td></td>
-<td>2</td>
-<td>com.zaigo.reactui.LoginTestCases@82de64a</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.listValidate()'><b>listValidate</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
-<td></td>
-<td>2</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
-<tr>
-<td title='com.zaigo.reactui.EditDetailScreenCompaniesTestCases.teamModule()'><b>teamModule</b><br>Test class: com.zaigo.reactui.EditDetailScreenCompaniesTestCases</td>
-<td></td>
-<td>15</td>
-<td>com.zaigo.reactui.EditDetailScreenCompaniesTestCases@47d9a273</td></tr>
-<tr>
-<td title='com.zaigo.reactui.LoginTestCases.verifyInvalidPassword()'><b>verifyInvalidPassword</b><br>Test class: com.zaigo.reactui.LoginTestCases</td>
-<td></td>
-<td>1</td>
-<td>com.zaigo.reactui.LoginTestCases@82de64a</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.searchValidate()'><b>searchValidate</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
-<td></td>
-<td>6</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
-<tr>
-<td title='com.zaigo.reactui.EditContractorCompaniesTestCases.editField()'><b>editField</b><br>Test class: com.zaigo.reactui.EditContractorCompaniesTestCases</td>
-<td></td>
-<td>1</td>
-<td>com.zaigo.reactui.EditContractorCompaniesTestCases@1151e434</td></tr>
-<tr>
-<td title='com.zaigo.reactui.EditUserTestCases.loginPage()'><b>loginPage</b><br>Test class: com.zaigo.reactui.EditUserTestCases</td>
-<td></td>
-<td>3</td>
-<td>com.zaigo.reactui.EditUserTestCases@2dc54ad4</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.invalidValidationData()'><b>invalidValidationData</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
-<td></td>
-<td>1</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
-<tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.verifyFaxMinValidation()'><b>verifyFaxMinValidation</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationEmailField()'><b>maxValidationEmailField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
 <td></td>
 <td>0</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.CreateContractorTestCases.verifyFaxMaxValidation()'><b>verifyFaxMaxValidation</b><br>Test class: com.zaigo.reactui.CreateContractorTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationAccessHoursField()'><b>maxValidationAccessHoursField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
 <td></td>
 <td>0</td>
-<td>com.zaigo.reactui.CreateContractorTestCases@4b8ee4de</td></tr>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.EditUserTestCases.updateContent()'><b>updateContent</b><br>Test class: com.zaigo.reactui.EditUserTestCases</td>
+<td title='com.zaigo.reactui.OnBoardingTestCases.passwordMandatoryField()'><b>passwordMandatoryField</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
 <td></td>
-<td>7</td>
-<td>com.zaigo.reactui.EditUserTestCases@2dc54ad4</td></tr>
+<td>1</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
 <tr>
-<td title='com.zaigo.reactui.EditDetailScreenCompaniesTestCases.edit()'><b>edit</b><br>Test class: com.zaigo.reactui.EditDetailScreenCompaniesTestCases</td>
+<td title='com.zaigo.reactui.OnBoardingTestCases.confirmPasswordFieldCondition()'><b>confirmPasswordFieldCondition</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
 <td></td>
-<td>2</td>
-<td>com.zaigo.reactui.EditDetailScreenCompaniesTestCases@47d9a273</td></tr>
+<td>0</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
 <tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.modulePage()'><b>modulePage</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationInstallationNotesField()'><b>maxValidationInstallationNotesField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
 <td></td>
-<td>20</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
+<td>4</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
 <tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.invalidSearch()'><b>invalidSearch</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.minValidationZipcodeField()'><b>minValidationZipcodeField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
 <td></td>
-<td>6</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
 <tr>
-<td title='com.zaigo.reactui.EditContractorCompaniesTestCases.userModuleField()'><b>userModuleField</b><br>Test class: com.zaigo.reactui.EditContractorCompaniesTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.createOrganization()'><b>createOrganization</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
 <td></td>
 <td>21</td>
-<td>com.zaigo.reactui.EditContractorCompaniesTestCases@1151e434</td></tr>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.CreateUserTestCases.alreadyExistData()'><b>alreadyExistData</b><br>Test class: com.zaigo.reactui.CreateUserTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.searchInvalid()'><b>searchInvalid</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
 <td></td>
 <td>6</td>
-<td>com.zaigo.reactui.CreateUserTestCases@27f981c6</td></tr>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
 <tr>
-<td title='com.zaigo.reactui.EditDetailScreenCompaniesTestCases.addLocation()'><b>addLocation</b><br>Test class: com.zaigo.reactui.EditDetailScreenCompaniesTestCases</td>
-<td></td>
-<td>3</td>
-<td>com.zaigo.reactui.EditDetailScreenCompaniesTestCases@47d9a273</td></tr>
-<tr>
-<td title='com.zaigo.reactui.SendInviteTestCases.verifyFirtName()'><b>verifyFirtName</b><br>Test class: com.zaigo.reactui.SendInviteTestCases</td>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.minValidationContactPhoneNumberField()'><b>minValidationContactPhoneNumberField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
 <td></td>
 <td>0</td>
-<td>com.zaigo.reactui.SendInviteTestCases@1b11171f</td></tr>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.minValidationConfirmPassword()'><b>minValidationConfirmPassword</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.searchOrganizationNameListValidation()'><b>searchOrganizationNameListValidation</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>6</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.minValidationPassword()'><b>minValidationPassword</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationSerialNumberField()'><b>maxValidationSerialNumberField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.maximumValidationEmail()'><b>maximumValidationEmail</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationJobTittle()'><b>maxValidationJobTittle</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.modulePage()'><b>modulePage</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>18</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.maximumValidationFirstName()'><b>maximumValidationFirstName</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.passwordFieldConditions()'><b>passwordFieldConditions</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.characterFilterValidation()'><b>characterFilterValidation</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>2</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.lowerCaseValidation()'><b>lowerCaseValidation</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.contactModule()'><b>contactModule</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>17</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.searchPhoneNumberListValidation()'><b>searchPhoneNumberListValidation</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>6</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationStateField()'><b>maxValidationStateField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationZipcodeField()'><b>maxValidationZipcodeField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.maximumValidationBussinessName()'><b>maximumValidationBussinessName</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationAddress1Field()'><b>maxValidationAddress1Field</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.validationRadioButtonIntrested()'><b>validationRadioButtonIntrested</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationContactPhoneNumberField()'><b>maxValidationContactPhoneNumberField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.maximumValidationBussinessWebSite()'><b>maximumValidationBussinessWebSite</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>5</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationEmailField()'><b>maxValidationEmailField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationPropertyNameField()'><b>maxValidationPropertyNameField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.characterListValidation()'><b>characterListValidation</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationLastNameField()'><b>maxValidationLastNameField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationAddress2Field()'><b>maxValidationAddress2Field</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationPropertyStateField()'><b>maxValidationPropertyStateField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.loginPage()'><b>loginPage</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>22</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.correctValidationEmail()'><b>correctValidationEmail</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.mandatoryValidation()'><b>mandatoryValidation</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.mismatchPassword()'><b>mismatchPassword</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationPhoneNumberField()'><b>maxValidationPhoneNumberField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.alreadyExistedMail()'><b>alreadyExistedMail</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>4</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationContactFirstNameField()'><b>maxValidationContactFirstNameField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationBrandNameField()'><b>maxValidationBrandNameField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.mandatoryFieldValidation()'><b>mandatoryFieldValidation</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationPropertyAddress2Field()'><b>maxValidationPropertyAddress2Field</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.searchListNameField()'><b>searchListNameField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxSizeValidationProfileField()'><b>maxSizeValidationProfileField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>5</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.minValidationPhoneNumberField()'><b>minValidationPhoneNumberField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationOrganizationField()'><b>maxValidationOrganizationField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.createOrganizationListFirstName()'><b>createOrganizationListFirstName</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationAccessHoursField()'><b>maxValidationAccessHoursField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxFileUploadSizeValidationField()'><b>maxFileUploadSizeValidationField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>21</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationPropertyCityField()'><b>maxValidationPropertyCityField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxValidationAddress1()'><b>maxValidationAddress1</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxSizeValidationLogoField()'><b>maxSizeValidationLogoField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationPropertyAddress1Field()'><b>maxValidationPropertyAddress1Field</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationContactEmailField()'><b>maxValidationContactEmailField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.alreadyBussinessNameValidation()'><b>alreadyBussinessNameValidation</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.fileFormatAttachmentField()'><b>fileFormatAttachmentField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.sizeCompanyValidation()'><b>sizeCompanyValidation</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.maxLimitAttachmentField()'><b>maxLimitAttachmentField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>20</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateContactTestCases.fileFormatValidationProfileField()'><b>fileFormatValidationProfileField</b><br>Test class: com.zaigo.reactui.CustomerCreateContactTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateContactTestCases@2805d709</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationModelNumberField()'><b>maxValidationModelNumberField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationWebsiteField()'><b>maxValidationWebsiteField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.maxValidationContactLastNameField()'><b>maxValidationContactLastNameField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.minValidationPhoneNumberField()'><b>minValidationPhoneNumberField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.CustomerCreateOrganizationTestCases.validateContactEmailField()'><b>validateContactEmailField</b><br>Test class: com.zaigo.reactui.CustomerCreateOrganizationTestCases</td>
+<td></td>
+<td>0</td>
+<td>com.zaigo.reactui.CustomerCreateOrganizationTestCases@3ee37e5a</td></tr>
+<tr>
+<td title='com.zaigo.reactui.OnBoardingTestCases.maximumValidationLastName()'><b>maximumValidationLastName</b><br>Test class: com.zaigo.reactui.OnBoardingTestCases</td>
+<td></td>
+<td>1</td>
+<td>com.zaigo.reactui.OnBoardingTestCases@54bff557</td></tr>
 </table><p>
 </body>
 </html>

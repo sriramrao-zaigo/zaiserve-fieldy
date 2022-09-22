@@ -32,25 +32,44 @@ public class CustomerCreateContactPage extends BaseClass {
 
 	WebDriverWait wait;
 	WebDriver driver;
-
 	String ManditoryValidation = "Required Field";
-	String MaxCharacterVaildation = "Not Allowed More than 256 characters";
-	String MinValidationPhoneNumber = "Atleast 6 digits required";
+	String Max256CharacterValidation = "Not Allowed More than 256 characters";
+	String Min6CharacterValidation = "Atleast 6 digits required";
 	String MaxValidationPhoneNumber = "Not Allowed More than 12 digits";
 	String ValidEmail = "Enter a valid Email";
+	String Max512CharacterValidation = "Not Allowed More than 512 characters";
+	String Min3CharacterValidation = "Atleast 3 characters required";
+	String Max10CharacterValidation = "Not Allowed More than 10 characters";
+	String Max45CharacterValidation = "Not Allowed More than 45 characters";
+	String Max2048Validation = "Not Allowed More than 2048 characters";
+	String FormatValidationLogo = "Only jpg,jpeg,png Formats Allowed";
+	String MaxLogoValidation = "File Size Not Allowed More Than 2 MB";
+	String ListInvalid = "No Result Found";
+	String MaxSizeLogo = "File Size Not Allowed More Than 2 MB";
+	String SaveCompleteButton = "Save & Complete";
+	String OrganizationAlreadyExist = "Name Already Exists";
+	String AttachmentFormat = "Only JPG/PNG/JPEG files allowed";
+
+	String MaxCharacterVaildation = "Not Allowed More than 256 characters";
+	String MinValidationPhoneNumber = "Atleast 6 digits required";
+
 	String MaxCharactersValidation = "Not Allowed More than 512 characters";
 	String MinZipCodeValidation = "Atleast 3 characters required";
 	String MaxZipCodeValidation = "Not Allowed More than 10 characters";
 	String MaxStateNameValidation = "Not Allowed More than 45 characters";
 	String MaxInstallationNote = "Not Allowed More than 2048 characters";
-	String FormatValidationLogo = "Only jpg,jpeg,png Formats Allowed";
-	String MaxLogoValidation = "File Size Not Allowed More Than 2 MB";
+
 	String CreatedMessage = "Customer contact created successfully";
-	String EmailAlreadyExisted = "The e-mail is already exit";
+	String EmailAlreadyExisted = "Email Already Exists";
 	String Invalid = "No Result Found";
 	String LogoError = "File Size Not Allowed More Than 2 MB";
 	String MinValidationZipcode = "Atleast 3 characters required";
 	String MaxValidationZipcode = "Not Allowed More than 10 characters";
+
+	String characters256 = RandomStringUtils.randomAlphabetic(257);
+	String characters512 = RandomStringUtils.randomAlphabetic(513);
+	String randomCharacter = RandomStringUtils.randomAlphabetic(6);
+	String characters2048 = RandomStringUtils.randomAlphabetic(2049);
 
 	public CustomerCreateContactPage(WebDriver driver) {
 		this.driver = driver;
@@ -62,6 +81,7 @@ public class CustomerCreateContactPage extends BaseClass {
 	By Contact = By.id("customer-contact-menu");
 	By AddContact = By.xpath("//button[@data-tabposition='1']");
 	By ErrorLogo = By.id("logo_error");
+	By FormatErrorLogo = By.xpath("//div[text()='Only jpg,jpeg,png Formats Allowed']");
 	By AlpbabetM = By.xpath("//*[@data-filteralphacon='M']");
 	By Yes = By.xpath("//*[text()='Yes']");
 	By ResponseMessage = By.xpath("//span[text()='Customer contact created successfully']");
@@ -69,6 +89,20 @@ public class CustomerCreateContactPage extends BaseClass {
 	By Search = By.id("customer-contact-search-value");
 	By SearchButton = By.id("customer-contact-search-button");
 	By InvalidList = By.xpath("//div[text()='No Result Found']");
+
+	private void ClickButton(By element) {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(element)).click();
+
+	}
+
+	private void mouseActionClick(By element) {
+		wait = new WebDriverWait(driver, 10);
+		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(until).click().build().perform();
+
+	}
 
 	private void inputText(By element, String text) {
 		wait = new WebDriverWait(driver, 10);
@@ -92,6 +126,16 @@ public class CustomerCreateContactPage extends BaseClass {
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
 
+	}
+
+	private void clickButton(By element) {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(element)).click();
+	}
+
+	private void validationTab(By element, String text) {
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(element)).sendKeys(text, Keys.TAB);
 	}
 
 	private void dashBoard() {
@@ -136,12 +180,15 @@ public class CustomerCreateContactPage extends BaseClass {
 
 	}
 
-	public void modulePage() throws InterruptedException {
+	By Text = By.xpath("//td[text()='Name']");
 
+	public void modulePage() throws InterruptedException {
 		this.dashBoard();
 		Thread.sleep(5000);
 		this.clickCustomer();
+		this.assertName(Text, "Name");
 		this.clickContact();
+		this.clickAddContact();
 
 	}
 
@@ -318,7 +365,6 @@ public class CustomerCreateContactPage extends BaseClass {
 	private void scrollDown() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-
 	}
 
 	private void scrollUp() {
@@ -358,9 +404,14 @@ public class CustomerCreateContactPage extends BaseClass {
 	}
 
 	public void maxValidation() throws AWTException, InterruptedException {
+		this.scrollUp();
 		this.mouseActionClick(Logo);
+		Thread.sleep(1500);
 		this.attachmentFile("dsc00531");
 		this.assertName(ErrorLogo, LogoError);
+		this.mouseActionClick(Logo);
+		Thread.sleep(1500);
+		this.attachmentFile("pexels-suliman-sallehi-1704488");
 		this.maxFirstName();
 		this.assertFirstName();
 		this.clearFirstName();
@@ -653,7 +704,7 @@ public class CustomerCreateContactPage extends BaseClass {
 	By InstallationNotes = By.id("equipments__installation_notes__0");
 	By ErrorInstallationNotes = By.id("equipments__installation_notes__0_error");
 	String randomAlphabetic = RandomStringUtils.randomAlphabetic(257);
-	String num = RandomStringUtils.randomNumeric(3);
+	String num = RandomStringUtils.randomNumeric(4);
 	String MinValidationZipPhone = RandomStringUtils.randomNumeric(2);
 	String MaxValidationZipPhone = RandomStringUtils.randomNumeric(15);
 	String MaxValidationStateName = RandomStringUtils.randomAlphabetic(50);
@@ -769,20 +820,6 @@ public class CustomerCreateContactPage extends BaseClass {
 		Assert.assertEquals(text, "File is too big (24.67MiB). Max filesize: 20MiB.");
 	}
 
-	private void ClickButton(By element) {
-		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(element)).click();
-
-	}
-
-	private void mouseActionClick(By element) {
-		wait = new WebDriverWait(driver, 10);
-		WebElement until = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-		Actions actions = new Actions(driver);
-		actions.moveToElement(until).click().build().perform();
-
-	}
-
 	By MaxFile = By.xpath("//div[@class='dropzone-error invalid-feedback']");
 	By Delete = By.xpath("(//span[text()='Delete'])[10]");
 
@@ -797,7 +834,6 @@ public class CustomerCreateContactPage extends BaseClass {
 			wait = new WebDriverWait(driver, 10);
 			String text = wait.until(ExpectedConditions.visibilityOfElementLocated(AssertionFile)).getText();
 			Assert.assertEquals(text, "sample-file.pdf");
-			Thread.sleep(1500);
 
 		}
 		this.attachmentFile(AttachmentFile);
@@ -827,8 +863,6 @@ public class CustomerCreateContactPage extends BaseClass {
 		for (int i = 0; i < 2; i++) {
 			this.ClickButton(Previous);
 		}
-
-//		this.assertName(ImagePreview, "pexels-suliman-sallehi-1704488");
 		this.clearFirstName();
 		this.inputText(FirstName, "Manoj");
 		this.inputText(LastName, "Kumar");
@@ -885,31 +919,6 @@ public class CustomerCreateContactPage extends BaseClass {
 		this.inputText(InstallationNotes, randomAlphabetic);
 
 	}
-
-	public void alphabetsFilters() {
-		this.ClickButton(AlpbabetM);
-		this.assertName(ListName, "Manoj Kumar");
-
-	}
-
-	public void searchListName() {
-		this.inputText(Search, "Manoj");
-		this.ClickButton(SearchButton);
-		this.assertName(ListName, "Manoj Kumar");
-		this.clearField(Search);
-
-	}
-
-	public void searchInvalidListName() {
-		this.inputText(Search, "sxrdcftyvghub");
-		this.ClickButton(SearchButton);
-		this.assertName(InvalidList, Invalid);
-
-	}
-
-	String a = num;
-	String b = "1";
-	String c = a + b;
 
 	public void alreadyExistedEmail() {
 		this.ClickButton(SaveComplete);
@@ -1058,6 +1067,323 @@ public class CustomerCreateContactPage extends BaseClass {
 		this.inputText(Search, text);
 		this.ClickButton(SearchButton);
 		this.clearEquipmentPage(Search);
+
+	}
+
+//****************************************************************************************************************
+	public void maxSizeProfile() throws AWTException, InterruptedException {
+		Thread.sleep(3000);
+		this.mouseActionClick(Logo);
+		Thread.sleep(1000);
+		this.attachmentFile("dsc00531");
+		this.assertName(ErrorLogo, MaxSizeLogo);
+
+	}
+
+	public void fileFormatProfile() throws AWTException, InterruptedException {
+		this.mouseActionClick(Logo);
+		Thread.sleep(1000);
+		this.attachmentFile("sample-file.pdf");
+		this.assertName(FormatErrorLogo, FormatValidationLogo);
+
+	}
+
+	public void uploadProfile() throws AWTException, InterruptedException {
+		this.mouseActionClick(Logo);
+		Thread.sleep(1000);
+		this.attachmentFile("pexels-suliman-sallehi-1704488");
+
+	}
+
+	public void mandatoryValidation() {
+		this.assertName(SaveComplete, "Save & Complete");
+		this.mouseActionClick(SaveComplete);
+		this.assertName(ErrorFirstName, ManditoryValidation);
+
+	}
+
+	public void maxValidationFirstName() {
+		this.validationTab(FirstName, characters256);
+		this.assertName(ErrorFirstName, Max256CharacterValidation);
+		this.clearField(FirstName);
+		this.inputText(FirstName, "Demo");
+
+	}
+
+	public void maxValidationLastName() {
+		this.validationTab(LastName, characters256);
+		this.assertName(MaxErrorLastName, Max256CharacterValidation);
+		this.clearField(LastName);
+
+	}
+
+	public void maxValidationJobTittle() {
+		this.validationTab(JobTittle, characters256);
+		this.assertName(ErrorJobTittle, Max256CharacterValidation);
+		this.clearField(JobTittle);
+
+	}
+
+	public void maxValidationEmail() {
+		this.scrollDown();
+		this.validationTab(Email, characters256);
+		this.assertName(ErrorEmail, Max256CharacterValidation);
+		this.clearField(Email);
+
+	}
+
+	public void invalidEmail() {
+		this.validationTab(Email, "sdbhsd");
+		this.assertName(ErrorEmail, ValidEmail);
+		this.clearField(Email);
+
+	}
+
+//changeName
+	public void minValidationPhone() {
+		this.validationTab(Phone, "21");
+		this.assertName(ErrorPhoneNo, Min6CharacterValidation);
+		this.clearField(Phone);
+	}
+
+	public void maxValidationPhone() {
+		this.validationTab(Phone, "4564564565313456456456");
+		this.assertName(ErrorPhoneNo, MaxValidationPhoneNumber);
+		this.clearField(Phone);
+		this.mouseActionClick(Next);
+
+	}
+
+//changeName	
+	public void maxValidationPropertyNamee() {
+		this.mouseActionClick(DeleteLocation);
+		this.mouseActionClick(AddProperty);
+		this.mouseActionClick(MakethisProperty);
+		this.validationTab(PropertyName, characters256);
+		this.assertName(ErrorPropertyName, Max256CharacterValidation);
+		this.clearField(PropertyName);
+
+	}
+
+//changeName
+	public void maxValidationContactPersonNamee() {
+		this.validationTab(ContactPersonName, characters512);
+		this.assertName(ErrorContactPersonName, Max512CharacterValidation);
+		this.clearField(ContactPersonName);
+
+	}
+
+	// changeName
+	public void maxValidationAddress11() {
+		this.validationTab(Address1, characters256);
+		this.assertName(ErrorAddress1, Max256CharacterValidation);
+		this.clearField(Address1);
+
+	}
+
+	// changeName
+	public void maxValidationAddress22() {
+		this.validationTab(Address2, characters256);
+		this.assertName(ErrorAddress2, Max256CharacterValidation);
+		this.clearField(Address2);
+
+	}
+
+	// changeName
+	public void maxValidationCity() {
+		this.validationTab(CityName, characters256);
+		this.assertName(ErrorCityName, Max256CharacterValidation);
+		this.clearField(CityName);
+
+	}
+
+	public void maxValidationState() {
+		this.validationTab(StateName, characters256);
+		this.assertName(ErrorStateName, Max45CharacterValidation);
+		this.clearField(StateName);
+
+	}
+
+	public void minValidationZipcode() {
+		this.validationTab(Zipcode, "21");
+		this.assertName(ErrorZipCode, Min3CharacterValidation);
+		this.clearField(Zipcode);
+
+	}
+
+	public void maxValidationZipcode() {
+		this.validationTab(Zipcode, "231456787912321321321");
+		this.assertName(ErrorZipCode, Max10CharacterValidation);
+		this.clearField(Zipcode);
+		this.mouseActionClick(Next);
+
+	}
+
+	public void maxValidationProductName() {
+		this.validationTab(ProductName, characters256);
+		this.assertName(ErrorProductName, Max256CharacterValidation);
+		this.clearField(ProductName);
+
+	}
+
+	public void maxValidationBrandName() {
+		this.validationTab(BrandName, characters256);
+		this.assertName(ErrorBrandName, Max256CharacterValidation);
+		this.clearField(BrandName);
+
+	}
+
+	public void maxValdidationModelNumber() {
+		this.validationTab(ModelNumber, characters256);
+		this.assertName(ErrorModelNumber, Max256CharacterValidation);
+		this.clearField(ModelNumber);
+
+	}
+
+	public void maxValidationSerialNumber() {
+		this.validationTab(SerialNumber, characters256);
+		this.assertName(ErrorSerialNumber, Max256CharacterValidation);
+		this.clearField(SerialNumber);
+
+	}
+
+	public void maxValidationAccessHours() {
+		this.validationTab(AccessHours, characters256);
+		this.assertName(ErrorAccessHours, Max256CharacterValidation);
+		this.clearField(AccessHours);
+
+	}
+
+	public void maxValidationInstallationNotes() {
+		this.validationTab(InstallationNotes, characters2048);
+		this.assertName(ErrorInstallationNotes, Max2048Validation);
+		this.clearField(InstallationNotes);
+		this.mouseActionClick(Next);
+
+	}
+
+	public void maxValidationAttachmentFile() throws AWTException, InterruptedException {
+		this.mouseActionClick(AttachmentFile);
+		Thread.sleep(1000);
+		attachmentFile("4889");
+		this.assertName(ErrorAttachmentFile, "File is too big (24.67MiB). Max filesize: 20MiB.");
+
+	}
+
+	public void fileFormatValidation() throws InterruptedException, AWTException {
+		this.mouseActionClick(AttachmentFile);
+		Thread.sleep(1000);
+		attachmentFile("kms_portfolio_new1.html");
+		this.assertName(ErrorAttachmentFile, AttachmentFormat);
+
+	}
+
+	public void maxLimitAttachmentField() throws AWTException, InterruptedException {
+
+		for (int i = 1; i < 11; i++) {
+			this.mouseActionClick(AttachmentFile);
+			Thread.sleep(1000);
+			attachmentFile("sample-file.pdf");
+			this.scrollDown();
+			By AssertionFile = By.xpath("(//span[@class='fieldy-dropzone-title'])[" + i + "]");
+			wait = new WebDriverWait(driver, 10);
+			String text = wait.until(ExpectedConditions.visibilityOfElementLocated(AssertionFile)).getText();
+			Assert.assertEquals(text, "sample-file.pdf");
+
+		}
+		this.mouseActionClick(AttachmentFile);
+		Thread.sleep(1000);
+		attachmentFile("sample-file.pdf");
+		this.scrollDown();
+		this.assertName(MaxFile, "Maximum upload limit reached");
+		for (int i = 1; i < 5; i++) {
+			By Delete = By.xpath("(//span[text()='Delete'])[" + i + "]");
+			this.mouseActionClick(Delete);
+		}
+
+	}
+
+	public void propertyPage() {
+		for (int i = 0; i < 2; i++) {
+			this.mouseActionClick(Previous);
+		}
+		this.inputText(PropertyName, "Work Location");
+		this.inputText(ContactPersonName, "Ravi");
+		this.inputText(Address1, "25/825");
+		this.inputText(Address2, "Wastern Street");
+		this.inputText(StateName, "TamilNadu");
+		this.inputText(CityName, "Chennai");
+		this.inputText(Zipcode, "624889");
+		this.clickNext();
+
+	}
+
+	public void equipmentPage() {
+		this.inputText(ProductName, "Samsung");
+		this.inputText(BrandName, "Neo QLED TVs");
+		this.inputText(ModelNumber, "7894562135478789");
+		this.inputText(SerialNumber, "8794562155");
+		this.inputText(DateInstalled, "08/25/2022");
+		this.inputText(AccessHours, "8hrs");
+		this.inputText(InstallationNotes, randomAlphabetic);
+		for (int i = 0; i < 2; i++) {
+			this.mouseActionClick(Previous);
+		}
+
+	}
+
+	String a = num;
+	String b = "1";
+	String c = a + b;
+
+	public void contactPage() throws AWTException, InterruptedException {
+		this.uploadProfile();
+		this.clearFirstName();
+		this.inputText(FirstName, "Manoj");
+		this.inputText(LastName, "Kumar");
+		this.inputText(JobTittle, "Replacement&Testing");
+		this.ClickButton(LeadSources);
+		this.ClickButton(Social);
+		this.scrollDown();
+		this.inputText(Email, "manoj" + c + "@yahoo.com");
+		String randomNumeric = RandomStringUtils.randomNumeric(8);
+		this.inputText(Phone, "95" + randomNumeric);
+		this.ClickButton(SaveComplete);
+		this.assertName(ResponseMessage, CreatedMessage);
+		this.assertName(ListName, "Manoj Kumar");
+
+	}
+
+	public void alreadyExistMail() throws InterruptedException {
+		String text = this.getText(ListEmail);
+		this.ClickButton(AddContact);
+		this.inputText(FirstName, "Ajith");
+		this.scrollDown();
+		this.validationTab(Email, text);
+		this.assertName(ErrorEmail, EmailAlreadyExisted);
+		this.ClickButton(Tittle);
+		this.ClickButton(Yes);
+
+	}
+
+	public void alphabetsFilters() {
+		this.ClickButton(AlpbabetM);
+		this.assertName(ListName, "Manoj Kumar");
+
+	}
+
+	public void searchListName() {
+		this.inputText(Search, "Manoj");
+		this.ClickButton(SearchButton);
+		this.assertName(ListName, "Manoj Kumar");
+		this.clearField(Search);
+
+	}
+
+	public void searchInvalidListName() {
+		this.inputText(Search, "sxrdcftyvghub");
+		this.ClickButton(SearchButton);
+		this.assertName(InvalidList, Invalid);
 
 	}
 

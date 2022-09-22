@@ -3,31 +3,23 @@
 <suite name="Failed suite [Fieldy Login Test]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Login TestCases(failed)">
     <classes>
-      <class name="com.zaigo.reactui.EditUserTestCases">
+      <class name="com.zaigo.reactui.CustomerCreateOrganizationTestCases">
         <methods>
-          <include name="exitBrowser"/>
-          <include name="deleteList"/>
-          <include name="setVariableEmpty"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.zaigo.reactui.EditUserTestCases -->
-      <class name="com.zaigo.reactui.EditContractorCompaniesTestCases">
-        <methods>
-          <include name="editName"/>
-          <include name="setup"/>
-          <include name="setVariableEmpty"/>
-          <include name="deleteField"/>
-          <include name="exitBrowser"/>
-        </methods>
-      </class> <!-- com.zaigo.reactui.EditContractorCompaniesTestCases -->
-      <class name="com.zaigo.reactui.CreateUserTestCases">
-        <methods>
-          <include name="contractExistingData"/>
           <include name="setVariableEmpty"/>
           <include name="exitBrowser"/>
+          <include name="filterListValidation"/>
+          <include name="searchEmailListValidation"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.zaigo.reactui.CreateUserTestCases -->
+      </class> <!-- com.zaigo.reactui.CustomerCreateOrganizationTestCases -->
+      <class name="com.zaigo.reactui.CustomerCreateContactTestCases">
+        <methods>
+          <include name="exitBrowser"/>
+          <include name="CreateContact"/>
+          <include name="setup"/>
+          <include name="setVariableEmpty"/>
+        </methods>
+      </class> <!-- com.zaigo.reactui.CustomerCreateContactTestCases -->
     </classes>
   </test> <!-- Login TestCases(failed) -->
 </suite> <!-- Failed suite [Fieldy Login Test] -->

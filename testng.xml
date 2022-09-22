@@ -10,7 +10,10 @@
 			<class name="com.zaigo.reactui.SendInviteTestCases" />
 			<class name="com.zaigo.reactui.EditContractorCompaniesTestCases" />
 			<class name="com.zaigo.reactui.EditUserTestCases" /-->
-			<class name="com.zaigo.reactui.CustomerCreateContactTestCases"></class>
+
+			<class name="com.zaigo.reactui.OnBoardingTestCases" />
+			<class name="com.zaigo.reactui.CustomerCreateContactTestCases" />
+			<class name="com.zaigo.reactui.CustomerCreateOrganizationTestCases" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

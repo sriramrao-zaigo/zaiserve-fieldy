@@ -1,5 +1,8 @@
 package com.zaigo.reactui;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -36,7 +39,7 @@ public class OnBoardingTestCases {
 	}
 
 	@Test(priority = 0)
-	public void login() {
+	public void login() throws MalformedURLException, IOException {
 		OnBoardingPage boardingPage = new OnBoardingPage(driver);
 		boardingPage.login();
 	}
@@ -62,27 +65,27 @@ public class OnBoardingTestCases {
 	}
 
 	@Test(priority = 4)
-	private void maximumValidationBussinessWebSite() {
+	private void maximumValidationBussinessWebSite() throws IOException {
 		OnBoardingPage maxValidation = new OnBoardingPage(driver);
 		maxValidation.maximumValidationBussinessWebSite();
 	}
 
 	@Test(priority = 5)
-	private void maximumValidationFirstName() {
+	private void maximumValidationFirstName() throws IOException {
 		OnBoardingPage maxValidation = new OnBoardingPage(driver);
 		maxValidation.maximumValidationFirstName();
 
 	}
 
 	@Test(priority = 6)
-	private void maximumValidationLastName() {
+	private void maximumValidationLastName() throws IOException {
 		OnBoardingPage maxValidation = new OnBoardingPage(driver);
 		maxValidation.maximumValidationLastName();
 
 	}
 
 	@Test(priority = 7)
-	private void maximumValidationEmail() {
+	private void maximumValidationEmail() throws IOException {
 		OnBoardingPage maxValidation = new OnBoardingPage(driver);
 		maxValidation.maximumValidationEmail();
 
@@ -190,4 +193,5 @@ public class OnBoardingTestCases {
 		OnBoardingPage mismatchPassword = new OnBoardingPage(driver);
 		mismatchPassword.mismatchPasswordValidation();
 	}
+
 }
